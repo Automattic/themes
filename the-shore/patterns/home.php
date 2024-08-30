@@ -22,7 +22,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"width":"400px","sizeSlug":"full","linkDestination":"none","align":"center"} -->
-<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_2.jpg" alt="<?php echo __('', 'the-shore');?>" style="width:400px"/></figure>
+<figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_2.jpg" alt="<?php echo __('A beach umbrella in front of the sea', 'the-shore');?>" style="width:400px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":"50px"} -->
@@ -31,7 +31,7 @@
 <!-- /wp:group -->
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_3.jpg","dimRatio":40,"overlayColor":"black","isUserOverlayColor":true,"minHeight":600,"minHeightUnit":"px","style":{"spacing":{"padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-40 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_3.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
+<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-40 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('Aerial shot of a small tropical island with a hotel between the trees', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_3.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
 <h2 class="wp-block-heading has-text-align-center has-large-font-size" style="font-style:normal;font-weight:300"><?php echo __('Immerse yourself in a luxurious and sophisticated lifestyle amidst the serene beauty of Turks and Caicos, one of the world’s most sought-after destinations.', 'the-shore');?></h2>
 <!-- /wp:heading --></div></div>
 <!-- /wp:cover -->
@@ -65,11 +65,11 @@
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"3rem","bottom":"3rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:3rem;margin-bottom:3rem"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_4.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_4.jpg" alt="<?php echo __('A beautiful hotel room with views to the sea', 'the-shore');?>"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_5.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_5.jpg" alt="<?php echo __('A rainfall shower head on a spa room', 'the-shore');?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -81,7 +81,7 @@
 <!-- /wp:group -->
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_6.jpg","dimRatio":20,"overlayColor":"black","isUserOverlayColor":true,"minHeight":600,"minHeightUnit":"px","style":{"spacing":{"padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-20 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_6.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em"}},"fontSize":"x-small","fontFamily":"commissioner"} -->
+<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-20 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('A waiter filling up some wine glasses', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_6.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em"}},"fontSize":"x-small","fontFamily":"commissioner"} -->
 <p class="has-commissioner-font-family has-x-small-font-size" style="letter-spacing:0.1em;text-transform:uppercase"><?php echo __('Bars &amp; Restaurant', 'the-shore');?></p>
 <!-- /wp:paragraph -->
 
@@ -120,19 +120,19 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_7.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_7.jpg" alt="<?php echo __('A woman swimming in an infinity pool looking at the sea', 'the-shore');?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_8.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_8.jpg" alt="<?php echo __('A hotel pool near a tropical forest', 'the-shore');?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_9.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_9.jpg" alt="<?php echo __('A view of a hotel from the pool', 'the-shore');?>"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":"50px"} -->
@@ -163,15 +163,15 @@
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"2.4rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"stretch","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_10.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_10.jpg" alt="<?php echo __('The hands of a masseuse working on someone\'s back', 'the-shore');?>"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_11.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_11.jpg" alt="<?php echo __('A massage room with two beds with a view to the trees and a pool', 'the-shore');?>"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_12.jpg" alt="<?php echo __('', 'the-shore');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_12.jpg" alt="<?php echo __('A woman doing a heart sign with her hands, sitting in a pool', 'the-shore');?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 

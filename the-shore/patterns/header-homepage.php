@@ -7,7 +7,7 @@
  */
 ?>
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_cover_image.jpg","dimRatio":20,"overlayColor":"primary","isUserOverlayColor":true,"minHeight":672,"minHeightUnit":"px","style":{"spacing":{"padding":{"right":"0","left":"0","top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:672px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-20 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_cover_image.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:672px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-20 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('The terrace of a hotel near the sea', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_cover_image.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignfull" style="min-height:100vh"><!-- wp:spacer {"height":"0px","style":{"layout":{"flexSize":"40px","selfStretch":"fixed"}}} -->
 <div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
@@ -16,7 +16,7 @@
 <div class="wp-block-group alignfull"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"5vw","right":"5vw"}}},"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--40);padding-right:5vw;padding-bottom:var(--wp--preset--spacing--40);padding-left:5vw"><!-- wp:group {"layout":{"type":"flex"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"200px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_logo_2.png" alt="<?php echo __('', 'the-shore');?>" style="width:200px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_logo_2.png" alt="<?php echo __('The Shore. Boutique, Resort & Spa', 'the-shore');?>" style="width:200px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
