@@ -212,11 +212,12 @@ $ # You may need to wait a while for longer lists of themes.
 $ node theme-utils.mjs validate-theme --color=always --table-width=$(( $(tput cols) )) atheme,adventurer,grammer,skatepark | less -R
 ```
 
-The added `--format=json` option is super helpful when combined with `jq` to drill down into the data.
+The added `--format=json` option is super helpful when combined with [`jq`](https://jqlang.github.io/jq/download/) to drill down into the data.
 
-For example, this is the breakdown of all the current themes and a count of the types of problems that they have:
+This, for example, is the breakdown of all the current themes and a count of the types of problems that they have:
 
 ```sh-session
+$ # Scroll to see the long command →
 $ node theme-utils.mjs validate-theme --format=json $(find . -name 'theme.json' | awk -F/ '{print $2}' | uniq | sort | paste -s -d, -) | jq '.[].data[].message' | sort | uniq -c | sort -bgr
 5815 "must NOT have additional properties"
  696 "must be object"
