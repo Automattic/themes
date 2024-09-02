@@ -1,0 +1,40 @@
+/*
+Theme Name: Pierian
+Theme URI: 
+Author: Automattic
+Author URI: https://wordpress.org
+Description: Pierian is a minimalist typography-focused theme that embraces a low-key styling approach. With equivalent headings, paragraphs, links, and navigation, it features columns that elegantly divide navigation, blog posts, and a profile block.
+Requires at least: 
+Tested up to: 6.5
+Requires PHP: 
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pierian
+Tags: blog, three-columns, left-sidebar, right-sidebar, block-styles, custom-colors, custom-header, full-site-editing, post-formats, style-variations, threaded-comments, translation-ready
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
