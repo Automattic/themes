@@ -2,8 +2,8 @@
 /**
  * Title: header
  * Slug: moviescript/header
- * Categories: header
- * Block Types: core/template-part/header
+ * Categories: hidden
+ * Inserter: no
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"},"margin":{"top":"0rem","bottom":"0rem"}},"border":{"bottom":{"width":"1px"}}},"backgroundColor":"tertiary","layout":{"type":"default"}} -->
@@ -11,11 +11,11 @@
 <div class="wp-block-group alignwide" style="border-bottom-width:1px"><!-- wp:group {"align":"wide","style":{"border":{"right":{"width":"1px"},"left":{"width":"1px"}},"spacing":{"padding":{"top":"1rem","bottom":"1rem","right":"1rem","left":"1rem"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="border-right-width:1px;border-left-width:1px;margin-top:0px;margin-bottom:0px;padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"0.8rem"}},"fontFamily":"golos-text"} -->
-<p class="has-text-align-left has-golos-text-font-family" style="font-size:0.8rem"><?php echo __('CROWDFUNDING AVAILABLE — Join now!', 'moviescript');?></p>
+<p class="has-text-align-left has-golos-text-font-family" style="font-size:0.8rem"><?php esc_html_e('CROWDFUNDING AVAILABLE — Join now!', 'moviescript');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"0.8rem"}},"fontFamily":"golos-text"} -->
-<p class="has-text-align-left has-golos-text-font-family" style="font-size:0.8rem"><?php echo __('SHARE', 'moviescript');?></p>
+<p class="has-text-align-left has-golos-text-font-family" style="font-size:0.8rem"><?php esc_html_e('SHARE', 'moviescript');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

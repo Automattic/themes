@@ -12,7 +12,15 @@
 <div class="wp-block-columns alignwide are-vertically-aligned-center" style="padding-top:8px;padding-bottom:8px"><!-- wp:column {"verticalAlignment":"center","width":"33.3%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.3%"><!-- wp:paragraph {"align":"left"} -->
 <p class="has-text-align-left">
-    Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a></p>
+    <?php
+        /* Translators: WordPress link. */
+        $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'moviescript' ) ) . '" rel="nofollow">WordPress</a>';
+        echo sprintf(
+            esc_html__( 'Designed with %1$s', 'moviescript' ),
+            $wordpress_link
+        );
+    ?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
