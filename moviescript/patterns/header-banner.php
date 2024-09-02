@@ -2,7 +2,8 @@
 /**
  * Title: Header banner
  * Slug: moviescript/header-banner
- * Inserter: no
+ * Categories: header
+ * Block Types: core/template-part/header
  */
 
 ?>

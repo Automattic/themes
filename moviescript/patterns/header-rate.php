@@ -2,8 +2,8 @@
 /**
  * Title: header-rate
  * Slug: moviescript/header-rate
- * Categories: hidden
- * Inserter: no
+ * Categories: header
+ * Block Types: core/template-part/header
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"},"border":{"width":"0px","style":"none"}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->

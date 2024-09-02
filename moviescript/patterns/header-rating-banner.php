@@ -2,7 +2,8 @@
 /**
  * Title: Header rating banner
  * Slug: moviescript/header-rating-banner
- * Inserter: no
+ * Categories: header
+ * Block Types: core/template-part/header
  */
 
 ?>

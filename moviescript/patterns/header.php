@@ -2,8 +2,8 @@
 /**
  * Title: header
  * Slug: moviescript/header
- * Categories: hidden
- * Inserter: no
+ * Categories: header
+ * Block Types: core/template-part/header
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"},"margin":{"top":"0rem","bottom":"0rem"}},"border":{"bottom":{"width":"1px"}}},"backgroundColor":"tertiary","layout":{"type":"default"}} -->

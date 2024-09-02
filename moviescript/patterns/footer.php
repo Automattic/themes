@@ -2,8 +2,8 @@
 /**
  * Title: footer
  * Slug: moviescript/footer
- * Categories: hidden
- * Inserter: no
+ * Categories: footer
+ * Block Types: core/template-part/footer
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
