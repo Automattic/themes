@@ -158,7 +158,8 @@ const commands = {
 	'escape-patterns': {
 		helpText:
 			'Escapes block patterns for pattern files that have changes (staged or unstaged).',
-		run: () => escapePatterns(),
+		additionalArgs: '[directory]',
+		run: ( args ) => escapePatterns( args?.[ 1 ] ),
 	},
 	'validate-theme': {
 		helpText: [
@@ -1453,23 +1454,31 @@ export async function executeCommand( command, logResponse ) {
 	} );
 }
 
-async function escapePatterns() {
-	// get staged files
-	const staged = (
-		await executeCommand( `git diff --cached --name-only` )
-	).split( '\n' );
-	// get unstaged, untracked files
-	const unstaged = (
-		await executeCommand( `git ls-files -m -o --exclude-standard` )
-	).split( '\n' );
+async function escapePatterns( directory ) {
+	let patternFiles;
 
-	// avoid duplicates and filter pattern files
-	const patterns = [ ...new Set( [ ...staged, ...unstaged ] ) ].filter(
-		( file ) => file.match( /.*\/patterns\/.*.php/g )
-	);
+	if ( directory ) {
+		// If a directory is provided, use fast-glob to find all PHP files in the specified directory
+		patternFiles = await glob( `${ directory }/**/*.php`, {
+			ignore: [ 'node_modules/**', 'vendor/**' ], // Exclude node_modules and vendor directories
+		} );
+	} else {
+		// If no directory is provided, detect changed files via Git
+		patternFiles = await glob( '**/*.php', {
+			ignore: [ 'node_modules/**', 'vendor/**' ], // Exclude node_modules and vendor directories
+		} );
 
-	// arrange patterns by theme
-	const themePatterns = patterns.reduce( ( acc, file ) => {
+		// Further filter the files to only those that have changed
+		patternFiles = patternFiles.filter( ( file ) => {
+			const result = execSync( `git diff --name-only HEAD ${ file }` )
+				.toString()
+				.trim();
+			return result !== '';
+		} );
+	}
+
+	// Arrange patterns by theme
+	const themePatterns = patternFiles.reduce( ( acc, file ) => {
 		const themeSlug = file.split( '/' ).shift();
 		return {
 			...acc,
@@ -1477,40 +1486,39 @@ async function escapePatterns() {
 		};
 	}, {} );
 
-	Object.entries( themePatterns ).forEach(
-		async ( [ themeSlug, patterns ] ) => {
-			console.log( getPatternTable( themeSlug, patterns ) );
+	// Process each theme's patterns
+	for ( const [ themeSlug, patterns ] of Object.entries( themePatterns ) ) {
+		console.log( getPatternTable( themeSlug, patterns ) );
 
-			const prompt = await inquirer.prompt( [
-				{
-					type: 'input',
-					message: 'Verify the theme slug',
-					name: 'themeSlug',
-					default: themeSlug,
-				},
-			] );
+		const prompt = await inquirer.prompt( [
+			{
+				type: 'input',
+				message: 'Verify the theme slug',
+				name: 'themeSlug',
+				default: themeSlug,
+			},
+		] );
 
-			if ( ! prompt.themeSlug ) {
-				return;
-			}
-
-			patterns.forEach( ( file ) => {
-				const rewriter = getReWriter( prompt.themeSlug );
-				const tmpFile = `${ file }-tmp`;
-				const readStream = fs.createReadStream( file, {
-					encoding: 'UTF-8',
-				} );
-				const writeStream = fs.createWriteStream( tmpFile, {
-					encoding: 'UTF-8',
-				} );
-				writeStream.on( 'finish', () => {
-					fs.renameSync( tmpFile, file );
-				} );
-
-				readStream.pipe( rewriter ).pipe( writeStream );
-			} );
+		if ( ! prompt.themeSlug ) {
+			return;
 		}
-	);
+
+		for ( const file of patterns ) {
+			const rewriter = getReWriter( prompt.themeSlug );
+			const tmpFile = `${ file }-tmp`;
+			const readStream = fs.createReadStream( file, {
+				encoding: 'UTF-8',
+			} );
+			const writeStream = fs.createWriteStream( tmpFile, {
+				encoding: 'UTF-8',
+			} );
+			writeStream.on( 'finish', () => {
+				fs.renameSync( tmpFile, file );
+			} );
+
+			readStream.pipe( rewriter ).pipe( writeStream );
+		}
+	}
 
 	// Helper functions
 	function getReWriter( themeSlug ) {
