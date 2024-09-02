@@ -6,9 +6,10 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"blockGap":"3rem","padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem","padding":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph -->
+<!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}},"dimensions":{"minHeight":"94vh"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group" style="min-height:94vh;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"metadata":{"categories":["hidden"]},"style":{"spacing":{"blockGap":"3rem","padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"}},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between"}} -->
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
 <p>Sappho, spelled (in the dialect spoken by the poet) Psappho, (born c. 610, Lesbos, Greece — died c. 570 BCE). A lyric poet greatly admired in all ages for the beauty of her writing style.</p>
 <!-- /wp:paragraph -->
 
@@ -17,20 +18,15 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:image {"id":145,"sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":["#111111","#ffbbbb"]}}} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/sappho-statue_bw.webp" alt="" class="wp-image-145"/></figure>
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group"><!-- wp:image {"id":145,"aspectRatio":"3/4","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":[]}} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/sappho-statue_bw.webp" alt="" class="wp-image-145" style="aspect-ratio:3/4;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">
-<?php
-	$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pierian' ) ) . '" rel="nofollow">WordPress</a>';
-	echo sprintf(
-	/* Translators: WordPress link. */
-		esc_html__( 'Designed with %1$s', 'pierian' ),
-		$wordpress_link
-	);
-	?>
-</p>
+<!-- wp:paragraph {"align":"left"} -->
+<p class="has-text-align-left">
+Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
