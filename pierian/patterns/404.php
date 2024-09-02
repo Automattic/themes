@@ -18,13 +18,13 @@
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|70"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--70)"><!-- wp:heading {"textAlign":"left","level":1} -->
 <h1 class="wp-block-heading has-text-align-left" id="oops-that-page-can-t-be-found">
-  Oops! That page can’t be found.</h1>
+  <?php  echo __('Oops! That page can’t be found.', 'pierian'); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40","padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:paragraph -->
 <p>
-  It looks like nothing was found at this location. Maybe try a search?</p>
+  <?php  echo __('It looks like nothing was found at this location. Maybe try a search?', 'pierian'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:search {"label":"","showLabel":false,"width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","style":{"border":{"radius":"0px","width":"1px"}},"borderColor":"background","fontSize":"small"} /--></div>
