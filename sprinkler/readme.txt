@@ -12,6 +12,9 @@ Sprinkler is a blogging theme ideal for gardening enthusiasts who would like to 
 
 == Changelog ==
 
+= 1.0.1 =
+* Optimise image
+
 = 1.0.0 =
 * Initial release
 
@@ -28,23 +31,23 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 Literata Font
-Copyright 2017 The Literata Project Authors (https://github.com/googlefonts/literata) 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
+Copyright 2017 The Literata Project Authors (https://github.com/googlefonts/literata)
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL
 Source: http://www.google.com
 -- End of Literata Font credits --
 
 Lora Font
-Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic), with Reserved Font Name "Lora". 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
-License URL: https://scripts.sil.org/OFL 
+Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic), with Reserved Font Name "Lora".
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+License URL: https://scripts.sil.org/OFL
 Source: https://cyreal.org
 -- End of Lora Font credits --
 
 Lato Font
-Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1. 
-Copyright (c) 2011-2011 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). 
-License URL: http://scripts.sil.org/OFL 
+Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1.
+Copyright (c) 2011-2011 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL).
+License URL: http://scripts.sil.org/OFL
 Source: http://www.typoland.com/
 -- End of Lato Font credits --
 
