@@ -2,7 +2,7 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -53,4 +53,9 @@ Hezaedrus
 Copyright (c) 2015 by Hubert & Fischer. All rights reserved.
 Source: www.google.com/fonts
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
+
+== Images ==
+
+Generated with AI on Midjourney, released under the CC0 license.
 
