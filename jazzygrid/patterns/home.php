@@ -55,7 +55,7 @@
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":{"top":"0px","left":"0px"},"padding":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"}}}} -->
 <div class="wp-block-columns alignwide" style="margin-top:0px;margin-bottom:0px;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:column {"verticalAlignment":"stretch","width":"75%","backgroundColor":"primary"} -->
-<div class="wp-block-column is-vertically-aligned-stretch has-primary-background-color has-background" style="flex-basis:75%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/cover_trumpeteer.png","dimRatio":0,"isUserOverlayColor":true,"focalPoint":{"x":0.5,"y":0.40000000000000002},"className":"has-parallax is-repeated has-custom-content-position is-position-top-left"} -->
+<div class="wp-block-column is-vertically-aligned-stretch has-primary-background-color has-background" style="flex-basis:75%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/cover_trumpeteer.png","dimRatio":0,"isUserOverlayColor":true,"focalPoint":{"x":0.5,"y":0.4},"className":"has-parallax is-repeated has-custom-content-position is-position-top-left"} -->
 <div class="wp-block-cover has-parallax is-repeated has-custom-content-position is-position-top-left"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background " alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/cover_trumpeteer.png" style="object-position:50% 40%" data-object-fit="cover" data-object-position="50% 40%"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"2rem","padding":{"right":"10%"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="padding-right:10%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"level":1} -->
@@ -73,7 +73,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('Live at the Masonic Auditorium<br>San Francisco, July 22nd, 2023.', 'jazzygrid');?></p>
+<p><?php echo __('Live at the Masonic Auditorium','jazzygrid'); ?><br><?php echo __('San Francisco, July 22nd, 2023.','jazzygrid'); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>

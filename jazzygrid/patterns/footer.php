@@ -16,7 +16,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Along with interpretations of jazz standards, Holiday wrote many of her own songs — a rare feat for jazz singers of that time.</p>
+<p><?php echo esc_html__('Along with interpretations of jazz standards, Holiday wrote many of her own songs — a rare feat for jazz singers of that time.', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover --></div>
@@ -28,20 +28,20 @@
 <div class="wp-block-group has-background-color has-custom-eebaac-background-color has-text-color has-background has-link-color" style="border-radius:1px;min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:cover {"dimRatio":0,"overlayColor":"custom-cce7-e2","minHeight":10,"minHeightUnit":"rem","contentPosition":"top left","isDark":false,"align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px","margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-cover alignwide is-light has-custom-content-position is-position-top-left" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;min-height:10rem"><span aria-hidden="true" class="wp-block-cover__background has-custom-cce-7-e-2-background-color has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull"><!-- wp:heading -->
-<h2 class="wp-block-heading"><a href="https://www.pbs.org/wnet/americanmasters/billie-holiday-about-the-singer/68/" target="_blank" rel="noreferrer noopener">The Long Night of Lady Day</a></h2>
+<h2 class="wp-block-heading"><a href="https://www.pbs.org/wnet/americanmasters/billie-holiday-about-the-singer/68/" target="_blank" rel="noreferrer noopener"><?php echo esc_html__('The Long Night of Lady Day', 'jazzygrid'); ?></a></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>Video</p>
+<p><?php echo esc_html__('Video', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>·</p>
+<p><?php echo esc_html__('·', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><strong>PBS Special</strong></p>
+<p><strong><?php echo esc_html__('PBS Special', 'jazzygrid'); ?></strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>

@@ -23,11 +23,11 @@
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:25%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/album-cover-1.png","id":175,"dimRatio":0,"focalPoint":{"x":0.8,"y":0.25},"minHeight":20,"minHeightUnit":"%","contentPosition":"center left","align":"full","style":{"spacing":{"blockGap":"0px","margin":{"top":"0px","bottom":"0px"},"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"color":{"duotone":["#037261","#a2dda5"]}},"layout":{"type":"default"}} -->
 <div class="wp-block-cover alignfull has-custom-content-position is-position-center-left" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;min-height:20%"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-175" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/album-cover-1.png" style="object-position:80% 25%" data-object-fit="cover" data-object-position="80% 25%"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"0rem","left":"2rem"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:2rem;padding-right:2rem;padding-bottom:0rem;padding-left:2rem"><!-- wp:paragraph -->
-<p>Billie Holiday Live<br>at Carnegie Hall</p>
+<p><?php echo esc_html__('Billie Holiday Live', 'jazzygrid'); ?><br><?php echo esc_html__('at Carnegie Hall', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"style":{"spacing":{"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><a href="https://youtube.com/" target="_blank" rel="noreferrer noopener">Listen</a></h2>
+<h2 class="wp-block-heading" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><a href="https://youtube.com/" target="_blank" rel="noreferrer noopener"><?php echo esc_html__('Listen', 'jazzygrid'); ?></a></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover --></div>
@@ -46,21 +46,21 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"3rem"},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"left"}} -->
 <div class="wp-block-group" style="min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px"}},"textColor":"custom-bb9-a3-b","fontSize":"small"} -->
-<p class="has-custom-bb-9-a-3-b-color has-text-color has-small-font-size" style="letter-spacing:2px;text-transform:uppercase">About</p>
+<p class="has-custom-bb-9-a-3-b-color has-text-color has-small-font-size" style="letter-spacing:2px;text-transform:uppercase"><?php echo esc_html__('About', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><a href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener">Billie Holiday changed Jazz forever</a></h1>
+<h1 class="wp-block-heading"><a href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener"><?php echo esc_html__('Billie Holiday changed Jazz forever', 'jazzygrid'); ?></a></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Elinore Harris, byname Lady Day, (born April 7, 1915, Philadelphia, Pennsylvania, U.S.—died July 17, 1959, New York City, New York), American jazz singer, one of the greatest from the 1930s to the ’50s.</p>
+<p><?php echo esc_html__('Elinore Harris, byname Lady Day, (born April 7, 1915, Philadelphia, Pennsylvania, U.S.—died July 17, 1959, New York City, New York), American jazz singer, one of the greatest from the 1930s to the ’50s.', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"custom-bb9-a3-b","className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-custom-bb-9-a-3-b-color has-text-color wp-element-button" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener">More</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-custom-bb-9-a-3-b-color has-text-color wp-element-button" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener"><?php echo esc_html__('More', 'jazzygrid'); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -83,21 +83,21 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"3rem"},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"left"}} -->
 <div class="wp-block-group" style="min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px"}},"textColor":"custom-bb9-a3-b","fontSize":"small"} -->
-<p class="has-custom-bb-9-a-3-b-color has-text-color has-small-font-size" style="letter-spacing:2px;text-transform:uppercase">Autobiography</p>
+<p class="has-custom-bb-9-a-3-b-color has-text-color has-small-font-size" style="letter-spacing:2px;text-transform:uppercase"><?php echo esc_html__('Autobiography', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank"></a><a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank">Lady Sings the Blues</a></h1>
+<h1 class="wp-block-heading"><a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank"></a><a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank"><?php echo esc_html__('Lady Sings the Blues', 'jazzygrid'); ?></a></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>The book ”Lady Sings the Blues” is an autobiography by jazz singer Billie Holiday, co-authored by William Dufty. The book formed the basis of the 1972 film ”Lady Sings the Blues” starring Diana Ross.</p>
+<p><?php echo esc_html__('The book ”Lady Sings the Blues” is an autobiography by jazz singer Billie Holiday, co-authored by William Dufty. The book formed the basis of the 1972 film ”Lady Sings the Blues” starring Diana Ross.', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"custom-bb9-a3-b","className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-custom-bb-9-a-3-b-color has-text-color wp-element-button" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener">Shop Now</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-custom-bb-9-a-3-b-color has-text-color wp-element-button" href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener"><?php echo esc_html__('Shop Now', 'jazzygrid'); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -115,11 +115,11 @@
 <div class="wp-block-column is-vertically-aligned-top has-custom-cce-7-e-2-background-color has-background" style="flex-basis:50%"><!-- wp:cover {"dimRatio":0,"overlayColor":"custom-cce7-e2","minHeight":100,"minHeightUnit":"px","contentPosition":"top left","isDark":false,"align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px","margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-cover alignwide is-light has-custom-content-position is-position-top-left" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;min-height:100px"><span aria-hidden="true" class="wp-block-cover__background has-custom-cce-7-e-2-background-color has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull"><!-- wp:heading -->
-<h2 class="wp-block-heading"><a href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener">Innovative singer and composer</a></h2>
+<h2 class="wp-block-heading"><a href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener"><?php echo esc_html__('Innovative singer and composer', 'jazzygrid'); ?></a></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Along with interpretations of jazz standards, Holiday wrote many of her own songs — a rare feat for jazz singers of that time.</p>
+<p><?php echo esc_html__('Along with interpretations of jazz standards, Holiday wrote many of her own songs — a rare feat for jazz singers of that time.', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover --></div>
@@ -127,20 +127,20 @@
 
 <!-- wp:column {"verticalAlignment":"top","width":"25%","backgroundColor":"custom-eebaac"} -->
 <div class="wp-block-column is-vertically-aligned-top has-custom-eebaac-background-color has-background" style="flex-basis:25%"><!-- wp:heading -->
-<h2 class="wp-block-heading"><a href="https://www.pbs.org/wnet/americanmasters/billie-holiday-about-the-singer/68/" target="_blank" rel="noreferrer noopener">The Long Night of Lady Day</a></h2>
+<h2 class="wp-block-heading"><a href="https://www.pbs.org/wnet/americanmasters/billie-holiday-about-the-singer/68/" target="_blank" rel="noreferrer noopener"><?php echo esc_html__('The Long Night of Lady Day', 'jazzygrid'); ?></a></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>Video</p>
+<p><?php echo esc_html__('Video', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>·</p>
+<p><?php echo esc_html__('·', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><strong>PBS Special</strong></p>
+<p><strong><?php echo esc_html__('PBS Special', 'jazzygrid'); ?></strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -152,7 +152,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size">·</p>
+<p class="has-large-font-size"><?php echo esc_html__('·', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":19,"width":64,"height":64,"sizeSlug":"full","linkDestination":"none"} -->
@@ -160,7 +160,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size">·</p>
+<p class="has-large-font-size"><?php echo esc_html__('·', 'jazzygrid'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":20,"width":64,"height":64,"sizeSlug":"full","linkDestination":"none"} -->
