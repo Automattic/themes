@@ -126,6 +126,10 @@ const commands = {
 		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
 		run: () => escapePatterns()
 	},
+	"theme-checklist": {
+		helpText: 'Runs the theme through the dotorg theme checklist validation.',
+		run: () => themeChecklist()
+	},
 	'validate-theme': {
 		helpText: [
 			'Validates a theme against the WordPress theme requirements.',
@@ -1403,6 +1407,10 @@ async function escapePatterns() {
 
 		return table(patterns.map(p => [p]), tableConfig);
 	}
+}
+
+async function themeChecklist(themes) {
+	console.log('themes', themes);
 }
 
 /**

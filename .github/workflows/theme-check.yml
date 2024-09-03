@@ -1,0 +1,39 @@
+name: Theme Checklist for Dotorg repository
+
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  theme-check:
+    if: github.event.label.name == 'New Theme'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Theme Checklist
+        run: |
+          # Get a list of unique top-level directories containing changed files
+          CHANGED_THEMES=$(git diff --name-only HEAD^ -- ${{ github.event.pull_request.base.ref }} | awk -F/ '{print $1}' | uniq)
+
+          # Check if any changed directory is a valid theme
+          VALID_THEMES=()
+          for THEME in $CHANGED_THEMES; do
+            if [ -d "$THEME" ] && [ -f "$THEME/style.css" ]; then
+              VALID_THEMES+=("$THEME")
+            fi
+          done
+
+          # If we found any valid themes, run the 
+          if [ ${#VALID_THEMES[@]} -gt 0 ]; then
+            npm run checklist -- "$VALID_THEMES"
+          fi
