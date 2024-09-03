@@ -2,9 +2,6 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
-			"background": true,
-			"custom": true,
-			"defaultPalette": true,
 			"palette": [
 				{
 					"color": "#f7be26",
@@ -45,7 +42,43 @@
 		"spacing": {
 			"customSpacingSize": true,
 			"defaultSpacingSizes": false,
-			"spacingSizes": [],
+			"spacingSizes": [
+				{
+					"name": "2X-Small",
+					"size": "0.5rem",
+					"slug": "20"
+				},
+				{
+					"name": "X-Small",
+					"size": "clamp(0.5rem, 1vw, 1rem)",
+					"slug": "30"
+				},
+				{
+					"name": "Small",
+					"size": "clamp(0.75rem, 1.5vw, 1.5rem)",
+					"slug": "40"
+				},
+				{
+					"name": "Medium",
+					"size": "clamp(1rem, 2vw, 2rem)",
+					"slug": "50"
+				},
+				{
+					"name": "Large",
+					"size": "clamp(1.5rem, 3vw, 3rem)",
+					"slug": "60"
+				},
+				{
+					"name": "X-Large",
+					"size": "clamp(2rem, 4vw, 4rem)",
+					"slug": "70"
+				},
+				{
+					"name": "2X-Large",
+					"size": "clamp(3rem, 6vw, 6rem)",
+					"slug": "80"
+				}
+			],
 			"units": [
 				"%",
 				"px",
@@ -73,25 +106,25 @@
 							"fontFamily": "Rubik",
 							"fontStyle": "normal",
 							"fontWeight": "300",
-							"src": "file:./assets/fonts/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYi1VU80V4bVkA.woff2"
+							"src": "file:./assets/fonts/rubik/rubik_normal_300.woff2"
 						},
 						{
 							"fontFamily": "Rubik",
 							"fontStyle": "italic",
 							"fontWeight": "300",
-							"src": "file:./assets/fonts/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8sDE0U1dYPFkJ1O.woff2"
+							"src": "file:./assets/fonts/rubik/rubik_italic_300.woff2"
 						},
 						{
 							"fontFamily": "Rubik",
 							"fontStyle": "normal",
 							"fontWeight": "500",
-							"src": "file:./assets/fonts/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYi1VU80V4bVkA.woff2"
+							"src": "file:./assets/fonts/rubik/rubik_normal_500.woff2"
 						},
 						{
 							"fontFamily": "Rubik",
 							"fontStyle": "italic",
 							"fontWeight": "500",
-							"src": "file:./assets/fonts/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tvE0U1dYPFkJ1O.woff2"
+							"src": "file:./assets/fonts/rubik/rubik_italic_500.woff2"
 						}
 					],
 					"fontFamily": "Rubik, sans-serif",
@@ -101,33 +134,123 @@
 				{
 					"fontFace": [
 						{
-							"fontFamily": "\"Crimson Pro\"",
+							"fontFamily": "Crimson Pro",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/q5uUsoa5M_tv7IihmnkabC5XiXCAlXGks1WZzm18PZE_VNWoyQ.woff2"
+							"src": "file:./assets/fonts/crimson-pro/crimson-pro_normal_400.ttf"
 						},
 						{
-							"fontFamily": "\"Crimson Pro\"",
-							"fontStyle": "normal",
-							"fontWeight": "500",
-							"src": "file:./assets/fonts/q5uUsoa5M_tv7IihmnkabC5XiXCAlXGks1WZ_G18PZE_VNWoyQ.woff2"
-						},
-						{
-							"fontFamily": "\"Crimson Pro\"",
+							"fontFamily": "Crimson Pro",
 							"fontStyle": "italic",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/q5uSsoa5M_tv7IihmnkabAReu49Y_Bo-HVKMBi6Ue5s-dtC4yZNE.woff2"
+							"src": "file:./assets/fonts/crimson-pro/crimson-pro_italic_400.ttf"
 						},
 						{
-							"fontFamily": "\"Crimson Pro\"",
+							"fontFamily": "Crimson Pro",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": "file:./assets/fonts/crimson-pro/crimson-pro_normal_500.ttf"
+						},
+						{
+							"fontFamily": "Crimson Pro",
 							"fontStyle": "italic",
 							"fontWeight": "500",
-							"src": "file:./assets/fonts/q5uSsoa5M_tv7IihmnkabAReu49Y_Bo-HVKMBi6me5s-dtC4yZNE.woff2"
+							"src": "file:./assets/fonts/crimson-pro/crimson-pro_italic_500.ttf"
+						},
+						{
+							"fontFamily": "Crimson Pro",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "file:./assets/fonts/crimson-pro/crimson-pro_normal_700.ttf"
+						},
+						{
+							"fontFamily": "Crimson Pro",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": "file:./assets/fonts/crimson-pro/crimson-pro_italic_700.ttf"
 						}
 					],
-					"fontFamily": "\"Crimson Pro\", serif",
+					"fontFamily": "Crimson Pro, serif",
 					"name": "Crimson Pro",
 					"slug": "crimson-pro"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Inter Tight",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/inter-tight/inter-tight_normal_400.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter Tight",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/inter-tight/inter-tight_normal_700.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter Tight",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/inter-tight/inter-tight_italic_400.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter Tight",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/inter-tight/inter-tight_italic_700.woff2"
+							]
+						}
+					],
+					"fontFamily": "Inter Tight, sans-serif",
+					"name": "Inter Tight",
+					"slug": "inter-tight"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Norm",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/norm/Norm_regular_700.woff"
+							]
+						},
+						{
+							"fontFamily": "Norm",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/norm/Norm_italic_700.woff"
+							]
+						},
+						{
+							"fontFamily": "Norm",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/norm/Norm_regular_400.woff"
+							]
+						},
+						{
+							"fontFamily": "Norm",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/norm/Norm_italic_400.woff"
+							]
+						}
+					],
+					"fontFamily": "Norm",
+					"name": "Norm",
+					"slug": "norm"
 				}
 			],
 			"fontSizes": [
@@ -209,12 +332,23 @@
 			},
 			"core/comment-edit-link": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontStyle": "normal",
+					"fontWeight": "700"
 				}
 			},
 			"core/comment-reply-link": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontStyle": "normal",
+					"fontWeight": "700"
+				}
+			},
+			"core/comments": {
+				"spacing": {
+					"margin": {
+						"bottom": "var(--wp--preset--spacing--70)"
+					}
 				}
 			},
 			"core/gallery": {
@@ -267,6 +401,13 @@
 						"typography": {
 							"textDecoration": "none"
 						}
+					}
+				}
+			},
+			"core/post-comments-form": {
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--preset--spacing--40)"
 					}
 				}
 			},
@@ -406,7 +547,7 @@
 						"style": "none",
 						"width": "0px"
 					},
-					"radius": "5px",
+					"radius": "2px",
 					"right": {
 						"style": "none",
 						"width": "0px"
@@ -586,12 +727,12 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "1.5rem",
+			"blockGap": "var(--wp--preset--spacing--40)",
 			"padding": {
-				"bottom": "0rem",
-				"left": "1.5rem",
-				"right": "1.5rem",
-				"top": "0rem"
+				"bottom": "0",
+				"left": "var(--wp--preset--spacing--60)",
+				"right": "var(--wp--preset--spacing--60)",
+				"top": "0"
 			}
 		},
 		"typography": {
