@@ -84,7 +84,7 @@
 <div class="wp-block-column is-vertically-aligned-stretch has-secondary-background-color has-background" style="flex-basis:25%"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"4rem","right":"3rem","bottom":"4rem","left":"1.5rem"},"blockGap":"2.5rem"},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group" style="min-height:100%;margin-top:0rem;margin-bottom:0rem;padding-top:4rem;padding-right:3rem;padding-bottom:4rem;padding-left:1.5rem"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"},"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground","layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group has-foreground-color has-text-color has-link-color" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><?php echo __('<a href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener"></a><a href="#" target="_blank" rel="noreferrer noopener">Jazzin\' Around Town</a>', 'jazzygrid');?></h1>
+<h1 class="wp-block-heading"><?php echo __('<a href="https://en.wikipedia.org/wiki/Billie_Holiday" target="_blank" rel="noreferrer noopener">Jazzin\' Around Town</a>', 'jazzygrid');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
