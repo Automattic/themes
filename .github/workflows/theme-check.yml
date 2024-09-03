@@ -27,7 +27,7 @@ jobs:
       - name: Determine Changed Themes
         id: find-themes
         run: |
-          CHANGED_THEMES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | awk -F/ '{print $1}' | uniq)
+          CHANGED_THEMES=$(git diff --name-only ${{ github.event.pull_request.base.ref }}...${{ github.sha }} | awk -F/ '{print $1}' | uniq)
 
           # Filter out non-theme directories (assuming each theme has a style.css file)
           VALID_THEMES=()
