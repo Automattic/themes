@@ -20,12 +20,12 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Theme Checklist
+      - name: Determine Changed Themes
+        id: find-themes
         run: |
-          # Get a list of unique top-level directories containing changed files
-          CHANGED_THEMES=$(git diff --name-only HEAD^ -- ${{ github.event.pull_request.base.ref }} | awk -F/ '{print $1}' | uniq)
+          CHANGED_THEMES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | awk -F/ '{print $1}' | uniq)
 
-          # Check if any changed directory is a valid theme
+          # Filter out non-theme directories (assuming each theme has a style.css file)
           VALID_THEMES=()
           for THEME in $CHANGED_THEMES; do
             if [ -d "$THEME" ] && [ -f "$THEME/style.css" ]; then
@@ -33,7 +33,10 @@ jobs:
             fi
           done
 
-          # If we found any valid themes, run the 
-          if [ ${#VALID_THEMES[@]} -gt 0 ]; then
-            npm run checklist -- "$VALID_THEMES"
-          fi
+          # Expose as environment variable for next steps
+          echo "theme_slugs=$VALID_THEMES" >> $GITHUB_ENV
+
+      - name: Run Theme Checklist Script
+        run: npm run checklist -- "$theme_slugs"
+        env:
+          theme_slugs: ${{ env.theme_slugs }}
