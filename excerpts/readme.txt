@@ -2,7 +2,7 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,4 +44,11 @@ Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotyp
 Source: https://www.tokotype.com
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
+
+== Images ==
+
+Image for theme screenshot, Credit, Henri Rousseau's Virgin Forest with Sunset (1910)
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3856482/illustration-image-flower-tree-art
 
