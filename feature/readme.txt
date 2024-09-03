@@ -2,7 +2,7 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,10 +38,11 @@ Feature is based on Issue (https://wordpress.com/themes/issue/), (C) Automattic,
 
 
 == Images ==
-El Beso, Francesco Hayez
-License: Public domain.
-https://en.wikipedia.org/wiki/The_Kiss_(Hayez)#/media/File:El_Beso_(Pinacoteca_de_Brera,_Mil%C3%A1n,_1859).jpg
 
+Image for theme screenshot, Credit, Francesco Hayez 'El Beso'
+License: Public Domain (PD)
+License URL: https://en.wikipedia.org/wiki/List_of_countries_copyright_lengths
+Source: https://en.wikipedia.org/wiki/en:The_Kiss_(Hayez)
 
 == Fonts ==
 

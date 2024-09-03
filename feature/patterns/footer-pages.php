@@ -7,27 +7,27 @@
  */
 ?>
 <!-- wp:group {"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"10rem","bottom":"10rem"},"blockGap":"5rem"}}} -->
-<div class="wp-block-group alignfull" style="padding-top:10rem;padding-bottom:10rem"><!-- wp:columns -->
+<div class="wp-block-group"><!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|80","padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"bottom","width":"70%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:70%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"15%","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"2rem"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:15%;padding-bottom:0px;padding-left:0px"><!-- wp:heading -->
-<h2 class="wp-block-heading"><?php echo __('Feature is a magazine-style theme displaying blog posts, reviews, artwork, and news.', 'feature');?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e('Feature is an online magazine made by culture lovers. We offer weekly reflections, reviews, and news on art, literature, and music.', 'feature');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php echo __('The Feature theme comes in different styles to spark your creativity and make your site design look as desired.', 'feature');?></p>
+<p class="has-text-align-left"><?php esc_html_e('Please subscribe to our newsletter to let us know whenever we publish new content. We send no spam, and you can unsubscribe at any time.', 'feature');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"bottom","width":"30%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-column is-vertically-aligned-bottom" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:30%"><!-- wp:jetpack/contact-form {"className":"is-style-animated","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<div class="wp-block-jetpack-contact-form is-style-animated" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderRadius":4,"borderWidth":0,"lineHeight":1,"labelLineHeight":1,"inputColor":"#111111","labelColor":"#111111","fieldBackgroundColor":"#1212120d","borderColor":"#111111"} /-->
+<div class="wp-block-column is-vertically-aligned-bottom" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:30%"><!-- wp:jetpack/contact-form {"className":"is-style-animated","textColor":"primary","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"margin":{"top":"0","right":"0","bottom":"0","left":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}}} -->
+<div class="wp-block-jetpack-contact-form is-style-animated has-primary-color has-text-color has-link-color" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderRadius":4,"borderWidth":0,"lineHeight":1,"labelLineHeight":1,"inputColor":"#fafafa","labelColor":"#111111","fieldBackgroundColor":"#1212120d"} /-->
 
-<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderRadius":4,"borderWidth":0,"lineHeight":1,"labelLineHeight":1,"inputColor":"#111111","labelColor":"#111111","fieldBackgroundColor":"#1212120d","borderColor":"#111111"} /-->
+<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderRadius":4,"borderWidth":0,"lineHeight":1,"labelLineHeight":1,"inputColor":"#fafafa","labelColor":"#111111","fieldBackgroundColor":"#1212120d"} /-->
 
-<!-- wp:jetpack/field-consent {"requiredText":"(required)","borderRadius":4,"borderWidth":0,"lineHeight":1,"labelLineHeight":1,"inputColor":"#111111","labelColor":"#111111","fieldBackgroundColor":"#1212120d","borderColor":"#111111","consentType":"explicit"} /-->
+<!-- wp:jetpack/field-consent {"requiredText":"(required)","borderRadius":4,"borderWidth":0,"lineHeight":1,"labelLineHeight":1,"inputColor":"#fafafa","labelColor":"#111111","fieldBackgroundColor":"#1212120d","consentType":"explicit"} /-->
 
 <!-- wp:spacer {"height":"0.5rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
 <div style="margin-top:0px;margin-bottom:0px;height:0.5rem" aria-hidden="true" class="wp-block-spacer"></div>
@@ -38,16 +38,14 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"bottom","width":"70%"} -->
-<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:70%"><!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>.', 'feature');?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:columns {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|80"}}}} -->
+<div class="wp-block-columns" style="margin-bottom:var(--wp--preset--spacing--80)"><!-- wp:column {"verticalAlignment":"bottom","width":"70%"} -->
+<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:70%"><!-- wp:site-title /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"bottom","width":"30%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:30%"><!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php echo __('The Feature is built on sizable typography and imagery to expand your content. Download and make it yours.', 'feature');?></p>
+<p class="has-text-align-left"><?php esc_html_e('Designed with WordPress.', 'feature');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
