@@ -15,24 +15,20 @@
 
 <!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"tagName":"main","align":"wide","layout":{"type":"default"}} -->
 <main class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"10vh"}}} -->
-<!-- wp:post-title {"level":1} /-->
+<!-- wp:post-title {"fontSize":"x-large"} /-->
 
-<!-- wp:post-excerpt {"moreText":"Read more.","showMoreOnNewLine":false,"excerptLength":20,"style":{"typography":{"lineHeight":"1.2"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"large"} /-->
+<!-- wp:post-excerpt {"moreText":"More.","showMoreOnNewLine":false,"excerptLength":30,"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"typography":{"lineHeight":1.3999999999999999}},"textColor":"primary","fontSize":"large"} /-->
 
-<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0.5rem","margin":{"top":"2vh"}}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
-<div class="wp-block-group alignfull" style="margin-top:2vh"><!-- wp:post-date {"format":"M j","fontSize":"large"} /-->
+<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group alignfull"><!-- wp:post-date {"format":"M j"} /-->
 
-<!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"><?php esc_html_e('·', 'excerpts');?></p>
+<!-- wp:post-terms {"term":"category","prefix":"·  "} /-->
+
+<!-- wp:paragraph -->
+<p><?php esc_html_e('·', 'excerpts');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:post-terms {"term":"category","fontSize":"large"} /-->
-
-<!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"><?php esc_html_e('·', 'excerpts');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:post-time-to-read {"fontSize":"large"} /--></div>
+<!-- wp:post-time-to-read /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->
 

@@ -10,11 +10,13 @@
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:group {"align":"full"} -->
 <div class="wp-block-group alignfull"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"50%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50%"><!-- wp:site-title {"fontSize":"large"} /-->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group"><!-- wp:site-title {"fontSize":"large"} /-->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
 <p class="has-medium-font-size"><?php esc_html_e('A design for writers who want their posts displayed as a direct conversation, with no images or post titles. Excerpts also has diverse style variations to spark your creativity. Enjoy!', 'excerpts');?></p>
-<!-- /wp:paragraph -->
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph {"align":"left","fontSize":"medium"} -->
 <p class="has-text-align-left has-medium-font-size"><?php esc_html_e('Designed with WordPress', 'excerpts');?></p>
