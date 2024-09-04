@@ -9,9 +9,24 @@ declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"textAlign":"center","className":"wave-underline","fontSize":"large"} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)">
+
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+<div class="wp-block-group">
+
+<!-- wp:separator {"className":"is-style-default","style":{"layout":{"selfStretch":"fixed","flexSize":"80px"}}} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-default"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"textAlign":"center","className":"wave-underline","fontSize":"large"} -->
 <h2 class="wp-block-heading has-text-align-center wave-underline has-large-font-size"><?php echo esc_html__( 'Nail Services', 'luxus' ); ?></h2>
 <!-- /wp:heading -->
+
+<!-- wp:separator {"style":{"layout":{"selfStretch":"fixed","flexSize":"80px"}}} -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|30"} -->
 <div style="height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>
@@ -23,8 +38,8 @@ declare( strict_types = 1 );
 <p class="has-medium-font-size"><?php echo esc_html__( 'Classic Manicure', 'luxus' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"15px"}}} -->
-<p style="font-size:15px"><?php echo esc_html__( 'Nail shaping, cuticle care, polish application, and hand massage.', 'luxus' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px"}}} -->
+<p style="font-size:16px"><?php echo esc_html__( 'Nail shaping, cuticle care, polish application, and hand massage.', 'luxus' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -39,8 +54,8 @@ declare( strict_types = 1 );
 <p class="has-medium-font-size"><?php echo esc_html__( 'Deluxe Spa Manicure', 'luxus' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"15px"}}} -->
-<p style="font-size:15px"><?php echo esc_html__( 'Exfoliation, mask, and extended massage for ultimate relaxation.', 'luxus' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px"}}} -->
+<p style="font-size:16px"><?php echo esc_html__( 'Exfoliation, mask, and extended massage for ultimate relaxation.', 'luxus' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -55,8 +70,8 @@ declare( strict_types = 1 );
 <p class="has-medium-font-size"><?php echo esc_html__( 'Classic Pedicure', 'luxus' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"15px"}}} -->
-<p style="font-size:15px"><?php echo esc_html__( 'Foot soak, nail shaping, cuticle care, polish application, and foot massage.', 'luxus' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px"}}} -->
+<p style="font-size:16px"><?php echo esc_html__( 'Foot soak, nail shaping, cuticle care, polish application, and foot massage.', 'luxus' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -71,8 +86,8 @@ declare( strict_types = 1 );
 <p class="has-medium-font-size"><?php echo esc_html__( 'Deluxe Spa Pedicure', 'luxus' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"15px"}}} -->
-<p style="font-size:15px"><?php echo esc_html__( 'Luxurious pedicure with exfoliation, mask, and extended foot massage.', 'luxus' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px"}}} -->
+<p style="font-size:16px"><?php echo esc_html__( 'Luxurious pedicure with exfoliation, mask, and extended foot massage.', 'luxus' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
