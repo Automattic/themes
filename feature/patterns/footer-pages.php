@@ -40,7 +40,7 @@
 
 <!-- wp:columns {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|80"}}}} -->
 <div class="wp-block-columns" style="margin-bottom:var(--wp--preset--spacing--80)"><!-- wp:column {"verticalAlignment":"bottom","width":"70%"} -->
-<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:70%"><!-- wp:site-title /--></div>
+<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:70%"><!-- wp:site-title {"fontSize":"medium"} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"bottom","width":"30%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"layout":{"type":"default"}} -->

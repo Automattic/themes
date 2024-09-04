@@ -46,6 +46,19 @@ Source: https://en.wikipedia.org/wiki/en:The_Kiss_(Hayez)
 
 == Fonts ==
 
+Averia Serif Libre
+Copyright (c) 2011, Dan Sayers (i@iotic.com), with Reserved Font Name 'Averia' and 'Averia Libre'.
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
+
+Teko
+Copyright 2023 The Teko Project Authors (https://www.github.com/googlefonts/teko)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
+Labrada
+Copyright 2022 The Labrada Project Authors (https://github.com/Omnibus-Type/Labrada)
+Source: https://www.omnibus-type.com
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
 Plus Jakarta Sans
 Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans)
 Source: https://www.tokotype.com
