@@ -749,9 +749,9 @@ export function getThemeMetadata(styleCss, attribute, trimWPCom = true) {
 				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
 				?.trim();
 			return trimWPCom ? version.replace('-wpcom', '') : version;
-		case 'Requires at least':
+		default:
 			return styleCss
-				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
+				.match(new RegExp(`(?<=${attribute}:\\s*).*?(?=\\s*\\r?\\n|\\rg)`, 'gs'))?.[0]
 				?.trim();
 	}
 }
@@ -1542,33 +1542,270 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 			: undefined;
 		const isSupportedWpVersion = wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' )
 
-		if ( ! wpVersion ) {
-			problems.push(
-				createProblem( {
-					type: 'error',
-					file: styleCssPath,
-					data: {
-						// prettier-ignore
-						message: `missing ${ chalkStr.green( "'Requires at least'" ) } header metadata`,
-					},
-				} )
-			);
-		}
+		const validators = {
+			isValidVersion( attr, value, validLengths = [ 3 ] ) {
+				const adjustedValue =
+					value && `${ value }.0`.split( '.', 3 ).join( '.' );
+				if (
+					! value ||
+					! validLengths.includes( value.split( '.' ).length ) ||
+					! semver.valid( adjustedValue )
+				) {
+					return {
+						actual: `${ chalkStr.green(
+							attr
+						) }: ${ chalkStr.yellow( value ) }`,
+						expected: `format ${ chalkStr.yellow(
+							Array.from( { length: Math.min( validLengths ) } )
+								.fill( 'x' )
+								.join( '.' )
+						) }`,
+						message: `${ value } is not a valid version`,
+					};
+				}
+			},
+			isGreaterOrEqual( attr, value, version ) {
+				const adjustedValue =
+					value && `${ value }.0`.split( '.', 3 ).join( '.' );
+				const adjustedVersion =
+					version && `${ version }.0`.split( '.', 3 ).join( '.' );
+				if (
+					! value ||
+					! version ||
+					! semver.valid( adjustedValue ) ||
+					! semver.valid( adjustedVersion ) ||
+					! semver.gte( adjustedValue, adjustedVersion )
+				) {
+					return {
+						actual: `${ chalkStr.green(
+							attr
+						) }: ${ chalkStr.yellow( value ) }`,
+						expected: `${ chalkStr.yellow( version ) } or greater`,
+						message: `provide a valid version value`,
+					};
+				}
+			},
+			isUri: ( attr, value ) => {
+				if ( value && ! URL.canParse( value ) ) {
+					return {
+						actual: `${ chalkStr.green(
+							attr
+						) }: ${ chalkStr.yellow( value ) }`,
+						expected: `a valid URI`,
+						message: `${ value } is not a valid URI`,
+					};
+				}
+			},
+			isValidSlug: ( attr, value ) => {
+				if ( value && ! /^[a-z0-9-]+$/.test( value ) ) {
+					return {
+						actual: `${ chalkStr.green(
+							attr
+						) }: ${ chalkStr.yellow( value ) }`,
+						expected: `a valid value`,
+						message: `${ value } is not a valid value`,
+					};
+				}
+			},
+			// a8c validations
+			isA8CThemeUri: ( attr, value ) => {
+				if (
+					value &&
+					! /^https:\/\/wordpress\.com\/themes\/[a-z0-9-]+\/?$/.test(
+						value
+					)
+				) {
+					return {
+						actual: `${ chalkStr.green(
+							attr
+						) }: ${ chalkStr.yellow( value ) }`,
+						expected: `https://wordpress.com/themes/${ chalkStr.yellow( '{slug}' ) }/`,
+						message: `${ value } is not a valid WordPress.com theme URI`,
+					};
+				}
+			},
+			isA8CAuthor: ( attr, value ) => {
+				if ( value && ! /^Automattic$/.test( value ) ) {
+					return {
+						actual: `${ chalkStr.green(
+							attr
+						) }: ${ chalkStr.yellow( value ) }`,
+						expected: `Automattic`,
+						message: `${ value } is not a valid author`,
+					};
+				}
+			},
+			isA8CAuthorUri: ( attr, value ) => {
+				if (
+					value &&
+					! /^https:\/\/automattic\.com\/$/.test( value )
+				) {
+					return {
+						actual: `${ chalkStr.green(
+							attr
+						) }: ${ chalkStr.yellow( value ) }`,
+						expected: `https://automattic.com/`,
+						message: `${ value } is not a valid Automattic author URI`,
+					};
+				}
+			},
+		};
 
-		if ( ! isSupportedWpVersion ) {
-			problems.push(
-				createProblem( {
-					type: 'warning',
-					file: styleCssPath,
-					// prettier-ignore
-					data: {
-						actual: chalkStr.yellow( wpVersion ),
-						expected: `${ chalkStr.yellow( '5.9' ) } or greater`,
-						message: `the ${ chalkStr.green( "'Requires at least'" ) } version does not support theme.json`,
+		// validate style.css metadata
+		// Spec: https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/
+		const styleCssMetadata = [
+			{ attribute: 'Theme Name', required: true },
+			{
+				attribute: 'Theme URI',
+				validators: [
+					{
+						validate: validators.isUri,
+						type: 'warning',
 					},
-				} )
-			);
-		}
+					{
+						validate: validators.isA8CThemeUri,
+						type: 'warning',
+					},
+				],
+			},
+			{
+				attribute: 'Author',
+				required: true,
+				validators: [
+					{
+						validate: validators.isA8CAuthor,
+						type: 'warning',
+					},
+				],
+			},
+			{
+				attribute: 'Author URI',
+				validators: [
+					{
+						validate: validators.isUri,
+						type: 'warning',
+					},
+					{
+						validate: validators.isA8CAuthorUri,
+						type: 'warning',
+					},
+				],
+			},
+			{ attribute: 'Description', required: true },
+			{
+				attribute: 'Version',
+				required: true,
+				validators: [
+					{
+						validate: ( attr, value ) =>
+							validators.isValidVersion( attr, value, [ 3 ] ),
+						type: 'error',
+					},
+				],
+			},
+			{
+				attribute: 'Requires at least',
+				required: true,
+				validators: [
+					{
+						validate: ( attr, value ) =>
+							validators.isValidVersion( attr, value, [ 2 ] ),
+						type: 'error',
+					},
+					{
+						validate: ( attr, value ) =>
+							validators.isGreaterOrEqual(
+								attr,
+								`${ value }.0`,
+								'5.9.0'
+							),
+						type: 'error',
+					},
+				],
+			},
+			{
+				attribute: 'Tested up to',
+				required: true,
+				validators: [
+					{
+						validate: ( attr, value ) =>
+							validators.isValidVersion( attr, value, [ 2, 3 ] ),
+						type: 'error',
+					},
+					{
+						validate: ( attr, value ) =>
+							validators.isGreaterOrEqual(
+								attr,
+								value,
+								themeRequires
+							),
+						type: 'error',
+					},
+				],
+			},
+			{
+				attribute: 'Requires PHP',
+				required: true,
+				validators: [
+					{
+						validate: ( attr, value ) =>
+							validators.isValidVersion( attr, value, [ 2 ] ),
+						type: 'error',
+					},
+				],
+			},
+			{ attribute: 'License', required: true },
+			{
+				attribute: 'License URI',
+				required: true,
+				validators: [
+					{
+						validate: validators.isUri,
+						type: 'warning',
+					},
+				],
+			},
+			{
+				attribute: 'Text Domain',
+				required: true,
+				validators: [
+					{
+						validate: validators.isValidSlug,
+						type: 'error',
+					},
+				],
+			},
+		];
+
+		styleCssMetadata.forEach( ( { attribute, required, validators } ) => {
+			const attributeValue = getThemeMetadata( styleCss, attribute );
+			if ( ! attributeValue ) {
+				problems.push(
+					createProblem( {
+						type: required ? 'error' : 'warning',
+						file: styleCssPath,
+						data: {
+							message: `missing ${ chalkStr.green(
+								attribute
+							) } header metadata`,
+						},
+					} )
+				);
+			} else if ( validators ) {
+				validators.forEach( ( { validate, type } ) => {
+					const problem = validate( attribute, attributeValue );
+					if ( problem ) {
+						problems.push(
+							createProblem( {
+								type: type,
+								file: styleCssPath,
+								data: problem,
+							} )
+						);
+					}
+				} );
+			}
+		} );
 
 		const validations = await Promise.all( [
 			glob( `${ themeSlug }/styles/*.json` ).then( ( paths ) => ( {
