@@ -1,8 +1,7 @@
 /**
  * External dependencies
  */
-import { execSync } from 'child_process';
-import { spawnSync } from 'child_process';
+import { execSync, spawnSync } from 'child_process';
 import { existsSync } from 'fs';
 import chalk from 'chalk';
 import path from 'path';
@@ -10,8 +9,8 @@ import _ from 'lodash';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath( import.meta.url );
+const __dirname = dirname( __filename );
 
 /*
  * A lot of this code has been liberally borrowed from the wp-calypso pre-commit script
