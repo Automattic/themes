@@ -39,6 +39,7 @@
 					"background": "var(--wp--preset--color--theme-1)"
 				}
 			},
+			"separator": "radial-gradient(14.79px at 50% calc(100% + 9.5px),#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% - 20px) calc(50% - 6px + .5px)/40px 12px, radial-gradient(14.79px at 50% -9.5px,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) 50% calc(50% + 6px)/40px 12px;",
 			"spacing-increment": "2",
 			"spacing-unit": "10"
 		},
@@ -388,13 +389,13 @@
 			"core/separator": {
 				"border": {
 					"color": "currentColor",
-					"style": "double",
-					"width": "0 0 3px 0"
+					"style": "solid",
+					"width": "0 0 35px 0"
 				},
 				"color": {
 					"text": "var(--wp--preset--color--theme-4)"
 				},
-				"css": "&:not(.is-style-wide):not(.is-style-dots):not(.alignwide):not(.alignfull){width: var(--wp--preset--spacing--60)}\n\n"
+				"css": ".wp-block-separator:not(.is-style-dots){mask: var(--wp--custom--separator);} &.wp-block-separator.is-style-wide{max-width:none;}"
 			},
 			"core/site-title": {
 				"elements": {

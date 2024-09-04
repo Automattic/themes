@@ -4,8 +4,8 @@ Theme URI: https://wordpress.com/theme/luxus
 Author: Automattic
 Author URI: https://automattic.com/
 Description: A WordPress theme for nail and beauty salons.
-Requires at least: 6.0
-Tested up to: 6.4.3
+Requires at least: 6.1
+Tested up to: 6.6.1
 Requires PHP: 5.7
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -122,22 +122,6 @@ footer {
 }
 
 /*
- * Decorative border for headings with .wave-underline class.
- */
-:is(h1, h2, h3, h4, h5, h6).wave-underline::after {
-	mask: url(assets/images/wave.svg) no-repeat center / cover;
-	height: 7px;
-	content: " ";
-	width: 200px;
-	background: var(--wp--preset--color--theme-4);
-	display: block;
-	mask-position: center;
-	position: relative;
-	bottom: -9px;
-	left: calc( 100% - ( 50% + 100px ) );
-}
-
-/*
  * Adds the decorative lines behind the header area on the homepage.
  */
 .rays-background-overlay {
@@ -188,10 +172,5 @@ footer {
 @media screen and (max-width: 640px){
 	.dome {
 		min-height: 12rem !important;
-	}
-
-	:is(h1, h2, h3, h4, h5, h6).wave-underline::after {
-		width: 154px;
-		left: calc( 100% - ( 50% + 77px ) );
 	}
 }
