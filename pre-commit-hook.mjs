@@ -104,7 +104,7 @@ const phpFiles = parseGitDiffToPathArray(
 ).filter( ( file ) => file.endsWith( '.php' ) );
 
 if ( phpFiles.length ) {
-	phpcbfResult = spawnSync( phpcbfPath, [ ...phpFiles ], {
+	const phpcbfResult = spawnSync( phpcbfPath, [ ...phpFiles ], {
 		shell: true,
 		stdio: 'inherit',
 	} );
