@@ -15,7 +15,7 @@ const __dirname = dirname(__filename);
 
 /*
  * A lot of this code has been liberally borrowed from the wp-calypso pre-commit script
- * https://github.com/Automattic/wp-calypso/blob/master/bin/pre-commit-hook.mjs
+ * https://github.com/Automattic/wp-calypso/blob/master/bin/pre-commit-hook.js
  */
 
 const phpcsChangedPath = getPathForCommand( 'phpcs-changed' );
