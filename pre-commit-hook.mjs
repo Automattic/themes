@@ -1,12 +1,17 @@
 /**
  * External dependencies
  */
-const execSync = require( 'child_process' ).execSync;
-const spawnSync = require( 'child_process' ).spawnSync;
-const existsSync = require( 'fs' ).existsSync;
-const chalk = require( 'chalk' );
-const path = require( 'path' );
-const _ = require( 'lodash' );
+import { execSync } from 'child_process';
+import { spawnSync } from 'child_process';
+import { existsSync } from 'fs';
+import chalk from 'chalk';
+import path from 'path';
+import _ from 'lodash';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /*
  * A lot of this code has been liberally borrowed from the wp-calypso pre-commit script
