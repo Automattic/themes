@@ -11,6 +11,9 @@ A theme to celebrate the history of the international games and the milestones t
 
 == Changelog ==
 
+= 1.0.4 =
+* Olympique: Fix author links (#8070)
+
 = 1.0.0 =
 * Initial release
 
