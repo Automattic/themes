@@ -1504,12 +1504,10 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 	const progress = startProgress( themes.length );
 
 	let problems = [];
-	let hasError = false;
 	for ( const themeSlug of themes ) {
 		const styleCssPath = `${ themeSlug }/style.css`;
 
 		if ( ! fs.existsSync( themeSlug ) ) {
-			hasError = true;
 			problems.push(
 				createProblem( {
 					type: 'error',
@@ -1523,7 +1521,6 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		}
 
 		if ( ! fs.existsSync( styleCssPath ) ) {
-			hasError = true;
 			problems.push(
 				createProblem( {
 					type: 'error',
@@ -1618,7 +1615,6 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 						);
 					}
 				} catch ( error ) {
-					hasError = true;
 					problems.push(
 						createProblem( { type: 'error', file, data: error } )
 					);
@@ -1654,6 +1650,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		);
 	}
 
+	const hasError = problems.some( ( { type } ) => type === 'error' );
 	if ( hasError ) {
 		if ( process.stdout.isTTY && process.stderr.isTTY ) {
 			console.error( chalk.red( '\n\nValidation failed.' ) );
