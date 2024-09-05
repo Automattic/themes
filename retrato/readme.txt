@@ -34,14 +34,12 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-Retrato is based on Ritratto - WordPress.com (), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-
 == Images ==
-Ernest Hemingway Portrait 1918 - NARA - 192668
-License: Public domain
-U.S. National Archives and Records Administration
-https://www.archives.gov/
+
+Image for theme screenshot, Ernest Hemingway Portrait 1918 - NARA - 192668
+License: Public Domain Mark 1.0 Universal - This work is in the public domain in the United States because it is a work prepared by an officer or employee of the United States Government as part of that person’s official duties under the terms of Title 17, Chapter 1, Section 105 of the US Code.
+License URL: https://en.wikipedia.org/wiki/en:Copyright_status_of_work_by_the_U.S._government
+Source: https://commons.wikimedia.org/wiki/File:Ernest_Hemingway_Portrait_1918_-_NARA_-_192668.jpg
 
 
 == Fonts ==

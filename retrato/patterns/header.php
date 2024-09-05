@@ -17,34 +17,34 @@
 <!-- wp:site-title {"level":0} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"level":1,"align":"wide","style":{"typography":{"fontSize":"8rem","lineHeight":"1","letterSpacing":"-0.2rem","fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontFamily":"instrument-serif"} -->
-<h1 class="wp-block-heading alignwide has-base-color has-text-color has-link-color has-instrument-serif-font-family" style="font-size:8rem;font-style:normal;font-weight:400;letter-spacing:-0.2rem;line-height:1"><?php echo __('<a href="/">Hemingway</a>', 'retrato');?></h1>
+<!-- wp:heading {"level":1,"align":"wide","className":"no-underline","style":{"typography":{"fontSize":"8rem","lineHeight":"1","letterSpacing":"-0.2rem","fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontFamily":"instrument-serif"} -->
+<h1 class="wp-block-heading alignwide no-underline has-base-color has-text-color has-link-color has-instrument-serif-font-family" style="font-size:8rem;font-style:normal;font-weight:400;letter-spacing:-0.2rem;line-height:1"><?php esc_html_e('Hemingway', 'retrato');?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"1rem","margin":{"top":"2rem","bottom":"2rem"},"padding":{"right":"2.5rem"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:2rem;margin-bottom:2rem;padding-right:2.5rem"><!-- wp:paragraph -->
-<p><?php echo __('Ernest Hemingway was an American novelist, short-story writer, journalist, and sportsman.', 'retrato');?></p>
+<p><?php esc_html_e('Ernest Hemingway was an American novelist, short-story writer, journalist, and sportsman.', 'retrato');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}},"typography":{"lineHeight":"1"}}} /-->
+<div class="wp-block-group"><!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"margin":{"top":"0"}},"typography":{"lineHeight":"1"}},"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /-->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600;line-height:1"><?php echo __('/', 'retrato');?></p>
+<p style="font-style:normal;font-weight:600;line-height:1"><?php esc_html_e('/', 'retrato');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600;line-height:1"><?php echo __('Tumblr', 'retrato');?></p>
+<p style="font-style:normal;font-weight:600;line-height:1"><?php esc_html_e('Tumblr', 'retrato');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600;line-height:1"><?php echo __('/', 'retrato');?></p>
+<p style="font-style:normal;font-weight:600;line-height:1"><?php esc_html_e('/', 'retrato');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600;line-height:1"><?php echo __('Linkedin', 'retrato');?></p>
+<p style="font-style:normal;font-weight:600;line-height:1"><?php esc_html_e('Linkedin', 'retrato');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
