@@ -55,7 +55,7 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 License URL: http://scripts.sil.org/OFL 
 Source: http://gent.media
 
-Image for theme screenshot,
-License: 
-License URL:
-Source: 
+Image for theme screenshot, Credit Jan Brueghel The Elder 
+License: CC0 Public Domain
+License URL: https://creativecommons.org/public-domain/
+Source: https://artvee.com/dl/flowers-in-a-wan-li-vase-2/
