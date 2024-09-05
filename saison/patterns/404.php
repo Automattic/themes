@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"var:preset|spacing|50","margin":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|60"},"padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"default"}} -->

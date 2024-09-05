@@ -23,7 +23,7 @@
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.7rem"}}} -->
 <p class="has-text-align-center" style="font-size:0.7rem">
-	<?php
+    <?php
         /* Translators: WordPress link. */
         $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'saison' ) ) . '" rel="nofollow">WordPress</a>';
         echo sprintf(

@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:template-part {"slug":"header","area":"header"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"default"}} -->
@@ -30,7 +31,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"aspectRatio":"16/9","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-1-scaled.jpg" alt="<?php esc_html_e('', 'saison');?>" class="" style="aspect-ratio:16/9;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-1-scaled.jpg" alt="<?php esc_attr_e('', 'saison');?>" class="" style="aspect-ratio:16/9;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:columns {"style":{"spacing":{"padding":{"top":"6vh","bottom":"6vh"}}}} -->
@@ -48,13 +49,13 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"60.2%"} -->
 <div class="wp-block-column" style="flex-basis:60.2%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-2-1024x556.jpg" alt="<?php esc_html_e('', 'saison');?>" class=""/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-2-1024x556.jpg" alt="<?php esc_attr_e('', 'saison');?>" class=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-3-1024x891.jpg" alt="<?php esc_html_e('', 'saison');?>" class=""/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-3-1024x891.jpg" alt="<?php esc_attr_e('', 'saison');?>" class=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -84,7 +85,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.9rem","letterSpacing":"0.06em"}}} -->
-<p class="has-text-align-center" style="font-size:0.9rem;letter-spacing:0.06em"><?php esc_html_e('92 St. Faiths Lane,<br>Norwich NR1 1NE', 'saison');?></p>
+<p class="has-text-align-center" style="font-size:0.9rem;letter-spacing:0.06em"><?php esc_html_e('92 St. Faiths Lane,<br>Norwich NR1 1NE', 'saison' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
