@@ -12,7 +12,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center"><a href="#">email@example.com<br></a>+00 123 456 789</p>
+<p class="has-text-align-center"><a href="#"><?php esc_html_e('email@example.com', 'saison');?></a><br><?php esc_html_e('+00 123 456 789', 'saison');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"large"} -->

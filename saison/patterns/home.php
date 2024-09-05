@@ -90,7 +90,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.9rem","letterSpacing":"0.06em"}}} -->
-<p class="has-text-align-center" style="font-size:0.9rem;letter-spacing:0.06em"><?php esc_html_e('<a href="#">email@example.com</a><br>+00 123 456 789', 'saison');?></p>
+<p class="has-text-align-center" style="font-size:0.9rem;letter-spacing:0.06em"><a href="#"><?php esc_html_e('email@example.com', 'saison');?></a><br><?php esc_html_e('+00 123 456 789', 'saison');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
