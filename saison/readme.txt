@@ -101,26 +101,36 @@ Source: http://georgduffner.at/
 
 == Images ==
 
-home-image-1.jpg
-CC0
+Images used for home page and theme screenshot:
+
+Credit Jakub Kapusnak
+License: Creative Commons Zero (CC0) license
+License URL: https://www.foodiesfeed.com/license/
 Source: https://www.foodiesfeed.com/free-food-photo/open-kitchen-in-a-fancy-restaurant/
 
-home-image-2.jpg
-CC0
-Source: https://www.foodiesfeed.com/free-food-photo/sea-crab-at-fish-market/download/
+Credit Jakub Kapusnak
+License: Creative Commons Zero (CC0) license
+License URL: https://www.foodiesfeed.com/license/
+Source: https://www.foodiesfeed.com/free-food-photo/sea-crab-at-fish-market/
 
-home-image-3.jpg
-CC0
-Source: https://www.foodiesfeed.com/free-food-photo/organic-purple-carrots-at-a-local-farmers-market/download/
+Credit Jakub Kapusnak
+License: Creative Commons Zero (CC0) license
+License URL: https://www.foodiesfeed.com/license/
+Source: https://www.foodiesfeed.com/free-food-photo/organic-purple-carrots-at-a-local-farmers-market/
 
-pattern-image-1.jpg
-CC0
+Images used for patterns:
+
+Credit Justyna Le
+License: Creative Commons Zero (CC0) license
+License URL: https://www.foodiesfeed.com/license/
 Source: https://www.foodiesfeed.com/free-food-photo/vegan-chickpea-and-potato-curry/
 
-pattern-image-2.jpg
-CC0
+Credit Jakub Kapusnak
+License: Creative Commons Zero (CC0) license
+License URL: https://www.foodiesfeed.com/license/
 Source: https://www.foodiesfeed.com/free-food-photo/excellent-beef-steak-with-vegetables-3/
 
-pattern-image-3.jpg
-CC0
+Credit Jakub Kapusnak
+License: Creative Commons Zero (CC0) license
+License URL: https://www.foodiesfeed.com/license/
 Source: https://www.foodiesfeed.com/free-food-photo/eating-hash-browns-with-eggs-for-breakfast/
