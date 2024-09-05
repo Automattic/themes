@@ -19,11 +19,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading">Opening Soon</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Opening Soon', 'saison' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>92 St. Faiths Lane,<br>Norwich NR1 1NE</p>
+<p><?php echo esc_html__( '92 St. Faiths Lane,', 'saison' ); ?><br><?php echo esc_html__( 'Norwich NR1 1NE', 'saison' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

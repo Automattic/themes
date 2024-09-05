@@ -4,7 +4,6 @@
  * slug: saison/comments
  * inserter: no
  */
-
 ?>
 
 <!-- wp:comments {"className":"wp-block-comments-query-loop"} -->

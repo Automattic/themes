@@ -20,11 +20,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"style":{"typography":{"fontSize":"1.6rem"}}} -->
-<h2 class="wp-block-heading" style="font-size:1.6rem">Opening Soon</h2>
+<h2 class="wp-block-heading" style="font-size:1.6rem"><?php echo esc_html__( 'Opening Soon', 'saison' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9rem","letterSpacing":"0.1em"}}} -->
-<p style="font-size:0.9rem;letter-spacing:0.1em">92 St. Faiths Lane,<br>Norwich NR1 1NE</p>
+<p style="font-size:0.9rem;letter-spacing:0.1em"><?php echo esc_html__( '92 St. Faiths Lane,', 'saison' ); ?><br><?php echo esc_html__( 'Norwich NR1 1NE', 'saison' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

@@ -8,19 +8,19 @@
 ?>
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">92 St. Faiths Lane,<br>Norwich NR1 1NE</p>
+<p class="has-text-align-center"><?php echo esc_html__( '92 St. Faiths Lane,', 'saison' ); ?><br><?php echo esc_html__( 'Norwich NR1 1NE', 'saison' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center"><a href="#">email@example.com<br></a>+00 123 456 789</p>
+<p class="has-text-align-center"><a href="#"><?php esc_html_e('email@example.com', 'saison');?></a><br><?php esc_html_e('+00 123 456 789', 'saison');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center","fontSize":"large"} -->
-<h2 class="wp-block-heading has-text-align-center has-large-font-size">Opening Hours</h2>
+<h2 class="wp-block-heading has-text-align-center has-large-font-size"><?php echo esc_html__( 'Opening Hours', 'saison' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Tuesday to Sunday: 12am - 10pm<br>Monday: Closed</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'Tuesday to Sunday: 12am - 10pm', 'saison' ); ?><br><?php echo esc_html__( 'Monday: Closed', 'saison' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|20"} -->
