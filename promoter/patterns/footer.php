@@ -13,13 +13,13 @@
 <div class="wp-block-group alignwide"><!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#00000a","size":"has-small-icon-size","style":{"typography":{"letterSpacing":"-0.02rem"}},"className":"is-style-logos-only","layout":{"type":"flex","justifyContent":"center"}} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only" style="letter-spacing:-0.02rem"><!-- wp:social-link {"url":"tumblr.com","service":"tumblr"} /-->
 
-<!-- wp:social-link {"url":"mastodon.com","service":"mastodon"} /-->
+<!-- wp:social-link {"url":"#","service":"mastodon"} /-->
 
-<!-- wp:social-link {"url":"devianart.com","service":"deviantart"} /-->
+<!-- wp:social-link {"url":"#","service":"deviantart"} /-->
 
-<!-- wp:social-link {"url":"behance.com","service":"behance"} /-->
+<!-- wp:social-link {"url":"#","service":"behance"} /-->
 
-<!-- wp:social-link {"url":"linkedin.com","service":"linkedin"} /--></ul>
+<!-- wp:social-link {"url":"#","service":"linkedin"} /--></ul>
 <!-- /wp:social-links -->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"textTransform":"uppercase","fontSize":"0.9rem","letterSpacing":"-0.02rem"}}} -->
