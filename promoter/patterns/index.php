@@ -48,9 +48,7 @@
 <!-- /wp:query-pagination -->
 
 <!-- wp:query-no-results {"align":"wide"} -->
-<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
-<p><?php esc_html_e('', 'promoter');?></p>
-<!-- /wp:paragraph -->
+<!-- wp:pattern {"slug":"promoter/hidden-no-results"} /-->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></main>
