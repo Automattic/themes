@@ -1,47 +1,9 @@
 {
 	"settings": {
 		"appearanceTools": true,
-		"blocks": {
-			"core/spacer": {
-				"color": {
-					"palette": [
-						{
-							"color": "#111111",
-							"name": "Primary",
-							"slug": "primary"
-						},
-						{
-							"color": "#f7f8f2",
-							"name": "Secondary",
-							"slug": "secondary"
-						},
-						{
-							"color": "#f7f8f2",
-							"name": "Foreground",
-							"slug": "foreground"
-						},
-						{
-							"color": "#030201",
-							"name": "Background",
-							"slug": "background"
-						},
-						{
-							"color": "#f7f8f280",
-							"name": "Tertiary",
-							"slug": "tertiary"
-						}
-					]
-				}
-			}
-		},
 		"color": {
-			"background": true,
-			"custom": true,
 			"customDuotone": true,
-			"customGradient": true,
 			"defaultDuotone": false,
-			"defaultGradients": true,
-			"defaultPalette": true,
 			"duotone": [
 				{
 					"colors": [
@@ -99,8 +61,48 @@
 		},
 		"spacing": {
 			"customSpacingSize": true,
-			"defaultSpacingSizes": false,
-			"spacingSizes": [],
+			"spacingScale": {
+				"theme": {
+					"steps": 0
+				}
+			},
+			"spacingSizes": [
+				{
+					"name": "2X-Small",
+					"size": "0.5rem",
+					"slug": "20"
+				},
+				{
+					"name": "X-Small",
+					"size": "clamp(0.5rem, 1vw, 1rem)",
+					"slug": "30"
+				},
+				{
+					"name": "Small",
+					"size": "clamp(0.75rem, 1.5vw, 1.5rem)",
+					"slug": "40"
+				},
+				{
+					"name": "Medium",
+					"size": "clamp(1rem, 2vw, 2rem)",
+					"slug": "50"
+				},
+				{
+					"name": "Large",
+					"size": "clamp(1.5rem, 3vw, 3rem)",
+					"slug": "60"
+				},
+				{
+					"name": "X-Large",
+					"size": "clamp(2rem, 4vw, 4rem)",
+					"slug": "70"
+				},
+				{
+					"name": "2X-Large",
+					"size": "clamp(3rem, 6vw, 6rem)",
+					"slug": "80"
+				}
+			],
 			"units": [
 				"%",
 				"px",
@@ -128,7 +130,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/d-din-exp_normal_400.ttf"
+								"file:./assets/fonts/d-din/d-din-exp_normal_400.ttf"
 							]
 						},
 						{
@@ -136,7 +138,7 @@
 							"fontStyle": "italic",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/d-din-exp_italic_400.ttf"
+								"file:./assets/fonts/d-din/d-din-exp_italic_400.ttf"
 							]
 						}
 					],
@@ -146,11 +148,34 @@
 				{
 					"fontFace": [
 						{
+							"fontFamily": "Rubik",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": [
+								"file:./assets/fonts/rubik/rubik_normal_300.ttf"
+							]
+						},
+						{
+							"fontFamily": "Rubik",
+							"fontStyle": "italic",
+							"fontWeight": "300",
+							"src": [
+								"file:./assets/fonts/rubik/rubik_italic_300.ttf"
+							]
+						}
+					],
+					"fontFamily": "Rubik",
+					"name": "Rubik",
+					"slug": "rubik"
+				},
+				{
+					"fontFace": [
+						{
 							"fontFamily": "Barlow",
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/barlow_normal_400.ttf"
+								"file:./assets/fonts/barlow/barlow_normal_400.ttf"
 							]
 						},
 						{
@@ -158,7 +183,7 @@
 							"fontStyle": "italic",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/barlow_italic_400.ttf"
+								"file:./assets/fonts/barlow/barlow_italic_400.ttf"
 							]
 						},
 						{
@@ -166,7 +191,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
-								"file:./assets/fonts/barlow_normal_700.ttf"
+								"file:./assets/fonts/barlow/barlow_normal_700.ttf"
 							]
 						},
 						{
@@ -174,7 +199,7 @@
 							"fontStyle": "italic",
 							"fontWeight": "700",
 							"src": [
-								"file:./assets/fonts/barlow_italic_700.ttf"
+								"file:./assets/fonts/barlow/barlow_italic_700.ttf"
 							]
 						}
 					],
@@ -575,7 +600,7 @@
 					"fontFamily": "var(--wp--preset--font-family--d-din-exp)",
 					"fontSize": "var(--wp--preset--font-size--x-large)",
 					"letterSpacing": "0rem",
-					"lineHeight": "1.1",
+					"lineHeight": "1",
 					"textTransform": "none"
 				}
 			},
@@ -586,7 +611,7 @@
 					"fontStyle": "normal",
 					"fontWeight": "400",
 					"letterSpacing": "0.01rem",
-					"lineHeight": 1,
+					"lineHeight": "1.1",
 					"textTransform": "uppercase"
 				}
 			},
@@ -597,7 +622,7 @@
 					"fontStyle": "normal",
 					"fontWeight": "400",
 					"letterSpacing": "0.01rem",
-					"lineHeight": "1",
+					"lineHeight": "1.1",
 					"textTransform": "none"
 				}
 			},
@@ -621,7 +646,7 @@
 			"h6": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--d-din-exp)",
-					"fontSize": "0.8rem",
+					"fontSize": "var(--wp--preset--font-size--small)",
 					"letterSpacing": "0.02rem",
 					"lineHeight": "1.2",
 					"textTransform": "uppercase"
@@ -633,6 +658,7 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--d-din-exp)",
+					"fontStyle": "normal",
 					"fontWeight": "400",
 					"lineHeight": "1.125"
 				}
@@ -654,10 +680,10 @@
 		"spacing": {
 			"blockGap": "1.5rem",
 			"padding": {
-				"bottom": "0rem",
-				"left": "1.5rem",
-				"right": "1.5rem",
-				"top": "0rem"
+				"bottom": "0",
+				"left": "var(--wp--preset--spacing--50)",
+				"right": "var(--wp--preset--spacing--50)",
+				"top": "0"
 			}
 		},
 		"typography": {

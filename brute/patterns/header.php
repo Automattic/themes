@@ -1,3 +1,11 @@
+<?php
+/**
+ * Title: header
+ * Slug: brute/header
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
 <!-- wp:group {"style":{"spacing":{"blockGap":"0rem","margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"2rem","bottom":"3rem"}},"border":{"bottom":{"width":"1px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="border-bottom-width:1px;margin-top:0rem;margin-bottom:0rem;padding-top:2rem;padding-bottom:3rem"><!-- wp:group {"align":"full","style":{"border":{"top":{"width":"1px"}},"spacing":{"padding":{"top":"0rem","right":"1.5rem","bottom":"0rem","left":"1.5rem"},"margin":{"top":"0rem","bottom":"0rem"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="border-top-width:1px;margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:1.5rem;padding-bottom:0rem;padding-left:1.5rem"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0rem","left":"0rem"}}}} -->
@@ -21,3 +29,7 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p><?php esc_html_e('⊕', 'brute');?></p>
+<!-- /wp:paragraph -->
