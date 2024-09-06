@@ -42,23 +42,12 @@ Brute is based on RAW (), (C) Automattic, [GPLv2 or later](http://www.gnu.org/li
 Image for theme screenshot
 License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://pxhere.com/en/photo/1397257
-
-License: CC0 1.0 Universal (CC0 1.0)
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-https://pxhere.com/en/photo/972626
+https://pxhere.com/en/photo/1571681
 
 License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 https://pxhere.com/en/photo/56714
 
-License: CC0 1.0 Universal (CC0 1.0)
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-https://pxhere.com/en/photo/1571681
-
-License: CC0 1.0 Universal (CC0 1.0)
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-https://pxhere.com/en/photo/1232983
 
 == Fonts ==
 
