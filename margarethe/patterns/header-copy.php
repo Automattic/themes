@@ -12,7 +12,7 @@
 <div class="wp-block-group alignfull" style="min-height:100vh"><!-- wp:group {"align":"full","style":{"border":{"top":{"width":"0px","style":"none"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="border-top-style:none;border-top-width:0px"><!-- wp:columns {"verticalAlignment":"center","isStackedOnMobile":false,"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center is-not-stacked-on-mobile" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:column {"verticalAlignment":"center","width":"35%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:35%"><!-- wp:site-title {"style":{"layout":{"selfStretch":"fixed","flexSize":"230px"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /--></div>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:35%"><!-- wp:site-title {"level":0,"style":{"layout":{"selfStretch":"fixed","flexSize":"230px"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"65%"} -->
@@ -21,7 +21,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Work with me', 'margarethe' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Work with me', 'margarethe' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -36,13 +36,13 @@
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":""} -->
 <div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.04em"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--30);letter-spacing:0.04em;text-transform:uppercase"><?php echo esc_html__( 'What I do', 'margarethe' ); ?></p>
+<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--30);letter-spacing:0.04em;text-transform:uppercase"><?php esc_html_e( 'What I do', 'margarethe' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"65.16%"} -->
 <div class="wp-block-column" style="flex-basis:65.16%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1.1"}},"fontSize":"xxxx-large"} -->
-<h2 class="wp-block-heading has-xxxx-large-font-size" style="line-height:1.1"><?php echo esc_html__( 'I’m an interior designer based in Antwerp.', 'margarethe' ); ?></h2>
+<h2 class="wp-block-heading has-xxxx-large-font-size" style="line-height:1.1"><?php esc_html_e( 'I’m an interior designer based in Antwerp.', 'margarethe' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

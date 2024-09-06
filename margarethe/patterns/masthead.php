@@ -12,7 +12,7 @@ declare( strict_types = 1 );
 	<!-- wp:column {"width":""} -->
 	<div class="wp-block-column">
 		<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.04em"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"fontSize":"small"} -->
-		<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--30);letter-spacing:0.04em;text-transform:uppercase"><?php echo esc_html__( 'What I do', 'margarethe' ); ?></p>
+		<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--30);letter-spacing:0.04em;text-transform:uppercase"><?php esc_html_e( 'What I do', 'margarethe' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:column -->
@@ -20,7 +20,7 @@ declare( strict_types = 1 );
 	<!-- wp:column {"width":"65.16%"} -->
 	<div class="wp-block-column" style="flex-basis:65.16%">
 		<!-- wp:heading {"level":1,"style":{"typography":{"textTransform":"uppercase","lineHeight":"0.89"}},"fontSize":"xxxx-large"} -->
-		<h1 class="wp-block-heading has-xxxx-large-font-size" style="line-height:0.89;text-transform:uppercase"><?php echo esc_html__( 'Mindset performance coaching', 'margarethe' ); ?></h1>
+		<h1 class="wp-block-heading has-xxxx-large-font-size" style="line-height:0.89;text-transform:uppercase"><?php esc_html_e( 'Mindset performance coaching', 'margarethe' ); ?></h1>
 		<!-- /wp:heading -->
 	</div>
 	<!-- /wp:column -->
@@ -41,21 +41,21 @@ declare( strict_types = 1 );
 	<!-- wp:column {"width":""} -->
 	<div class="wp-block-column">
 		<!-- wp:paragraph {"style":{"typography":{"textTransform":"none"}}} -->
-		<p style="text-transform:none"><?php echo esc_html__( 'Hi, I&rsquo;m Margarethe, your partner on this exciting journey to self-discovery and success.', 'margarethe' ); ?></p>
+		<p style="text-transform:none"><?php esc_html_e( 'Hi, I&rsquo;m Margarethe, your partner on this exciting journey to self-discovery and success.', 'margarethe' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph -->
-		<p><?php echo esc_html__( 'With personalized mindset coaching, we&rsquo;ll work together to break through barriers, harness your unique potential, and help you achieve your personal and professional goals. I&rsquo;m here to guide you every step of the way. Let&rsquo;s embark on this adventure together.', 'margarethe' ); ?></p>
+		<p><?php esc_html_e( 'With personalized mindset coaching, we&rsquo;ll work together to break through barriers, harness your unique potential, and help you achieve your personal and professional goals. I&rsquo;m here to guide you every step of the way. Let&rsquo;s embark on this adventure together.', 'margarethe' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph -->
-		<p><a href="#"><?php echo esc_html__( 'More about me', 'margarethe' ); ?></a></p>
+		<p><a href="#"><?php esc_html_e( 'More about me', 'margarethe' ); ?></a></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size"><?php echo esc_html__( 'Connect with me:', 'margarethe' ); ?></p>
+			<p class="has-small-font-size"><?php esc_html_e( 'Connect with me:', 'margarethe' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","iconBackgroundColor":"primary","iconBackgroundColorValue":"#000000","size":"has-small-icon-size","className":"is-style-default"} -->

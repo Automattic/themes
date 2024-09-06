@@ -26,15 +26,17 @@
 <!-- wp:column {"width":"65.16%"} -->
 <div class="wp-block-column" style="flex-basis:65.16%"><!-- wp:columns {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","letterSpacing":"-0.01em","lineHeight":"1.2"},"spacing":{"blockGap":{"left":"var:preset|spacing|60"}}},"fontSize":"x-large"} -->
 <div class="wp-block-columns has-x-large-font-size" style="font-style:normal;font-weight:400;letter-spacing:-0.01em;line-height:1.2"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":6,"fontSize":"x-large"} -->
-<h6 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('Monday: Closed', 'margarethe');?><br><?php echo esc_html__( 'Tue to Sun: 9am — 7pm', 'margarethe' ); ?><br><?php echo esc_html__( 'Sat and Sun: 10am — 7pm', 'margarethe');?></h6>
-<!-- /wp:heading --></div>
+<div class="wp-block-column">
+<!-- wp:paragraph {"style":{"typography":{"letterSpacing":"-0.01em","lineHeight":"1.1"}},"fontSize":"x-large","fontFamily":"lucette"} -->
+<p class="has-lucette-font-family has-x-large-font-size" style="letter-spacing:-0.01em;line-height:1.1"><?php esc_html_e('Monday: Closed', 'margarethe');?><br><?php esc_html_e( 'Tue to Sun: 9am — 7pm', 'margarethe' ); ?><br><?php esc_html_e( 'Sat and Sun: 10am — 7pm', 'margarethe');?></p>
+<!-- /wp:paragraph -->	
+</div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":6,"fontSize":"x-large"} -->
-<h6 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('Grote Baan 343', 'margarethe' ); ?><br><?php echo esc_html__( '2460 Kasterlee, Antwerp', 'margarethe' ); ?><br><?php echo esc_html__( '+32 0123 45 67 89', 'margarethe');?></h6>
-<!-- /wp:heading --></div>
+<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"-0.01em","lineHeight":"1.1"}},"fontSize":"x-large","fontFamily":"lucette"} -->
+<p class="has-lucette-font-family has-x-large-font-size" style="letter-spacing:-0.01em;line-height:1.1"><?php esc_html_e('Grote Baan 343', 'margarethe' ); ?><br><?php esc_html_e( '2460 Kasterlee, Antwerp', 'margarethe' ); ?><br><?php esc_html_e( '+32 0123 45 67 89', 'margarethe');?></p>
+<!-- /wp:paragraph -->	</div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>

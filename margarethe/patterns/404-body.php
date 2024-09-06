@@ -8,5 +8,5 @@ declare( strict_types = 1 );
 ?>
 
 <!-- wp:paragraph -->
-	<p><?php echo esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'margarethe' ); ?></p>
+	<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'margarethe' ); ?></p>
 <!-- /wp:paragraph -->
