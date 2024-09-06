@@ -33,7 +33,7 @@ declare( strict_types = 1 );
 	<!-- wp:column {"width":"65.16%"} -->
 	<div class="wp-block-column" style="flex-basis:65.16%">
 		<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-		<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/StockSnap_YIPAMY1N5F.jpg" alt="" class=""/></figure>
+		<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/margarethe-img-9.jpg" alt="<?php esc_html_e( 'Portrait of smiling blonde woman with long hair', 'margarethe' ); ?>"/></figure>
 		<!-- /wp:image -->
 	</div>
 	<!-- /wp:column -->

@@ -36,7 +36,7 @@ declare( strict_types = 1 );
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 			<div class="wp-block-group">
 				<!-- wp:image {"width":"60px","height":"60px","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-				<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/man-person-suit-portrait-corporate-professional-675849-pxhere-2.jpg" alt="" style="object-fit:cover;width:60px;height:60px"/></figure>
+				<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/margarethe-img-10.jpg" alt="<?php esc_attr_e('Business man working', 'margarethe');?>" style="object-fit:cover;width:60px;height:60px"/></figure>
 				<!-- /wp:image -->
 
 				<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -76,7 +76,7 @@ declare( strict_types = 1 );
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 			<div class="wp-block-group">
 				<!-- wp:image {"width":"60px","height":"60px","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-				<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/StockSnap_LMKLOZE1TO-cropped.jpg" alt="" style="object-fit:cover;width:60px;height:60px"/></figure>
+				<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/margarethe-img-11-scaled.jpg" alt="<?php esc_attr_e('Smiling blonde woman', 'margarethe');?>" style="object-fit:cover;width:60px;height:60px"/></figure>
 				<!-- /wp:image -->
 
 				<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -116,7 +116,7 @@ declare( strict_types = 1 );
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 			<div class="wp-block-group">
 				<!-- wp:image {"width":"60px","height":"60px","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-				<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/man-person-people-hair-white-boy-1046502-pxhere-2.jpg" alt="" style="object-fit:cover;width:60px;height:60px"/></figure>
+				<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/margarethe-img-9.jpg" alt="<?php esc_attr_e('Portrait of smiling blonde woman with long hair', 'margarethe');?>" style="object-fit:cover;width:60px;height:60px"/></figure>
 				<!-- /wp:image -->
 
 				<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
