@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.0.30 =
+* Fixed Blockbase children style variations (#7859)
+
 = 1.0.29 =
 * Lossless image optimization (#7671)
 

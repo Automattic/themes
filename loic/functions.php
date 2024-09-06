@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Loïc functions and definitions

@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Add Logo Size option in the customizer.

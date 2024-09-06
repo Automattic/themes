@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+IGNORE_FILE="$SCRIPT_DIR/.dotorg-ignore"
+
 git remote update > /dev/null
 current_branch=$(git branch --show-current)
 hash_at_divergence=$(git merge-base origin/trunk ${current_branch})
@@ -92,7 +95,7 @@ build-org-zip() {
 	
 	# Copy the theme into a subfolder (excluding the excludables) to be packaged up in a zip
 	mkdir $THEME;
-	rsync -avzq --include='theme.json' --exclude $THEME --exclude-from '../dotorg-exclude.txt' ./ $THEME
+	rsync -avzq --include='theme.json' --exclude $THEME --exclude-from $IGNORE_FILE ./ $THEME
 
 	# Make sure the -wpcom version naming and tags aren't shipped 
 	#NOTE: (can we be rid of that -wpcom 'versioning')

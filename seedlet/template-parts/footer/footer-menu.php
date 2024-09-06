@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php if ( has_nav_menu( 'footer' ) ) : ?>
 	<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'seedlet' ); ?>">
 		<?php

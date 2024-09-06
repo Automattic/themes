@@ -1,0 +1,36 @@
+<?php
+/**
+ * Title: Default Header
+ * Slug: luxus/header
+ * Categories: header
+ * Block Types: core/template-part/header
+ */
+
+declare( strict_types = 1 );
+?>
+
+<!-- wp:group {"metadata":{"name":"Header Container"},"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}},"border":{"bottom":{"color":"var:preset|color|theme-4","width":"1px"}},"position":{"type":""}},"backgroundColor":"theme-1","className":"border-bottom-double","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull border-bottom-double has-theme-1-background-color has-background" style="border-bottom-color:var(--wp--preset--color--theme-4);border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:spacer {"height":"var:preset|spacing|20","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+<div style="margin-top:0;margin-bottom:0;height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:group {"tagName":"header","metadata":{"name":"Contents"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"position":{"type":""}},"layout":{"type":"constrained"}} -->
+<header class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"grid","columnCount":"2","minimumColumnWidth":null}} -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:navigation {"overlayMenu":"always","overlayBackgroundColor":"theme-1","overlayTextColor":"theme-4","className":"order-1 md:order-0","layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"},"fontSize":"medium"} /-->
+
+<!-- wp:site-title {"fontSize":"medium"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"}} -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#"><?php echo esc_html__( 'Book now', 'luxus' ); ?> — (123) 456 - 789</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></header>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"var:preset|spacing|20","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+<div style="margin-top:0;margin-bottom:0;height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
+<!-- /wp:group -->

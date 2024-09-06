@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php if ( has_nav_menu( 'menu-2' ) ) : ?>
 	<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'varia' ); ?>">
 		<?php

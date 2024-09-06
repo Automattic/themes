@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 // These functions are borrowed from the colorline lib
 if ( ! function_exists( 'hex_to_rgb' ) ) {

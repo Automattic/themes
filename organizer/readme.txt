@@ -12,6 +12,9 @@ Organizer has a simple structure and displays only the necessary information a r
 
 == Changelog ==
 
+= 1.0.3 =
+* Organizer: Fix archive and search templates (#8040)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 

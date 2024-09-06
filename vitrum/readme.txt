@@ -14,6 +14,9 @@ Vitrum was designed to be a portfolio theme and is composed of wide-width layout
 
 == Changelog ==
 
+= 1.4 =
+* Remove copyright statement (#7988)
+
 = 1.0.0 =
 * Initial release
 

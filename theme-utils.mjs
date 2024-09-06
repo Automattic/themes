@@ -1,15 +1,21 @@
 import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
+import util from 'util';
 import open from 'open';
+import process from 'process';
 import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
-import { table } from 'table';
+import { table, getBorderCharacters } from 'table';
 import progressbar from 'string-progressbar';
 import semver from 'semver';
+import Ajv from 'ajv';
+import AjvDraft04 from 'ajv-draft-04';
+import glob from 'fast-glob';
+import chalk, { Chalk } from 'chalk';
 
 const remoteSSH = 'wpcom-sandbox';
-const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
-const sandboxRootFolder = '/home/wpdev/public_html/';
+const sandboxPublicThemesFolder = '/home/wpcom/public_html/wp-content/themes/pub';
+const sandboxRootFolder = '/home/wpcom/public_html/';
 const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
 const isWin = process.platform === 'win32';
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree', 'twentytwentyfour'];
@@ -21,12 +27,12 @@ const commands = {
 * Version bump all themes that have changes since the last deployment
 * Commit the version bump change to github
 * Clean the sandbox and ensure it is up - to - date
-* Push all changed files(including removal of deleted files) since the last deployment
+* Push all changed files (including removal of deleted files) since the last deployment
 * Update the 'last deployed' hash on the sandbox
-* Create a phabricator diff based on the changes since the last deployment.The description including the commit messages since the last deployment.
-* Open the Phabricator Diff in your browser
-* Create a tag in the github repository at this point of change which includes the phabricator link in the description
-* After pausing to allow testing, land and deploy the changes
+* Create a GitHub pull request based on the changes since the last deployment. The description including the commit messages since the last deployment.
+* Open the GitHub pull request in your browser
+* Create a tag in the github repository at this point of change which includes the GitHub pull request link in the description
+* After pausing to allow testing, merge and deploy the changes
 		`,
 		run: pushButtonDeploy
 	},
@@ -52,8 +58,8 @@ const commands = {
 		run: versionBumpThemes
 	},
 	"land-diff": {
-		helpText: 'Run arc land to merge in the specified diff id.',
-		additionalArgs: '<arc diff id>',
+		helpText: 'Run gh pr merge to merge in the specified pull request id.',
+		additionalArgs: '<gh pr id>',
 		run: (args) => landChanges(args?.[1])
 	},
 	"deploy-preview": {
@@ -101,10 +107,10 @@ const commands = {
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => deploySyncCoreTheme(args?.[1], args?.[2])
 	},
-	"create-core-phabricator-diff": {
-		helpText: 'Given a theme slug and specific revision create a Phabricator diff from the resources currently on the sandbox.',
+	"create-core-github-pr": {
+		helpText: 'Given a theme slug and specific revision create a GitHub pull request from the resources currently on the sandbox.',
 		additionalArgs: '<theme-slug> <since-revision>',
-		run: (args) => createCorePhabriactorDiff(args?.[1], args?.[2])
+		run: (args) => createCoreGithubPR(args?.[1], args?.[2])
 	},
 	"update-theme-changelog": {
 		helpText: 'Use the commit log to build a list of recent changes and add them as a new changelog entry. If add-changes is true, the updated readme.txt will be staged.',
@@ -120,6 +126,37 @@ const commands = {
 		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
 		run: () => escapePatterns()
 	},
+	'validate-theme': {
+		helpText: [
+			'Validates a theme against the WordPress theme requirements.',
+			'--format=FORMAT',
+			wrapIndent( 'Output format. Possible values: *table*, json, dir.' ),
+			'--color=WHEN',
+			wrapIndent(
+				'Colorize the output for table or dir formats. The automatic mode only enables colors if an interactive terminal is detected. Possible values: *auto*, always, never.'
+			),
+			'--table-width=COLUMNS',
+			wrapIndent(
+				'Explicitly set the width of the table format instead of determining it automatically. Will default to 120 if omitted and width cannot be determined automatically.'
+			),
+		].join( '\n\n' ),
+		additionalArgs:
+			'[--format=FORMAT] [--color=WHEN] [--table-width=COLUMNS] <array of theme slugs>',
+		run: async ( args ) => {
+			args.shift();
+			const options = {};
+			while ( args[ 0 ].startsWith( '--' ) ) {
+				const flag = args.shift().slice( 2 );
+				const [ key, value ] = flag.split( '=' );
+				const camelCaseKey = key.replace( /-([a-z])/g, ( [ , c ] ) =>
+					c.toUpperCase()
+				);
+				options[ camelCaseKey ] = value ?? true;
+			}
+			const themes = args[ 0 ].split( /[ ,]+/ );
+			await validateThemes( themes, options );
+		},
+	},
 	"help": {
 		helpText: 'Displays the main help message.',
 		run: (args) => showHelp(args?.[1])
@@ -131,11 +168,29 @@ const commands = {
 	let command = args?.[0];
 
 	if (!commands[command]) {
-		return showHelp();
+		showHelp();
+		process.exit(1);
 	}
 
-	commands[command].run(args);
+	await commands[command].run(args);
 })();
+
+function wrapIndent(
+	text,
+	indent = '        ',
+	newline = '\n',
+	width = process.stdout.columns || 80
+) {
+	return text
+		.match(
+			new RegExp(
+				`.{1,${ width - indent.length - 1 }}(\\s+|$)|[^\\s]+?(\\s+|$)`,
+				'g'
+			)
+		)
+		.map( ( line ) => indent + line )
+		.join( newline );
+}
 
 function showHelp(command = '') {
 	if (!command || !commands.hasOwnProperty(command)) {
@@ -231,9 +286,9 @@ async function addStrictTypesToChangedThemes() {
 	* Clean the sandbox and ensure it is up-to-date
 	* Push all changed files (including removal of deleted files) since the last deployment
 	* Update the 'last deployed' hash on the sandbox
-	* Create a phabricator diff based on the changes since the last deployment.  The description including the commit messages since the last deployment.
-	* Open the Phabricator Diff in your browser
-	* Create a tag in the github repository at this point of change which includes the phabricator link in the description
+	* Create a GitHub pull request based on the changes since the last deployment.  The description including the commit messages since the last deployment.
+	* Open the GitHub pull request in your browser
+	* Create a tag in the github repository at this point of change which includes the GitHub pull request link in the description
 */
 async function pushButtonDeploy() {
 
@@ -290,7 +345,7 @@ async function pushButtonDeploy() {
 		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
-				message: 'Are you ready to push this version bump change to the source repository (Github)?',
+				message: 'Are you ready to push this version bump change to the source repository (GitHub.com)?',
 				name: "continue",
 				default: false
 			}]);
@@ -299,7 +354,6 @@ async function pushButtonDeploy() {
 				console.log(`Aborted Automated Deploy Process at version bump push change.`);
 				return;
 			}
-
 			await executeCommand(`
 				git commit -m "Version Bump";
 				git push --set-upstream origin trunk
@@ -308,17 +362,31 @@ async function pushButtonDeploy() {
 
 		await updateLastDeployedHash();
 
-		let commitMessage = await buildPhabricatorCommitMessageSince(hash);
-		let diffUrl = await createPhabricatorDiff(commitMessage);
-		let diffId = diffUrl.split('a8c.com/')[1];
+		let commitMessage = await buildGithubCommitMessageSince(hash);
+
+		// Make sure the themes/pub repo in sandbox is ready to create a PR to the A8C GitHub Host
+		prompt = await inquirer.prompt([{
+			type: 'confirm',
+			message: 'Before you can create the GitHub PR, login in A8C GitHub Enterprise Server from the themes/pub repo in your sandbox with the command "gh auth login" and using your SSH key.\nAre you logged in?',
+			name: "continue",
+			default: false
+		}]);
+
+		if (!prompt.continue) {
+			console.log(`Aborted Automated Deploy Process at require to login in into A8C GitHub Enterprise Server in sandbox.`);
+			return;
+		}
+
+		let prUrl = await createGithubPR(commitMessage);
+		let prId = prUrl.split('pull/')[1];
 
 
 		await tagDeployment({
 			hash: hash,
-			diffId: diffId
+			prId: prId
 		});
 
-		console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the diff is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes.join(' ')}\n\n\n`);
+		console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the PR is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes.join(' ')}\n\n\n`);
 
 		prompt = await inquirer.prompt([{
 			type: 'confirm',
@@ -328,11 +396,11 @@ async function pushButtonDeploy() {
 		}]);
 
 		if (!prompt.continue) {
-			console.log(`Aborted Automated Deploy Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}`);
+			console.log(`Aborted Automated Deploy Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the PR to land: ${prId}`);
 			return;
 		}
 
-		await landChanges(diffId);
+		await landChanges(prId);
 
 		try {
 			await deployThemes(changedThemes);
@@ -384,7 +452,7 @@ return;
 	}
 
 	await pushThemeToSandbox(theme);
-	let diffId = await createCorePhabriactorDiff(theme, sinceRevision);
+	let prId = await createCoreGithubPR(theme, sinceRevision);
 
 	prompt = await inquirer.prompt([{
 		type: 'confirm',
@@ -394,18 +462,18 @@ return;
 	}]);
 
 	if (!prompt.continue) {
-		console.log(`Aborted Automated Deploy Sync Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}`);
+		console.log(`Aborted Automated Deploy Sync Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the PR to land: ${prId}`);
 		return;
 	}
 
-	await landChanges(diffId);
+	await landChanges(prId);
 	await deployThemes([theme]);
 	await buildComZips([theme]);
 	return;
 }
 
 
-async function buildCorePhabricatorCommitMessageSince(theme, sinceRevision){
+async function buildCoreGithubCommitMessageSince(theme, sinceRevision){
 
 	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
 	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
@@ -432,13 +500,13 @@ Subscribers:
 /**
  * Deploys the localy copy of a core theme to wpcom.
  */
-async function createCorePhabriactorDiff(theme, sinceRevision) {
+async function createCoreGithubPR(theme, sinceRevision) {
 
-	let commitMessage = await buildCorePhabricatorCommitMessageSince(theme, sinceRevision);
+	let commitMessage = await buildCoreGithubCommitMessageSince(theme, sinceRevision);
 
-	let diffUrl = await createPhabricatorDiff(commitMessage);
-	let diffId = diffUrl.split('a8c.com/')[1];
-	return diffId;
+	let prUrl = await createGithubPR(commitMessage);
+	let prId = prUrl.split('pull/')[1];
+	return prId;
 }
 
 /*
@@ -463,7 +531,7 @@ async function buildComZip(themeSlug) {
 			console.log('Could not find theme version (Version:) in the theme style.css.');
 		}
 		if (!wpVersionCompat) {
-			console.log('Could not find WP compat version (Tested up to:) in the theme style.css.');
+			console.log('Could not find WP compat version (Requires at least:) in the theme style.css.');
 		}
 		console.log('Please build the .zip file for the theme manually.', themeSlug);
 		open('https://mc.a8c.com/themes/downloads/');
@@ -519,10 +587,10 @@ async function checkForDeployability() {
 }
 
 /*
- Land the changes from the given diff ID.  This is the "production merge".
+ Land the changes from the given PR ID.  This is the "production merge".
 */
-async function landChanges(diffId) {
-	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; /usr/local/bin/arc patch ${diffId}; /usr/local/bin/arc land; exit;"`, true);
+async function landChanges(prId) {
+	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder} && gh pr merge ${prId} --squash; exit;"`, true);
 }
 
 async function getChangedThemes(hash) {
@@ -661,7 +729,9 @@ async function versionBumpThemes() {
 	//version bump the root project if there were changes to any of the themes
 	const rootHasVersionBump = await checkProjectForVersionBump(hash);
 
-	if (versionBumpCount > 0 && !rootHasVersionBump) {
+	if (versionBumpCount === 0) {
+		console.log('No changes detected; Root package version bump not required');
+	} else if (!rootHasVersionBump) {
 		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
 		changesWereMade = true;
 	}
@@ -676,12 +746,13 @@ export function getThemeMetadata(styleCss, attribute, trimWPCom = true) {
 	switch (attribute) {
 		case 'Version':
 			const version = styleCss
-				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
-				.trim();
+				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
+				?.trim();
 			return trimWPCom ? version.replace('-wpcom', '') : version;
 		case 'Requires at least':
 			return styleCss
-				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
+				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
+				?.trim();
 	}
 }
 
@@ -992,11 +1063,11 @@ async function syncCoreTheme(theme, sinceRevision) {
 
 
 /*
- Build the Phabricator commit message.
+ Build the GitHub commit message.
  This message contains the logs from all of the commits since the given hash.
- Used by create*PhabricatorDiff
+ Used by create*GithubPR
 */
-async function buildPhabricatorCommitMessageSince(hash) {
+async function buildGithubCommitMessageSince(hash) {
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await getCommitLogs(hash);
@@ -1006,21 +1077,17 @@ Summary:
 ${logs}
 
 Test Plan: Execute Smoke Test
-
-Reviewers:
-
-Subscribers:
 `;
 }
 
 /*
- Create a Phabricator diff with the given message based on the contents currently in the sandbox.
- Open the phabricator diff in your browser.
- Provide the URL of the phabricator diff.
+ Create a GitHub pull request with the given message based on the contents currently in the sandbox.
+ Open the GitHub pull request in your browser.
+ Provide the URL of the GitHub pull request.
 */
-async function createPhabricatorDiff(commitMessage) {
+async function createGithubPR(commitMessage) {
 
-	console.log('creating Phabricator Diff');
+	console.log('Creating GitHub Pull Request');
 
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
@@ -1028,37 +1095,36 @@ async function createPhabricatorDiff(commitMessage) {
 		git checkout -b deploy
 		git add --all
 		git commit -m "${commitMessage}"
-		arc diff --create --verbatim
+		git push origin deploy
+		gh pr create --fill --head deploy
 	`, true);
 
-	let phabricatorUrl = getPhabricatorUrlFromResponse(result);
+	let githubUrl = getGithubUrlFromResponse(result);
 
-	console.log('Diff Created at: ', phabricatorUrl);
+	console.log('PR Created at: ', githubUrl);
 
-	if (phabricatorUrl) {
-		open(phabricatorUrl);
+	if (githubUrl) {
+		open(githubUrl);
 	}
 
-	return phabricatorUrl;
+	return githubUrl;
 }
 
 /*
- Utility to pull the Phabricator URL from the diff creation command.
- Used by createPhabricatorDiff
+ Utility to pull the GitHub URL from the PR creation command.
+ Used by createGithubPR
 */
-function getPhabricatorUrlFromResponse(response) {
+function getGithubUrlFromResponse(response) {
 	return response
 		?.split('\n')
-		?.find(item => {
-			return item.includes('Revision URI: ');
-		})
-		?.split("Revision URI: ")[1];
+		?.filter(item => item.includes('http')) // filter out lines that include 'http'
+		?.pop(); // get the last URL
 }
 
 /*
  Create a git tag at the current hash.
  In the description include the commit logs since the given hash.
- Include the (cleansed) Phabricator link.
+ Include the (cleansed) GitHub PR link.
 */
 async function tagDeployment(options = {}) {
 
@@ -1066,14 +1132,14 @@ async function tagDeployment(options = {}) {
 
 	let hash = options.hash || await getLastDeployedHash();
 
-	let workInTheOpenPhabricatorUrl = '';
-	if (options.diffId) {
-		workInTheOpenPhabricatorUrl = `Phabricator: ${options.diffId}-code`;
+	let workInTheOpenGithubUrl = '';
+	if (options.prId) {
+		workInTheOpenGithubUrl = `GitHub: ${options.prId}`;
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await getCommitLogs(hash);
 	let tag = `v${projectVersion}`;
-	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenPhabricatorUrl}`;
+	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenGithubUrl}`;
 
 	await executeCommand(`
 		git tag -a ${tag} -m "${message}"
@@ -1339,7 +1405,474 @@ async function escapePatterns() {
 	}
 }
 
+/**
+ * Validates theme files against their respective JSON schemas.
+ *
+ * @param {string} themes List of theme directories to validate
+ * @param {Object} options Options for the validation
+ * @param {string} options.format Output format (table, json, dir)
+ * @param {string} options.color Colorize output (auto, always, never)
+ * @param {number} options.tableWidth Width of the table output
+ */
+async function validateThemes( themes, { format, color, tableWidth } ) {
+	util.inspect.styles.name = 'whiteBright';
+	switch ( color ) {
+		case 'always':
+			chalk.level = 1;
+			break;
+		case 'never':
+			chalk.level = 0;
+			break;
+	}
+	const isColorized = chalk.level > 0;
+
+	const chalkStr = new Chalk( {
+		level: ! format || format === 'table' ? 1 : 0,
+	} );
+
+	function readJson( file ) {
+		return fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
+	}
+
+	async function loadSchema( uri ) {
+		if ( ! uri ) {
+			// prettier-ignore
+			throw {
+				url: uri,
+				message: `Missing $schema URI: ${ chalkStr.whiteBright( uri ) }`,
+			};
+		}
+
+		let schema;
+		if ( URL.canParse( uri ) ) {
+			const url = new URL( uri );
+			switch ( url.protocol ) {
+				case 'http:':
+				case 'https:':
+					{
+						const res = await fetch( url );
+						if ( ! res.ok ) {
+							throw {
+								type: res.type,
+								url: res.url,
+								redirected: res.redirected,
+								status: res.status,
+								ok: res.ok,
+								statusText: res.statusText,
+								headers: res.headers,
+								message: await res.text(),
+							};
+						}
+						schema = await res.json();
+					}
+					break;
+				case 'file:': {
+					schema = readJson(
+						path.resolve( dirname, url.href.slice( 7 ) )
+					);
+					break;
+				}
+				default:
+					// prettier-ignore
+					throw {
+						url: uri,
+						message: `Unsupported ${ chalkStr.whiteBright( '$schema' ) } protocol: ${ chalkStr.whiteBright( url.protocol + '//' ) }`,
+					};
+			}
+		} else {
+			schema = await readJson( path.resolve( dirname, uri ) );
+		}
+
+		// Handle schemastore $ref for older schemas
+		if ( ! schema.$schema && typeof schema.$ref === 'string' ) {
+			return loadSchema( schema.$ref );
+		}
+
+		return schema;
+	}
+
+	const ajvOptions = {
+		strict: false,
+		allErrors: true,
+		loadSchema,
+	};
+	const ajv = {
+		'http://json-schema.org/draft-07/schema#': new Ajv( ajvOptions ),
+		'http://json-schema.org/draft-04/schema#': new AjvDraft04( ajvOptions ),
+	};
+
+	const progress = startProgress( themes.length );
+
+	let problems = [];
+	for ( const themeSlug of themes ) {
+		const styleCssPath = `${ themeSlug }/style.css`;
+
+		if ( ! fs.existsSync( themeSlug ) ) {
+			problems.push(
+				createProblem( {
+					type: 'error',
+					theme: themeSlug,
+					file: chalkStr.gray( 'undefined' ),
+					data: { message: `the theme does not exist` },
+				} )
+			);
+			progress.increment();
+			continue;
+		}
+
+		if ( ! fs.existsSync( styleCssPath ) ) {
+			problems.push(
+				createProblem( {
+					type: 'error',
+					file: styleCssPath,
+					data: { message: `the theme is missing a style.css file` },
+				} )
+			);
+			progress.increment();
+			continue;
+		}
+
+		const styleCss = await fs.promises.readFile( styleCssPath, 'utf-8' );
+		const themeRequires = getThemeMetadata( styleCss, 'Requires at least' );
+		const wpVersion = themeRequires
+			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
+			: undefined;
+		const isSupportedWpVersion = wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' )
+
+		if ( ! wpVersion ) {
+			problems.push(
+				createProblem( {
+					type: 'error',
+					file: styleCssPath,
+					data: {
+						// prettier-ignore
+						message: `missing ${ chalkStr.green( "'Requires at least'" ) } header metadata`,
+					},
+				} )
+			);
+		}
+
+		if ( ! isSupportedWpVersion ) {
+			problems.push(
+				createProblem( {
+					type: 'warning',
+					file: styleCssPath,
+					// prettier-ignore
+					data: {
+						actual: chalkStr.yellow( wpVersion ),
+						expected: `${ chalkStr.yellow( '5.9' ) } or greater`,
+						message: `the ${ chalkStr.green( "'Requires at least'" ) } version does not support theme.json`,
+					},
+				} )
+			);
+		}
+
+		const validations = await Promise.all( [
+			glob( `${ themeSlug }/styles/*.json` ).then( ( paths ) => ( {
+				schemaType: 'theme',
+				paths: [ `${ themeSlug }/theme.json`, ...paths ],
+			} ) ),
+			glob( `${ themeSlug }/assets/fonts/*.json` ).then( ( paths ) => ( {
+				schemaType: 'font-collection',
+				paths,
+			} ) ),
+		] );
+
+		for ( const { schemaType, paths } of validations ) {
+			for ( const file of paths ) {
+				try {
+					const data = await readJson( file );
+					const schemaUri = isSupportedWpVersion
+						? `https://schemas.wp.org/wp/${ wpVersion }/${ schemaType }.json`
+						: data.$schema;
+
+					if ( data.$schema !== schemaUri ) {
+						problems.push(
+							createProblem( {
+								type: 'warning',
+								file,
+								// prettier-ignore
+								data: {
+									actual: data.$schema,
+									expected: schemaUri,
+									message: `the ${ chalkStr.whiteBright( '$schema' ) } version does not match style.css ${ chalkStr.green( "'Requires at least'" ) } version`,
+								},
+							} )
+						);
+					}
+
+					const schema = await loadSchema( schemaUri );
+					const validate =
+						await ajv[ schema.$schema ].compileAsync( schema );
+					if ( ! validate( data ) ) {
+						problems.push(
+							createProblem( {
+								type: 'warning',
+								file,
+								data: validate.errors,
+								metadata: { schema: schemaUri },
+							} )
+						);
+					}
+				} catch ( error ) {
+					problems.push(
+						createProblem( { type: 'error', file, data: error } )
+					);
+				}
+			}
+		}
+
+		progress.increment();
+	}
+
+	if ( problems.length ) {
+		let output = '';
+		switch ( format ) {
+			case 'json':
+				output = JSON.stringify( problems );
+				break;
+			case 'dir':
+				output = util.inspect( problems, {
+					depth: null,
+					maxArrayLength: null,
+					colors: isColorized,
+				} );
+				break;
+			case 'table':
+			default: {
+				output = problemsToTable( problems, { tableWidth } );
+			}
+		}
+		await new Promise( ( resolve, reject ) =>
+			process.stdout.write( output, ( error ) =>
+				error ? reject( error ) : resolve()
+			)
+		);
+	}
+
+	const hasError = problems.some( ( { type } ) => type === 'error' );
+	if ( hasError ) {
+		if ( process.stdout.isTTY && process.stderr.isTTY ) {
+			console.error( chalk.red( '\n\nValidation failed.' ) );
+		}
+		process.exit( 1 );
+	}
+
+	if ( process.stdout.isTTY ) {
+		if ( problems.length ) {
+			console.log( chalk.yellow( '\n\nValidation passed with warnings.' ) );
+		} else {
+			console.log( chalk.green( '\n\nValidation passed.' ) );
+		}
+	}
+}
+
+/**
+ * @typedef {Object} Problem
+ * @prop {'warning'|'error'} type Type of problem
+ * @prop {string} theme Name of the theme
+ * @prop {string} file File path, relative to the theme, where the problem exists
+ * @prop {Object} metadata Additional metadata to include in logging
+ * @prop {Object[]} data Array of validation problems
+ */
+
+/**
+ * Creates a problem object.
+ * @param {Object} options Options for creating a problem
+ * @param {'warning'|'error'} options.type Type of problem
+ * @param {string?} options.theme Name of the theme
+ * @param {string} options.file File path where the problem exists
+ * @prop {Object} metadata Additional metadata to include in logging
+ * @prop {Object[]} data Array of validation problems
+ * @return {Problem} Problem object
+ */
+function createProblem( options ) {
+	const {
+		type,
+		metadata,
+		data: problemData,
+		theme: themeOverride,
+		file: themeFile,
+	} = options;
+	const separatorIndex = themeFile.indexOf( '/' );
+	const theme = themeOverride
+		? themeOverride.charAt( 0 ).toUpperCase() + themeOverride.slice( 1 )
+		: themeFile.charAt( 0 ).toUpperCase() + themeFile.slice( 1, separatorIndex );
+	const file = themeFile.slice( separatorIndex + 1 );
+	const data = Array.isArray( problemData ) ? problemData : [ problemData ];
+	return { type, theme, file, metadata, data };
+}
+
+/**
+ * Similar to Object.entries, but includes non-enumerable properties and
+ * traverses the prototype chain.
+ *
+ * @param {Object} obj Any object
+ * @return {Array<[string, any]>} An array of key-value pairs
+ */
+function objectOwnPropertiesEntries( obj ) {
+	const visited = new Set();
+	const propertyNames = new Set();
+
+	let currentObj = obj;
+	while ( currentObj !== null ) {
+		if ( visited.has( currentObj ) ) {
+			break;
+		}
+		visited.add( currentObj );
+
+		for ( const name of Object.getOwnPropertyNames( currentObj ) ) {
+			propertyNames.add( name );
+		}
+
+		currentObj = Object.getPrototypeOf( currentObj );
+	}
+
+	return [ ...propertyNames ].map( ( key ) => [ key, obj[ key ] ] );
+}
+
+/**
+ * Converts an object into a borderless table format.
+ *
+ * Example:
+ *   objectToTable( {
+ *     keyOne: 'value1',
+ *     keyTwo: 'value2',
+ *     keyThree: 3,
+ *     fn: () => {},
+ *     obj: {},
+ *   } )
+ *   // Returns:
+ *   // 'key one   : value1\n' +
+ *   // 'key two   : value2\n' +
+ *   // 'key three : 3'
+ *
+ * @param {Object} obj Object to convert into a table
+ * @param {Object} [extraOptions] Extra options for the table
+ *
+ * @return {string} Table string
+ */
+function objectToTable( obj = {}, extraOptions ) {
+	const data = objectOwnPropertiesEntries( obj )
+		.filter(
+			( [ key, value ] ) =>
+				typeof value !== 'function' && ! key.startsWith( '_' )
+		)
+		.map( ( [ key, value ] ) => [
+			key
+				.split( /(?=[A-Z0-9])/g )
+				.map( ( part, i ) =>
+					i === 0
+						? part.charAt( 0 ).toUpperCase() + part.slice( 1 )
+						: part.charAt( 0 ).toLowerCase() + part.slice( 1 )
+				)
+				.join( ' ' ),
+			typeof value === 'object'
+				? util.inspect( value, { colors: chalk.level > 0 } )
+				: value,
+		] );
+
+	const options = {
+		columns: [ { paddingLeft: 0 }, { paddingRight: 0 } ],
+		border: getBorderCharacters( 'void' ), // No border, modified below.
+		drawHorizontalLine: () => false,
+	};
+	options.border.bodyJoin = ':';
+
+	// Hack for alignment with other tables.
+	if ( extraOptions?.columns?.[ 0 ]?.minWidth ) {
+		options.columns[ 0 ].width = Math.max(
+			extraOptions.columns[ 0 ].minWidth,
+			...data.map( ( [ key ] ) => key.length )
+		);
+	}
+
+	return table( data, options ).slice( 0, -1 ); // Remove trailing newline.
+}
+
+/**
+ * Generates a table in the following format.
+ *
+ * ╔═══════════════════════════════════════════════════╤═══════════════════════╗
+ * ║ WARNING                                           │ Warning key 0 : value ║
+ * ║ Theme : Example                                   │ Warning key 1 : value ║
+ * ║ File  : style.css                                 │                       ║
+ * ╟───────────────────────────────────────────────────┼───────────────────────╢
+ * ║ ERROR                                             │ Error 0 key 0 : value ║
+ * ║ Theme  : Example                                  │ Error 0 key 1 : value ║
+ * ║ File   : theme.json                               │ Error 0 key 2 : value ║
+ * ║ Schema : https://schemas.wp.org/wp/X.Y/theme.json ├───────────────────────╢
+ * ║                                                   │ Error 1 key 0 : value ║
+ * ║                                                   │ Error 1 key 1 : value ║
+ * ║                                                   │ Error 1 key 2 : value ║
+ * ╚═══════════════════════════════════════════════════╧═══════════════════════╝
+ *
+ * It has a very basic dynamic column width calculation where the first column
+ * expands to the content and the second column uses the remaining width of the
+ * terminal. Each column has a minimum width of 20 characters.
+ *
+ * @param {Problem[]} problems List of problems to format
+ *
+ * @return {string} Table string
+ */
+function problemsToTable( problems, options ) {
+	const tableWidth = options.tableWidth || process.stdout.columns || 120;
+	const paddingAndBorderWidth = '║  │  ║'.length;
+	const columnMinWidth = 20;
+
+	const userConfig = {
+		columns: [
+			{ width: columnMinWidth },
+			{ width: tableWidth - columnMinWidth - paddingAndBorderWidth },
+		],
+		spanningCells: [],
+	};
+	const tableData = [];
+
+	for ( const { type, theme, file, data, metadata } of problems ) {
+		const metadataTable = metadata ? objectToTable( metadata ) : '';
+		const titleTable = objectToTable(
+			{ theme, file },
+			{ columns: [ { minWidth: metadataTable.indexOf( ':' ) - 1 } ] }
+		);
+
+		const rows = data.map( ( m ) => [ '', objectToTable( m ) ] );
+		rows[ 0 ][ 0 ] = [
+			chalk[ type === 'warning' ? 'yellow' : 'red' ].bold(
+				type.toUpperCase()
+			),
+			chalk.whiteBright( titleTable ),
+			metadataTable,
+		]
+			.filter( Boolean )
+			.join( '\n' );
+
+		tableData.push( ...rows );
+
+		userConfig.spanningCells.push( {
+			row: tableData.length - rows.length,
+			col: 0,
+			rowSpan: rows.length,
+		} );
+
+		userConfig.columns[ 0 ].width = Math.max(
+			userConfig.columns[ 0 ].width,
+			...rows[ 0 ][ 0 ].split( '\n' ).map( ( s ) => s.length )
+		);
+		userConfig.columns[ 1 ].width = Math.max(
+			columnMinWidth,
+			tableWidth - userConfig.columns[ 0 ].width - paddingAndBorderWidth
+		);
+	}
+
+	return table( tableData, userConfig ).slice( 0, -1 ); // Remove trailing newline.
+}
+
 function startProgress(length) {
+	if (!process.stdout.isTTY) {
+		return { increment() {} };
+	}
+
 	let current = 0;
 	function render() {
 		const [progress, percentage] = progressbar.filledBar(length, current);
@@ -1350,6 +1883,7 @@ function startProgress(length) {
 	return {
 		increment() {
 			current++;
+			process.stdout.moveCursor?.(0, -3);
 			render();
 		}
 	};

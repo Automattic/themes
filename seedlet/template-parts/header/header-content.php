@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 $has_primary_nav = has_nav_menu( 'primary' );
 $header_classes  = 'site-header header_classes';
