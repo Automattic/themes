@@ -33,9 +33,7 @@ declare( strict_types = 1 );
 	<div class="wp-block-column" style="flex-basis:65.16%">
 		<!-- wp:embed {"url":"https://videopress.com/v/Ozp4y2Qm","type":"video","providerNameSlug":"videopress","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
 		<figure class="wp-block-embed is-type-video is-provider-videopress wp-block-embed-videopress wp-embed-aspect-16-9 wp-has-aspect-ratio">
-			<div class="wp-block-embed__wrapper">
-				https://videopress.com/v/Ozp4y2Qm
-			</div>
+			<div class="wp-block-embed__wrapper"><?php echo esc_html__( 'https://videopress.com/v/Ozp4y2Qm', 'margarethe' ); ?></div>
 		</figure>
 		<!-- /wp:embed -->
 	</div>

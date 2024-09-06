@@ -1,11 +1,12 @@
 <?php
 /**
- * Title: header-copy
- * Slug: margarethe/header-copy
- * Categories: hidden
- * Inserter: no
+ * Title: header-front-page
+ * Slug: margarethe/header-front-page
+ * Categories: header
+ * Block Types: core/template-part/header
  */
 ?>
+
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/margarethe-img-1-scaled.jpg","id":24,"dimRatio":50,"minHeight":100,"minHeightUnit":"vh","customGradient":"linear-gradient(180deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 50%,rgb(0,0,0) 96%)","style":{"spacing":{"padding":{"right":"var:preset|spacing|60","left":"var:preset|spacing|60","top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover" style="padding-top:0;padding-right:var(--wp--preset--spacing--60);padding-bottom:0;padding-left:var(--wp--preset--spacing--60);min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim wp-block-cover__gradient-background has-background-gradient" style="background:linear-gradient(180deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 50%,rgb(0,0,0) 96%)"></span><img class="wp-block-cover__image-background wp-image-24" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/margarethe-img-1-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignfull" style="min-height:100vh"><!-- wp:group {"align":"full","style":{"border":{"top":{"width":"0px","style":"none"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"constrained"}} -->
@@ -20,7 +21,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Work with me</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Work with me', 'margarethe' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -35,13 +36,13 @@
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":""} -->
 <div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.04em"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--30);letter-spacing:0.04em;text-transform:uppercase">What I do</p>
+<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--30);letter-spacing:0.04em;text-transform:uppercase"><?php echo esc_html__( 'What I do', 'margarethe' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"65.16%"} -->
 <div class="wp-block-column" style="flex-basis:65.16%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1.1"}},"fontSize":"xxxx-large"} -->
-<h2 class="wp-block-heading has-xxxx-large-font-size" style="line-height:1.1">I’m an interior designer based in Antwerp.</h2>
+<h2 class="wp-block-heading has-xxxx-large-font-size" style="line-height:1.1"><?php echo esc_html__( 'I’m an interior designer based in Antwerp.', 'margarethe' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

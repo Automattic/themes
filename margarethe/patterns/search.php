@@ -7,4 +7,4 @@
 declare( strict_types = 1 );
 ?>
 
-<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"<?php echo esc_html_x( 'Search...', 'This is a placeholder text in a search field', 'margarethe' ); ?>","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+<!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'margarethe' ); ?>","showLabel":false,"placeholder":"<?php echo esc_html_x( 'Search...', 'This is a placeholder text in a search field', 'margarethe' ); ?>","buttonText":"<?php echo esc_html__( 'Search', 'margarethe' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true} /-->
