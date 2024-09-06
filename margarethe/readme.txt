@@ -35,70 +35,75 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-This theme bundles the following third-party resources:
-
-Elegant & cozy home interior. Original public domain image from Wikimedia Commons
-https://www.rawpixel.com/image/3289674/free-photo-image-room-hotel-room-cc0-chair
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-A living room having a brick wall, glass windows and containing a white sofa with throw pillows in Canada.. Original public domain image from Wikimedia Commons
-https://www.rawpixel.com/image/3283247/free-photo-image-interior-cafe-home-design
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-Dinner table. Original public domain image from Wikimedia Commons
-https://www.rawpixel.com/image/3343093/free-photo-image-living-room-table-restaurant-interior-design
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-1022 SW Stark St, Portland, United States. Original public domain image from Wikimedia Commons
-https://www.rawpixel.com/image/3295160/free-photo-image-cabinet-cc0-closet
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-Free public domain CC0 photo.
-https://www.rawpixel.com/image/5954951/free-public-domain-cc0-photo
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-Free public domain CC0 photo.
-https://www.rawpixel.com/image/5941039/free-public-domain-cc0-photo
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-Coffee table and a pillow chair next to a wall with wooden panelling. Original public domain image from Wikimedia Commons
-https://www.rawpixel.com/image/3303438/free-photo-image-wood-paneling-door-panel
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-Business People Free Stock Image
-https://stocksnap.io/photo/business-people-4UMSQADUEU
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-Smiling Woman Free Stock Image
-https://stocksnap.io/photo/smiling-woman-GS765ITKWA
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
-Wointech (microsoft) - 242
-https://nappy.co/photo/2169
-CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-
 
 Included in theme screenshot and in the front page template.
+
+Credit Original public domain image from Wikimedia Commons
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3289674/free-photo-image-room-hotel-room-cc0-chair
+
+
+Images included in templates and patterns:
+
+Credit Original public domain image from Wikimedia Commons
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3283247/free-photo-image-interior-cafe-home-design
+
+Dinner table. Original public domain image from Wikimedia Commons
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3343093/free-photo-image-living-room-table-restaurant-interior-design
+
+Credit Original public domain image from Wikimedia Commons
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3295160/free-photo-image-cabinet-cc0-closet
+
+Credit Free public domain CC0 photo.
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/5954951/free-public-domain-cc0-photo
+
+Credit Free public domain CC0 photo.
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/5941039/free-public-domain-cc0-photo
+
+Credit Original public domain image from Wikimedia Commons
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3303438/free-photo-image-wood-paneling-door-panel
+
+Credit Direct Media
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/business-people-4UMSQADUEU
+
+Credit Candace McDaniel
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/smiling-woman-GS765ITKWA
+
+Credit Wointech (microsoft) - 242
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://nappy.co/photo/2169
+
+
+This theme bundles the following third-party fonts:
 
 Jost Font
 Copyright 2020 The Jost Project Authors (https://github.com/indestructible-type/Jost) 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
 License URL: http://scripts.sil.org/OFL 
+Source: https://fonts.google.com/specimen/Jost
 -- End of Jost Font credits --
 
 Lucette Font
 Copyright Rapha Bastide 2020 
-  
+License URL: https://scripts.sil.org/OFL
 Source: www.yannlinguinou.com
 -- End of Lucette Font credits --
 
@@ -106,6 +111,7 @@ Junicode Font
 Copyright (c) 1998-2009 by Peter S. Baker 
 This font is free software; you are free to use it as you like, modify it, and redistribute it under the terms of the GNU Public License. 
 License URL: http://www.gnu.org/licenses/gpl.txt 
+Source: https://github.com/psb1558/Junicode-font/tree/master
 -- End of Junicode Font credits --
 
 Source Code Pro Font
@@ -114,5 +120,3 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 License URL: http://scripts.sil.org/OFL 
 Source: http://www.adobe.com/type
 -- End of Source Code Pro Font credits --
-
-
