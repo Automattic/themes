@@ -1543,7 +1543,8 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		const isSupportedWpVersion = wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' )
 
 		const validators = {
-			isValidVersion( attr, value, validLengths = [ 3 ] ) {
+			validateVersion( attr, value, validLengths = [ 3 ] ) {
+				const problems = [];
 				const adjustedValue =
 					value && `${ value }.0`.split( '.', 3 ).join( '.' );
 				if (
@@ -1551,7 +1552,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 					! validLengths.includes( value.split( '.' ).length ) ||
 					! semver.valid( adjustedValue )
 				) {
-					return {
+					problems.push( {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
@@ -1561,10 +1562,12 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 								.join( '.' )
 						) }`,
 						message: `${ value } is not a valid version`,
-					};
+					} );
 				}
+				return { isValid: ! problems.length, problems };
 			},
-			isGreaterOrEqual( attr, value, version ) {
+			validateVersionGte( attr, value, version ) {
+				const problems = [];
 				const adjustedValue =
 					value && `${ value }.0`.split( '.', 3 ).join( '.' );
 				const adjustedVersion =
@@ -1576,78 +1579,91 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 					! semver.valid( adjustedVersion ) ||
 					! semver.gte( adjustedValue, adjustedVersion )
 				) {
-					return {
+					problems.push( {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
 						expected: `${ chalkStr.yellow( version ) } or greater`,
 						message: `provide a valid version value`,
-					};
+					} );
 				}
+				return { isValid: ! problems.length, problems };
 			},
-			isUri: ( attr, value ) => {
+			validateUri: ( attr, value ) => {
+				const problems = [];
 				if ( value && ! URL.canParse( value ) ) {
-					return {
+					problems.push( {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
 						expected: `a valid URI`,
 						message: `${ value } is not a valid URI`,
-					};
+					} );
 				}
+				return { isValid: ! problems.length, problems };
 			},
-			isValidSlug: ( attr, value ) => {
+			validateThemeSlug: ( attr, value ) => {
+				const problems = [];
 				if ( value && ! /^[a-z0-9-]+$/.test( value ) ) {
-					return {
+					problems.push( {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
 						expected: `a valid value`,
 						message: `${ value } is not a valid value`,
-					};
+					} );
 				}
+				return { isValid: ! problems.length, problems };
 			},
 			// a8c validations
-			isA8CThemeUri: ( attr, value ) => {
+			validateA8CThemeUri: ( attr, value ) => {
+				const problems = [];
 				if (
 					value &&
 					! /^https:\/\/wordpress\.com\/themes\/[a-z0-9-]+\/?$/.test(
 						value
 					)
 				) {
-					return {
+					problems.push( {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
-						expected: `https://wordpress.com/themes/${ chalkStr.yellow( '{slug}' ) }/`,
+						expected: `https://wordpress.com/themes/${ chalkStr.yellow(
+							'{slug}'
+						) }/`,
 						message: `${ value } is not a valid WordPress.com theme URI`,
-					};
+					} );
 				}
+				return { isValid: ! problems.length, problems };
 			},
-			isA8CAuthor: ( attr, value ) => {
+			validateA8CAuthor: ( attr, value ) => {
+				const problems = [];
 				if ( value && ! /^Automattic$/.test( value ) ) {
-					return {
+					problems.push( {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
 						expected: `Automattic`,
 						message: `${ value } is not a valid author`,
-					};
+					} );
 				}
+				return { isValid: ! problems.length, problems };
 			},
-			isA8CAuthorUri: ( attr, value ) => {
+			validateA8CAuthorUri: ( attr, value ) => {
+				const problems = [];
 				if (
 					value &&
 					! /^https:\/\/automattic\.com\/$/.test( value )
 				) {
-					return {
+					problems.push( {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
 						expected: `https://automattic.com/`,
 						message: `${ value } is not a valid Automattic author URI`,
-					};
+					} );
 				}
+				return { isValid: ! problems.length, problems };
 			},
 		};
 
@@ -1659,11 +1675,11 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				attribute: 'Theme URI',
 				validators: [
 					{
-						validate: validators.isUri,
+						validate: validators.validateUri,
 						type: 'warning',
 					},
 					{
-						validate: validators.isA8CThemeUri,
+						validate: validators.validateA8CThemeUri,
 						type: 'warning',
 					},
 				],
@@ -1673,7 +1689,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				required: true,
 				validators: [
 					{
-						validate: validators.isA8CAuthor,
+						validate: validators.validateA8CAuthor,
 						type: 'warning',
 					},
 				],
@@ -1682,11 +1698,11 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				attribute: 'Author URI',
 				validators: [
 					{
-						validate: validators.isUri,
+						validate: validators.validateUri,
 						type: 'warning',
 					},
 					{
-						validate: validators.isA8CAuthorUri,
+						validate: validators.validateA8CAuthorUri,
 						type: 'warning',
 					},
 				],
@@ -1698,7 +1714,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				validators: [
 					{
 						validate: ( attr, value ) =>
-							validators.isValidVersion( attr, value, [ 3 ] ),
+							validators.validateVersion( attr, value, [ 3 ] ),
 						type: 'error',
 					},
 				],
@@ -1709,12 +1725,12 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				validators: [
 					{
 						validate: ( attr, value ) =>
-							validators.isValidVersion( attr, value, [ 2 ] ),
+							validators.validateVersion( attr, value, [ 2 ] ),
 						type: 'error',
 					},
 					{
 						validate: ( attr, value ) =>
-							validators.isGreaterOrEqual(
+							validators.validateVersionGte(
 								attr,
 								`${ value }.0`,
 								'5.9.0'
@@ -1729,12 +1745,12 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				validators: [
 					{
 						validate: ( attr, value ) =>
-							validators.isValidVersion( attr, value, [ 2, 3 ] ),
+							validators.validateVersion( attr, value, [ 2, 3 ] ),
 						type: 'error',
 					},
 					{
 						validate: ( attr, value ) =>
-							validators.isGreaterOrEqual(
+							validators.validateVersionGte(
 								attr,
 								value,
 								themeRequires
@@ -1749,7 +1765,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				validators: [
 					{
 						validate: ( attr, value ) =>
-							validators.isValidVersion( attr, value, [ 2 ] ),
+							validators.validateVersion( attr, value, [ 2 ] ),
 						type: 'error',
 					},
 				],
@@ -1760,7 +1776,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				required: true,
 				validators: [
 					{
-						validate: validators.isUri,
+						validate: validators.validateUri,
 						type: 'warning',
 					},
 				],
@@ -1770,7 +1786,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				required: true,
 				validators: [
 					{
-						validate: validators.isValidSlug,
+						validate: validators.validateThemeSlug,
 						type: 'error',
 					},
 				],
@@ -1793,14 +1809,19 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				);
 			} else if ( validators ) {
 				validators.forEach( ( { validate, type } ) => {
-					const problem = validate( attribute, attributeValue );
-					if ( problem ) {
-						problems.push(
-							createProblem( {
-								type: type,
-								file: styleCssPath,
-								data: problem,
-							} )
+					const { isValid, problems: validationProblems } = validate(
+						attribute,
+						attributeValue
+					);
+					if ( ! isValid ) {
+						problems = problems.concat(
+							validationProblems.map( ( problem ) =>
+								createProblem( {
+									type: type,
+									file: styleCssPath,
+									data: problem,
+								} )
+							)
 						);
 					}
 				} );
