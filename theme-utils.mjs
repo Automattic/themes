@@ -1507,6 +1507,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 	let hasError = false;
 	for ( const themeSlug of themes ) {
 		const styleCssPath = `${ themeSlug }/style.css`;
+		const themeJsonPath = `${ themeSlug }/theme.json`;
 
 		if ( ! fs.existsSync( themeSlug ) ) {
 			hasError = true;
@@ -1536,11 +1537,27 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		}
 
 		const styleCss = await fs.promises.readFile( styleCssPath, 'utf-8' );
-		const themeRequires = getThemeMetadata( styleCss, 'Requires at least' );
+		const themeRequires = getThemeMetadata( styleCss, 'Requires at least', true );
 		const wpVersion = themeRequires
 			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
 			: undefined;
-		const isSupportedWpVersion = wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' )
+		const isSupportedWpVersion = wpVersion && semver.valid( `${ wpVersion }.0` ) && semver.gte( `${ wpVersion }.0`, '5.9.0' )
+		const hasThemeJson = fs.existsSync( themeJsonPath );
+
+		if ( hasThemeJson && ! isSupportedWpVersion ) {
+			problems.push(
+				createProblem( {
+					type: 'warning',
+					file: styleCssPath,
+					// prettier-ignore
+					data: {
+						actual: chalkStr.yellow( wpVersion ),
+						expected: `${ chalkStr.yellow( '5.9' ) } or greater`,
+						message: `the ${ chalkStr.green( "'Requires at least'" ) } version does not support theme.json`,
+					},
+				} )
+			);
+		}
 
 		const validators = {
 			validateVersion( attr, value, validLengths = [ 3 ] ) {
@@ -1726,15 +1743,6 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 					{
 						validate: ( attr, value ) =>
 							validators.validateVersion( attr, value, [ 2 ] ),
-						type: 'error',
-					},
-					{
-						validate: ( attr, value ) =>
-							validators.validateVersionGte(
-								attr,
-								`${ value }.0`,
-								'5.9.0'
-							),
 						type: 'error',
 					},
 				],
