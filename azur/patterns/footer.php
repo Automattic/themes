@@ -18,9 +18,9 @@ declare( strict_types = 1 );
 	<!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"0.8rem","fontWeight":"500"}}} -->
 	<p class="has-text-align-left" style="font-size:0.8rem;font-weight:500"><?php
 		/* Translators: WordPress link. */
-		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'ici' ) ) . '" rel="nofollow">WordPress</a>';
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'azur' ) ) . '" rel="nofollow">WordPress</a>';
 		echo sprintf(
-			esc_html__( 'Azur Theme ● Designed with %1$s', 'ici' ),
+			esc_html__( 'Azur Theme ● Designed with %1$s', 'azur' ),
 			$wordpress_link
 		);
 	?></p>
