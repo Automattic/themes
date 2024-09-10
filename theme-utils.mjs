@@ -1541,10 +1541,10 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		const wpVersion = themeRequires
 			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
 			: undefined;
-		const isSupportedWpVersion = wpVersion && semver.valid( `${ wpVersion }.0` ) && semver.gte( `${ wpVersion }.0`, '5.9.0' )
+		const hasThemeJsonSupport = wpVersion && semver.valid( `${ wpVersion }.0` ) && semver.gte( `${ wpVersion }.0`, '5.9.0' )
 		const hasThemeJson = fs.existsSync( themeJsonPath );
 
-		if ( hasThemeJson && ! isSupportedWpVersion ) {
+		if ( hasThemeJson && ! hasThemeJsonSupport ) {
 			problems.push(
 				createProblem( {
 					type: 'warning',
@@ -1637,7 +1637,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				const problems = [];
 				if (
 					value &&
-					! /^https:\/\/wordpress\.com\/themes\/[a-z0-9-]+\/?$/.test(
+					! /^https:\/\/wordpress\.com\/themes?\/[a-z0-9-]+\/?$/.test(
 						value
 					)
 				) {
@@ -1645,7 +1645,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 						actual: `${ chalkStr.green(
 							attr
 						) }: ${ chalkStr.yellow( value ) }`,
-						expected: `https://wordpress.com/themes/${ chalkStr.yellow(
+						expected: `https://wordpress.com/theme/${ chalkStr.yellow(
 							'{slug}'
 						) }/`,
 						message: `${ value } is not a valid WordPress.com theme URI`,
@@ -1670,7 +1670,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				const problems = [];
 				if (
 					value &&
-					! /^https:\/\/automattic\.com\/$/.test( value )
+					! /^https:\/\/automattic\.com\/?$/.test( value )
 				) {
 					problems.push( {
 						actual: `${ chalkStr.green(
@@ -1851,7 +1851,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 			for ( const file of paths ) {
 				try {
 					const data = await readJson( file );
-					const schemaUri = isSupportedWpVersion
+					const schemaUri = hasThemeJsonSupport
 						? `https://schemas.wp.org/wp/${ wpVersion }/${ schemaType }.json`
 						: data.$schema;
 
