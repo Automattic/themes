@@ -12,6 +12,9 @@ Exegi monumentum aere perennius.
 
 == Changelog ==
 
+= 1.0.2 =
+* Perenne: Reduce the size of the screenshot (#8089)
+
 = 1.0.1 =
 * Lossless image optimization (#7671)
 

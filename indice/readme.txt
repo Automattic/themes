@@ -11,6 +11,9 @@ Indice is a tribute to the iconic indicehibit, an archetypal open source CMS tha
 
 == Changelog ==
 
+= 1.0.4 =
+* Indice: Fixe a wrong tag (#8088)
+
 = 1.0.3 =
 * Lossless image optimization (#7671)
 
