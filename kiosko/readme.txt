@@ -12,6 +12,9 @@ Kiosko is a simple store theme with product filters.
 
 == Changelog ==
 
+= 1.1 =
+* Kiosko: Add image credit (#8094)
+
 = 1.0 =
 * Initial release
 
