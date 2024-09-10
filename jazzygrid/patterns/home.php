@@ -42,8 +42,8 @@
 <div class="wp-block-column is-vertically-aligned-stretch has-primary-background-color has-background" style="flex-basis:25%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/img_trumpet-detail.png","dimRatio":0,"customOverlayColor":"#505050","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"%","contentPosition":"bottom left","align":"full","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"padding":{"top":"1.5rem","right":"3rem","bottom":"1.5rem","left":"1.5rem"},"blockGap":"0px"},"color":[]},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover alignfull has-custom-content-position is-position-bottom-left" style="margin-top:0px;margin-bottom:0px;padding-top:1.5rem;padding-right:3rem;padding-bottom:1.5rem;padding-left:1.5rem;min-height:100%"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#505050"></span><img class="wp-block-cover__image-background" alt="<?php esc_attr_e('', 'jazzygrid');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/img_trumpet-detail.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e('Message in Jazz', 'jazzygrid');?></h2>
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"className":"no-underline"} -->
+<h2 class="wp-block-heading no-underline"><?php esc_html_e('Message in Jazz', 'jazzygrid');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
@@ -57,11 +57,11 @@
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":{"top":"0px","left":"0px"},"padding":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"}}}} -->
 <div class="wp-block-columns alignwide" style="margin-top:0px;margin-bottom:0px;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:column {"verticalAlignment":"stretch","width":"75%","backgroundColor":"primary"} -->
-<div class="wp-block-column is-vertically-aligned-stretch has-primary-background-color has-background" style="flex-basis:75%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/cover_trumpeteer.png","dimRatio":0,"isUserOverlayColor":true,"className":"has-parallax is-repeated has-custom-content-position is-position-top-left","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-parallax is-repeated has-custom-content-position is-position-top-left"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background " alt="<?php esc_attr_e('', 'jazzygrid');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/cover_trumpeteer.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"3rem","padding":{"right":"10%"}},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"center"}} -->
+<div class="wp-block-column is-vertically-aligned-stretch has-primary-background-color has-background" style="flex-basis:75%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/img-cover_trumpeteer.png","dimRatio":0,"isUserOverlayColor":true,"className":"has-parallax is-repeated has-custom-content-position is-position-top-left","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover has-parallax is-repeated has-custom-content-position is-position-top-left"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background " alt="<?php esc_attr_e('', 'jazzygrid');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/img-cover_trumpeteer.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"3rem","padding":{"right":"10%"}},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="min-height:100%;padding-right:10%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><?php esc_html_e('Live —&nbsp;Message in Jazz', 'jazzygrid');?></h1>
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"level":1,"className":"no-underline"} -->
+<h1 class="wp-block-heading no-underline"><?php esc_html_e('Live —&nbsp;Message in Jazz', 'jazzygrid');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -91,8 +91,8 @@
 <!-- wp:column {"verticalAlignment":"stretch","width":"25%","backgroundColor":"secondary"} -->
 <div class="wp-block-column is-vertically-aligned-stretch has-secondary-background-color has-background" style="flex-basis:25%"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"4rem","right":"3rem","bottom":"4rem","left":"1.5rem"},"blockGap":"2.5rem"},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group" style="min-height:100%;margin-top:0rem;margin-bottom:0rem;padding-top:4rem;padding-right:3rem;padding-bottom:4rem;padding-left:1.5rem"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"},"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground","layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group has-foreground-color has-text-color has-link-color" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><?php esc_html_e('Jazzin’ Around Town', 'jazzygrid');?></h1>
+<div class="wp-block-group has-foreground-color has-text-color has-link-color" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"level":1,"className":"no-underline"} -->
+<h1 class="wp-block-heading no-underline"><?php esc_html_e('Jazzin’ Around Town', 'jazzygrid');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -113,8 +113,8 @@
 <div class="wp-block-columns alignwide" style="margin-top:0px;margin-bottom:0px;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:column {"verticalAlignment":"stretch","width":"50%","backgroundColor":"primary"} -->
 <div class="wp-block-column is-vertically-aligned-stretch has-primary-background-color has-background" style="flex-basis:50%"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"1.5rem","right":"3rem","bottom":"1.5rem","left":"1.5rem"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
 <div class="wp-block-group alignfull" style="min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:1.5rem;padding-right:3rem;padding-bottom:1.5rem;padding-left:1.5rem"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e('Monthly list of new jazz music', 'jazzygrid');?></h2>
+<div class="wp-block-group"><!-- wp:heading {"className":"no-underline"} -->
+<h2 class="wp-block-heading no-underline"><?php esc_html_e('Monthly list of new jazz music', 'jazzygrid');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -126,8 +126,8 @@
 
 <!-- wp:column {"verticalAlignment":"stretch","width":"25%","backgroundColor":"foreground"} -->
 <div class="wp-block-column is-vertically-aligned-stretch has-foreground-background-color has-background" style="flex-basis:25%"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"1.5rem","right":"3rem","bottom":"1.5rem","left":"1.5rem"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
-<div class="wp-block-group alignfull" style="min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:1.5rem;padding-right:3rem;padding-bottom:1.5rem;padding-left:1.5rem"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background"} -->
-<h2 class="wp-block-heading has-background-color has-text-color has-link-color"><?php esc_html_e('Newsletter', 'jazzygrid');?></h2>
+<div class="wp-block-group alignfull" style="min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:1.5rem;padding-right:3rem;padding-bottom:1.5rem;padding-left:1.5rem"><!-- wp:heading {"className":"no-underline","style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background"} -->
+<h2 class="wp-block-heading no-underline has-background-color has-text-color has-link-color"><?php esc_html_e('Newsletter', 'jazzygrid');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background"} -->
