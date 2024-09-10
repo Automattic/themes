@@ -12,7 +12,7 @@ Kiosko is a simple store theme with product filters.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Initial release
 
 == Recommended Plugins ==
