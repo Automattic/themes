@@ -13,7 +13,7 @@
 <h1 class="wp-block-heading has-contrast-color has-text-color has-link-color" style="line-height:0.8"><?php esc_html_e('Piccolo Teatro', 'massimo');?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:site-title {"className":"no-underline"} /--></div>
+<!-- wp:site-title {"level":0,"className":"no-underline"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:site-logo {"width":96,"shouldSyncIcon":false,"style":{"color":[]}} /--></div>

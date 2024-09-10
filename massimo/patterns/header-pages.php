@@ -14,7 +14,7 @@
 <h1 class="wp-block-heading has-large-font-size" style="letter-spacing:-0.05rem"><?php esc_html_e('Piccolo Teatro', 'massimo');?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:site-title {"className":"no-underline","style":{"typography":{"letterSpacing":"-0.05rem"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontSize":"large"} /--></div>
+<!-- wp:site-title {"level":0,"className":"no-underline","style":{"typography":{"letterSpacing":"-0.05rem"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontSize":"large"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 

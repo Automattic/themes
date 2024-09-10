@@ -14,9 +14,9 @@
 <main class="wp-block-group"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|70","padding":{"bottom":"var:preset|spacing|70"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:heading {"textAlign":"left","level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} -->
-<h1 class="wp-block-heading has-text-align-left has-contrast-color has-text-color has-link-color" id="oops-that-page-can-t-be-found"><?php esc_html_e('Oops!', 'massimo');?></h1>
-<!-- /wp:heading -->
+<div class="wp-block-group"><!-- wp:paragraph {"align":"left","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"typography":{"fontStyle":"normal","fontWeight":"600","letterSpacing":"-0.25rem","lineHeight":"0.9"}},"textColor":"contrast","fontSize":"xx-large"} -->
+<p class="has-text-align-left has-contrast-color has-text-color has-link-color has-xx-large-font-size" style="font-style:normal;font-weight:600;letter-spacing:-0.25rem;line-height:0.9"><?php esc_html_e('Oops!', 'massimo');?></p>
+<!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading"><?php esc_html_e('Nothing was found at the location.', 'massimo');?></h1>
