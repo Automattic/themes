@@ -7,7 +7,7 @@
  */
 ?>
 <!-- wp:group {"lock":{"move":false,"remove":false},"metadata":{"name":"Overlayed Header and Footer (Home)"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"className":"overlay","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"align":"full","className":"overlay","style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignfull overlay" style="min-height:100vh;padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:template-part {"slug":"header","area":"header"} /-->
 
 <!-- wp:spacer {"height":"0px","style":{"layout":{"flexSize":"100px","selfStretch":"fixed"}}} -->
@@ -18,8 +18,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Homepage Content"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:columns {"isStackedOnMobile":false,"style":{"spacing":{"padding":{"top":"0"},"margin":{"top":"0"}}}} -->
+<!-- wp:group {"tagName":"main","metadata":{"name":"Homepage Content"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+<main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:columns {"isStackedOnMobile":false,"style":{"spacing":{"padding":{"top":"0"},"margin":{"top":"0"}}}} -->
 <div class="wp-block-columns is-not-stacked-on-mobile" style="margin-top:0;padding-top:0"><!-- wp:column {"width":"30%","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:30%"></div>
 <!-- /wp:column -->
@@ -125,5 +125,5 @@
 <!-- wp:column {"verticalAlignment":"center","width":"40%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%"></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns --></div>
+<!-- /wp:columns --></main>
 <!-- /wp:group -->
