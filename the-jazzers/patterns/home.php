@@ -1,3 +1,11 @@
+<?php
+/**
+ * Title: home
+ * Slug: the-jazzers/home
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
 <!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"}}},"backgroundColor":"primary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-primary-background-color has-background" style="margin-top:0rem;margin-bottom:0rem"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"1.5rem","top":"1.5rem","right":"0rem","left":"0rem"},"blockGap":"0px"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group alignfull" style="padding-top:1.5rem;padding-right:0rem;padding-bottom:1.5rem;padding-left:0rem"><!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"backgroundColor":"primary","textColor":"background","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
@@ -9,7 +17,7 @@
 <!-- wp:group {"tagName":"main","align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group alignfull" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:query {"queryId":0,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
 <main class="wp-block-query alignfull"><!-- wp:post-template {"align":"full","style":{"spacing":{"blockGap":"0"}}} -->
-<!-- wp:cover {"useFeaturedImage":true,"hasParallax":true,"dimRatio":0,"isUserOverlayColor":true,"minHeight":95,"minHeightUnit":"vh","align":"full","style":{"color":{"duotone":"var:preset|duotone|duo-in-blue"},"border":{"width":"0px","style":"none"}},"layout":{"type":"constrained"}} -->
+<!-- wp:cover {"useFeaturedImage":true,"hasParallax":true,"dimRatio":0,"isUserOverlayColor":true,"minHeight":95,"minHeightUnit":"vh","align":"full","style":{"color":{"duotone":["#080808","#2976c6"]},"border":{"width":"0px","style":"none"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover alignfull has-parallax" style="border-style:none;border-width:0px;min-height:95vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem","margin":{"bottom":"10vh"}}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:10vh"><!-- wp:post-title {"level":1,"isLink":true,"style":{"elements":{"link":{"color":{"text":"#33f078"}}},"color":{"text":"#33f078"}}} /-->
 
@@ -25,7 +33,7 @@
 
 <!-- wp:query {"queryId":0,"query":{"perPage":"1","pages":0,"offset":"1","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
 <main class="wp-block-query alignfull"><!-- wp:post-template {"align":"full","style":{"spacing":{"blockGap":"0"}}} -->
-<!-- wp:cover {"useFeaturedImage":true,"hasParallax":true,"dimRatio":0,"customOverlayColor":"#5e5e5e","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"},"color":{"duotone":"var:preset|duotone|duo-in-orange"},"border":{"width":"0px","style":"none"}},"layout":{"type":"default"}} -->
+<!-- wp:cover {"useFeaturedImage":true,"hasParallax":true,"dimRatio":0,"customOverlayColor":"#5e5e5e","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"},"color":{"duotone":["#080808","#fe660e"]},"border":{"width":"0px","style":"none"}},"layout":{"type":"default"}} -->
 <div class="wp-block-cover alignfull has-parallax" style="border-style:none;border-width:0px;margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#5e5e5e"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem","margin":{"bottom":"10vh"}}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:10vh"><!-- wp:post-title {"level":1,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|custom-c7-c229"}}}},"textColor":"custom-c7-c229"} /-->
 
@@ -141,7 +149,7 @@
 
 <!-- wp:query-no-results -->
 <!-- wp:paragraph {"align":"center","placeholder":"Add text or blocks that will display when a query returns no results."} -->
-<p class="has-text-align-center">No posts here yet, sorry.</p>
+<p class="has-text-align-center"><?php esc_html_e('No posts here yet, sorry.', 'the-jazzers');?></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:group --></div>
