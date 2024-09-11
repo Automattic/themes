@@ -78,5 +78,7 @@ License: CC0
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://www.rawpixel.com/image/448663/free-photo-image-agriculture-eating-farm
 
-DM Sans from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-https://fonts.google.com/specimen/DM+Sans
+DM Sans from Google Fonts
+License: Open Font License 
+License URL: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Source: https://fonts.google.com/specimen/DM+Sans
