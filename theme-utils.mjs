@@ -1459,7 +1459,7 @@ async function escapePatterns( themeSlug ) {
 
 	if ( themeSlug ) {
 		// If a theme slug is provided, use fast-glob to find all PHP files in the specified theme's directory
-		patternFiles = await glob( `${ themeSlug }/**/*.php`, {
+		patternFiles = await glob( `${ themeSlug }/patterns/**/*.php`, {
 			ignore: [ 'node_modules/**', 'vendor/**' ], // Exclude node_modules and vendor directories
 		} );
 	} else {
