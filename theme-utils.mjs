@@ -1454,16 +1454,16 @@ export async function executeCommand( command, logResponse ) {
 	} );
 }
 
-async function escapePatterns( directory ) {
+async function escapePatterns( themeSlug ) {
 	let patternFiles;
 
-	if ( directory ) {
-		// If a directory is provided, use fast-glob to find all PHP files in the specified directory
-		patternFiles = await glob( `${ directory }/**/*.php`, {
+	if ( themeSlug ) {
+		// If a theme slug is provided, use fast-glob to find all PHP files in the specified theme's directory
+		patternFiles = await glob( `${ themeSlug }/**/*.php`, {
 			ignore: [ 'node_modules/**', 'vendor/**' ], // Exclude node_modules and vendor directories
 		} );
 	} else {
-		// If no directory is provided, detect changed files via Git
+		// If no theme slug is provided, detect changed files via Git
 		patternFiles = await glob( '**/*.php', {
 			ignore: [ 'node_modules/**', 'vendor/**' ], // Exclude node_modules and vendor directories
 		} );
