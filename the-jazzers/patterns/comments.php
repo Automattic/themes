@@ -2,7 +2,7 @@
 <?php
 /**
  * Title: Comments
- * slug: jazzers/comments
+ * slug: the-jazzers/comments
  * inserter: no
  */
 
