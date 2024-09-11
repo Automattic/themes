@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: farmhouse/comments
+ * slug: greenseed/comments
  * inserter: no
  */
 

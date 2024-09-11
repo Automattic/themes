@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: farmhouse/footer
+ * Slug: greenseed/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -19,9 +19,9 @@
 		<p class="has-text-align-center">
             <?php
                 /* Translators: WordPress link. */
-                $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'farmhouse' ) ) . '" rel="nofollow">WordPress</a>';
+                $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'greenseed' ) ) . '" rel="nofollow">WordPress</a>';
                 echo sprintf(
-                    esc_html__( 'Designed with %1$s', 'farmhouse' ),
+                    esc_html__( 'Designed with %1$s', 'greenseed' ),
                     $wordpress_link
                 );
             ?>

@@ -1,4 +1,4 @@
-=== Farmhouse ===
+=== Greenseed ===
 Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.0
@@ -8,12 +8,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Farmhouse is a sleek, simple theme tailored for small businesses aiming to make a lasting professional impression. With a dynamic and bold default homepage layout characterized by its sticky header and footer elements, Farmhouse exudes a sense of modernity and sophistication. Its versatile typography further enhances its adaptability, catering to a diverse range of business domains with finesse. Whether you're delving into retail, hospitality, or beyond, "Farmhouse" stands ready to elevate your online presence with its seamless blend of style and functionality.
+Greenseed is a sleek, simple theme tailored for small businesses aiming to make a lasting professional impression. With a dynamic and bold default homepage layout characterized by its sticky header and footer elements, Greenseed exudes a sense of modernity and sophistication. Its versatile typography further enhances its adaptability, catering to a diverse range of business domains with finesse. Whether you're delving into retail, hospitality, or beyond, "Greenseed" stands ready to elevate your online presence with its seamless blend of style and functionality.
 
 == Changelog ==
 
 = 0.0.30 =
-* Farmhouse: Update header alignment (#7575)
+* Greenseed: Update header alignment (#7575)
 
 = 0.0.29 =
 * Remove auto-loading-homepage tag. (#7300)
@@ -28,19 +28,19 @@ Farmhouse is a sleek, simple theme tailored for small businesses aiming to make 
 * Remove table CSS from block canvas theme as it has been addressed in Gutenberg (#6954)
 
 = 0.0.24 =
-* Farmhouse: Add no results content to search template (#6860)
+* Greenseed: Add no results content to search template (#6860)
 
 = 0.0.23 =
 * Remove font-smoothing CSS (#6816)
 
 = 0.0.22 =
-* Add home.html template to Farmhouse (#6784)
+* Add home.html template to Greenseed (#6784)
 
 = 0.0.21 =
-* Farmhouse: Add self-closing tag to comments pattern in page template (#6764)
+* Greenseed: Add self-closing tag to comments pattern in page template (#6764)
 
 = 0.0.20 =
-* Farmhouse: small updates (#6705)
+* Greenseed: small updates (#6705)
 
 = 0.0.19 =
 * Make theme available for translation as much as possible (#6484)
@@ -53,8 +53,8 @@ Farmhouse is a sleek, simple theme tailored for small businesses aiming to make 
 
 == Copyright ==
 
-Farmhouse WordPress Theme, (C) 2022 Automattic
-Farmhouse is distributed under the terms of the GNU GPL.
+Greenseed WordPress Theme, (C) 2022 Automattic
+Greenseed is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -78,5 +78,7 @@ License: CC0
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://www.rawpixel.com/image/448663/free-photo-image-agriculture-eating-farm
 
-DM Sans from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-https://fonts.google.com/specimen/DM+Sans
+DM Sans from Google Fonts
+License: Open Font License 
+License URL: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Source: https://fonts.google.com/specimen/DM+Sans
