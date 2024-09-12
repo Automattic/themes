@@ -1,0 +1,16 @@
+name: Add issue to theme launch board
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check if the 'Dotcom Launch' label is added
+      if: github.event.action == 'labeled' && contains(github.event.label.name, 'Dotcom Launch') || github.event.action == 'opened'
+      uses: actions/add-to-project@v0.5.0
+      with:
+        project-url: 'https://github.com/orgs/Automattic/projects/1150'
+        column-name: 'Ready for .com'
+        token: ${{ secrets.GITHUB_TOKEN }}
