@@ -1464,17 +1464,18 @@ async function escapePatterns( themeSlug ) {
 		} );
 	} else {
 		// If no theme slug is provided, detect changed files via Git
-		patternFiles = await glob( '**/*.php', {
-			ignore: [ 'node_modules/**', 'vendor/**' ], // Exclude node_modules and vendor directories
-		} );
+		const stagedFiles = await executeCommand(
+			'git diff --name-only --cached'
+		);
+		const unstagedFiles = await executeCommand( 'git diff --name-only' );
 
-		// Further filter the files to only those that have changed
-		patternFiles = patternFiles.filter( ( file ) => {
-			const result = execSync( `git diff --name-only HEAD ${ file }` )
-				.toString()
-				.trim();
-			return result !== '';
-		} );
+		// Combine staged and unstaged files, remove duplicates, and filter for pattern files
+		patternFiles = [
+			...new Set( [
+				...stagedFiles.split( '\n' ),
+				...unstagedFiles.split( '\n' ),
+			] ),
+		].filter( ( file ) => file.match( /.*\/patterns\/.*.php/g ) );
 	}
 
 	// Arrange patterns by theme
