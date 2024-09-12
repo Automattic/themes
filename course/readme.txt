@@ -1,7 +1,7 @@
 === Course ===
 Contributors: Automattic
 Requires at least: 6.3
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Course is a flexible and modern education theme for anyone wanting to share their knowledge. The theme is built with integration with Sensei LMS and is ideal for Sensei users that are creating or selling courses. Style variations with multiple font and color combinations help you craft the perfect look and feel to show off courses and content. The theme can be used without Sensei too.
 
 == Changelog ==
+
+= 1.3.9 =
+* Fix broken blocks in site editor templates (#8101)
 
 = 1.3.8 =
 * Remove copyright symbol (#7981)
