@@ -1,29 +1,26 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
-	"title": "Rufina & PT Serif",
-	"categories": [
-		"serif",
-		"elegant",
-		"classic",
-		"traditional",
-		"formal",
-		"luxurious"
-	],
+	"title": "Fahwang & DM Sans",
+	"categories": [ "sans-serif", "modern", "airy", "elegant", "contemporary" ],
 	"settings": {
 		"typography": {
 			"fontSizes": [
 				{
 					"name": "Small",
 					"size": "14px",
-					"slug": "small"
+					"slug": "small",
+					"fluid": {
+						"min": "13px",
+						"max": "14px"
+					}
 				},
 				{
 					"name": "Medium",
 					"size": "17px",
 					"slug": "medium",
 					"fluid": {
-						"min": "15px",
+						"min": "16px",
 						"max": "17px"
 					}
 				},
@@ -34,7 +31,7 @@
 				},
 				{
 					"name": "Extra Large",
-					"size": "60px",
+					"size": "56px",
 					"slug": "x-large"
 				},
 				{
@@ -49,13 +46,13 @@
 		"blocks": {
 			"core/site-title": {
 				"typography": {
-					"fontSize": "20px",
-					"fontWeight": "300"
+					"fontWeight": "300",
+					"fontSize": "24px"
 				}
 			},
 			"core/navigation": {
 				"typography": {
-					"fontSize": "13px",
+					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontWeight": "400",
 					"fontFamily": "var(--wp--preset--font-family--inter)",
 					"textTransform": "uppercase",
@@ -66,16 +63,18 @@
 		"elements": {
 			"button": {
 				"typography": {
-					"fontSize": "13px",
+					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontWeight": "400",
 					"fontFamily": "var(--wp--preset--font-family--inter)",
 					"textTransform": "uppercase",
-					"letterSpacing": "1px"
+					"letterSpacing": "1px",
+					"lineHeight": "1.9"
 				}
 			},
 			"heading": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--rufina)"
+					"fontFamily": "var(--wp--preset--font-family--fahkwang)",
+					"fontWeight": "200"
 				}
 			},
 			"h1": {
@@ -90,13 +89,14 @@
 			},
 			"h3": {
 				"typography": {
-					"fontWeight": "300"
+					"fontWeight": "300",
+					"fontSize": "26px"
 				}
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--pt-serif)",
-			"fontWeight": "200",
+			"fontFamily": "var(--wp--preset--font-family--dm-sans)",
+			"fontWeight": "300",
 			"lineHeight": "1.6",
 			"fontSize": "var(--wp--preset--font-size--medium)"
 		}
