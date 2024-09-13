@@ -1,0 +1,60 @@
+<?php
+/**
+ * Title: Three Columns Banner
+ * Slug: startorg/three-columns-banner
+ * Categories: text
+ */
+
+?>
+
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"right":"4vw","left":"4vw","bottom":"10vh","top":"10vh"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide has-tertiary-background-color has-background" style="padding-top:10vh;padding-right:4vw;padding-bottom:10vh;padding-left:4vw"><!-- wp:columns {"align":"wide"} -->
+<div class="wp-block-columns alignwide"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"1.2rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group"><!-- wp:image {"id":87,"sizeSlug":"full","linkDestination":"none","style":{"border":{"top":{"color":"var:preset|color|secondary","width":"2px"},"right":{},"bottom":{},"left":{}}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="https://startorgtheme.mystagingwebsite.com/wp-content/uploads/2023/07/home_image_3.jpg" alt="" class="wp-image-87" style="border-top-color:var(--wp--preset--color--secondary);border-top-width:2px"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"textAlign":"left","level":3} -->
+<h3 class="wp-block-heading has-text-align-left">Discover our universities and schools</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"left"} -->
+<p class="has-text-align-left">We work with a vast network of universities, schools, and educational institutions to create a nurturing environment.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"1.2rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group"><!-- wp:image {"id":89,"sizeSlug":"full","linkDestination":"none","style":{"border":{"top":{"color":"var:preset|color|secondary","width":"2px"},"right":{},"bottom":{},"left":{}}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="https://startorgtheme.mystagingwebsite.com/wp-content/uploads/2023/07/home_image_4.jpg" alt="" class="wp-image-89" style="border-top-color:var(--wp--preset--color--secondary);border-top-width:2px"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"textAlign":"left","level":3} -->
+<h3 class="wp-block-heading has-text-align-left">Learn about our new research initiatives</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"left"} -->
+<p class="has-text-align-left">Research is the backbone of innovation. At StartOrg Foundation we are committed to pushing the boundaries of knowledge.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"1.2rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group"><!-- wp:image {"id":88,"sizeSlug":"full","linkDestination":"none","style":{"border":{"top":{"color":"var:preset|color|secondary","width":"2px"},"right":{},"bottom":{},"left":{}}}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="https://startorgtheme.mystagingwebsite.com/wp-content/uploads/2023/07/home_image_5.jpg" alt="" class="wp-image-88" style="border-top-color:var(--wp--preset--color--secondary);border-top-width:2px"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"textAlign":"left","level":3} -->
+<h3 class="wp-block-heading has-text-align-left">Explore our development programs</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"left"} -->
+<p class="has-text-align-left">Beyond the confines of traditional academia, our organization is deeply rooted in community development.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
