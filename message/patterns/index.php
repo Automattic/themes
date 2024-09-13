@@ -10,8 +10,8 @@
 <div class="wp-block-group" style="margin-top:0vh;margin-bottom:0vh;padding-top:0vh;padding-right:0vh;padding-bottom:0vh;padding-left:0vh"><!-- wp:template-part {"slug":"header-pages","area":"uncategorized","align":"full"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"tagName":"main","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group"><!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-query"><!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false,"align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-top is-not-stacked-on-mobile"><!-- wp:column {"verticalAlignment":"top","width":"50px"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50px"></div>
@@ -73,7 +73,7 @@
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:group --></main>
-<!-- /wp:query --></div>
+<!-- /wp:query --></main>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
