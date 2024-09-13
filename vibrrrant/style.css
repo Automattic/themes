@@ -1,0 +1,68 @@
+/*
+Theme Name: Vibrrrant
+Theme URI: https://themeshaper.com/vibrrrant/
+Author: Automattic
+Author URI: https://automattic.com
+Description: Vibrrrant is a theme tailored to short-term rental businesses with a colourful, funky aesthetic.
+Requires at least: 5.8
+Tested up to: 6.5
+Requires PHP: 5.7
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: vibrrrant
+Tags: blog, two-columns, wide-blocks, block-patterns, featured-images, full-site-editing, rtl-language-support, template-editing, threaded-comments, translation-ready
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1.0px !important;
+	text-underline-offset: 1.5px;
+}
+
+/*
+ * Form field styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+::placeholder {
+	color: var(--wp--preset--color--contrast);
+	opacity: 1; /* Firefox */
+}
+
+/*
+ * Button Block
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
+
+/*
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
+ */
+.wp-block-navigation ul {
+	padding: unset;
+}
