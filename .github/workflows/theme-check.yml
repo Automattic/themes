@@ -201,13 +201,12 @@ jobs:
             fullComment += '--- \n';
           }
           
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: fullComment
-          });
-
           if (hasErrors) {
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: fullComment
+            });
             core.setFailed('One or more themes have required changes. Please review the comments and make necessary updates.');
           }
