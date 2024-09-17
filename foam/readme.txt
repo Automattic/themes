@@ -1,14 +1,14 @@
 === Foam ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.2
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Foam is a WordPress event theme with a vibrant, straightforward style. Entirely customisable, Foam allows you to present an event in a visually appealing way. Foam features a set of useful event patterns and essential templates.
+Foam is a WordPress event theme with a vibrant, straightforward style. Entirely customisable, Foam allows you to present an event in a visually appealing way.
 
 == Changelog ==
 
@@ -51,9 +51,43 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
+
+Male fitness Free Stock Image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/male-fitness-KERPZTONGA
+
+Woman portrait Free Stock Image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/woman-portrait-JOSZTZGOBG
+
+Business people Free Stock Image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/business-people-SMJLMCZMTN
+
+People man Free Stock Image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/people-man-6LPO676JKO
+
+woman working Free Stock Image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/woman-working-KFOCL5M9AN
+
+People woman Free Stock Image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/people-woman-MU7G67710S
+
+Map image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: Created by Beatriz Fialho and released under CCO license
+
+Logos image
+License: CC0 Public domain https://creativecommons.org/publicdomain/zero/1.0/
+Source: Created by Beatriz Fialho and released under CCO license
+
 Roboto Mono Font
 Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono) 
 Licensed under the Apache License, Version 2.0 
 License URL: http://www.apache.org/licenses/LICENSE-2.0 
-Source: Google.com
+Source: https://fonts.google.com/specimen/Roboto+Mono
 -- End of Roboto Mono Font credits --
