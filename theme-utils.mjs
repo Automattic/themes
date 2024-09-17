@@ -1768,13 +1768,12 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
 			: undefined;
 		const isSupportedWpVersion =
-			wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' );
-
-		const hasThemeJson = fs.existsSync( themeJsonPath );
-		const hasThemeJsonSupport =
 			wpVersion &&
 			semver.valid( `${ wpVersion }.0` ) &&
-			isSupportedWpVersion;
+			semver.gte( `${ wpVersion }.0`, '5.9.0' );
+
+		const hasThemeJson = fs.existsSync( themeJsonPath );
+		const hasThemeJsonSupport = wpVersion && isSupportedWpVersion;
 
 		if ( hasThemeJson && ! hasThemeJsonSupport ) {
 			problems.push(
