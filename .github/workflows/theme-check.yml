@@ -1,0 +1,236 @@
+name: WordPress Theme Check
+
+on:
+  pull_request:
+    types: [opened, labeled, synchronize]
+
+# Add this permissions block
+permissions:
+  pull-requests: write
+
+jobs:
+  theme-check:
+    runs-on: ubuntu-latest
+    
+    services:
+      wordpress:
+        image: wordpress:php8.2
+        ports:
+          - 8080:80
+        env:
+          WORDPRESS_DB_HOST: db
+          WORDPRESS_DB_USER: wordpress
+          WORDPRESS_DB_PASSWORD: wordpress
+          WORDPRESS_DB_NAME: wordpress
+      db:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: rootpassword
+          MYSQL_DATABASE: wordpress
+          MYSQL_USER: wordpress
+          MYSQL_PASSWORD: wordpress
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install WP-CLI inside WordPress container
+      run: |
+        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") chmod +x wp-cli.phar
+        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") mv wp-cli.phar /usr/local/bin/wp
+
+    - name: Wait for WordPress
+      run: |
+        timeout 300 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080)" != "302" ]]; do sleep 5; done' || false
+    
+    - name: Complete WordPress Installation
+      run: |
+        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp core install \
+          --url=http://localhost:8080 \
+          --title="Test Site" \
+          --admin_user=admin \
+          --admin_password=admin_password \
+          --admin_email=admin@example.com \
+          --skip-email \
+          --allow-root
+
+    - name: Test WP-CLI
+      run: docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp --info
+
+    - name: Install and activate Theme Check plugin
+      run: |
+        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp plugin install https://github.com/WordPress/theme-check/archive/refs/pull/458/head.zip --activate --allow-root
+
+    - name: Get changed root folders
+      uses: actions/github-script@v6
+      with:
+        script: |
+            const { owner, repo, number } = context.issue;
+            let allFiles = [];
+            let page = 1;
+            
+            while (true) {
+              const { data: files } = await github.rest.pulls.listFiles({
+                owner,
+                repo,
+                pull_number: number,
+                per_page: 100,
+                page: page
+              });
+              
+              allFiles = allFiles.concat(files);
+              
+              if (files.length < 100) break;
+              page++;
+            }
+
+            console.log('files', allFiles.map(file => file.filename));
+            
+            const rootFolders = new Set();
+            for (const file of allFiles) {
+              const parts = file.filename.split('/');
+              if (parts.length > 1) {
+                rootFolders.add(parts[0]);
+              }
+            }
+            
+            const rootFoldersArray = Array.from(rootFolders);
+            core.exportVariable('THEME_FOLDERS', rootFoldersArray.join(','));
+            console.log(`Changed root folders: ${rootFoldersArray.join(', ')}`);
+
+    - name: Debug THEME_FOLDERS
+      run: echo "THEME_FOLDERS is ${{ env.THEME_FOLDERS }}"
+
+    - name: Run Theme Check for each folder
+      run: |
+        IFS=',' read -ra FOLDERS <<< "${{ env.THEME_FOLDERS }}"
+        for THEME_FOLDER in "${FOLDERS[@]}"; do
+          echo "Processing theme folder: $THEME_FOLDER"
+          
+          # Install and activate theme
+          docker cp ${{ github.workspace }}/$THEME_FOLDER $(docker ps -qf "ancestor=wordpress:php8.2"):/var/www/html/wp-content/themes/
+          docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp theme activate $THEME_FOLDER --allow-root
+
+          # Run Theme Check
+          set +e
+          THEME_CHECK_RESULT=$(docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp theme-check run $THEME_FOLDER --format=json --allow-root)
+          THEME_CHECK_EXIT_CODE=$?
+          set -e
+
+          # Store results in environment variables
+          echo "THEME_CHECK_RESULT_${THEME_FOLDER//-/_}<<EOF" >> $GITHUB_ENV
+          echo "$THEME_CHECK_RESULT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          echo "THEME_CHECK_EXIT_CODE_${THEME_FOLDER//-/_}=$THEME_CHECK_EXIT_CODE" >> $GITHUB_ENV
+        done
+
+    - name: Find and delete previous comment
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { owner, repo, number } = context.issue;
+          const { data: comments } = await github.rest.issues.listComments({
+            owner,
+            repo,
+            issue_number: number,
+          });
+          
+          const botComment = comments.find(comment => 
+            comment.user.type === 'Bot' && 
+            comment.body.includes('Theme-Check results')
+          );
+          
+          if (botComment) {
+            await github.rest.issues.deleteComment({
+              owner,
+              repo,
+              comment_id: botComment.id,
+            });
+          }
+
+    - name: Comment PR
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const fs = require('fs');
+          
+          let fullComment = '';
+          const folders = process.env.THEME_FOLDERS.split(',');
+          let hasErrors = false;
+
+          const emojis = {
+            'REQUIRED': '❎',
+            'WARNING': '⚠️',
+            'RECOMMENDED': '💡',
+            'INFO': 'ℹ️',
+          };
+          
+          fullComment += 'Theme-Check results\n';
+          fullComment += '--- \n';
+          
+          for (const folder of folders) {
+            const envVarName = `THEME_CHECK_RESULT_${folder.replace(/-/g, '_')}`;
+            const exitCodeVarName = `THEME_CHECK_EXIT_CODE_${folder.replace(/-/g, '_')}`;
+            const themeCheckResult = process.env[envVarName];
+            const themeCheckExitCode = parseInt(process.env[exitCodeVarName]);
+            
+            console.log(`Theme Check Result for ${folder}: ${themeCheckResult}`);
+            console.log(`Theme Check Exit Code for ${folder}: ${themeCheckExitCode}`);
+
+            if (themeCheckExitCode !== 0) {
+              hasErrors = true;
+            }
+
+            const comments = JSON.parse(themeCheckResult);
+            
+            if (themeCheckExitCode !== 0) {
+              fullComment += `### ${folder}: There are required changes on the theme ❌.\n`;
+            } else {
+              fullComment += `### ${folder}: No changes required ✅.\n`;
+            }
+
+            const groupedComments = {};
+            for (const check of comments) {
+              if (!groupedComments[check.type]) {
+                groupedComments[check.type] = [];
+              }
+              groupedComments[check.type].push(check.value);
+            }
+
+            // Add REQUIRED comments to the main body
+            for (const type of ['REQUIRED']) {
+              if (groupedComments[type]) {
+                fullComment += `**${emojis[type]} ${type}**\n`;
+                groupedComments[type].forEach(value => {
+                  fullComment += `- ${value}\n`;
+                });
+                fullComment += '\n';
+              }
+            }
+
+            for (const [type, groupComments] of Object.entries(groupedComments)) {
+              if (type !== 'REQUIRED') {
+                fullComment += `<details>\n<summary>${emojis[type]} ${type} (${groupComments.length})</summary>\n\n`;
+                groupComments.forEach(value => {
+                  fullComment += `- ${value}\n`;
+                });
+                fullComment += '\n</details>\n\n';
+              }
+            }
+
+            fullComment += '--- \n';
+          }
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: fullComment
+          });
+
+          if (hasErrors) {
+            core.setFailed('One or more themes have required changes. Please review the comments and make necessary updates.');
+          }
