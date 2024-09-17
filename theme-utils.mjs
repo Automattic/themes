@@ -872,6 +872,10 @@ export function getThemeMetadata( styleCss, attribute, trimWPCom = true ) {
 					/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs
 				)?.[ 0 ]
 				?.trim();
+		default:
+			return styleCss
+				.match(new RegExp(`(?<=${attribute}:\\s*).*?(?=\\s*\\r?\\n|\\rg)`, 'gs'))?.[0]
+				?.trim();
 	}
 }
 
@@ -1767,8 +1771,8 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		const wpVersion = themeRequires
 			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
 			: undefined;
-		const isSupportedWpVersion =
-			wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' );
+		const hasThemeJsonSupport = wpVersion && semver.valid( `${ wpVersion }.0` ) && semver.gte( `${ wpVersion }.0`, '5.9.0' )
+		const hasThemeJson = fs.existsSync( themeJsonPath );
 
 		if ( hasThemeJson && ! hasThemeJsonSupport ) {
 			problems.push(
