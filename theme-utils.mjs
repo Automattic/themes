@@ -1770,6 +1770,12 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		const isSupportedWpVersion =
 			wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' );
 
+		const hasThemeJson = fs.existsSync( themeJsonPath );
+		const hasThemeJsonSupport =
+			wpVersion &&
+			semver.valid( `${ wpVersion }.0` ) &&
+			semver.gte( `${ wpVersion }.0`, '5.9.0' );
+
 		if ( hasThemeJson && ! hasThemeJsonSupport ) {
 			problems.push(
 				createProblem( {
