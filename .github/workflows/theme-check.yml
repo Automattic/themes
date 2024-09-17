@@ -4,63 +4,41 @@ on:
   pull_request:
     types: [opened, labeled, synchronize]
 
-# Add this permissions block
 permissions:
   pull-requests: write
 
 jobs:
   theme-check:
     runs-on: ubuntu-latest
-    
-    services:
-      wordpress:
-        image: wordpress:php8.2
-        ports:
-          - 8080:80
-        env:
-          WORDPRESS_DB_HOST: db
-          WORDPRESS_DB_USER: wordpress
-          WORDPRESS_DB_PASSWORD: wordpress
-          WORDPRESS_DB_NAME: wordpress
-      db:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: rootpassword
-          MYSQL_DATABASE: wordpress
-          MYSQL_USER: wordpress
-          MYSQL_PASSWORD: wordpress
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Install WP-CLI inside WordPress container
-      run: |
-        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") chmod +x wp-cli.phar
-        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") mv wp-cli.phar /usr/local/bin/wp
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
 
-    - name: Wait for WordPress
-      run: |
-        timeout 300 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080)" != "302" ]]; do sleep 5; done' || false
-    
-    - name: Complete WordPress Installation
-      run: |
-        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp core install \
-          --url=http://localhost:8080 \
-          --title="Test Site" \
-          --admin_user=admin \
-          --admin_password=admin_password \
-          --admin_email=admin@example.com \
-          --skip-email \
-          --allow-root
+    - name: Install @wordpress/env
+      run: npm install -g @wordpress/env 
 
-    - name: Test WP-CLI
-      run: docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp --info
+    - name: Write .wp-env.json to provide configuration for the WordPress environment
+      run: |
+        echo '{
+          "mappings": {
+            "wp-content/themes": "${{ github.workspace }}"
+          }
+        }' > .wp-env.json
+
+    - name: Start WordPress environment
+      run: |
+        wp-env start
+        wp-env run cli wp core install --url=http://localhost:8888 --title="Test Site" --admin_user=admin --admin_password=admin_password --admin_email=admin@example.com --skip-email
 
     - name: Install and activate Theme Check plugin
       run: |
-        docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp plugin install https://github.com/WordPress/theme-check/archive/refs/pull/458/head.zip --activate --allow-root
+        wp-env run cli wp plugin install https://github.com/WordPress/theme-check/archive/refs/pull/458/head.zip --activate
 
     - name: Get changed root folders
       uses: actions/github-script@v6
@@ -107,14 +85,13 @@ jobs:
         IFS=',' read -ra FOLDERS <<< "${{ env.THEME_FOLDERS }}"
         for THEME_FOLDER in "${FOLDERS[@]}"; do
           echo "Processing theme folder: $THEME_FOLDER"
-          
-          # Install and activate theme
-          docker cp ${{ github.workspace }}/$THEME_FOLDER $(docker ps -qf "ancestor=wordpress:php8.2"):/var/www/html/wp-content/themes/
-          docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp theme activate $THEME_FOLDER --allow-root
 
+          # Activate theme
+          wp-env run cli wp theme activate $THEME_FOLDER
+          
           # Run Theme Check
           set +e
-          THEME_CHECK_RESULT=$(docker exec $(docker ps -qf "ancestor=wordpress:php8.2") wp theme-check run $THEME_FOLDER --format=json --allow-root)
+          THEME_CHECK_RESULT=$(wp-env run cli wp theme-check run $THEME_FOLDER --format=json)
           THEME_CHECK_EXIT_CODE=$?
           set -e
 
