@@ -1,12 +1,12 @@
 <?php
 /**
- * Title: page-exhibitions
+ * Title: Exhibitions
  * Slug: musee/page-exhibitions
- * Categories: hidden
- * Inserter: no
+ * Categories: featured, posts
  */
+
+declare( strict_types = 1 );
 ?>
-<!-- wp:template-part {"slug":"header","area":"header"} /-->
 
 <!-- wp:group {"tagName":"main","align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|70","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group alignwide" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"default"}} -->
@@ -85,5 +85,3 @@
 <!-- /wp:query --></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","area":"footer"} /-->
