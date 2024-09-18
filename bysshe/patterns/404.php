@@ -11,7 +11,7 @@
 <header class="wp-block-group"><!-- wp:site-title {"style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} /-->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('• •', 'bysshe');?></p>
+<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('• •', 'Decorative symbols', 'bysshe');?></p>
 <!-- /wp:paragraph --></header>
 <!-- /wp:group -->
 
@@ -27,7 +27,7 @@
 
 <!-- wp:column {"width":"","style":{"spacing":{"padding":{"right":"var:preset|spacing|80"}}}} -->
 <div class="wp-block-column" style="padding-right:var(--wp--preset--spacing--80)"><!-- wp:heading {"style":{"typography":{"textTransform":"lowercase","fontStyle":"normal","fontWeight":"400"}},"fontSize":"medium"} -->
-<h2 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:400;text-transform:lowercase"><?php esc_html_e('Oops, we lost you...', 'bysshe');?></h2>
+<h2 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:400;text-transform:lowercase"><?php echo esc_html_e('Oops, we lost you...', 'bysshe');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"50px","style":{"layout":[]}} -->
@@ -45,7 +45,7 @@
 
 <!-- wp:group {"tagName":"footer","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <footer class="wp-block-group"><!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('• •', 'bysshe');?></p>
+<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('• •', 'Decorative symbols', 'bysshe');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"no-underline","style":{"typography":{"lineHeight":"1.3","textTransform":"uppercase","fontStyle":"normal","fontWeight":"400"}},"fontSize":"xxx-small"} -->

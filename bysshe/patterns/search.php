@@ -26,7 +26,7 @@
 <!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('• •', 'bysshe');?></p>
+<p class="has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('• •', 'Decorative symbols', 'bysshe');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:site-title {"textAlign":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} /--></div>

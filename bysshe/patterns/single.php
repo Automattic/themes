@@ -11,7 +11,7 @@
 <header class="wp-block-group"><!-- wp:site-title {"style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} /-->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('• •', 'bysshe');?></p>
+<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('• •', 'Decorative symbols', 'bysshe');?></p>
 <!-- /wp:paragraph --></header>
 <!-- /wp:group -->
 

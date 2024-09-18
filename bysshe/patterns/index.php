@@ -9,11 +9,11 @@
 <!-- wp:group {"style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"top":"var:preset|spacing|80","right":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|80"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group" style="min-height:100vh;padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--80)"><!-- wp:group {"tagName":"header","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <header class="wp-block-group"><!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('•', 'bysshe');?></p>
+<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('•', 'Decorative symbols', 'bysshe');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('• •', 'bysshe');?></p>
+<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('• •', 'Decorative symbols', 'bysshe');?></p>
 <!-- /wp:paragraph --></header>
 <!-- /wp:group -->
 
@@ -73,7 +73,7 @@
 
 <!-- wp:group {"tagName":"footer","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <footer class="wp-block-group"><!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('• •', 'bysshe');?></p>
+<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('• •', 'Decorative symbols', 'bysshe');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","className":"no-underline","style":{"typography":{"lineHeight":"1.3","fontStyle":"normal","fontWeight":"400","textTransform":"uppercase"}},"fontSize":"xxx-small"} -->
