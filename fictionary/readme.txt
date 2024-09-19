@@ -1,7 +1,7 @@
 === Fictionary ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4.2
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,12 +45,3 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 License URL: http://scripts.sil.org/OFL 
 Source: https://rsms.me/
 -- End of Inter Font credits --
-
-Images:
-
-All images are in the Public Domain
-fictionary_post_5.jpg: https://www.rawpixel.com/image/8799592/photo-image-public-domain-person
-fictionary_post_4.jpg: https://www.rawpixel.com/image/5919341/free-empty-road-image-public-domain-cc0-photo
-fictionary_post_3.jpg: https://www.rawpixel.com/image/3285420/free-photo-image-lake-house-cabin
-fictionary_post_2.jpg: https://www.rawpixel.com/image/5925727/photo-image-cloud-public-domain-sky
-fictionary_post_1.jpg: https://stocksnap.io/photo/space-rocket-M2IXWNZDKT
