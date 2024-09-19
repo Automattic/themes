@@ -46,10 +46,14 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 Source: http://scholarsfonts.net
 -- End of Cardo Font credits --
 
-impressionist-home-bg.jpg
-CC0, Public Domain
-https://www.rawpixel.com/image/2677419/free-illustration-image-winter-monet-snow
+Credit: Claude Monet
+License: Public Domain (CC0) license
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/2677419/free-illustration-image-winter-monet-snow
+It's used in the front-page pattern.
 
-impressionist-author-image-edited.jpg
-CC0, Public Domain
-https://en.wikipedia.org/wiki/Claude_Monet#/media/File:Claude_Monet_1899_Nadar_crop.jpg
+Credit: Nadar
+License: Public Domain (CC0) license
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://en.wikipedia.org/wiki/Claude_Monet#/media/File:Claude_Monet_1899_Nadar_crop.jpg
+It's used in the biography pattern.
