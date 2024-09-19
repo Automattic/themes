@@ -4,7 +4,6 @@
  * Slug: alleyoop/latest-post-heading
  * Inserter: no
  */
-
 declare( strict_types = 1 );
 ?>
 

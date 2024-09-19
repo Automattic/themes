@@ -6,17 +6,18 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:template-part {"slug":"header-with-sticky-post","tagName":"header","align":"full"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"2vh","margin":{"top":"10vh","bottom":"10vh"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:10vh;margin-bottom:10vh"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0rem","bottom":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group alignwide" style="padding-top:0rem;padding-bottom:0rem"><!-- wp:heading -->
-<h2 class="wp-block-heading">Latest Posts</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Latest Posts', 'alleyoop' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem","letterSpacing":"0.02rem","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
-<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="https://alleyoop.mystagingwebsite.com/news/" data-type="page" data-id="25">View all</a></p>
+<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="#" data-type="page" data-id="25"><?php echo esc_html__( 'View all', 'alleyoop' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -47,11 +48,11 @@
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"default"},"fontSize":"x-large"} -->
 <div class="wp-block-group has-x-large-font-size" style="margin-top:var(--wp--preset--spacing--60)"><!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"left"}} -->
-<!-- wp:query-pagination-previous {"label":"Prev"} /-->
+<!-- wp:query-pagination-previous {"label":"<?php echo esc_html__( 'Prev', 'alleyoop' ); ?>"} /-->
 
 <!-- wp:query-pagination-numbers /-->
 
-<!-- wp:query-pagination-next {"label":"Next"} /-->
+<!-- wp:query-pagination-next {"label":"<?php echo esc_html__( 'Next', 'alleyoop' ); ?>"} /-->
 <!-- /wp:query-pagination --></div>
 <!-- /wp:group --></div>
 <!-- /wp:query --></div>
@@ -62,11 +63,11 @@
 <main class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"2vh","margin":{"top":"10vh","bottom":"10vh"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:10vh;margin-bottom:10vh"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading -->
-<h2 class="wp-block-heading">Coming Fixtures</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Coming Fixtures', 'alleyoop' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem","letterSpacing":"0.02rem","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
-<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="https://alleyoop.mystagingwebsite.com/news/" data-type="page" data-id="25">View</a><a href="https://alleyoop.mystagingwebsite.com/about-us/schedule/" data-type="page" data-id="33"> </a><a href="https://alleyoop.mystagingwebsite.com/news/" data-type="page" data-id="25">all</a></p>
+<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="#" data-type="page" data-id="25"><?php echo esc_html__( 'View', 'alleyoop' ); ?></a><a href="#" data-type="page" data-id="33"> </a><a href="#" data-type="page" data-id="25"><?php echo esc_html__( 'all', 'alleyoop' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -74,7 +75,7 @@
 <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"5.37rem"}}} -->
-<h1 class="wp-block-heading" style="font-size:5.37rem">The 2024 Season</h1>
+<h1 class="wp-block-heading" style="font-size:5.37rem"><?php echo esc_html__( 'The 2024 Season', 'alleyoop' ); ?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -84,7 +85,7 @@
 
 <!-- wp:column {"width":"20%"} -->
 <div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph -->
-<p>Get to know the upcoming challenges we are about to face next.</p>
+<p><?php echo esc_html__( 'Get to know the upcoming challenges we are about to face next.', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -102,15 +103,15 @@
 
 <!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p>This is Us F.C</p>
+<p><?php echo esc_html__( 'This is Us F.C', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p class="has-text-align-center">x</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'x', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p class="has-text-align-right">A.C. Them</p>
+<p class="has-text-align-right"><?php echo esc_html__( 'A.C. Them', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -125,11 +126,11 @@
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>Sonnet Park — 12/01/2024</p>
+<p><?php echo esc_html__( 'Sonnet Park — 12/01/2024', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"fontSize":"0.8rem","letterSpacing":"0.02rem","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
-<p class="has-text-align-right has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase">Add to Cal</p>
+<p class="has-text-align-right has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><?php echo esc_html__( 'Add to Cal', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -148,15 +149,15 @@
 
 <!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p>A.C. Them</p>
+<p><?php echo esc_html__( 'A.C. Them', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p class="has-text-align-center">x</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'x', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p class="has-text-align-right">This is Us F.C</p>
+<p class="has-text-align-right"><?php echo esc_html__( 'This is Us F.C', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -171,11 +172,11 @@
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>Hackney Marches Pitch III — 18/01/2024</p>
+<p><?php echo esc_html__( 'Hackney Marches Pitch III — 18/01/2024', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"fontSize":"0.8rem","letterSpacing":"0.02rem","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
-<p class="has-text-align-right has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase">Add to Cal</p>
+<p class="has-text-align-right has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><?php echo esc_html__( 'Add to Cal', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -194,15 +195,15 @@
 
 <!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p>This is Us F.C</p>
+<p><?php echo esc_html__( 'This is Us F.C', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p class="has-text-align-center">x</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'x', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p class="has-text-align-right">A.C. Them</p>
+<p class="has-text-align-right"><?php echo esc_html__( 'A.C. Them', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -217,11 +218,11 @@
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>Sonnet Park — 12/01/2024</p>
+<p><?php echo esc_html__( 'Sonnet Park — 12/01/2024', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"fontSize":"0.8rem","letterSpacing":"0.02rem","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
-<p class="has-text-align-right has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase">Add to Cal</p>
+<p class="has-text-align-right has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><?php echo esc_html__( 'Add to Cal', 'alleyoop' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

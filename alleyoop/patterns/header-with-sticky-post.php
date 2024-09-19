@@ -5,7 +5,6 @@
  * Categories: header
  * Block Types: core/template-part/header
  */
-
 declare( strict_types = 1 );
 ?>
 

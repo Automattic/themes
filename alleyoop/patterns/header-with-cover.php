@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hero_topviewshadowed.jpg","id":212,"dimRatio":30,"isUserOverlayColor":true,"minHeightUnit":"vh","customGradient":"linear-gradient(180deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,0) 55%,rgb(0,0,0) 100%)","contentPosition":"top center","style":{"spacing":{"margin":{"top":"0px","bottom":"var:preset|spacing|60"},"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-cover has-custom-content-position is-position-top-center" style="margin-top:0px;margin-bottom:var(--wp--preset--spacing--60);padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-30 has-background-dim wp-block-cover__gradient-background has-background-gradient" style="background:linear-gradient(180deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,0) 55%,rgb(0,0,0) 100%)"></span><img class="wp-block-cover__image-background wp-image-212" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hero_topviewshadowed.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"wide","style":{"dimensions":{"minHeight":"60vh"},"spacing":{"blockGap":"0rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"top"}} -->

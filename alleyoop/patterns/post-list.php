@@ -4,7 +4,6 @@
  * Slug: alleyoop/post-list
  * Categories: featured, posts
  */
-
 declare( strict_types = 1 );
 ?>
 

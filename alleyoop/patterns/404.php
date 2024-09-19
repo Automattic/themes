@@ -4,7 +4,6 @@
  * Slug: alleyoop/404
  * Inserter: no
  */
-
 declare( strict_types = 1 );
 ?>
 
