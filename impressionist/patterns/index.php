@@ -1,3 +1,11 @@
+<?php
+/**
+ * Title: index
+ * Slug: impressionist/index
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:query {"queryId":9,"query":{"perPage":"20","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"tagName":"main"} -->
@@ -29,9 +37,9 @@
 
 <!-- wp:query-no-results -->
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"4vw","left":"4vw"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="padding-right:4vw;padding-left:4vw">
-	<!-- wp:pattern {"slug":"impressionist/hidden-no-results-content"} /-->
-</div>
+<div class="wp-block-group" style="padding-right:4vw;padding-left:4vw"><!-- wp:paragraph -->
+<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'impressionist');?></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 <!-- /wp:query-no-results --></main>
 <!-- /wp:query -->
