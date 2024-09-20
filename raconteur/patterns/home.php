@@ -312,7 +312,7 @@
 
 <!-- wp:column {"verticalAlignment":"stretch","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-stretch" style="flex-basis:50%"><!-- wp:image {"aspectRatio":"3/4","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-from-rawpixel-id-14263688.jpg" alt="<?php esc_html_e('', 'raconteur');?>" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-from-rawpixel-id-14263688.jpg" alt="<?php esc_attr_e('', 'raconteur');?>" style="aspect-ratio:3/4;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
