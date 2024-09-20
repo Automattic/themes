@@ -47,11 +47,6 @@ Copyright 2023 Laurids Kern
 Source: https://lau.ke
 -- End of Open Runde Font credits --
 
-https://www.rawpixel.com/image/3284677/free-photo-image-garden-growth-treehttps://www.rawpixel.com/image/5915238/image-public-domain-hands-noteshttps://www.rawpixel.com/image/5947725/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5959722/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5953058/free-public-domain-cc0-photohttps://www.rawpixel.com/image/3370570/free-photo-image-cat-lavender-gardenhttps://www.rawpixel.com/image/5950332/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5958709/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5959098/free-public-domain-cc0-photohttps://www.rawpixel.com/image/30463/black-girl-playing-basketballhttps://www.rawpixel.com/image/3282487/free-photo-image-ocean-canoe-skyhttps://www.rawpixel.com/image/3336815/free-photo-image-people-couple-rail-road-walk-togetherhttps://www.rawpixel.com/image/5922496/photo-image-public-domain-shadow-childhttps://www.rawpixel.com/image/434378/free-photo-image-way-road-carol-highsmithhttps://www.rawpixel.com/image/5924027/photo-image-background-light-public-domain
-
-https://www.rawpixel.com/image/3284677/free-photo-image-garden-growth-treehttps://www.rawpixel.com/image/5915238/image-public-domain-hands-noteshttps://www.rawpixel.com/image/5947725/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5959722/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5953058/free-public-domain-cc0-photohttps://www.rawpixel.com/image/3370570/free-photo-image-cat-lavender-gardenhttps://www.rawpixel.com/image/5950332/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5958709/free-public-domain-cc0-photohttps://www.rawpixel.com/image/5959098/free-public-domain-cc0-photohttps://www.rawpixel.com/image/30463/black-girl-playing-basketballhttps://www.rawpixel.com/image/3282487/free-photo-image-ocean-canoe-skyhttps://www.rawpixel.com/image/3336815/free-photo-image-people-couple-rail-road-walk-togetherhttps://www.rawpixel.com/image/5922496/photo-image-public-domain-shadow-childhttps://www.rawpixel.com/image/434378/free-photo-image-way-road-carol-highsmithhttps://www.rawpixel.com/image/5924027/photo-image-background-light-public-domain
-
-
 == Fonts ==
 
 Figtree
