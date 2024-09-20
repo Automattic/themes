@@ -1,11 +1,11 @@
 <?php
 /**
- * Alley-Oop functions and definitions
+ * AlleyOop functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Alley-Oop
- * @since Alley-Oop 1.0
+ * @package AlleyOop
+ * @since AlleyOop 1.0
  */
 
 declare( strict_types = 1 );
@@ -15,9 +15,9 @@ if ( ! function_exists( 'alleyoop_support' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress feaalleyoopres.
 	 *
-	 * @since Alley-Oop 1.0
+	 * @since AlleyOop 1.0
 	 *
-	 * @realleyooprn void
+	 * @return void
 	 */
 	function alleyoop_support() {
 
@@ -37,9 +37,9 @@ if ( ! function_exists( 'alleyoop_styles' ) ) :
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Alley-Oop 1.0
+	 * @since AlleyOop 1.0
 	 *
-	 * @realleyooprn void
+	 * @return void
 	 */
 	function alleyoop_styles() {
 

@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: search
- * Slug: alleyoop/search
+ * Title: archive
+ * Slug: alleyoop/archive
  * Categories: hidden
  * Inserter: no
  */
@@ -9,12 +9,12 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:group {"tagName":"main","align":"wide","style":{"spacing":{"blockGap":"1vh","margin":{"top":"10vh","bottom":"10vh"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group alignwide" style="margin-top:10vh;margin-bottom:10vh"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"2.5vh"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide" style="margin-bottom:2.5vh"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
-<!-- /wp:group -->
+<main class="wp-block-group alignwide" style="margin-top:10vh;margin-bottom:10vh"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0rem","bottom":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group alignwide" style="padding-top:0rem;padding-bottom:0rem"><!-- wp:query-title {"type":"archive","style":{"typography":{"fontSize":"0.88rem","letterSpacing":"0px"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontFamily":"hezaedrus"} /-->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0rem","bottom":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
-<div class="wp-block-group alignwide" style="padding-top:0rem;padding-bottom:0rem"><!-- wp:query-title {"type":"search","style":{"typography":{"fontSize":"0.88rem","letterSpacing":"0px"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontFamily":"hezaedrus"} /--></div>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.88rem","fontStyle":"normal","fontWeight":"800"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} -->
+<p class="has-contrast-color has-text-color has-link-color" style="font-size:0.88rem;font-style:normal;font-weight:800"><a href="#" ><?php esc_html_e('View all', 'alleyoop');?></a></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":true},"enhancedPagination":true,"align":"wide"} -->
