@@ -18,7 +18,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"writingMode":"vertical-rl"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="writing-mode:vertical-rl"><?php echo __('© 2024', 'raconteur');?></p>
+<p class="has-small-font-size" style="writing-mode:vertical-rl"><?php esc_html_e('© 2024', 'raconteur');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover --></div>
@@ -26,15 +26,15 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"top","layout":{"type":"constrained"}} -->
-<div class="wp-block-column is-vertically-aligned-top"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"0"},"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60);padding-top:var(--wp--preset--spacing--80);padding-bottom:0"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><?php echo __('Oops... That page can’t be found.', 'raconteur');?></h1>
-<!-- /wp:heading --></div>
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"0"},"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60);padding-top:var(--wp--preset--spacing--80);padding-bottom:0"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading"><?php esc_html_e('Oops... That page can’t be found.', 'raconteur');?></h1>
+<!-- /wp:heading --></main>
 <!-- /wp:group -->
 
 <!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-group"><!-- wp:paragraph -->
-<p><?php echo __('It looks like nothing was found at this location. Maybe try a search?', 'raconteur');?></p>
+<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'raconteur');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:search {"label":"","showLabel":false,"placeholder":"Search","buttonText":"","buttonPosition":"button-inside","buttonUseIcon":true} /--></main>
