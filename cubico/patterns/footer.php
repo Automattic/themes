@@ -2,7 +2,6 @@
 /**
  * Title: footer
  * Slug: cubico/footer
- * Categories: hidden
  * Inserter: no
  */
 ?>
@@ -10,10 +9,10 @@
 <div class="wp-block-group" style="padding-top:4vh;padding-bottom:8vh"><!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"66.66%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:66.66%"><!-- wp:group {"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:site-logo {"width":72,"shouldSyncIcon":false,"style":{"color":{"duotone":["#000000","#edeeef"]}}} /-->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"left"}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"shouldSyncIcon":false,"style":{"color":{"duotone":["#000000","#edeeef"]},"layout":{"selfStretch":"fit","flexSize":null}}} /-->
 
-<!-- wp:paragraph {"fontSize":"medium"} -->
+<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null}},"fontSize":"medium"} -->
 <p class="has-medium-font-size"><?php esc_html_e('I am Nuno Pessoa, a 42-year-old developer based in Porto. I\'m happily married, and I am the father of a wonderful daughter who brings joy to my life', 'cubico');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
@@ -33,7 +32,7 @@
 <!-- /wp:social-links -->
 
 <!-- wp:paragraph {"align":"right"} -->
-<p class="has-text-align-right"><?php esc_html_e('Designed with WordPress', 'cubico');?></p>
+<p class="has-text-align-right"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'cubico');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

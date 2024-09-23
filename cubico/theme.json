@@ -14,7 +14,7 @@
 					"slug": "contrast"
 				},
 				{
-					"color": "#000000",
+					"color": "#030202",
 					"name": "Primary",
 					"slug": "primary"
 				},
@@ -24,7 +24,7 @@
 					"slug": "secondary"
 				},
 				{
-					"color": "#c7c7d1",
+					"color": "#282828",
 					"name": "Tertiary",
 					"slug": "tertiary"
 				}
@@ -59,34 +59,6 @@
 			"fluid": true,
 			"fontFamilies": [
 				{
-					"fontFace": [],
-					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-					"name": "System Font",
-					"slug": "system-font"
-				},
-				{
-					"fontFace": [
-						{
-							"fontFamily": "Figtree",
-							"fontStyle": "normal",
-							"fontWeight": "500",
-							"src": [
-								"file:./assets/fonts/figtree/figtree_normal_500.ttf"
-							]
-						},
-						{
-							"fontFamily": "Figtree",
-							"fontStyle": "italic",
-							"fontWeight": "500",
-							"src": [
-								"file:./assets/fonts/figtree/figtree_italic_500.ttf"
-							]
-						}
-					],
-					"fontFamily": "Figtree",
-					"slug": "figtree"
-				},
-				{
 					"fontFace": [
 						{
 							"fontFamily": "Open Runde",
@@ -107,45 +79,6 @@
 					],
 					"fontFamily": "Open Runde",
 					"slug": "open-runde"
-				},
-				{
-					"fontFace": [
-						{
-							"fontFamily": "Inter Tight",
-							"fontStyle": "normal",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/inter-tight/inter-tight_normal_400.woff2"
-							]
-						},
-						{
-							"fontFamily": "Inter Tight",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/inter-tight/inter-tight_normal_700.woff2"
-							]
-						},
-						{
-							"fontFamily": "Inter Tight",
-							"fontStyle": "italic",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/inter-tight/inter-tight_italic_400.woff2"
-							]
-						},
-						{
-							"fontFamily": "Inter Tight",
-							"fontStyle": "italic",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/inter-tight/inter-tight_italic_700.woff2"
-							]
-						}
-					],
-					"fontFamily": "Inter Tight, sans-serif",
-					"name": "Inter Tight",
-					"slug": "inter-tight"
 				}
 			],
 			"fontSizes": [
@@ -224,18 +157,53 @@
 				}
 			},
 			"core/comment-author-name": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)",
 					"fontSize": "0.8rem",
 					"letterSpacing": "0.02rem"
 				}
 			},
 			"core/comment-date": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/comment-edit-link": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				},
 				"typography": {
 					"fontSize": "0.8rem",
 					"letterSpacing": "0.02rem",
@@ -249,12 +217,55 @@
 					"textTransform": "uppercase"
 				}
 			},
+			"core/comments-pagination": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				}
+			},
+			"core/comments-pagination-numbers": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				}
+			},
 			"core/cover": {
 				"border": {
 					"radius": "4px"
 				},
+				"color": {
+					"text": "var(--wp--preset--color--secondary)"
+				},
 				"dimensions": {
 					"aspectRatio": "1"
+				},
+				"elements": {
+					"heading": {
+						"color": {
+							"text": "var(--wp--preset--color--secondary)"
+						}
+					},
+					"link": {
+						"color": {
+							"text": "var(--wp--preset--color--secondary)"
+						}
+					}
 				},
 				"spacing": {
 					"blockGap": "1px"
@@ -304,7 +315,6 @@
 			},
 			"core/post-content": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)",
 					"fontSize": "1.5rem",
 					"lineHeight": 1.3999999999999999
 				}
@@ -326,10 +336,8 @@
 					}
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--figtree)",
 					"fontSize": "0.8rem",
 					"fontStyle": "normal",
-					"fontWeight": "500",
 					"letterSpacing": "0.02rem"
 				}
 			},
@@ -352,7 +360,6 @@
 					}
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)",
 					"fontSize": "var(--wp--preset--font-size--medium)",
 					"lineHeight": 1.3999999999999999
 				}
@@ -401,11 +408,36 @@
 				}
 			},
 			"core/query-pagination": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)",
 					"fontSize": "var(--wp--preset--font-size--medium)",
 					"fontStyle": "normal",
 					"fontWeight": "600"
+				}
+			},
+			"core/query-pagination-numbers": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
 				}
 			},
 			"core/quote": {
@@ -441,7 +473,6 @@
 			},
 			"core/site-tagline": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)",
 					"fontSize": "var(--wp--preset--font-size--small)",
 					"lineHeight": "1"
 				}
@@ -460,7 +491,6 @@
 					}
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)",
 					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontStyle": "normal",
 					"fontWeight": "600",
@@ -484,17 +514,17 @@
 			"button": {
 				":active": {
 					"color": {
-						"background": "var(--wp--preset--color--primary)",
+						"background": "var(--wp--preset--color--tertiary)",
 						"text": "var(--wp--preset--color--base)"
 					}
 				},
 				":focus": {
 					"color": {
-						"background": "var(--wp--preset--color--primary)",
+						"background": "var(--wp--preset--color--tertiary)",
 						"text": "var(--wp--preset--color--base)"
 					},
 					"outline": {
-						"color": "var(--wp--preset--color--primary)",
+						"color": "var(--wp--preset--color--tertiary)",
 						"offset": "2px",
 						"style": "dotted",
 						"width": "1px"
@@ -502,7 +532,7 @@
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--secondary)",
+						"background": "var(--wp--preset--color--tertiary)",
 						"text": "var(--wp--preset--color--base)"
 					}
 				},
@@ -512,9 +542,6 @@
 				"color": {
 					"background": "var(--wp--preset--color--primary)",
 					"text": "var(--wp--preset--color--base)"
-				},
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)"
 				}
 			},
 			"h1": {
@@ -551,7 +578,6 @@
 			},
 			"heading": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--open-runde)",
 					"fontStyle": "normal",
 					"fontWeight": "600",
 					"lineHeight": "1.125"
@@ -567,10 +593,7 @@
 					}
 				},
 				"color": {
-					"text": "var(--wp--preset--color--contrast)"
-				},
-				"typography": {
-					"textDecoration": "none"
+					"text": "var(--wp--preset--color--primary)"
 				}
 			}
 		},
@@ -584,10 +607,9 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--figtree)",
+			"fontFamily": "var(--wp--preset--font-family--open-runde)",
 			"fontSize": "var(--wp--preset--font-size--small)",
 			"fontStyle": "normal",
-			"fontWeight": "500",
 			"lineHeight": "1.5"
 		}
 	},
