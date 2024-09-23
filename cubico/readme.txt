@@ -12,6 +12,9 @@ Cubico is a block version of the classic Cubic, a grid-based theme with large fe
 
 == Changelog ==
 
+= 1.0.1 =
+* Cubico: Cleanup for submission (#8194)
+
 = 1.0.0 =
 * Initial release
 
