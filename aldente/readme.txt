@@ -9,6 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Al Dente is a blog theme perfect for blogs whose posts are categorised, for example food recipe blogs.
+Update Description
 
 == Changelog ==
 
