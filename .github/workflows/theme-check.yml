@@ -41,41 +41,9 @@ jobs:
         wp-env run cli wp plugin install https://github.com/WordPress/theme-check/archive/refs/pull/458/head.zip --activate
 
     - name: Get changed root folders
-      uses: actions/github-script@v6
-      with:
-        script: |
-            const { owner, repo, number } = context.issue;
-            let allFiles = [];
-            let page = 1;
-            
-            while (true) {
-              const { data: files } = await github.rest.pulls.listFiles({
-                owner,
-                repo,
-                pull_number: number,
-                per_page: 100,
-                page: page
-              });
-              
-              allFiles = allFiles.concat(files);
-              
-              if (files.length < 100) break;
-              page++;
-            }
-
-            console.log('files', allFiles.map(file => file.filename));
-            
-            const rootFolders = new Set();
-            for (const file of allFiles) {
-              const parts = file.filename.split('/');
-              if (parts.length > 1) {
-                rootFolders.add(parts[0]);
-              }
-            }
-            
-            const rootFoldersArray = Array.from(rootFolders);
-            core.exportVariable('THEME_FOLDERS', rootFoldersArray.join(','));
-            console.log(`Changed root folders: ${rootFoldersArray.join(', ')}`);
+      run: |
+        THEME_FOLDERS=$(git diff --name-only HEAD^ | awk '!/^\./ && /\//' | awk -F/ '{print $1}' | uniq | paste -s -d, -)
+        echo "THEME_FOLDERS=${THEME_FOLDERS}" >> $GITHUB_ENV
 
     - name: Debug THEME_FOLDERS
       run: echo "THEME_FOLDERS is ${{ env.THEME_FOLDERS }}"
