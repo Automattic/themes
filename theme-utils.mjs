@@ -180,7 +180,7 @@ const commands = {
 		run: async ( args ) => {
 			args.shift();
 			const options = {};
-			while ( args[ 0 ].startsWith( '--' ) ) {
+			while ( args[ 0 ] && args[ 0 ].startsWith( '--' ) ) {
 				const flag = args.shift().slice( 2 );
 				const [ key, value ] = flag.split( '=' );
 				const camelCaseKey = key.replace( /-([a-z])/g, ( [ , c ] ) =>
@@ -188,8 +188,10 @@ const commands = {
 				);
 				options[ camelCaseKey ] = value ?? true;
 			}
-			const themes = args[ 0 ].split( /[ ,]+/ );
-			await validateThemes( themes, options );
+			const themes = args[ 0 ] ? args[ 0 ].split( /[ ,]+/ ) : [];
+			if ( themes.length ) {
+				await validateThemes( themes, options );
+			}
 		},
 	},
 	help: {
