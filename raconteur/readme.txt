@@ -14,6 +14,9 @@ A theme to promote marvelous stories, Raconteur displays enlarged imagery and ty
 
 == Changelog ==
 
+= 1.0.2 =
+* Raconteur: Update the casing of some font files and remove unused font files (#8202)
+
 = 1.0.0 =
 * Initial release
 
