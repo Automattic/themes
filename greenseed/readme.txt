@@ -12,6 +12,9 @@ Greenseed is a sleek, simple theme tailored for small businesses aiming to make 
 
 == Changelog ==
 
+= 1.0.1 =
+* renamed images (#8123)
+
 = 0.0.30 =
 * Greenseed: Update header alignment (#7575)
 
