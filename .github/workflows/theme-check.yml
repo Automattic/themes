@@ -189,7 +189,7 @@ jobs:
             }
 
             for (const [type, groupComments] of Object.entries(groupedComments)) {
-              if (type !== 'REQUIRED') {
+              if (type !== 'REQUIRED' && type !== 'INFO') {
                 fullComment += `<details>\n<summary>${emojis[type]} ${type} (${groupComments.length})</summary>\n\n`;
                 groupComments.forEach(value => {
                   fullComment += `- ${value}\n`;
