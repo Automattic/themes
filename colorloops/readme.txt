@@ -1,14 +1,14 @@
 === Colorloops ===
-Contributors: the WordPress team
-Requires at least: 6.0
-Tested up to: 6.4.1
+Contributors: Automattic
+Requires at least: 6.1
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Colorloops is a minimalistic theme designed to bring some color to your blogging. With a thoughtful neutral frame, Colorloops will make your blog posts shine with a colorful effect.
+Colorloops is a minimalistic theme designed to bring some color to your blogging. With a thoughtful, neutral frame, this theme will make your blog posts shine with a colorful effect.
 
 == Changelog ==
 
@@ -52,41 +52,67 @@ License URL: http://scripts.sil.org/OFL
 Source: http://www.creative-sauce.com
 -- End of Open Sauce Sans Font credits --
 
-Green Earth
-https://pxhere.com/en/photo/137519
-https://pxhere.com/en/photo/110883
+Green Earthhttps://pxhere.com/en/photo/137519https://pxhere.com/en/photo/110883Emerald Greenhttps://pxhere.com/en/photo/1343327Greek Whitehttps://pxhere.com/en/photo/621110https://pxhere.com/en/photo/1286045https://pxhere.com/en/photo/1070619Yellow Ocherhttps://pxhere.com/en/photo/1063755Orangehttps://www.rawpixel.com/image/440254/solar-observationshttps://pxhere.com/en/photo/768520https://www.rawpixel.com/image/3282169/free-photo-image-flower-plant-floralRed Ocherhttps://pxhere.com/en/photo/180903Tyrian Purplehttps://pxhere.com/en/photo/1073616Cochinealhttps://pxhere.com/en/photo/900135https://pxhere.com/en/photo/710783Egyptian Bluehttps://pxhere.com/en/photo/1362286Cobalthttps://pxhere.com/en/photo/1560451Profile Pichttps://www.rawpixel.com/image/5924243/photo-image-public-domain-hand-technology
 
-Emerald Green
-https://pxhere.com/en/photo/1343327
 
-Greek White
-https://pxhere.com/en/photo/621110
-https://pxhere.com/en/photo/1286045
-https://pxhere.com/en/photo/1070619
+== Fonts ==
 
-Yellow Ocher
-https://pxhere.com/en/photo/1063755
+Open Sauce Sans
+Copyright © 2020 by Alfredo Marco Pradil. All rights reserved.
+Source: http://www.creative-sauce.com
+License: Copyright (c) 2020, Alfredo Marco Pradil,
+with Reserved Font Name Open Sauce Sans.
 
-Orange
-https://www.rawpixel.com/image/440254/solar-observations
-https://pxhere.com/en/photo/768520
-https://www.rawpixel.com/image/3282169/free-photo-image-flower-plant-floral
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
 
-Red Ocher
-https://pxhere.com/en/photo/180903
+Overpass Mono
+Copyright 2021 The Overpass Project Authors (https://github.com/RedHatOfficial/Overpass)
+Source: https://delvefonts.com
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
-Tyrian Purple
-https://pxhere.com/en/photo/1073616
+== Images ==
 
-Cochineal
-https://pxhere.com/en/photo/900135
-https://pxhere.com/en/photo/710783
+Images displaying on the screenshot under Public Domain.
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/110883
 
-Egyptian Blue
-https://pxhere.com/en/photo/1362286
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/768520
 
-Cobalt
-https://pxhere.com/en/photo/1560451
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1362286
 
-Profile Pic
-https://www.rawpixel.com/image/5924243/photo-image-public-domain-hand-technology
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1070619
+
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1560451
+
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/900135
+
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1073616
+
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1063755
+
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/180903
+
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1343327
+
+
