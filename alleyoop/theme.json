@@ -2,12 +2,8 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
-			"background": true,
-			"custom": true,
 			"customDuotone": true,
-			"customGradient": true,
-			"defaultDuotone": true,
-			"defaultGradients": false,
+			"defaultDuotone": false,
 			"defaultPalette": false,
 			"duotone": [
 				{
@@ -33,9 +29,103 @@
 					],
 					"name": "Vanilla",
 					"slug": "duotone-vanilla"
+				},
+				{
+					"colors": [
+						"#410B17",
+						"#eca440"
+					],
+					"name": "Heat",
+					"slug": "duotone-mmh"
+				},
+				{
+					"colors": [
+						"#4f287e",
+						"#eca440"
+					],
+					"name": "Lakers",
+					"slug": "duotone-lal"
+				},
+				{
+					"colors": [
+						"#b72b35",
+						"#F4F5F5"
+					],
+					"name": "Clippers",
+					"slug": "duotone-lac"
+				},
+				{
+					"colors": [
+						"#044323",
+						"#5BB964"
+					],
+					"name": "Celtics",
+					"slug": "duotone-cel"
+				},
+				{
+					"colors": [
+						"#010203",
+						"#E6E6E6CC"
+					],
+					"name": "Nets",
+					"slug": "duotone-net"
+				},
+				{
+					"colors": [
+						"#1B125C",
+						"#33758A1A"
+					],
+					"name": "Hornets",
+					"slug": "duotone-hor"
+				},
+				{
+					"colors": [
+						"#010203",
+						"#ae132d"
+					],
+					"name": "Bulls",
+					"slug": "duotone-bul"
+				},
+				{
+					"colors": [
+						"#791537",
+						"#eca440"
+					],
+					"name": "Cavaliers",
+					"slug": "duotone-cav"
+				},
+				{
+					"colors": [
+						"#002B5C",
+						"#F4F5F5"
+					],
+					"name": "Wizards",
+					"slug": "duotone-wiz"
+				},
+				{
+					"colors": [
+						"#003C66",
+						"#e68a3f"
+					],
+					"name": "Knicks",
+					"slug": "duotone-kni"
+				},
+				{
+					"colors": [
+						"#1B3C7E",
+						"#FFC933"
+					],
+					"name": "Warriors",
+					"slug": "duotone-war"
 				}
 			],
-			"gradients": [],
+			"gradients": [
+				{
+					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--tertiary) 0%,var(--wp--preset--color--quaternary) 100%)",
+					"name": "default gradient",
+					"slug": "default-gradient"
+				}
+			],
 			"palette": [
 				{
 					"color": "#FDFCFC",
@@ -56,6 +146,16 @@
 					"color": "#0807070d",
 					"name": "Secondary",
 					"slug": "secondary"
+				},
+				{
+					"color": "#010203",
+					"name": "Tertiary",
+					"slug": "tertiary"
+				},
+				{
+					"color": "#01030473",
+					"name": "Quaternary",
+					"slug": "quaternary"
 				}
 			],
 			"text": true
@@ -125,11 +225,12 @@
 							"fontStyle": "normal",
 							"fontWeight": "900",
 							"src": [
-								"file:./assets/fonts/tektur-tight_normal_900.ttf"
+								"file:./assets/fonts/tektur/tektur-tight_normal_900.ttf"
 							]
 						}
 					],
 					"fontFamily": "Tektur Tight",
+					"name": "Tektur Tight",
 					"slug": "tektur-tight"
 				},
 				{
@@ -139,7 +240,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/hezaedrus_normal_400.ttf"
+								"file:./assets/fonts/hezaedrus/hezaedrus_normal_400.ttf"
 							]
 						},
 						{
@@ -147,7 +248,7 @@
 							"fontStyle": "italic",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/hezaedrus_italic_400.ttf"
+								"file:./assets/fonts/hezaedrus/hezaedrus_italic_400.ttf"
 							]
 						},
 						{
@@ -155,7 +256,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
-								"file:./assets/fonts/hezaedrus_normal_700.ttf"
+								"file:./assets/fonts/hezaedrus/hezaedrus_normal_700.ttf"
 							]
 						},
 						{
@@ -163,11 +264,12 @@
 							"fontStyle": "italic",
 							"fontWeight": "700",
 							"src": [
-								"file:./assets/fonts/hezaedrus_italic_700.ttf"
+								"file:./assets/fonts/hezaedrus/hezaedrus_italic_700.ttf"
 							]
 						}
 					],
 					"fontFamily": "Hezaedrus",
+					"name": "Hezaedrus",
 					"slug": "hezaedrus"
 				}
 			],
@@ -263,6 +365,9 @@
 			"core/avatar": {
 				"border": {
 					"radius": "999px"
+				},
+				"filter": {
+					"duotone": "var(--wp--preset--duotone--duotone-bw)"
 				}
 			},
 			"core/button": {
@@ -363,7 +468,7 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--source-sans-3)",
-					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
 					"letterSpacing": "normal",
 					"lineHeight": "1.590909091"
 				}
@@ -392,7 +497,7 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--source-sans-3)",
-					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
 					"letterSpacing": "normal",
 					"lineHeight": "1.590909091"
 				}
@@ -412,7 +517,7 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--source-sans-3)",
-					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
 					"letterSpacing": "normal",
 					"lineHeight": "1.590909091"
 				}
@@ -457,6 +562,7 @@
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--source-sans-3)",
 					"fontSize": "var(--wp--preset--font-size--x-small)",
+					"fontStyle": "normal",
 					"fontWeight": "500",
 					"letterSpacing": "normal",
 					"lineHeight": "1"
