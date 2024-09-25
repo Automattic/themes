@@ -28,7 +28,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu enim eu magna convallis accumsan sodales et metus. Quisque at metus id purus luctus aliquet.', 'colorloops');?></p>
+<p><?php esc_html_e('<br>Sophia Bennett is an art historian and freelance writer with a passion for exploring the intersections between nature, symbolism, and artistic expression. With a background in Renaissance and modern art, Sophia enjoys uncovering the hidden meanings behind iconic works and sharing her insights with art lovers of all levels. When she’s not visiting museums or researching the latest trends in contemporary art, you can find her hiking in the countryside, always chasing the next rainbow.', 'colorloops');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
