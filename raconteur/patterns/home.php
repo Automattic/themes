@@ -300,7 +300,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"lock":{"move":false,"remove":false}} -->
-<p><?php esc_html_e('Designed with WordPress', 'raconteur');?></p>
+<p class="has-text-align-left"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'raconteur');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
