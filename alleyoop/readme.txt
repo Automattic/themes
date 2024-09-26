@@ -1,7 +1,7 @@
 === AlleyOop ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.7
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,27 +30,24 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-This theme bundles the following third-party resources:
 
-Included in theme screenshot:
-https://unsplash.com/photos/woman-in-black-tank-top-and-black-shorts-playing-basketball--TJUZDO3sJ8
-https://unsplash.com/photos/white-and-black-heart-print-textile-N_7Kb4hpaoU
+== Fonts ==
 
-Included in a footer pattern:
-https://unsplash.com/photos/red-and-white-abstract-painting-O2kqxbix4Mw
+Tektur Tight
+Copyright 2020 The Tektur Project Authors (https://www.github.com/hyvyys/Tektur)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
-Included in a header pattern:
-https://unsplash.com/photos/white-and-black-heart-print-textile-N_7Kb4hpaoU
-
-Tektur Tight Font
-Copyright 2020 The Tektur Project Authors (https://www.github.com/hyvyys/Tektur) 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
-License URL: https://scripts.sil.org/OFL 
--- End of Tektur Tight Font credits --
-
-Hezaedrus Font
-Copyright (c) 2015 by Hubert & Fischer. All rights reserved. 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
+Hezaedrus
+Copyright (c) 2015 by Hubert & Fischer. All rights reserved.
 Source: www.google.com/fonts
--- End of Hezaedrus Font credits --
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
+
+== Images ==
+
+Photo by form PxHere
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/25480
+
+
