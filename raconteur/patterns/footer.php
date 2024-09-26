@@ -19,7 +19,7 @@ declare( strict_types = 1 );
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph {"lock":{"move":false,"remove":true},"className":"no-underline","fontSize":"x-small"} -->
-		<p class="has-text-align-right"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'raconteur');?></p>
+		<p class="has-text-align-left"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'raconteur');?></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
