@@ -10,7 +10,7 @@
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false,"align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-top is-not-stacked-on-mobile"><!-- wp:column {"verticalAlignment":"top","width":""} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:paragraph {"align":"left","fontSize":"small"} -->
-<p class="has-text-align-left has-small-font-size"><?php esc_html_e('Designed with WordPress', 'colorstream');?></p>
+<p class="no-underline has-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'colorstream');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
