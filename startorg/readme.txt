@@ -17,8 +17,6 @@ Startorg is a community/non profit theme perfect for organizations.
 
 == Copyright ==
 
-Startorg is based on Startorg (https://github.com/Automattic/themes/tree/trunk/startorg), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
 Startorg WordPress Theme, (C) 2022 Automattic
 Startorg is distributed under the terms of the GNU GPL.
 
