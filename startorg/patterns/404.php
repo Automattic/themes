@@ -17,7 +17,7 @@
 <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'startorg');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false} /-->
+<!-- wp:search {"showLabel":false,"width":100,"widthUnit":"%","buttonUseIcon":true,"style":{"border":{"radius":"100px","width":"0px","style":"none"},"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"500","letterSpacing":"0.02em"}},"backgroundColor":"secondary","fontSize":"small"} /-->
 
 <!-- wp:spacer -->
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
