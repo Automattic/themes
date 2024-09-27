@@ -1,7 +1,7 @@
 === Startorg ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.3.1
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,15 +32,44 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+== Fonts ==
+
 Plus Jakarta Sans Font
 Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans) 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
 License URL: https://scripts.sil.org/OFL 
 Source: https://www.tokotype.com
--- End of Plus Jakarta Sans Font credits --
 
-home_image_3 (CC0): https://stocksnap.io/photo/blue-sky-E1C34B4580
-home_image_4 (CC0): https://www.rawpixel.com/image/5904389/laboratory-free-public-domain-cc0-photo
-home_image_5 (CC0): https://stocksnap.io/photo/sky-clouds-M3WRIJL64I
-home_image (CC0): https://stocksnap.io/photo/hand-child-05PNBOP0GU
-roar_hero_banner.webm (CC0): https://www.pexels.com/video/training-athletes-854169/
+== Images ==
+
+Used in patterns
+
+Hand Child Free Stock Image
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/hand-child-05PNBOP0GU
+
+Sky Clouds Free Stock Image
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/sky-clouds-M3WRIJL64I
+
+Blue Sky Free Stock Image
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/blue-sky-E1C34B4580
+
+Laboratory, free public domain CC0 photo
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/blue-sky-E1C34B4580
+
+Laboratory, free public domain CC0 photo
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://stocksnap.io/photo/blue-sky-E1C34B4580
+
+Training Athletes Free Stock Video Footage
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.pexels.com/video/training-athletes-854169/
