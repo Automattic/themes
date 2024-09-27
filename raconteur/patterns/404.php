@@ -13,20 +13,20 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"top","layout":{"type":"constrained"}} -->
-<div class="wp-block-column is-vertically-aligned-top"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|70"},"dimensions":{"minHeight":"90vh"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="min-height:90vh;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)"><!-- wp:heading {"level":1} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|70"},"dimensions":{"minHeight":"90vh"}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="min-height:90vh;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)"><!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading"><?php esc_html_e('Oops... That page can’t be found.', 'raconteur');?></h1>
-<!-- /wp:heading --></main>
+<!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group"><!-- wp:paragraph -->
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
 <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'raconteur');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search","buttonText":"","buttonPosition":"button-inside","buttonUseIcon":true} /--></main>
-<!-- /wp:group --></div>
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search","buttonText":"","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
+<!-- /wp:group --></main>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
