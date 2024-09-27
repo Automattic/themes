@@ -10,7 +10,7 @@
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"width":120,"height":120,"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/speaker_1.webp" alt="" width="120" height="120"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/speaker_1.webp" alt="" width="120" height="120"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
@@ -26,7 +26,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":60,"width":120,"height":120,"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/speaker_6.webp" alt="" class="wp-image-60" width="120" height="120"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/speaker_6.webp" alt="" class="wp-image-60" width="120" height="120"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
@@ -42,7 +42,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":61,"width":120,"height":120,"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/speaker_3.webp" alt="" class="wp-image-61" width="120" height="120"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/speaker_3.webp" alt="" class="wp-image-61" width="120" height="120"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
@@ -56,7 +56,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":57,"width":120,"height":120,"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/speaker_4.webp" alt="" class="wp-image-57" width="120" height="120"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/speaker_4.webp" alt="" class="wp-image-57" width="120" height="120"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
@@ -72,7 +72,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":58,"width":120,"height":120,"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/speaker_2.webp" alt="" class="wp-image-58" width="120" height="120"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/speaker_2.webp" alt="" class="wp-image-58" width="120" height="120"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
@@ -88,7 +88,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":59,"width":120,"height":120,"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/speaker_5.webp" alt="" class="wp-image-59" width="120" height="120"/></figure>
+<figure class="wp-block-image size-full is-resized is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/speaker_5.webp" alt="" class="wp-image-59" width="120" height="120"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->

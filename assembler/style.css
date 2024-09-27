@@ -7,32 +7,17 @@ Description: Assemble something beautiful.
 Requires at least: 6.4
 Tested up to: 6.4
 Requires PHP: 7.0
-Version: 0.0.19
+Version: 0.0.21
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: assembler
 Tags: blog, one-column, three-columns, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready
 */
 
-/* Progresive enhancement to reduce widows and orphans. */
+/* Remove auto-applied padding on headings when color is applied. */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote {
-	text-wrap: balance;
-}
-
-/* Remove auto-applied padding on headings when color is applied.  */
 h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.has-background, h6.has-background {
     padding: 0;
-}
-
-p {
-	text-wrap: pretty;
 }
 
 /* Set default line height for font size presets. */
@@ -45,6 +30,15 @@ p {
 
 .entry-content > p:first-child {
 	margin-top: var(--wp--style--root--padding-left);
+}
+
+/* Add a transition state for buttons. */
+
+.wp-element-button {
+    transition: border, background-color, color, box-shadow, opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(30px) brightness(120%);
 }
 
 /* Fields */

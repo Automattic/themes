@@ -12,6 +12,13 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.21 =
+* Assembler: Remove inherited color styling from linked headings (#8206)
+* Fix footer validation and spacing issue (#8208)
+
+= 0.0.20 =
+* Assembler: Improving styles (#8027)
+
 = 0.0.19 =
 * Minor style tweaks for Assembler (#7989)
 

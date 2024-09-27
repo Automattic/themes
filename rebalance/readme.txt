@@ -26,6 +26,9 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 
 == Changelog ==
 
+= 1.1.18 =
+* Do not add padding in carusel block (#8085)
+
 = 1.1.17 =
 * Lossless image optimization (#7671)
 

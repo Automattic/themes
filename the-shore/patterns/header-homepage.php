@@ -15,9 +15,9 @@
 <!-- wp:group {"align":"full","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"5vw","right":"5vw"}}},"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--40);padding-right:5vw;padding-bottom:var(--wp--preset--spacing--40);padding-left:5vw"><!-- wp:group {"layout":{"type":"flex"}} -->
-<div class="wp-block-group"><!-- wp:image {"width":"200px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_logo_2.png" alt="<?php echo __('The Shore. Boutique, Resort & Spa', 'the-shore');?>" style="width:200px"/></figure>
-<!-- /wp:image --></div>
+<div class="wp-block-group"><!-- wp:site-logo {"width":40,"shouldSyncIcon":true} /-->
+
+<!-- wp:site-title {"level":0} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:navigation {"overlayBackgroundColor":"base","overlayTextColor":"primary","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"vertical"},"style":{"spacing":{"margin":{"top":"0"},"blockGap":"var:preset|spacing|10"}}} /--></div>
