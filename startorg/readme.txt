@@ -15,6 +15,12 @@ Startorg is a community/non profit theme perfect for organizations.
 = 1.0.0 =
 * Initial release
 
+== Recommended Plugins ==
+
+Jetpack
+https://wordpress.org/plugins/jetpack/
+Security, performance, and marketing tools made by WordPress experts. Jetpack keeps your site protected so you can focus on more important things.
+
 == Copyright ==
 
 Startorg WordPress Theme, (C) 2022 Automattic
