@@ -14,6 +14,9 @@ Colorstream is a slick and minimalistic theme design crafted especially for Word
 
 == Changelog ==
 
+= 1.0.2 =
+* Colorstream: unifies sidebars and removes frontpage (#8207)
+
 = 1.0.0 =
 * Initial release
 
