@@ -12,6 +12,9 @@ Startorg is a community/non profit theme perfect for organizations.
 
 == Changelog ==
 
+= 1.0.2 =
+* Startorg: Remove Rubik font from heading definition (#8221)
+
 = 1.0.1 =
 * Update header and footer template parts
 
