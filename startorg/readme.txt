@@ -12,6 +12,9 @@ Startorg is a community/non profit theme perfect for organizations.
 
 == Changelog ==
 
+= 1.0.1 =
+* Update header and footer template parts
+
 = 1.0.0 =
 * Initial release
 
