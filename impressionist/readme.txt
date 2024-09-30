@@ -12,6 +12,9 @@ Impressionist is a block theme about the impressionist art movement.
 
 == Changelog ==
 
+= 1.0.1 =
+* Impressionist: Remove staging site mentioning (#8215)
+
 = 1.0.0 =
 * Initial release
 
