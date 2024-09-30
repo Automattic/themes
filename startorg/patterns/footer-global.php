@@ -18,15 +18,15 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#eaeaea","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"top":"1.8rem","left":"1.8rem"},"margin":{"top":"20px","bottom":"20px"}}},"className":"is-style-logos-only"} -->
-<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only" style="margin-top:20px;margin-bottom:20px"><!-- wp:social-link {"url":"https://startorg.mystagingwebsite.com","service":"facebook"} /-->
+<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only" style="margin-top:20px;margin-bottom:20px"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
 
-<!-- wp:social-link {"url":"https://startorg.mystagingwebsite.com","service":"instagram"} /-->
+<!-- wp:social-link {"url":"#","service":"instagram"} /-->
 
-<!-- wp:social-link {"url":"https://startorg.mystagingwebsite.com","service":"wordpress"} /-->
+<!-- wp:social-link {"url":"#","service":"wordpress"} /-->
 
-<!-- wp:social-link {"url":"https://startorg.mystagingwebsite.com","service":"whatsapp"} /-->
+<!-- wp:social-link {"url":"#","service":"whatsapp"} /-->
 
-<!-- wp:social-link {"url":"https://startorg.mystagingwebsite.com","service":"linkedin"} /--></ul>
+<!-- wp:social-link {"url":"#","service":"linkedin"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
