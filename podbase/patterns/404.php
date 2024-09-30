@@ -42,7 +42,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"30%","layout":{"type":"default"}} -->
-<div class="wp-block-column" style="flex-basis:30%"></div>
+<div class="wp-block-column" style="flex-basis:30%"><!-- wp:template-part {"slug":"sidebar","area":"uncategorized"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 

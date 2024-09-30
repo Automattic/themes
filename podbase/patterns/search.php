@@ -20,8 +20,8 @@
 <div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"tagName":"main","align":"wide","layout":{"type":"default"}} -->
-<main class="wp-block-query alignwide"><!-- wp:group {"style":{"border":{"color":null,"style":null,"width":null,"top":[],"right":[],"bottom":{"color":"var:preset|color|contrast","style":"dotted","width":"1px"},"left":[]},"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
+<!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-query alignwide"><!-- wp:group {"style":{"border":{"color":null,"style":null,"width":null,"top":[],"right":[],"bottom":{"color":"var:preset|color|contrast","style":"dotted","width":"1px"},"left":[]},"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--contrast);border-bottom-style:dotted;border-bottom-width:1px;margin-bottom:var(--wp--preset--spacing--60)"><!-- wp:query-title {"type":"search"} /--></div>
 <!-- /wp:group -->
 
@@ -61,7 +61,7 @@
 <!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
 <p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'podbase');?></p>
 <!-- /wp:paragraph -->
-<!-- /wp:query-no-results --></main>
+<!-- /wp:query-no-results --></div>
 <!-- /wp:query --></div>
 <!-- /wp:column -->
 
