@@ -9,7 +9,7 @@
 
 <!-- wp:group {"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"padding":{"top":"10vh","bottom":"10vh","left":"6vw","right":"6vw"}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-color has-contrast-background-color has-text-color has-background has-link-color" style="padding-top:10vh;padding-right:6vw;padding-bottom:10vh;padding-left:6vw"><!-- wp:image {"id":262,"width":"220px","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-large is-resized is-style-rounded"><img src="https://arttheme.mystagingwebsite.com/wp-content/uploads/2024/02/impressionist-author-image-edited.jpg" alt="" class="wp-image-262" style="width:220px"/></figure>
+<figure class="wp-block-image size-large is-resized is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/impressionist-author-image-edited.jpg" alt="" class="wp-image-262" style="width:220px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2"}},"fontSize":"large"} -->
