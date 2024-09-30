@@ -68,7 +68,7 @@ jobs:
             const rootFolders = new Set();
             for (const file of allFiles) {
               const parts = file.filename.split('/');
-              if (parts.length > 1) {
+              if (parts.length > 1 && !parts[0].startsWith('.')) {
                 rootFolders.add(parts[0]);
               }
             }
