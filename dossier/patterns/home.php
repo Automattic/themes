@@ -13,8 +13,8 @@
 <div class="wp-block-column"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignwide"><!-- wp:site-title {"level":0,"className":"no-underline"} /-->
 
-<!-- wp:heading {"align":"wide","className":"no-underline","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}},"typography":{"textTransform":"uppercase"}},"textColor":"secondary","fontSize":"x-large"} -->
-<h2 class="wp-block-heading alignwide no-underline has-secondary-color has-text-color has-link-color has-x-large-font-size" style="text-transform:uppercase"><?php esc_html_e('Chef de Cuisine', 'dossier');?></h2>
+<!-- wp:heading {"align":"wide","className":"no-underline","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-large"} -->
+<h2 class="wp-block-heading alignwide no-underline has-secondary-color has-text-color has-link-color has-x-large-font-size"><?php esc_html_e('Chef de Cuisine', 'dossier');?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
