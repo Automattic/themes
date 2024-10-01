@@ -1,16 +1,23 @@
 <?php
 /**
- * Title: List of posts, 3 columns
- * Slug: kamala/posts-3-col
- * Categories: query
- * Block Types: core/query
+ * Title: index
+ * Slug: kamala/index
+ * Inserter: no
  */
 ?>
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
+<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull">
+	<!-- wp:heading {"level":1,"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|50"}}}} -->
+	<h1 class="wp-block-heading alignwide" style="padding-top:var(--wp--preset--spacing--50)"><?php esc_html_e('Posts', 'kamala');?></h1>
+	<!-- /wp:heading -->
 <!-- wp:query {"query":{"perPage":10,"pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide">
 	<!-- wp:query-no-results -->
-	<!-- wp:pattern {"slug":"kamala/hidden-no-results"} /-->
+		<!-- wp:paragraph -->
+		<p><?php echo esc_html_x( 'Sorry, but nothing was found. Please try a search with different keywords.', 'Message explaining that there are no results returned from a search', 'kamala' ); ?></p>
+		<!-- /wp:paragraph -->
 	<!-- /wp:query-no-results -->
 
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
@@ -50,3 +57,7 @@
 	<!-- /wp:group -->
 </div>
 <!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->

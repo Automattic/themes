@@ -1,128 +1,52 @@
 <?php
 /**
- * Title: Footer with colophon, 4 columns
+ * Title: footer
  * Slug: kamala/footer
- * Categories: footer
- * Block Types: core/template-part/footer
+ * Inserter: no
  */
 ?>
+<!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40","top":"6vh","bottom":"6vh"}},"border":{"top":{"color":"var:preset|color|contrast","width":"1px"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group" style="border-top-color:var(--wp--preset--color--contrast);border-top-width:1px;padding-top:6vh;padding-right:var(--wp--preset--spacing--40);padding-bottom:6vh;padding-left:var(--wp--preset--spacing--40)"><!-- wp:columns {"align":"full"} -->
+<div class="wp-block-columns alignfull"><!-- wp:column {"width":"30%"} -->
+<div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"style":{"dimensions":{"minHeight":""},"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"width":60,"shouldSyncIcon":true,"style":{"layout":{"selfStretch":"fit","flexSize":null}}} /-->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
-	<!-- wp:columns {"align":"wide"} -->
-	<div class="wp-block-columns alignwide">
-		<!-- wp:column {"width":"30%"} -->
-		<div class="wp-block-column" style="flex-basis:30%">
-			<!-- wp:group {"style":{"dimensions":{"minHeight":""},"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"flex","orientation":"vertical"}} -->
-			<div class="wp-block-group">
-				<!-- wp:site-logo {"width":20,"shouldSyncIcon":true,"style":{"layout":{"selfStretch":"fit","flexSize":null}}} /-->
+<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontSize":"large"} /--></div>
+<!-- /wp:group -->
 
-				<!-- wp:site-title {"level":0,"fontSize":"medium"} /-->
+<!-- wp:site-tagline {"fontSize":"small"} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
 
-				<!-- wp:site-tagline {"fontSize":"small"} /-->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:column -->
+<!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%"></div>
+<!-- /wp:column -->
 
-		<!-- wp:column {"width":"20%"} -->
-		<div class="wp-block-column" style="flex-basis:20%">
-		</div>
-		<!-- /wp:column -->
+<!-- wp:column {"width":"25%"} -->
+<div class="wp-block-column" style="flex-basis:25%"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"}}} -->
+<p style="font-style:normal;font-weight:500"><?php esc_html_e('Working Hours', 'kamala');?></p>
+<!-- /wp:paragraph -->
 
-		<!-- wp:column {"width":"50%"} -->
-		<div class="wp-block-column" style="flex-basis:50%">
-			<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
-			<div class="wp-block-group">
-				<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-				<div class="wp-block-group">
-					<!-- wp:heading {"level":2,"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}},"fontFamily":"body"} -->
-					<h2 class="wp-block-heading has-medium-font-size has-body-font-family" style="font-style:normal;font-weight:600"><?php esc_html_e( 'About', 'kamala' ); ?></h2>
-					<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><?php echo wp_kses_post( __('Monday: Closed <br>Tue to Sun: 9am — 7pm <br>Sat and Sun: 10am — 7pm', 'kamala') );?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
 
-					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-					<div class="wp-block-group">
+<!-- wp:column {"width":"25%"} -->
+<div class="wp-block-column" style="flex-basis:25%"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"}}} -->
+<p style="font-style:normal;font-weight:500"><?php esc_html_e('Location', 'kamala');?></p>
+<!-- /wp:paragraph -->
 
-						<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"spacing":{"blockGap":"var:preset|spacing|10"}},"fontSize":"small","ariaLabel":"<?php esc_attr_e( 'About', 'kamala' ); ?>"} -->
+<!-- wp:paragraph -->
+<p><?php echo wp_kses_post( __('123 Example St. <br>Los Angeles, CA 12345 <br>(555) 555-5555', 'kamala') );?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
 
-						<!-- wp:navigation-link {"label":"Team","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"History","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"Careers","url":"#"} /-->
-
-						<!-- /wp:navigation -->
-
-					</div>
-					<!-- /wp:group -->
-				</div>
-
-				<!-- /wp:group -->
-
-				<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-				<div class="wp-block-group">
-					<!-- wp:heading {"level":2,"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}},"fontFamily":"body"} -->
-					<h2 class="wp-block-heading has-medium-font-size has-body-font-family" style="font-style:normal;font-weight:600"><?php esc_html_e( 'Privacy', 'kamala' ); ?></h2>
-					<!-- /wp:heading -->
-
-					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-					<div class="wp-block-group">
-
-						<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"spacing":{"blockGap":"var:preset|spacing|10"}},"fontSize":"small","ariaLabel":"<?php esc_attr_e( 'Privacy', 'kamala' ); ?>"} -->
-
-						<!-- wp:navigation-link {"label":"Privacy Policy","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"Terms and Conditions","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"Contact Us","url":"#"} /-->
-
-						<!-- /wp:navigation -->
-
-					</div>
-					<!-- /wp:group -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-				<div class="wp-block-group">
-					<!-- wp:heading {"level":2,"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}},"fontFamily":"body"} -->
-					<h2 class="wp-block-heading has-medium-font-size has-body-font-family" style="font-style:normal;font-weight:600"><?php esc_html_e( 'Social', 'kamala' ); ?></h2>
-					<!-- /wp:heading -->
-
-					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-					<div class="wp-block-group">
-
-						<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"spacing":{"blockGap":"var:preset|spacing|10"}},"fontSize":"small","ariaLabel":"<?php esc_attr_e( 'Social Media', 'kamala' ); ?>"} -->
-
-						<!-- wp:navigation-link {"label":"Facebook","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"Instagram","url":"#"} /-->
-						<!-- wp:navigation-link {"label":"Twitter/X","url":"#"} /-->
-
-						<!-- /wp:navigation -->
-
-					</div>
-					<!-- /wp:group -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:column -->
-	</div>
-	<!-- /wp:columns -->
-
-	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"0"}}}} -->
-	<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:0">
-		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast-2","fontSize":"small"} -->
-		<p class="has-contrast-2-color has-text-color has-link-color has-small-font-size">
-		<?php
-			/* Translators: WordPress link. */
-			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'kamala' ) ) . '" rel="nofollow">WordPress</a>';
-			echo sprintf(
-				/* Translators: Designed with WordPress */
-				esc_html__( 'Designed with %1$s', 'kamala' ),
-				$wordpress_link
-			);
-			?>
-		</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
-</div>
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"0"}}}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:0"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"fontSize":"small"} -->
+<p class="has-link-color has-small-font-size"><?php echo wp_kses_post( __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a> ', 'kamala') );?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->

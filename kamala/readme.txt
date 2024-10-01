@@ -1,7 +1,7 @@
 === Kamala ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4.2
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,23 +32,23 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
+
 === Images ===
-License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
 
-museum.webp - https://www.rawpixel.com/image/3297419/free-photo-image-interior-hallway-architecture
-tourist-and-building.webp - https://www.rawpixel.com/image/5928004/photo-image-public-domain-hand-person
-building-exterior.webp - https://www.rawpixel.com/image/430335/free-photo-image-architecture-building-roof
-windows.webp - https://www.rawpixel.com/image/3286615/free-photo-image-texture-architecture-building
-abstract-geometric-art.webp - https://www.rawpixel.com/image/3283970/free-photo-image-pattern-artwork-abstract
-angular-roof.webp - https://www.rawpixel.com/image/3289063/free-photo-image-architectural-detail-architecture
-art-gallery.webp - https://www.rawpixel.com/image/3286187/free-photo-image-person-stairs-architecture
-green-staircase.webp - https://www.rawpixel.com/image/430558/free-photo-image-abstract-architecture-art-public-domain
-hotel-facade.webp - https://www.rawpixel.com/image/3286725/free-photo-image-black-and-white-background-photos
-hero_image.jpg - https://unsplash.com/pt-br/fotografias/uma-mulher-de-biquini-marrom-fazendo-um-suporte-de-mao-N21356amsyw
-homepage_image_1.jpg -https://unsplash.com/pt-br/fotografias/piscina-azul-perto-de-planta-em-vaso-verde-3jztLhBPrUo
+Credit: Jade Stephens
+License: Unsplash license
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/a-woman-in-a-brown-bikini-doing-a-handstand-N21356amsyw
+It's used in the homepage template.
 
-License: UNICODE LICENSE V3 https://www.unicode.org/license.txt
-icon-message.webp
+Credit: Frames For Your Heart
+License: Unsplash license
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/blue-swimming-pool-near-green-potted-plant-3jztLhBPrUo
+It's used in the homepage template.
+
+=== Fonts ===
 
 Public Sans Font
 Copyright 2015 The Public Sans Project Authors (https://github.com/uswds/public-sans) 

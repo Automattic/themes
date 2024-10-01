@@ -5,12 +5,20 @@ Author: Automattic
 Author URI: https://automattic.com
 Description: Kamala is ideal for small businesses looking to present their services in a visually captivating way. Kamala uses Twenty Twenty-Four as a base theme, providing delicate yet functional styles for a pleasurable online experience.
 Requires at least: 6.0
-Tested up to: 6.4.2
+Tested up to: 6.6
 Requires PHP: 5.7
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: kamala
-Tags: blog, news, portfolio, one-column, wide-blocks, accessibility-ready, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, sticky-post, style-variations, threaded-comments, translation-ready, yoga, yoga-studio, kamala, wellness, meditation
+Tags: one-column, wide-blocks, block-patterns, block-styles, featured-images, full-site-editing, rtl-language-support, style-variations, threaded-comments, translation-ready,
 */
+
+.wp-block-button.is-style-outline
+	> .wp-block-button__link:not(.has-text-color, .has-background):hover {
+	background-color: var(--wp--preset--color--contrast-2, var(--wp--preset--color--contrast, transparent));
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--contrast-2, var(--wp--preset--color--contrast, currentColor));
+}
+
 
