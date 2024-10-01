@@ -32,63 +32,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Tilda Sans Font
-Copyright (c) 2021 ParaType Ltd. All rights reserved. 
-http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
-Source: http://www.paratype.com
--- End of Tilda Sans Font credits --
-
-Ibarra Real Nova Font
-Copyright 2007 The Ibarra Real Nova Project Authors (https://github.com/googlefonts/ibarrareal) 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
-License URL: https://scripts.sil.org/OFL 
-Source: www.octaviopardo.com
--- End of Ibarra Real Nova Font credits --
-
-AI-generated user avatar
-https://stocksnap.io/photo/person-smiling-QH2V8JROLS
-https://www.rawpixel.com/image/5928211/photo-image-background-public-domain-hands
-
-
-== Fonts ==
-
-Avara
-Created by Raphael Bastide with FontForge 2.0 (http://fontforge.sf.net). Edited by Wei Huang and Lucas Le Bihan
-
-Averia Serif Libre
-Copyright (c) 2011, Dan Sayers (i@iotic.com), with Reserved Font Name 'Averia' and 'Averia Libre'.
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
-
-Crimson Pro
-Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro)
-Source: http://www.baronvonfonthausen.com/
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
-
-Instrument Sans
-Copyright 2022 The Instrument Sans Project Authors (https://github.com/Instrument/instrument-sans)
-Source: www.fragtypefoundry.xyz
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
-
-Instrument Sans Condensed
-Copyright 2022 The Instrument Sans Project Authors (https://github.com/Instrument/instrument-sans)
-Source: www.fragtypefoundry.xyz
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
-
-Rethink Sans
-Copyright 2022 The Rethink Sans Project Authors (https://github.com/hans-thiessen/Rethink-Sans)
-Source: https://rethinkideas.com/
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
-
-Tilda Sans
-Copyright (c) 2021 ParaType Ltd. All rights reserved.
-Source: http://www.paratype.com
-License: http://scripts.sil.org/OFL
-
-Ibarra Real Nova
-Copyright 2007 The Ibarra Real Nova Project Authors (https://github.com/googlefonts/ibarrareal)
-Source: www.octaviopardo.com
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
 == Images ==
 
@@ -104,4 +47,36 @@ License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://www.rawpixel.com/image/5928211/photo-image-background-public-domain-hands
 
+
+== Fonts ==
+
+Infini
+Sandrine Nugue
+Source: http://www.sandrinenugue.com
+License: Le caractere Infini a ete cree avec le soutien du Centre National des Arts Plastiques
+
+Crimson Pro
+Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro)
+Source: http://www.baronvonfonthausen.com/
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
+Imbue 100pt
+Copyright 2020 The Imbue Project Authors (https://github.com/Etcetera-Type-Co/Imbue)
+Source: https://www.etceteratype.co
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
+Plus Jakarta Sans
+Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans)
+Source: https://www.tokotype.com
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
+Tilda Sans
+Copyright (c) 2021 ParaType Ltd. All rights reserved.
+Source: http://www.paratype.com
+License: http://scripts.sil.org/OFL
+
+Ibarra Real Nova
+Copyright 2007 The Ibarra Real Nova Project Authors (https://github.com/googlefonts/ibarrareal)
+Source: www.octaviopardo.com
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
