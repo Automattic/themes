@@ -99,4 +99,9 @@ License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://stocksnap.io/photo/person-smiling-QH2V8JROLS
 
+Free woman seasoning her meal with hot spice image, public domain food CC0 photo.
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/5928211/photo-image-background-public-domain-hands
+
 

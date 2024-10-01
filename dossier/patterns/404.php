@@ -35,7 +35,7 @@
 <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'dossier');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"showLabel":false,"placeholder":" Search","width":100,"widthUnit":"%","buttonText":"","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
+<!-- wp:search {"showLabel":false,"placeholder":"  Search","width":100,"widthUnit":"%","buttonText":"","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
