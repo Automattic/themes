@@ -14,61 +14,23 @@
 
 <!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"blockGap":"var:preset|spacing|70"}},"textColor":"base"} -->
-<!-- wp:columns {"verticalAlignment":"top"} -->
-<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1"} /--></div>
+<!-- wp:columns {"verticalAlignment":"center"} -->
+<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"25%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:25%"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1"} /--></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"top","width":"5%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:5%"></div>
+<!-- wp:column {"verticalAlignment":"center","width":"10%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:10%"></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"top","width":"5%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:5%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"top","width":"60%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:60%"><!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<!-- wp:column {"verticalAlignment":"center","width":"65%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:65%"><!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignfull"><!-- wp:post-title {"isLink":true,"fontSize":"xx-large"} /-->
 
 <!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignfull"><!-- wp:post-date {"isLink":true} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"top","width":"0%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:0%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"top","width":"5%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:5%"></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
-
-<!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|80"}}}} -->
-<div class="wp-block-columns are-vertically-aligned-center" style="padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:column {"verticalAlignment":"center","width":"25%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:25%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"center","width":"5%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:5%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"center","width":"5%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:5%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"center","width":"0%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:0%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"center","width":"5%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:5%"></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 <!-- /wp:post-template -->

@@ -99,7 +99,7 @@
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:30%"><!-- wp:navigation {"textColor":"base","overlayMenu":"always","icon":"menu","hasIcon":false,"style":{"layout":{"selfStretch":"fit","flexSize":null},"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"small","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"}} /-->
 
 <!-- wp:paragraph {"align":"left","fontSize":"small"} -->
-<p class="has-text-align-left has-small-font-size"><?php esc_html_e('Designed with WordPress', 'podbase');?></p>
+<p class="has-base-color has-text-color has-link-color has-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'podbase');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
