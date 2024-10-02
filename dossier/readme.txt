@@ -36,13 +36,14 @@ GNU General Public License for more details.
 == Images ==
 
 Image on the screenshot
-Person smiling Free Stock Image by Matt Moloney
+Title: Person smiling Free Stock Image by Matt Moloney
 Author: https://stocksnap.io/author/mattmoloney
 License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://stocksnap.io/photo/person-smiling-QH2V8JROLS
 
-Free woman seasoning her meal with hot spice image, public domain food CC0 photo.
+'About the Chef' featured image
+Title: Free woman seasoning her meal with hot spice image, public domain food CC0 photo.
 License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://www.rawpixel.com/image/5928211/photo-image-background-public-domain-hands
@@ -79,4 +80,5 @@ Ibarra Real Nova
 Copyright 2007 The Ibarra Real Nova Project Authors (https://github.com/googlefonts/ibarrareal)
 Source: www.octaviopardo.com
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
 

@@ -50,7 +50,7 @@
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":""} -->
 <div class="wp-block-column"><!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php esc_html_e('Designed with WordPress', 'dossier');?></p>
+<p class="has-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'dossier');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
