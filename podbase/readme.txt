@@ -1,7 +1,7 @@
 == Podbase ==
 
 Contributors: Automattic
-Requires at least: 6.0
+Requires at least: 6.1
 Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
@@ -155,7 +155,6 @@ Teko
 Copyright 2023 The Teko Project Authors (https://www.github.com/googlefonts/teko)
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
 
-
 == Images ==
 
 Images displayed on the screenshot
@@ -166,4 +165,5 @@ Source: https://pxhere.com/en/photo/498235
 License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/1173243
+
 
