@@ -18,7 +18,7 @@
 <div class="wp-block-column" style="flex-basis:75%"><!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"level":1,"align":"wide"} -->
-<h1 class="wp-block-heading alignwide"><?php esc_html_e('Ops!', 'dossier');?></h1>
+<h1 class="wp-block-heading alignwide"><?php esc_html_e('Oops!', 'dossier');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"level":1,"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
