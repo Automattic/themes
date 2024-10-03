@@ -80,5 +80,3 @@ Ibarra Real Nova
 Copyright 2007 The Ibarra Real Nova Project Authors (https://github.com/googlefonts/ibarrareal)
 Source: www.octaviopardo.com
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
-
-
