@@ -4,9 +4,7 @@
  * slug: dossier/comments
  * inserter: no
  */
-
 ?>
-
 <!-- wp:comments {"align":"wide","className":"wp-block-comments-query-loop"} -->
 <div class="wp-block-comments alignwide wp-block-comments-query-loop"><!-- wp:comments-title {"level":1} /-->
 
@@ -37,11 +35,11 @@
 <!-- /wp:comment-template -->
 
 <!-- wp:comments-pagination {"layout":{"type":"flex","justifyContent":"left"}} -->
-<!-- wp:comments-pagination-previous {"label":"<?php esc_html_e('Older', 'dossier');?>11./-->
+<!-- wp:comments-pagination-previous {"label":"<?php esc_html_e('Older', 'dossier');?>"}./-->
 
 <!-- wp:comments-pagination-numbers /-->
 
-<!-- wp:comments-pagination-next {"label":"<?php esc_html_e('Newer', 'dossier');?>11./-->
+<!-- wp:comments-pagination-next {"label":"<?php esc_html_e('Newer', 'dossier');?>"}./-->
 <!-- /wp:comments-pagination -->
 
 <!-- wp:post-comments-form /--></div>
