@@ -14,6 +14,9 @@ Sometimes, your podcast episode cover arts deserve more attention than regular t
 
 == Changelog ==
 
+= 1.0.2 =
+* Podbase: adds sidebar to page template (#8235)
+
 = 1.0.0 =
 * Initial release
 
