@@ -38,7 +38,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"top","width":"30%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:30%"><!-- wp:navigation {"overlayMenu":"always","icon":"menu","hasIcon":false,"overlayTextColor":"primary","style":{"layout":{"selfStretch":"fit","flexSize":null},"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"small","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"}} /--></div>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:30%"><!-- wp:navigation {"overlayMenu":"always","icon":"menu","hasIcon":false,"overlayBackgroundColor":"background","overlayTextColor":"primary","style":{"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"}} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
