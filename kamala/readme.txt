@@ -12,6 +12,9 @@ Kamala is ideal for small businesses looking to present their services in a visu
 
 == Changelog ==
 
+= 1.0.1 =
+* Kamala: Added patterns and page templates (#8233)
+
 = 1.0.0 =
 * Initial release
 
