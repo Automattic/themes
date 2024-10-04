@@ -18,8 +18,7 @@
 <div class="wp-block-group"><!-- wp:site-title {"textAlign":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"x-large"} /-->
 
 <!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-<p class="has-text-align-center has-small-font-size">
-            Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>        </p>
+<p class="no-underline has-x-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'kawaii-chan');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

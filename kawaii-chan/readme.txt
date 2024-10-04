@@ -11,45 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Kawaii-Chan is a simple theme that supports full-site editing. It comes with a set of minimal templates and design settings that can be manipulated through Global Styles. Use it to build something beautiful.
 
 == Changelog ==
-
-= 0.0.30 =
-* Kawaii-Chan: Update header alignment (#7575)
-
-= 0.0.29 =
-* Remove auto-loading-homepage tag. (#7300)
-
-= 0.0.28 =
-* Remove Rubik font from heading definition (#7267)
-
-= 0.0.27 =
-* Add link styles for post-terms (#7058)
-
-= 0.0.26 =
-* Remove table CSS from block canvas theme as it has been addressed in Gutenberg (#6954)
-
-= 0.0.24 =
-* Kawaii-Chan: Add no results content to search template (#6860)
-
-= 0.0.23 =
-* Remove font-smoothing CSS (#6816)
-
-= 0.0.22 =
-* Add home.html template to Kawaii-Chan (#6784)
-
-= 0.0.21 =
-* Kawaii-Chan: Add self-closing tag to comments pattern in page template (#6764)
-
-= 0.0.20 =
-* Kawaii-Chan: small updates (#6705)
-
-= 0.0.19 =
-* Make theme available for translation as much as possible (#6484)
-
-= 0.0.18 =
-* Update block canvas styles (#6640)
-
-= 0.0.17 =
-* Block canvas: clean up templates (#6620)
+= 1.0.0 =
+Initial release
 
 == Copyright ==
 
@@ -65,7 +28,6 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
 
 == Fonts ==
 
@@ -88,7 +50,6 @@ Bellota Text
 Copyright: Designed by Kemie Guaida (https://github.com/kemie/Bellota-Font)
 License: SIL Open Font License (OFL) version 1.1 - https://openfontlicense.org/
 Source: https://fonts.google.com/specimen/Bellota
-
 
 == Images ==
 
