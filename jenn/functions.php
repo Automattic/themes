@@ -196,8 +196,8 @@ if ( ! function_exists( 'jenn_pattern_categories' ) ) :
 		register_block_pattern_category(
 			'page',
 			array(
-				'label'       => _x( 'Pages', 'Block pattern category' ),
-				'description' => __( 'A collection of full page layouts.' ),
+				'label'       => _x( 'Pages', 'Block pattern category', 'jenn' ),
+				'description' => __( 'A collection of full page layouts.', 'jenn' ),
 			)
 		);
 	}
