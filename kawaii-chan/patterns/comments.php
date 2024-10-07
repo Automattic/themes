@@ -4,6 +4,7 @@
  * slug: kawaii-chan/comments
  * inserter: no
  */
+
 ?>
 <!-- wp:comments {"className":"wp-block-comments-query-loop"} -->
 <div class="wp-block-comments wp-block-comments-query-loop"><!-- wp:comments-title {"level":3} /-->
@@ -31,11 +32,11 @@
 <!-- /wp:comment-template -->
 
 <!-- wp:comments-pagination -->
-<!-- wp:comments-pagination-previous {"label":"<?php esc_html_e('Older', 'kawaii-chan');?>"}./-->
+<!-- wp:comments-pagination-previous {"label":"<?php esc_html_e('Older', 'kawaii-chan');?>"} /-->
 
 <!-- wp:comments-pagination-numbers /-->
 
-<!-- wp:comments-pagination-next {"label":"<?php esc_html_e('Newer', 'kawaii-chan');?>"}./-->
+<!-- wp:comments-pagination-next {"label":"<?php esc_html_e('Newer', 'kawaii-chan');?>"} /-->
 <!-- /wp:comments-pagination -->
 
 <!-- wp:post-comments-form /--></div>
