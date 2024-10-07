@@ -39,15 +39,6 @@ GNU General Public License for more details.
 
 === Images ===
 
-License: Unsplash License https://unsplash.com/license
-
-hero-image-scaled.jpg - https://unsplash.com/photos/woman-in-black-tank-top-sitting-on-brown-wooden-dock-during-daytime-xce530fBHrk
-jenn-about.jpg - https://unsplash.com/photos/a-woman-in-a-white-dress-walking-down-a-road-Fnq_Cm7Rz54
-jenn-home.jpg - https://unsplash.com/photos/woman-doing-yoga-pose-wa8o6rs22Fw
-jenn-post-1.jpg - https://unsplash.com/photos/woman-in-brown-knit-sweater-holding-brown-ceramic-cup-VsI_74zRzAo
-jenn-post-2.jpg - https://unsplash.com/photos/woman-doing-exercise-routine-Tq9Ln3gpiG4
-
-
 License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
 
 museum.webp - https://www.rawpixel.com/image/3297419/free-photo-image-interior-hallway-architecture
@@ -62,6 +53,36 @@ hotel-facade.webp - https://www.rawpixel.com/image/3286725/free-photo-image-blac
 
 License: UNICODE LICENSE V3 https://www.unicode.org/license.txt
 icon-message.webp
+
+Credit: Jared Rice
+License: Unsplash license
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/woman-in-black-tank-top-sitting-on-brown-wooden-dock-during-daytime-xce530fBHrk
+It's used in the Full width banner pattern.
+
+Credit: Spenser Sembrat
+License: Unsplash license
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/a-woman-in-a-white-dress-walking-down-a-road-Fnq_Cm7Rz54
+It's used in the Text on right with image on left pattern.
+
+Credit: Patrick Malleret
+License: Unsplash license
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/woman-doing-yoga-pose-wa8o6rs22Fw
+It's used in the Text on left with image on right pattern.
+
+Credit: Conscious Design
+License: Unsplash license
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/woman-in-brown-knit-sweater-holding-brown-ceramic-cup-VsI_74zRzAo
+It's used in the Services call to action in 2 columns pattern.
+
+Credit: Rima Kruciene
+License: Unsplash license
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/woman-doing-exercise-routine-Tq9Ln3gpiG4
+It's used in the Services call to action in 2 columns pattern.
 
 Plus Jakarta Sans Font
 Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans) 
