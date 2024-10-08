@@ -12,6 +12,9 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.34 =
+* Remove fixed font-size from post title block on blockbase themes (#8197)
+
 = 2.1.33 =
 * Lossless image optimization (#7671)
 

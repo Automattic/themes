@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.57 =
+* Remove fixed font-size from post title block on blockbase themes (#8197)
+
 = 1.1.56 =
 * Lossless image optimization (#7671)
 

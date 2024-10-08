@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.45 =
+* Remove fixed font-size from post title block on blockbase themes (#8197)
+
 = 1.0.44 =
 * Lossless image optimization (#7671)
 
