@@ -11,6 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Kawaii-Chan is a simple theme that supports full-site editing. It comes with a set of minimal templates and design settings that can be manipulated through Global Styles. Use it to build something beautiful.
 
 == Changelog ==
+
+= 1.0.1 =
+* Kawaii-chan: fixes heading font issue (#8242)
 = 1.0.0 =
 Initial release
 
