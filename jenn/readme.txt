@@ -12,6 +12,9 @@ Jenn is a block theme ideal for yoga bloggers wanting to turn their hobby into a
 
 == Changelog ==
 
+= 1.0.1 =
+* Jenn: Rename a pattern and fixed missing images (#8245)
+
 = 1.0.0 =
 * Initial release
 
