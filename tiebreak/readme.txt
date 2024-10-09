@@ -1,14 +1,14 @@
 === TieBreak ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4.1
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-TieBreak is a theme for tennis enthusiasts. This WordPress magazine block theme features a variety of query loop patterns and a sidebar making it perfect for any other topic.
+TieBreak is a theme for tennis enthusiasts. This WordPress magazine block theme features a variety of query loop patterns and a sidebar making it perfect for any other topic.
 
 == Changelog ==
 
@@ -32,11 +32,47 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-== Sources of images in screenshot.png ==
+== Images ==
 
-https://www.rawpixel.com/image/5905179/photo-image-public-domain-free-sport
-https://www.rawpixel.com/image/11981532/tennis-court-background-design
-https://www.europeana.eu/pt/item/267/6538
+Credit: Rawpixel
+License: CC0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/5905179/photo-image-public-domain-free-sport
+It's used in screenshot.png.
+
+Credit: Rawpixel
+License:
+License URL:
+Source: https://www.rawpixel.com/image/11981532/tennis-court-background-design
+It's used in screenshot.png and categories pattern.
+
+Credit: Manfrini
+License: CC0
+License URL: https://creativecommons.org/publicdomain/mark/1.0/
+Source: https://www.europeana.eu/pt/item/267/6538
+It's used in screenshot.png, homepage template, and categories pattern.
+
+Credit: Rawpixel
+License: CC0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/6034259/photo-image-public-domain-free-sport
+It's used in categories pattern.
+
+Credit: Rawpixel
+License: CC0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/6030714/photo-image-background-public-domain-person
+It's used in categories pattern.
+
+Credit: Joost Evers / Anefo
+License: CC0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+Source: Top Tennis Toernooi 1969 in Amsterdam D. Ralston
+It's used in categories pattern.
+
+== Video ==
+
+The video uses an AI generated on Midjourney.
 
 == Fonts ==
 
