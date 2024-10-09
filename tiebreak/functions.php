@@ -1,11 +1,11 @@
 <?php
 /**
- * Tie-Break functions and definitions
+ * TieBreak functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Tie-Break
- * @since Tie-Break 1.0
+ * @package TieBreak
+ * @since TieBreak 1.0
  */
 
 
@@ -14,7 +14,7 @@ if ( ! function_exists( 'tiebreak_support' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Tie-Break 1.0
+	 * @since TieBreak 1.0
 	 *
 	 * @return void
 	 */
@@ -36,7 +36,7 @@ if ( ! function_exists( 'tiebreak_styles' ) ) :
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Tie-Break 1.0
+	 * @since TieBreak 1.0
 	 *
 	 * @return void
 	 */

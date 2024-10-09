@@ -1,4 +1,4 @@
-=== Tie-Break ===
+=== TieBreak ===
 Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.4.1
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Tie-Break is a theme for tennis enthusiasts. This WordPress magazine block theme features a variety of query loop patterns and a sidebar making it perfect for any other topic.
+TieBreak is a theme for tennis enthusiasts. This WordPress magazine block theme features a variety of query loop patterns and a sidebar making it perfect for any other topic.
 
 == Changelog ==
 
@@ -17,7 +17,7 @@ Tie-Break is a theme for tennis enthusiasts. This WordPress magazine block them
 
 == Copyright ==
 
-Tie-Break is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+TieBreak is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 Block Canvas WordPress Theme, (C) 2022 Automattic
 Block Canvas is distributed under the terms of the GNU GPL.
