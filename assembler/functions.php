@@ -121,6 +121,11 @@ if ( ! function_exists( 'assembler_register_pattern_categories' ) ) :
 			'about',
 			array( 'label' => __( 'About', 'assembler' ) )
 		);
+
+        register_block_pattern_category(
+			'social',
+			array( 'label' => __( 'Social', 'assembler' ) )
+		);
 	}
 endif;
 
