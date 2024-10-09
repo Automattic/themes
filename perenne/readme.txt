@@ -12,6 +12,9 @@ Exegi monumentum aere perennius.
 
 == Changelog ==
 
+= 1.0.3 =
+* Perenne: Add footer pattern (#8249)
+
 = 1.0.2 =
 * Perenne: Reduce the size of the screenshot (#8089)
 
