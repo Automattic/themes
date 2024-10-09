@@ -180,7 +180,7 @@
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:search {"showLabel":false,"placeholder":"\u0022Wimbledon\u0022"} /--></div>
+<!-- wp:search {"showLabel":false,"placeholder":"Wimbledon"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":"30px"} -->
