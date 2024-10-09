@@ -3,6 +3,7 @@
  * Title: About 1
  * Slug: assembler/about-1
  * Categories: about
+ * Viewport width: 1400
  */
 declare( strict_types = 1 );
 ?>
