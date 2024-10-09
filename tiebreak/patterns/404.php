@@ -21,7 +21,7 @@
 <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'tiebreak');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"Wimbledon","width":100,"widthUnit":"%","buttonUseIcon":true} /--></div>
+<!-- wp:pattern {"slug":"tiebreak/search-field"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":"8vh"} -->

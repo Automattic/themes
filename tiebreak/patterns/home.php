@@ -74,7 +74,7 @@
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:search {"showLabel":false,"placeholder":"Wimbledon","buttonText":"Search","buttonUseIcon":true} /--></div>
+<!-- wp:pattern {"slug":"tiebreak/search-field"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":"30px"} -->
