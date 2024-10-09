@@ -98,7 +98,6 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'assembler_styles' );
 
-// Add this new function
 if ( ! function_exists( 'assembler_register_pattern_categories' ) ) :
 	/**
 	 * Register custom pattern categories.
