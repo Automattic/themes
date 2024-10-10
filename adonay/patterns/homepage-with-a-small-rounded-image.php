@@ -43,8 +43,8 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph -->
-<p><?php echo wp_kses_post( __ ('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a> ', 'adonay') );?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px"}}} -->
+<p style="font-size:14px"><?php echo wp_kses_post( __ ('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a> ', 'adonay') );?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"0px","style":{"layout":{"flexSize":"100px","selfStretch":"fixed"}}} -->
