@@ -18,7 +18,7 @@
 
 <!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
 <main class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.3"},"spacing":{"margin":{"right":"var:preset|spacing|80"}}}} -->
-<p style="margin-right:var(--wp--preset--spacing--80);line-height:1.3"><?php esc_html_e('I’m a photographer and art director based in Manchester, United Kingdom. When I’m not shooting weddings and portraits, you can find me posting on Instagram. Currently available for hire.', 'adonay');?></p>
+<p style="margin-right:var(--wp--preset--spacing--80);line-height:1.3"><?php echo wp_kses_post( __ ('I’m a photographer and art director based in Manchester, United Kingdom. When I’m not shooting weddings and portraits, you can find me posting on <a href="#">Instagram</a>. Currently available for hire.', 'adonay') );?></p>
 <!-- /wp:paragraph --></main>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
