@@ -12,6 +12,9 @@ Adonay is crafted for single page websites that want to leave a stunning and mem
 
 == Changelog ==
 
+= 1.0.1 =
+* Adonay: Prepare for submission (#8254)
+
 = 1.0.0 =
 * Initial release
 
