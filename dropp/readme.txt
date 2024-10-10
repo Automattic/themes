@@ -1,7 +1,7 @@
 === Dropp ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4.3
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,4 +32,20 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+== Images ==
+
 All images used in the theme have been generated with AI in Midjourney.
+
+== Fonts ==
+
+Archivo Font
+Copyright 2020 Omnibus Type (https://www.omnibus-type.com/)
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+License URL: https://scripts.sil.org/OFL
+Source: https://github.com/Omnibus-Type/Archivo
+
+Cutive Mono Font
+Copyright Vernon Adams (https://sansoxygen.com/)
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+License URL: https://scripts.sil.org/OFL
+Source: https://fonts.google.com/specimen/Cutive+Mono
