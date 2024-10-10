@@ -16,7 +16,7 @@
 <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'dropp');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search...","buttonText":"Search","style":{"border":{"radius":"0px"}}} /--></main>
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Type here...', 'Search input field placeholder text', 'dropp' ); ?>","buttonText":"<?php echo esc_attr_x( 'Search', 'Button text. Verb.', 'dropp' ); ?>","style":{"border":{"radius":"0px"}}} /--></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
