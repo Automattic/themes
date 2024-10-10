@@ -15,7 +15,7 @@
 <!-- wp:query-title {"type":"search","align":"wide"} /-->
 
 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide"><!-- wp:search {"showLabel":false,"placeholder":"Search...","buttonText":"Search","style":{"border":{"radius":"0px"}}} /--></div>
+<div class="wp-block-group alignwide"><!-- wp:search {"showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Type here...', 'Search input field placeholder text', 'dropp' ); ?>","buttonText":"<?php echo esc_attr_x( 'Search', 'Button text. Verb.', 'dropp' ); ?>","style":{"border":{"radius":"0px"}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|50"} -->
