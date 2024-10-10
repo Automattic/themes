@@ -1,33 +1,18 @@
 <?php
 /**
- * Title: Default footer
+ * Title: footer
  * Slug: adonay/footer
- * Categories: footer
- * Block Types: core/template-part/footer
+ * Inserter: no
  */
 ?>
-
-<!-- wp:spacer {"height":"var(--wp--preset--spacing--80)"} -->
+<!-- wp:spacer {"height":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d80)"} -->
 <div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)"}}}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">
-            <?php
-                /* Translators: WordPress link. */
-                $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'adonay' ) ) . '" rel="nofollow">WordPress</a>';
-                echo sprintf(
-                    esc_html__( 'Designed with %1$s', 'adonay' ),
-                    $wordpress_link
-                );
-            ?>
-        </p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
-</div>
+<div class="wp-block-group"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)","bottom":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)"}}}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"14px"}}} -->
+<p class="has-text-align-left" style="font-size:14px"><?php esc_html_e('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'adonay');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
