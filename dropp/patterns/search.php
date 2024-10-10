@@ -55,9 +55,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:query-no-results {"align":"wide"} -->
-<!-- wp:paragraph {"metadata":[]} -->
-<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dropp');?></p>
-<!-- /wp:paragraph -->
+<!-- wp:pattern {"slug":"dropp/hidden-no-results-content"} /-->
 <!-- /wp:query-no-results --></main>
 <!-- /wp:query -->
 
