@@ -57,8 +57,8 @@ Source: https://fonts.google.com/
 
 === Image ===
 
-Credit: Pixabay
-License: CC0
+Credit: Nappy
+License: Public Domain, CC0
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://nappy.co/photo/
+Source: https://nappy.co/photo/435
 It's used in the Homepage with a small, rounded image pattern and the Homepage with a full height image pattern.
