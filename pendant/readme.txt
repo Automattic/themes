@@ -12,6 +12,9 @@ An elegant product-focused theme.
 
 == Changelog ==
 
+= 1.0.18 =
+* Underline links by default and remove on hover / focus (#8257)
+
 = 1.0.17 =
 * Remove copyright statement (#7988)
 
