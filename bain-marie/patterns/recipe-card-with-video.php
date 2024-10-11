@@ -17,7 +17,7 @@ declare( strict_types = 1 );
 
 <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"metadata":{"name":"Recipe Author"},"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontWeight":"300"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="font-style:italic;font-weight:300">Recipe by</p>
+<p class="has-small-font-size" style="font-style:italic;font-weight:300"><?php esc_html_e('Recipe by', 'bain-marie');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-author-name {"style":{"typography":{"fontStyle":"italic","fontWeight":"500"}},"fontSize":"small"} /--></div>
@@ -31,7 +31,7 @@ declare( strict_types = 1 );
 <!-- /wp:heading -->
 
 <!-- wp:heading {"level":6,"lock":{"move":false,"remove":false}} -->
-<h6 class="wp-block-heading">Beginner</h6>
+<h6 class="wp-block-heading"><?php esc_html_e('Beginner', 'bain-marie');?></h6>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -41,15 +41,15 @@ declare( strict_types = 1 );
 <div class="wp-block-columns is-not-stacked-on-mobile" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"layout":{"selfStretch":"fixed","flexSize":"25%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":313,"width":"30px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="https://y2kblog.mystagingwebsite.com/wp-content/uploads/2024/05/servings-icon-1.png" alt="" class="wp-image-313" style="width:30px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/servings-icon-1.png" alt="" class="wp-image-313" style="width:30px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center","level":6} -->
-<h6 class="wp-block-heading has-text-align-center">Servings</h6>
+<h6 class="wp-block-heading has-text-align-center"><?php esc_html_e('Servings', 'bain-marie');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-<p class="has-text-align-center has-small-font-size">2 servings</p>
+<p class="has-text-align-center has-small-font-size"><?php esc_html_e('2 servings', 'bain-marie');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -57,15 +57,15 @@ declare( strict_types = 1 );
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"layout":{"selfStretch":"fixed","flexSize":"25%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":314,"width":"30px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="https://y2kblog.mystagingwebsite.com/wp-content/uploads/2024/05/preptime-icon-1.png" alt="" class="wp-image-314" style="width:30px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/preptime-icon-1.png" alt="" class="wp-image-314" style="width:30px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center","level":6} -->
-<h6 class="wp-block-heading has-text-align-center">Prep time</h6>
+<h6 class="wp-block-heading has-text-align-center"><?php esc_html_e('Prep time', 'bain-marie');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-<p class="has-text-align-center has-small-font-size">10 mins</p>
+<p class="has-text-align-center has-small-font-size">10 min</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -77,11 +77,11 @@ declare( strict_types = 1 );
 <div class="wp-block-columns is-not-stacked-on-mobile" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"layout":{"selfStretch":"fixed","flexSize":"25%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":315,"width":"30px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="https://y2kblog.mystagingwebsite.com/wp-content/uploads/2024/05/cookingtime-icon-1.png" alt="" class="wp-image-315" style="width:30px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/cookingtime-icon-1.png" alt="" class="wp-image-315" style="width:30px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center","level":6} -->
-<h6 class="wp-block-heading has-text-align-center">Cooking time</h6>
+<h6 class="wp-block-heading has-text-align-center"><?php esc_html_e('Cooking time', 'bain-marie');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"small"} -->
@@ -93,11 +93,11 @@ declare( strict_types = 1 );
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"layout":{"selfStretch":"fixed","flexSize":"25%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":316,"width":"30px","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="https://y2kblog.mystagingwebsite.com/wp-content/uploads/2024/05/calories-icon-1.png" alt="" class="wp-image-316" style="width:30px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/calories-icon-1.png" alt="" class="wp-image-316" style="width:30px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center","level":6} -->
-<h6 class="wp-block-heading has-text-align-center">Calories</h6>
+<h6 class="wp-block-heading has-text-align-center"><?php esc_html_e('Calories', 'bain-marie');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"small"} -->
@@ -111,77 +111,77 @@ declare( strict_types = 1 );
 
 <!-- wp:group {"lock":{"move":true,"remove":true},"metadata":{"name":"About the recipe"},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"lock":{"move":true,"remove":true}} -->
-<p>These healthy fruit bowls make a nutritious breakfast, snack, or even a light dessert option. You can prepare the fruit bowls in advance and store them covered in the refrigerator for up to a day. However, it's best to add the banana slices just before serving to prevent them from browning. Experiment with different toppings such as granola, dried fruits, or a drizzle of almond butter for added variety and flavor. Enjoy them any time of day for a refreshing and satisfying treat!</p>
+<p><?php esc_html_e('These healthy fruit bowls make a nutritious breakfast, snack, or even a light dessert option. You can prepare the fruit bowls in advance and store them covered in the refrigerator for up to a day. However, it\'s best to add the banana slices just before serving to prevent them from browning. Experiment with different toppings such as granola, dried fruits, or a drizzle of almond butter for added variety and flavor. Enjoy them any time of day for a refreshing and satisfying treat!', 'bain-marie');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"metadata":{"name":"Ingredients"},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading">Ingredients</h2>
+<h2 class="wp-block-heading"><?php esc_html_e('Ingredients', 'bain-marie');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:list -->
 <ul><!-- wp:list-item -->
-<li>1 cup mixed berries (such as strawberries, blueberries, raspberries)</li>
+<li><?php esc_html_e('1 cup mixed berries (such as strawberries, blueberries, raspberries)', 'bain-marie');?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>1/2 cup unsweetened coconut flakes</li>
+<li><?php esc_html_e('1/2 cup unsweetened coconut flakes', 'bain-marie');?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>1/4 cup mixed nuts (such as almonds, walnuts, pecans), chopped</li>
+<li><?php esc_html_e('1/4 cup mixed nuts (such as almonds, walnuts, pecans), chopped', 'bain-marie');?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>1 ripe banana, sliced</li>
+<li><?php esc_html_e('1 ripe banana, sliced', 'bain-marie');?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>1/4 cup Greek yogurt (optional)</li>
+<li><?php esc_html_e('1/4 cup Greek yogurt (optional)', 'bain-marie');?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>1 tablespoon honey or maple syrup (optional)</li>
+<li><?php esc_html_e('1 tablespoon honey or maple syrup (optional)', 'bain-marie');?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Fresh mint leaves for garnish (optional)</li>
+<li><?php esc_html_e('Fresh mint leaves for garnish (optional)', 'bain-marie');?></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"metadata":{"name":"Directions"},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading">Directions</h2>
+<h2 class="wp-block-heading"><?php esc_html_e('Directions', 'bain-marie');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:list {"ordered":true} -->
 <ol><!-- wp:list-item -->
-<li><strong>Prepare the Fruit:</strong> Wash the berries thoroughly under cold water and pat them dry with a paper towel. If using strawberries, remove the stems and slice them into halves or quarters.</li>
+<li><?php echo wp_kses_post( __ ( '<strong>Prepare the Fruit:</strong> Wash the berries thoroughly under cold water and pat them dry with a paper towel. If using strawberries, remove the stems and slice them into halves or quarters.', 'bain-marie' ) );?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><strong>Assemble the Bowls:</strong> Divide the mixed berries evenly between two serving bowls. Arrange the sliced banana on top of the berries.</li>
+<li><?php echo wp_kses_post( __ ( '<strong>Assemble the Bowls:</strong> Divide the mixed berries evenly between two serving bowls. Arrange the sliced banana on top of the berries.', 'bain-marie' ) );?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><strong>Add Coconut and Nuts:</strong> Sprinkle the unsweetened coconut flakes and chopped mixed nuts over the fruit in each bowl, distributing them evenly.</li>
+<li><?php echo wp_kses_post( __ ( '<strong>Add Coconut and Nuts:</strong> Sprinkle the unsweetened coconut flakes and chopped mixed nuts over the fruit in each bowl, distributing them evenly.', 'bain-marie' ) );?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><strong>Optional Yogurt Drizzle:</strong> If desired, add a dollop of Greek yogurt on top of each fruit bowl. Drizzle with honey or maple syrup for a touch of sweetness.</li>
+<li><?php echo wp_kses_post( __ ( '<strong>Optional Yogurt Drizzle:</strong> If desired, add a dollop of Greek yogurt on top of each fruit bowl. Drizzle with honey or maple syrup for a touch of sweetness.', 'bain-marie' ) );?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><strong>Garnish and Serve:</strong> Garnish the fruit bowls with fresh mint leaves for a burst of freshness and color. Serve immediately and enjoy!</li>
+<li><?php echo wp_kses_post( __ ( '<strong>Garnish and Serve:</strong> Garnish the fruit bowls with fresh mint leaves for a burst of freshness and color. Serve immediately and enjoy!', 'bain-marie' ) );?></li>
 <!-- /wp:list-item --></ol>
 <!-- /wp:list --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"templateLock":false,"lock":{"move":true,"remove":false},"metadata":{"name":"Recipe Video"},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading">Recipe Video</h2>
+<h2 class="wp-block-heading"><?php esc_html_e('Recipe Video', 'bain-marie');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:video {"id":416} -->
@@ -191,11 +191,11 @@ declare( strict_types = 1 );
 
 <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"metadata":{"name":"Notes"},"style":{"border":{"bottom":{"color":"#00000029","style":"dashed","width":"1px"},"top":{},"right":{},"left":{}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="border-bottom-color:#00000029;border-bottom-style:dashed;border-bottom-width:1px"><!-- wp:heading -->
-<h2 class="wp-block-heading">Notes</h2>
+<h2 class="wp-block-heading"><?php esc_html_e('Notes', 'bain-marie');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size">Feel free to customize these fruit bowls with your favorite fruits and nuts. Kiwi slices, mango chunks, or pineapple tidbits would make excellent additions. To make this recipe vegan-friendly, omit the Greek yogurt or use a dairy-free alternative such as coconut yogurt. For added protein and fiber, consider sprinkling chia seeds or flaxseeds over the fruit bowls.</p>
+<p class="has-small-font-size"><?php esc_html_e('Feel free to customize these fruit bowls with your favorite fruits and nuts. Kiwi slices, mango chunks, or pineapple tidbits would make excellent additions. To make this recipe vegan-friendly, omit the Greek yogurt or use a dairy-free alternative such as coconut yogurt. For added protein and fiber, consider sprinkling chia seeds or flaxseeds over the fruit bowls.', 'bain-marie');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"20px"} -->
