@@ -24,14 +24,24 @@
 <div class="wp-block-group"><!-- wp:cover {"useFeaturedImage":true,"dimRatio":20,"overlayColor":"black","isUserOverlayColor":true,"contentPosition":"top left","style":{"dimensions":{"aspectRatio":"1"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover has-custom-content-position is-position-top-left"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-20 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"border":{"width":"1px"},"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="border-width:1px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:post-title {"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"base","fontSize":"x-small","fontFamily":"jetbrains-mono"} /--></div>
-<!-- /wp:group -->
-
-<!-- wp:paragraph -->
-<p><?php echo __('', 'vibrrrant');?></p>
-<!-- /wp:paragraph --></div></div>
+<!-- /wp:group --></div></div>
 <!-- /wp:cover --></div>
 <!-- /wp:group -->
-<!-- /wp:post-template --></div>
+<!-- /wp:post-template -->
+
+<!-- wp:spacer {"height":"60px","style":{"layout":[]}} -->
+<div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:query-no-results -->
+<!-- wp:pattern {"slug":"vibrrrant/no-results-content"} /-->
+<!-- /wp:query-no-results -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between","orientation":"horizontal","verticalAlignment":"center"}} -->
+<!-- wp:query-pagination-previous {"label":"Previous Page"} /-->
+
+<!-- wp:query-pagination-next {"label":"Next Page"} /-->
+<!-- /wp:query-pagination --></div>
 <!-- /wp:query --></main>
 <!-- /wp:group -->
 
