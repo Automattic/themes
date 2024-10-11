@@ -68,7 +68,7 @@ jobs:
             const rootFolders = new Set();
             for (const file of allFiles) {
               const parts = file.filename.split('/');
-              if (parts.length > 1) {
+              if (parts.length > 1 && !parts[0].startsWith('.')) {
                 rootFolders.add(parts[0]);
               }
             }
@@ -81,6 +81,7 @@ jobs:
       run: echo "THEME_FOLDERS is ${{ env.THEME_FOLDERS }}"
 
     - name: Run Theme Check for each folder
+      if: env.THEME_FOLDERS != ''
       run: |
         IFS=',' read -ra FOLDERS <<< "${{ env.THEME_FOLDERS }}"
         for THEME_FOLDER in "${FOLDERS[@]}"; do
@@ -128,6 +129,7 @@ jobs:
           }
 
     - name: Comment PR
+      if: env.THEME_FOLDERS != ''
       uses: actions/github-script@v6
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
