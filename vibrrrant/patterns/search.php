@@ -20,7 +20,7 @@
 <div class="wp-block-group" style="min-height:100vh;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--70)"><!-- wp:query-title {"type":"search","style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}}} /-->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonUseIcon":true} /--></div>
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Search...', 'Search input field placeholder text', 'vibrrrant' ); ?>","buttonText":"<?php echo esc_attr_x( 'Search', 'Button text. Verb.', 'vibrrrant' ); ?>","buttonUseIcon":true} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->

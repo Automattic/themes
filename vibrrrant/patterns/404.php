@@ -30,7 +30,7 @@
 <p><?php echo __('It looks like nothing was found at this location. Maybe try a search?', 'vibrrrant');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonUseIcon":true} /--></main>
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Search...', 'Search input field placeholder text', 'vibrrrant' ); ?>","buttonText":"<?php echo esc_attr_x( 'Search', 'Button text. Verb.', 'vibrrrant' ); ?>","buttonUseIcon":true} /--></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /--></div>
