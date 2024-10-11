@@ -2,7 +2,7 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,11 +34,12 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-
 Vibrrrant is based on JinJang (https://wordpress.com/theme/jinjang/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
 This theme bundles the following third-party resources:
+
+== Fonts ==
 
 Ojuju Font
 Copyright 2024 The Ojuju Project Authors (https://github.com/jobosonchisa/ojuju)
@@ -56,7 +57,6 @@ http://scripts.sil.org/OFL
 License URL: http://scripts.sil.org/OFL 
 -- End of JetBrains Mono Font credits --
 
-Images in theme screenshot:
-License: CC0 1.0 Universal (CC0 1.0)
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-Source: Generated with AI on Midjourney, released under the CC0 license
+== Images ==
+
+Images in theme screenshot were generated with AI on Midjourney
