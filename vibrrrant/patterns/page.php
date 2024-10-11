@@ -26,7 +26,7 @@
 <!-- wp:post-content {"lock":{"move":false,"remove":false},"layout":{"type":"constrained","justifyContent":"center"}} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"comments"} /--></main>
+</main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /--></div>
