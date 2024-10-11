@@ -41,6 +41,10 @@
 <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
+<!-- wp:query-no-results -->
+<!-- wp:pattern {"slug":"vibrrrant/no-results-content"} /-->
+<!-- /wp:query-no-results -->
+
 <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between","orientation":"horizontal","verticalAlignment":"center"}} -->
 <!-- wp:query-pagination-previous {"label":"Previous Page"} /-->
 
