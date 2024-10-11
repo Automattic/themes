@@ -83,7 +83,7 @@
 <!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"left","style":{"typography":{"lineHeight":"1"}}} -->
-<p class="has-text-align-left" style="line-height:1"><?php esc_html_e('Design with WordPress', 'castcore');?></p>
+<p class="has-text-align-left" style="line-height:1"><?php echo wp_kses_post( __ ( 'Designed with <a href="[https://wordpress.org](https://wordpress.org/)" rel="nofollow">WordPress</a> ', 'castcore' ) );?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#1a171c","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"0.5rem"}}}} -->
