@@ -13,7 +13,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"x-small"} -->
-<p class="has-x-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'vibrrrant');?></p>
+<p class="has-x-small-font-size"><?php echo wp_kses_post( __ ( 'Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'vibrrrant' ) );?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
