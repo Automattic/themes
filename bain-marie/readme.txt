@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Bain Marie is the perfect blogging theme for food bloggers. Featuring elegant, modern styles and specialized recipe cards, it offers a reliable and attractive choice for your blog. The theme includes two color palettes, providing you with more customization options.
+Bain Marie is the perfect theme for food bloggers. Featuring elegant, modern styles and specialized recipe cards, it offers a reliable and attractive choice for your blog. The theme includes two color palettes, providing you with more customization options.
 
 == Changelog ==
 
@@ -59,7 +59,7 @@ Bain Marie is the perfect blogging theme for food bloggers. Featuring elegant, m
 
 == Copyright ==
 
-Bain Marie WordPress Theme, (C) 2022 Automattic
+Bain Marie WordPress Theme, (C) 2024 Automattic
 Bain Marie is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -94,7 +94,7 @@ Source: https://www.foodiesfeed.com/free-food-photo/grilled-headless-sardines/
 
 foodblog-aboutme.jpg: Image generated with AI on Midjourney
 
-All the following icons were created by Beatriz Fialhoa and released under the CC0 License:
+All the following icons were created by Beatriz Fialho and released under the CC0 License:
 preptime-icon.png
 servings-icon.png
 cookingtime-icon.png
