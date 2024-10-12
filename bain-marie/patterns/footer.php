@@ -30,9 +30,9 @@
 <p class="has-text-align-center has-small-font-size"> 
 	<?php
 		/* Translators: WordPress link. */
-		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'saison' ) ) . '" rel="nofollow">WordPress</a>';
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'bain-marie' ) ) . '" rel="nofollow">WordPress</a>';
 		echo sprintf(
-			esc_html__( 'Designed with %1$s', 'saison' ),
+			esc_html__( 'Designed with %1$s', 'bain-marie' ),
 			$wordpress_link
 		);
 	?></p>
