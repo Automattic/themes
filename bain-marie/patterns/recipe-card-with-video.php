@@ -185,7 +185,7 @@ declare( strict_types = 1 );
 <!-- /wp:heading -->
 
 <!-- wp:video {"id":416} -->
-<figure class="wp-block-video"><video controls src="https://y2kblog.mystagingwebsite.com/wp-content/uploads/2024/05/foodblog-video-2.mp4"></video></figure>
+<figure class="wp-block-video"><video controls src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/videos/foodblog-video-2.mp4"></video></figure>
 <!-- /wp:video --></div>
 <!-- /wp:group -->
 
