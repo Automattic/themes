@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.19 =
+* Update blockbase to better ensure type safety (#8263)
+
 = 3.1.18 =
 * Remove fixed font-size from post title block on blockbase themes (#8197)
 
