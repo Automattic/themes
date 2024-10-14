@@ -30,10 +30,14 @@ function migrate_blockbase_custom_fonts() {
 	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
 	// Also count fonts registerd to the blockbase font provider
 	foreach ( $font_families as $font_family ) {
-		if ( strpos( $font_family['slug'], 'heading' ) !== false && array_key_exists( 'fontSlug', $font_family ) ) {
+		if ( isset( $font_family['slug'] )
+			&& strpos( $font_family['slug'], 'heading' ) !== false
+			&& array_key_exists( 'fontSlug', $font_family ) ) {
 			$heading_font_slug = $font_family['fontSlug'];
 		}
-		if ( strpos( $font_family['slug'], 'body' ) !== false && array_key_exists( 'fontSlug', $font_family ) ) {
+		if ( isset( $font_family['slug'] )
+			&& strpos( $font_family['slug'], 'body' ) !== false
+			&& array_key_exists( 'fontSlug', $font_family ) ) {
 			$body_font_slug = $font_family['fontSlug'];
 		}
 	}
