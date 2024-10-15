@@ -15,11 +15,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"},"typography":{"textTransform":"uppercase","fontSize":"13px","letterSpacing":"0.05em"}},"layout":{"type":"flex","flexWrap":"nowrap"},"fontFamily":"metropolis"} -->
 <div class="wp-block-group has-metropolis-font-family" style="font-size:13px;letter-spacing:0.05em;text-transform:uppercase"><!-- wp:paragraph -->
-<p><?php esc_html_e('<a href="#">Subscribe</a>', 'aigoo');?></p>
+<p><?php echo wp_kses_post( __ ( '<a href="#">Subscribe</a>', 'aigoo' ) ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('<a href="#">Newsletter</a>', 'aigoo');?></p>
+<p><?php echo wp_kses_post( __ ( '<a href="#">Newsletter</a>', 'aigoo' ) ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:navigation {"overlayMenu":"always","overlayBackgroundColor":"custom-light","overlayTextColor":"contrast","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}},"fontSize":"x-large"} /--></div>
