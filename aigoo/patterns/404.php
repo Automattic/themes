@@ -1,16 +1,40 @@
 <?php
 /**
- * Title: A 404 page
+ * Title: 404
  * Slug: aigoo/404
  * Inserter: no
  */
-
 ?>
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"x-large"} -->
-<h1 class="has-text-align-center has-x-large-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'aigoo' ); ?></h1>
+<!-- wp:group {"style":{"spacing":{"padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:6vw;padding-left:6vw"><!-- wp:spacer {"height":"8vh"} -->
+<div style="height:8vh" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"2vh"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide" style="padding-bottom:2vh"><!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"66.66%"} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"textAlign":"left","level":1,"style":{"typography":{"fontStyle":"normal","fontWeight":"700","letterSpacing":"-0.03em"}},"fontSize":"x-large","fontFamily":"gaegu"} -->
+<h1 class="wp-block-heading has-text-align-left has-gaegu-font-family has-x-large-font-size" id="oops-that-page-can-t-be-found" style="font-style:normal;font-weight:700;letter-spacing:-0.03em"><?php esc_html_e('Page not found.', 'aigoo');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo  esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'aigoo' ); ?></p>
+<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'aigoo');?></p>
 <!-- /wp:paragraph -->
+
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"\u0022BTS\u0022","width":100,"widthUnit":"%"} /--></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"33.33%"} -->
+<div class="wp-block-column" style="flex-basis:33.33%"></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"8vh"} -->
+<div style="height:8vh" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
