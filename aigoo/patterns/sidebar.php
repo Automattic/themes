@@ -12,11 +12,11 @@
 
 <!-- wp:group {"style":{"position":{"type":""},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}},"border":{"top":{"color":"var:preset|color|contrast","width":"2px","style":"dotted"},"bottom":{"color":"var:preset|color|contrast","width":"2px","style":"dotted"},"right":[],"left":[]}},"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio","layout":{"type":"constrained"}} -->
 <div class="wp-block-group wp-embed-aspect-16-9 wp-has-aspect-ratio" style="border-top-color:var(--wp--preset--color--contrast);border-top-style:dotted;border-top-width:2px;border-bottom-color:var(--wp--preset--color--contrast);border-bottom-style:dotted;border-bottom-width:2px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"13px","textTransform":"uppercase","fontStyle":"normal","fontWeight":"600","letterSpacing":"0.1em"}},"fontFamily":"metropolis"} -->
-<p class="has-text-align-center has-metropolis-font-family" style="font-size:13px;font-style:normal;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">Watch</p>
+<p class="has-text-align-center has-metropolis-font-family" style="font-size:13px;font-style:normal;font-weight:600;letter-spacing:0.1em;text-transform:uppercase"><?php esc_html_e('Watch', 'aigoo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:video {"id":89} -->
-<figure class="wp-block-video"><video controls src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/videos/kpop_video.mp4"></video><figcaption class="wp-element-caption">CARNATION - Twin Flame (M/V)</figcaption></figure>
+<figure class="wp-block-video"><video controls src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/videos/kpop_video.mp4"></video><figcaption class="wp-element-caption"><?php esc_html_e('CARNATION - Twin Flame (M/V)', 'aigoo');?></figcaption></figure>
 <!-- /wp:video --></div>
 <!-- /wp:group -->
 
