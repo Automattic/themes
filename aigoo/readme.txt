@@ -17,7 +17,7 @@ Aigoo is a theme for K-Pop enthusiasts. This WordPress blogging block theme feat
 
 == Copyright ==
 
-Aigoo is based on Tie-Break (), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Aigoo is based on Tie-Break, (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 Tie-Break is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -34,32 +34,36 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-== Sources of images in screenshot.png ==
-
-https://www.pexels.com/photo/photo-of-a-young-man-in-a-black-outfit-15995462/
-https://unsplash.com/photos/one-unknown-celebrity-in-white-top-SP8kfJxNSNE
-
-Images generated with AI using Midjourney
-
 == Recommended Plugins ==
 
 Jetpack
 https://wordpress.org/plugins/jetpack/
+
 Jetpack Social
 https://wordpress.org/plugins/jetpack-social/
+
 Jetpack VideoPress
 https://wordpress.org/plugins/jetpack-videopress/
+
+== Images ==
+
+Credit: Teddy Yang
+License:
+License URL: https://www.pexels.com/license/
+Source: https://www.pexels.com/photo/photo-of-a-young-man-in-a-black-outfit-15995462/
+It's used in categories pattern.
+
+Other images were generated with AI using Midjourney
+
+== Fonts ==
 
 Gaegu Font
 Copyright 2018 The Gaegu Project Authors 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
 License URL: http://scripts.sil.org/OFL 
--- End of Gaegu Font credits --
 
 Nunito Font
 Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito) 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
 License URL: https://scripts.sil.org/OFL 
 Source: http://www.sansoxygen.com
--- End of Nunito Font credits --
-
