@@ -14,32 +14,26 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:columns {"align":"full","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
-<div class="wp-block-columns alignfull"><!-- wp:column -->
+<div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:query {"queryId":4,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"only","inherit":false}} -->
-<div class="wp-block-query"><!-- wp:post-featured-image {"isLink":true} /-->
+<div class="wp-block-query"><!-- wp:post-template -->
+<!-- wp:post-featured-image {"isLink":true} /-->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:post-title {"textAlign":"left","isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"800","fontSize":"2rem"}}} /-->
 
-<!-- wp:post-date {"textAlign":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} /-->
+<!-- wp:post-date {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} /-->
 
 <!-- wp:post-excerpt /-->
 
-<!-- wp:read-more /--></div>
+<!-- wp:read-more /-->
+
+<!-- wp:spacer {"height":"0px","style":{"layout":{"selfStretch":"fixed","flexSize":"30px"}}} -->
+<div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:group -->
-
-<!-- wp:spacer {"height":"30px"} -->
-<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:post-template -->
-<!-- wp:post-title /-->
-
-<!-- wp:post-date /-->
-
-<!-- wp:post-excerpt /-->
 <!-- /wp:post-template --></div>
 <!-- /wp:query --></div>
 <!-- /wp:group --></div>
