@@ -22,7 +22,7 @@
 
 <!-- wp:group {"style":{"position":{"type":""},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}},"border":{"top":{"width":"0px","style":"none"},"bottom":{"color":"var:preset|color|contrast","width":"2px","style":"dotted"},"right":[],"left":[]}},"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio","layout":{"type":"constrained"}} -->
 <div class="wp-block-group wp-embed-aspect-16-9 wp-has-aspect-ratio" style="border-top-style:none;border-top-width:0px;border-bottom-color:var(--wp--preset--color--contrast);border-bottom-style:dotted;border-bottom-width:2px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"13px","textTransform":"uppercase","fontStyle":"normal","fontWeight":"600","letterSpacing":"0.1em"}},"fontFamily":"metropolis"} -->
-<p class="has-text-align-center has-metropolis-font-family" style="font-size:13px;font-style:normal;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">Most Popular</p>
+<p class="has-text-align-center has-metropolis-font-family" style="font-size:13px;font-style:normal;font-weight:600;letter-spacing:0.1em;text-transform:uppercase"><?php esc_html_e('Most Popular', 'aigoo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"10px"} -->
