@@ -74,7 +74,7 @@
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:search {"showLabel":false,"placeholder":"\u0022BTS\u0022"} /--></div>
+<!-- wp:pattern {"slug":"aigoo/search-field"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":"30px"} -->

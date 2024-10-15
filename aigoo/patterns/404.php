@@ -23,7 +23,7 @@
 <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'aigoo');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"\u0022BTS\u0022","width":100,"widthUnit":"%"} /--></div>
+<!-- wp:pattern {"slug":"aigoo/search-field"} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.33%"} -->
