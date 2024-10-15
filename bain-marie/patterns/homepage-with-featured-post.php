@@ -44,7 +44,7 @@
 <p class="has-text-align-center has-base-color has-text-color has-link-color has-small-font-size"><?php echo wp_kses_post( __ ( 'Search my recipes below or view <em><a href="#">all recipes</a></em>.', 'bain-marie' ) );?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"\u0022Apple Pie\u0022","buttonText":"Search","style":{"border":{"radius":"0px","width":"0px","style":"none"}}} /--></div>
+<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"e.g. Apple Pie","buttonText":"Search","style":{"border":{"radius":"0px","width":"0px","style":"none"}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Posts"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"default"}} -->
