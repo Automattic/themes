@@ -20,7 +20,7 @@
 <p class="has-text-align-center has-small-font-size"><?php echo wp_kses_post( __ ( 'Search my recipes below or view <em><a href="#">all recipes</a></em>.', 'bain-marie' ) );?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"\u0022Apple Pie\u0022","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"0px","width":"0px","style":"none"}},"fontSize":"small"} /-->
+<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"e.g. Apple Pie","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"0px","width":"0px","style":"none"}},"fontSize":"small"} /-->
 
 <!-- wp:spacer {"height":"10px"} -->
 <div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -168,7 +168,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"30%"} -->
-<div class="wp-block-column" style="flex-basis:30%"><!-- wp:template-part {"slug":"sidebar","theme":"bain-marie"} /--></div>
+<div class="wp-block-column" style="flex-basis:30%"><!-- wp:template-part {"slug":"sidebar"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
