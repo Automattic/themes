@@ -97,3 +97,37 @@ if ( ! function_exists( 'assembler_styles' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'assembler_styles' );
+
+if ( ! function_exists( 'assembler_register_pattern_categories' ) ) :
+	/**
+	 * Register custom pattern categories.
+	 *
+	 * @since Assembler 1.0
+	 *
+	 * @return void
+	 */
+	function assembler_register_pattern_categories() {
+		register_block_pattern_category(
+			'intro',
+			array( 'label' => __( 'Intro', 'assembler' ) )
+		);
+		
+		register_block_pattern_category(
+			'services',
+			array( 'label' => __( 'Services', 'assembler' ) )
+		);
+
+ 		register_block_pattern_category(
+			'about',
+			array( 'label' => __( 'About', 'assembler' ) )
+		);
+
+        register_block_pattern_category(
+			'social',
+			array( 'label' => __( 'Social', 'assembler' ) )
+		);
+	}
+endif;
+
+// Add this new action
+add_action( 'init', 'assembler_register_pattern_categories' );
