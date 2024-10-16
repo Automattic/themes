@@ -23,7 +23,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><?php echo wp_kses_post( __ ( '<a href="#">Watch</a> <strong>BABYMONSTER</strong> by YG Entertainment Debut', 'aigoo' ) ); ?>></p>
+<p><?php echo wp_kses_post( __ ( '<a href="#">Watch</a> <strong>BABYMONSTER</strong> by YG Entertainment Debut', 'aigoo' ) ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
