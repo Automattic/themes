@@ -12,6 +12,12 @@ As its name states, Happening is a theme designed for events and ceremonies. It 
 
 == Changelog ==
 
+= 1.0.3 =
+* Updates version number to equal the showcase (#8277)
+
+= 1.0.2 =
+* Removes Holiday tag
+
 = 1.0.1 =
 * Multiple Themes: Fix broken template previews due to site-specific attributes in template/pattern markup (#7631)
 
