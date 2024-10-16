@@ -14,7 +14,10 @@ Feature is a magazine theme focused on sizable typography and imagery to grow yo
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.1 =
+* Fixes the version number from two (1.0) to three digits (1.0.1)
+
+= 1.0 =
 * Initial release
 
 
