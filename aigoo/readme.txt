@@ -12,6 +12,9 @@ Aigoo is a theme for K-Pop enthusiasts. This WordPress blogging block theme feat
 
 == Changelog ==
 
+= 1.0.1 =
+* Aigoo: Fix two column blog posts pattern (#8271)
+
 = 1.0.0 =
 * Initial release
 
