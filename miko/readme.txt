@@ -1,25 +1,27 @@
-=== Miko ===
+== Miko ==
+
 Contributors: Automattic
-Requires at least: 6.0
-Tested up to: 6.2.2
+Requires at least: 6.6
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 
 == Description ==
 
 Miko is a personal theme designed to showcase your resume and writing.
 
+
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
+
 
 == Copyright ==
 
-Miko is based on Miko (https://wordpress.com/theme/miko/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-Miko WordPress Theme, (C) 2023 Automattic
+Miko WordPress Theme, (C) 2024 Automattic
 Miko is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -33,16 +35,20 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-Mona Sans Font
-Copyright 2022 The Mona Sans Project Authors (https://github.com/github/mona-sans), with Reserved Font Name "Mona" 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
-License URL: https://scripts.sil.org/OFL 
-Source: www.github.com
+Miko is based on Dark Academia (https://themeshaper.com/dark-academia/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+
+== Fonts ==
+
+Mona Sans
+Copyright (c) 2023, GitHub https://github.com/github/mona-sans
+Licensed under the SIL Open Font License.
 -- End of Mona Sans Font credits --
 
-Photo Credit
-Author: Gu Kssn
-License: CC0 Public domain
-Source: https://www.pexels.com/photo/distorted-portrait-of-brunette-woman-16241275/
-Used in the theme screenshot, theme demo, and theme template files.
--- End of photo credits --
+== Images ==
+
+Distorted Portrait of Brunette Woman by Gu Kssn via Pexels
+https://www.pexels.com/photo/distorted-portrait-of-brunette-woman-16241275/
+-- End of image credits --
+
+
+
