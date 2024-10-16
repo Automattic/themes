@@ -14,6 +14,9 @@ Fixmate is a blog theme designed for individuals focusing on users who are into 
 
 == Changelog ==
 
+= 1.0.1 =
+* Updates version number to equal the showcase
+
 = 1.0.0 =
 * Initial release
 
