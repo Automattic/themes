@@ -1,0 +1,64 @@
+/*
+Theme Name: Downtown
+Theme URI: https://github.com/wordpress/downtown/
+Author: the WordPress team
+Author URI: https://wordpress.org/themes/
+Description: Downtown was designed as a spin-off of Vetro, a theme composed of wide-width layouts with generous space for images and bold type sizes. Its pages are composed of wide content blocks to grant viewers focus on visuals and short paragraphs.
+Requires at least: 6.0
+Tested up to: 6.4.2
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: downtown
+Tags: entertainment, holiday, portfolio, full-site-editing, tourism, hotel, tourist-attraction, hostel, rent, visit-city, real-state, city-guide, travel, lifestyle
+*/
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Text and navigation link styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25ch;
+}
+
+a:hover,
+a:focus {
+	text-decoration-style: dashed;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:hover,
+.wp-block-navigation .wp-block-navigation-item a:focus {
+	text-decoration: underline;
+	text-decoration-style: dashed;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline
+	> .wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
+}
