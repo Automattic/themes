@@ -1,0 +1,35 @@
+/*
+Theme Name: PsycheDeli
+Theme URI: https://github.com/wordpress/psychedeli/
+Author: the WordPress team
+Author URI: https://wordpress.org/themes/
+Description: PsycheDeli is the ultimate WordPress theme for bloggers and artists seeking to showcase their vibrant journeys through the captivating visuals of the '60s. Designed with passion and creativity in mind, PsycheDeli is your gateway to effortlessly share your psychedelic adventures and thought-provoking creations with the world. Get ready to ignite imaginations and captivate audiences like never before with PsycheDeli.
+Requires at least: 6.0
+Tested up to: 6.4.3
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: psychedeli
+Tags: blog, entertainment, portfolio, two-columns, three-columns, wide-blocks, accessibility-ready, block-patterns, block-styles, buddypress, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, flexible-header, front-page-post-form, full-site-editing, full-width-template, post-formats, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready, psychedelic, psychedelia, colorful, vibrant, bloggers, artists, sixties, thought-provoking, duotones
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
