@@ -14,6 +14,9 @@ The Shore is a sleek and elegant WordPress theme designed specifically for hotel
 
 == Changelog ==
 
+= 1.0.1 =
+* The Shore: Update site logo usage to display different versions of logo (#8287)
+
 = 1.0.0 =
 * Initial release
 
