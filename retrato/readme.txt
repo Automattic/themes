@@ -10,12 +10,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Besides an appreciable snapshot of the author, the theme immediately offers large titles and post metadata displayed on a grid with no Featured Images.
+Besides an appreciable snapshot of the author, the theme immediately offers large titles and post meta data displayed on a grid with no Featured Images.
 
 == Changelog ==
 
 = 1.0.1 =
-* Hard-coded links removed from patterns/front-page.php
+* Updates version number to equal the showcase (#8283)
 
 = 1.0.0 =
 * Initial release
