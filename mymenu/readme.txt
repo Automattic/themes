@@ -10,13 +10,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-My Menu is a simple theme designed to facilitate restaurant owners’ site-building experiences. It is clean, direct, and customizable. Test the cool style variations that have been added to the theme.
+MyMenu is a simple theme designed to facilitate restaurant owners’ site-building experiences. It is clean, direct, and customizable. Test the cool style variations that have been added to the theme.
 
 
 == Changelog ==
 
 = 1.0.2 =
-* MyMenu: fixing after review (#7946)
+* Updates version number to equal the showcase (#8282)
 
 = 1.0.1 =
 * Hard-coded links removed from patterns/front-page.php
