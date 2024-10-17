@@ -14,6 +14,9 @@ Besides an appreciable snapshot of the author, the theme immediately offers larg
 
 == Changelog ==
 
+= 1.0.1 =
+* Updates version number to equal the showcase (#8283)
+
 = 1.0.0 =
 * Initial release
 
