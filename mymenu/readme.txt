@@ -16,7 +16,7 @@ My Menu is a simple theme designed to facilitate restaurant owners’ site-build
 == Changelog ==
 
 = 1.0.2 =
-* MyMenu: fixing after review (#7946)
+* Updates version number to equal the showcase
 
 = 1.0.1 =
 * Hard-coded links removed from patterns/front-page.php
