@@ -14,6 +14,9 @@ Promoter has a simple structure and displays only the necessary information for 
 
 == Changelog ==
 
+= 1.0.1 =
+Updates version number to equal the showcase
+
 = 1.0.0 =
 * Initial release
 
