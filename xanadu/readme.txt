@@ -12,6 +12,9 @@ This theme is named after the city in Samuel Taylor Coleridge’s poem Kubla Kha
 
 == Changelog ==
 
+= 1.0.3 =
+* Xanadu: Polishing (#8291)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 
