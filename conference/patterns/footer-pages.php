@@ -33,7 +33,7 @@
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"x-small"} -->
-<p class="has-text-align-left has-x-small-font-size"><?php esc_html_e('Designed with WordPress', 'conference');?></p>
+<p class="has-text-align-left has-x-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
