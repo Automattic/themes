@@ -5,9 +5,8 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|70","padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|80"}},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-primary-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"66.6%"} -->
+<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"66.6%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:66.6%"><!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--40)"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"700"}},"fontSize":"x-small"} -->
 <p class="has-x-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:0.05rem;text-transform:uppercase"><?php esc_html_e('About this theme', 'conference');?></p>
@@ -33,7 +32,7 @@
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"x-small"} -->
-<p class="has-text-align-left has-x-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'conference');?></p>
+<p class="has-text-align-left has-x-small-font-size">Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -58,5 +57,4 @@
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns --></div>
-<!-- /wp:group -->
+<!-- /wp:columns -->

@@ -62,8 +62,8 @@
 <h2 class="wp-block-heading"><?php esc_html_e('Speakers', 'conference');?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontFamily":"newsreader"} -->
-<p class="has-primary-color has-text-color has-link-color has-newsreader-font-family"><?php esc_html_e('See our range of speakers who spoke at the event in Athens!', 'conference');?></p>
+<!-- wp:paragraph -->
+<p><?php esc_html_e('See our range of speakers who spoke at the event in Athens!', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -92,8 +92,8 @@
 <h2 class="wp-block-heading"><?php esc_html_e('Organizers', 'conference');?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontFamily":"newsreader"} -->
-<p class="has-primary-color has-text-color has-link-color has-newsreader-font-family"><?php esc_html_e('Find out who organized WordCamp Europe 2023 and our teams involved.', 'conference');?></p>
+<!-- wp:paragraph -->
+<p><?php esc_html_e('Find out who organized WordCamp Europe 2023 and our teams involved.', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -122,8 +122,8 @@
 <h2 class="wp-block-heading"><?php esc_html_e('Attendees', 'conference');?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontFamily":"newsreader"} -->
-<p class="has-primary-color has-text-color has-link-color has-newsreader-font-family"><?php esc_html_e('Our list is here – see which members of the WP community joined us!', 'conference');?></p>
+<!-- wp:paragraph -->
+<p><?php esc_html_e('Our list is here – see which members of the WP community joined us!', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -161,14 +161,14 @@
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontFamily":"newsreader"} -->
-<p class="has-primary-color has-text-color has-link-color has-newsreader-font-family"><?php esc_html_e('Embark on this adventure as we relocate the Acme Corp Design Summit 2024 to the mesmerizing Iceland. Nestled in the heart of this stunning island nation, Reykjavík offers a truly unique setting for our global gathering.', 'conference');?></p>
+<div class="wp-block-column"><!-- wp:paragraph -->
+<p><?php esc_html_e('Embark on this adventure as we relocate the Acme Corp Design Summit 2024 to the mesmerizing Iceland. Nestled in the heart of this stunning island nation, Reykjavík offers a truly unique setting for our global gathering.', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontFamily":"newsreader"} -->
-<p class="has-primary-color has-text-color has-link-color has-newsreader-font-family"><?php esc_html_e('Known for its landscapes, geothermal wonders, and artistic spirit, Reykjavík is a place where creativity and innovation flourish amidst breathtaking natural beauty, and it is the perfect location to our conference.', 'conference');?></p>
+<div class="wp-block-column"><!-- wp:paragraph -->
+<p><?php esc_html_e('Known for its landscapes, geothermal wonders, and artistic spirit, Reykjavík is a place where creativity and innovation flourish amidst breathtaking natural beauty, and it is the perfect location to our conference.', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

@@ -15,8 +15,8 @@
 <h1 class="wp-block-heading has-text-align-left has-x-large-font-size" id="oops-that-page-can-t-be-found"><?php esc_html_e('🫥', 'conference');?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"textAlign":"left","level":1,"style":{"typography":{"fontSize":"5.5rem"}}} -->
-<h1 class="wp-block-heading has-text-align-left" id="oops-that-page-can-t-be-found" style="font-size:5.5rem"><?php esc_html_e('Oops! This page can’t be found.', 'conference');?></h1>
+<!-- wp:heading {"textAlign":"left","level":1,"fontSize":"x-large"} -->
+<h1 class="wp-block-heading has-text-align-left has-x-large-font-size" id="oops-that-page-can-t-be-found"><?php esc_html_e('Oops! This page can’t be found.', 'conference');?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -34,5 +34,5 @@
 <!-- wp:group {"metadata":{"name":"Footer for Pages"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-tertiary-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:0"><!-- wp:template-part {"slug":"footer-news","align":"wide"} /-->
 
-<!-- wp:template-part {"slug":"footer-pages","align":"full"} /--></div>
+<!-- wp:template-part {"slug":"footer-pages","align":"wide"} /--></div>
 <!-- /wp:group -->
