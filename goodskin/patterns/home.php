@@ -6,7 +6,7 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Intro \u0026 Posts"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
+<!-- wp:group {"metadata":{"name":"Intro & Posts"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:cover {"overlayColor":"custom-background","isUserOverlayColor":true,"isDark":false,"metadata":{"name":"Intro"},"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","layout":{"type":"default"}} -->
 <div class="wp-block-cover is-light has-contrast-color has-text-color has-link-color" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><span aria-hidden="true" class="wp-block-cover__background has-custom-background-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:template-part {"slug":"header","align":"full"} /-->
 
@@ -82,7 +82,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center"><?php esc_html_e('Sunsai SPF50+  Lightweight Sunscreen', 'goodskin');?></p>
+<p class="has-text-align-center"><?php esc_html_e('Sunsai SPF50+ Lightweight Sunscreen', 'goodskin');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:jetpack/rating-star {"rating":3,"className":"is-style-filled","align":"center"} -->
@@ -142,7 +142,7 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Newsletter \u0026 Gallery"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<!-- wp:group {"metadata":{"name":"Newsletter & Gallery"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Newsletter"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"backgroundColor":"custom-background","layout":{"type":"default"}} -->
 <div class="wp-block-group has-custom-background-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)"><!-- wp:columns {"align":"full"} -->
 <div class="wp-block-columns alignfull"><!-- wp:column {"width":"33.33%"} -->
@@ -158,7 +158,7 @@
 
 <!-- wp:jetpack/contact-form {"subject":"[goodskin] Newsletter","to":""} -->
 <div class="wp-block-jetpack-contact-form">
-<!-- wp:jetpack/field-email {"label":"","requiredText":"(required)","placeholder":"Your Email","borderWidth":1,"fieldBackgroundColor":"#efefea"} /-->
+<!-- wp:jetpack/field-email {"label":"","requiredText":"(required)","placeholder":"<?php echo esc_attr__( 'Your Email', 'goodskin' ); ?>","borderWidth":1,"fieldBackgroundColor":"#efefea"} /-->
 <!-- wp:jetpack/button {"element":"button","text":"Subscribe","lock":{"remove":true}} /-->
 </div>
 <!-- /wp:jetpack/contact-form --></div>
