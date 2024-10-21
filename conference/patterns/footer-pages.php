@@ -24,7 +24,7 @@
 <p class="has-x-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:0.05rem;text-transform:uppercase"><?php esc_html_e('All pages', 'conference');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:navigation {"overlayMenu":"never","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"small","layout":{"type":"flex","justifyContent":"space-between"}} /--></div>
+<!-- wp:navigation {"textColor":"primary","overlayMenu":"never","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"small","layout":{"type":"flex","justifyContent":"space-between"}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -32,7 +32,7 @@
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"x-small"} -->
-<p class="has-text-align-left has-x-small-font-size">Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>
+<p class="has-text-align-left has-x-small-font-size"><?php echo wp_kses_post( __ ( 'Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'conference' ) ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -49,7 +49,7 @@
 <!-- /wp:social-links -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:site-title /-->
+<div class="wp-block-group"><!-- wp:site-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} /-->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"700"}},"fontSize":"x-small"} -->
 <p class="has-x-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:0.05rem;text-transform:uppercase"><?php esc_html_e('↩', 'conference');?></p>

@@ -34,19 +34,18 @@ GNU General Public License for more details.
 
 
 == Images ==
+Images on the screenshot
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/542548
 
-https://pxhere.com/en/photo/618609
-https://pxhere.com/en/photo/764669
-https://pxhere.com/en/photo/743550
-https://pxhere.com/en/photo/1425693
-https://pxhere.com/en/photo/1447191
-https://pxhere.com/en/photo/1374255
-https://pxhere.com/en/photo/559565
-https://pxhere.com/en/photo/606425
-https://pxhere.com/en/photo/1431569
-https://pxhere.com/en/photo/1392242
-https://pxhere.com/en/photo/437994
-https://pxhere.com/en/photo/1431569
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1425693
+
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/606425
 
 
 == Fonts ==
