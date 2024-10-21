@@ -34,6 +34,7 @@ GNU General Public License for more details.
 
 
 == Images ==
+
 Images on the screenshot
 License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
@@ -46,7 +47,6 @@ Source: https://pxhere.com/en/photo/1425693
 License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/606425
-
 
 == Fonts ==
 
@@ -64,4 +64,5 @@ Inter
 Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
 Source: https://rsms.me/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
 
