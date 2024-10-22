@@ -15,6 +15,9 @@ Miko is a personal theme designed to showcase your resume and writing.
 
 == Changelog ==
 
+= 1.1 =
+* Remove nav ref ID. (#8295)
+
 = 1.0.0 =
 * Initial release
 
