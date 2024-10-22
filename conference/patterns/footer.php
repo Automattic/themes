@@ -49,11 +49,11 @@
 <!-- wp:social-link {"url":"wordpress.org","service":"x"} /--></ul>
 <!-- /wp:social-links -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:site-title /-->
+<!-- wp:group {"metadata":{"name":"Find details"},"style":{"spacing":{"blockGap":"0.5rem","padding":{"top":"0.5em","bottom":"0.5em"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="padding-top:0.5em;padding-bottom:0.5em"><!-- wp:site-title /-->
 
-<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"700"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"x-small"} -->
-<p class="has-base-color has-text-color has-link-color has-x-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:0.05rem;text-transform:uppercase"><?php esc_html_e('↩', 'conference');?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"typography":{"lineHeight":"1"}},"textColor":"base","fontSize":"x-small"} -->
+<p class="has-base-color has-text-color has-link-color has-x-small-font-size" style="line-height:1"><?php esc_html_e('', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

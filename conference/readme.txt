@@ -35,18 +35,31 @@ GNU General Public License for more details.
 
 == Images ==
 
-Images on the screenshot
+Image: Auditory displayed on the screenshot
 License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/542548
 
-License: CC0 Public Domain
-License URL: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://pxhere.com/en/photo/1425693
-
+Image: Speakers
 License: CC0 Public Domain
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/606425
+
+Image: Organizers
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://wordpress.org/photos/photo/39364651ac/
+
+Image: Attendees
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://wordpress.org/photos/photo/9456465197/
+
+Image: Location
+License: CC0 Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1374255
+
 
 == Fonts ==
 
@@ -55,7 +68,7 @@ Copyright 2022 The Inter Project Authors (https://github.com/rsms/inter-tight)
 Source: https://rsms.me/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
-Newsreader 16pt
+Newsreader
 Copyright 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)
 Source: http://www.productiontype.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
