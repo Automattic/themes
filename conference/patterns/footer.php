@@ -5,18 +5,22 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|70","padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|80"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background has-link-color" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"66.6%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:66.6%"><!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|70","padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|80","right":"var:preset|spacing|50","left":"var:preset|spacing|50"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background has-link-color" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--50)"><!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"61.6%"} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:61.6%"><!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--40)"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"700"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
 <p class="has-secondary-color has-text-color has-link-color has-x-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:0.05rem;text-transform:uppercase"><?php esc_html_e('About this theme', 'conference');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<p class="has-base-color has-text-color has-link-color" style="font-style:normal;font-weight:500"><?php esc_html_e('Ready to immerse yourself in the world of design and inspiration? Don\'t miss your chance to participate in the Acme Corp Design Summit 2024 in the captivating city of Reykjavík, Iceland. Join us for a week of groundbreaking talks, hands-on workshops, and unforgettable experiences.', 'conference');?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
+<p class="has-base-color has-text-color has-link-color"><?php esc_html_e('Ready to immerse yourself in the world of design and inspiration? Don\'t miss your chance to participate in the Acme Corp Design Summit 2024 in the captivating city of Reykjavík, Iceland. Join us for a week of groundbreaking talks, hands-on workshops, and unforgettable experiences.', 'conference');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"top","width":"5%"} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:5%"></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"top","width":"%"} -->
@@ -31,10 +35,14 @@
 <!-- /wp:columns -->
 
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"1rem"}}}} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fill","flexSize":null},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"x-small"} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"61.6%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:61.6%"><!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fill","flexSize":null},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"x-small"} -->
 <p class="has-text-align-left has-base-color has-text-color has-link-color has-x-small-font-size">Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center","width":"5%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:5%"></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"%"} -->
