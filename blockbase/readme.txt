@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.21 =
+* Blockbase: Fix font collection logic and add error handling for theme.json file (#8300)
+
 = 3.1.19 =
 * Update blockbase to better ensure type safety (#8263)
 
