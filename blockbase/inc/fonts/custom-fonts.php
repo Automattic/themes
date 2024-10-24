@@ -118,14 +118,26 @@ function extract_font_slug_from_setting( $setting ) {
  * @return array Collection of all font slugs defined in the theme.json file
  */
 function collect_fonts_from_blockbase() {
-	$fonts                  = array();
-	$parent_theme_json_data = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
-	$font_families          = $parent_theme_json_data['settings']['typography']['fontFamilies'];
+	$fonts           = array();
+	$theme_json_path = get_template_directory() . '/theme.json';
 
-	foreach ( $font_families as $font ) {
-		// Only pick it up if we're claiming it as ours to manage
-		if ( array_key_exists( 'provider', $font ) && 'blockbase-fonts' === $font['provider'] ) {
-			$fonts[] = $font;
+	// Check if the file exists and is readable
+	if ( file_exists( $theme_json_path ) && is_readable( $theme_json_path ) ) {
+		$theme_json = file_get_contents( $theme_json_path );
+		if ( is_string( $theme_json ) ) {
+			$parent_theme_json_data = json_decode( $theme_json, true );
+
+			// Check if the file content was decoded properly
+			if ( is_array( $parent_theme_json_data ) && isset( $parent_theme_json_data['settings']['typography']['fontFamilies'] ) ) {
+				$font_families = $parent_theme_json_data['settings']['typography']['fontFamilies'];
+
+				foreach ( $font_families as $font ) {
+					// Only pick it up if we're claiming it as ours to manage
+					if ( array_key_exists( 'provider', $font ) && 'blockbase-fonts' === $font['provider'] ) {
+						$fonts[] = $font;
+					}
+				}
+			}
 		}
 	}
 
