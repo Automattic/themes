@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.22 =
+* Fix background color not showing for headings (#8261)
+
 = 0.0.21 =
 * Assembler: Remove inherited color styling from linked headings (#8206)
 * Fix footer validation and spacing issue (#8208)

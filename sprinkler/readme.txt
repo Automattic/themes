@@ -12,6 +12,9 @@ Sprinkler is a blogging theme ideal for gardening enthusiasts who would like to 
 
 == Changelog ==
 
+= 1.0.3 =
+* Sprinkler: Replaces Literata heading font (#8299)
+
 = 1.0.2 =
 * Sprinkler: addressing dotorg feedback (#8071)
 
