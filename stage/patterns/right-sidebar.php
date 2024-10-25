@@ -13,7 +13,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.2rem","lineHeight":1.6}},"fontFamily":"libre-caslon-text"} -->
-<p class="has-libre-caslon-text-font-family" style="font-size:1.2rem;line-height:1.6"><a href="https://stage.mystagingwebsite.com/about/" data-type="page" data-id="2"><?php echo esc_html__( 'Ernest M. Hemingway was an American novelist, short-story writer, journalist, and sportsman.', 'stage' ); ?></a></p>
+<p class="has-libre-caslon-text-font-family" style="font-size:1.2rem;line-height:1.6"><a href="#" data-type="page" data-id="2"><?php echo esc_html__( 'Ernest M. Hemingway was an American novelist, short-story writer, journalist, and sportsman.', 'stage' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":220,"width":96,"height":96,"sizeSlug":"full","linkDestination":"none"} -->
