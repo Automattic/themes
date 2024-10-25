@@ -31,8 +31,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center","width":"3%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:3%"></div>
+<!-- wp:column {"verticalAlignment":"center","width":"2.5%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:2.5%"></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
