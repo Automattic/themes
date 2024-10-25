@@ -17,10 +17,18 @@
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:63.66%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:post-title {"level":1,"isLink":true} /-->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"metadata":{"name":"Date and category"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:post-date /-->
 
-<!-- wp:post-terms {"term":"category","prefix":"·  "} /--></div>
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1"}},"fontSize":"x-small"} -->
+<p class="has-x-small-font-size" style="line-height:1"><?php esc_html_e('·', 'castcore');?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-terms {"term":"category"} /-->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -114,7 +122,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","width":"33.33%","layout":{"type":"default"}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:33.33%"><!-- wp:group {"style":{"spacing":{"blockGap":"3rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/portrait_photomatt.jpg" alt="" class="" style="aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/portrait_photomatt.jpg" alt="" style="aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
