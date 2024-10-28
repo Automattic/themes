@@ -13,7 +13,7 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><?php esc_html_e('Explore WordPress with Josepha Haden, the project’s executive director, and guests. Learn about where WordPress is going, how we’ll get there, and how you can get involved.', 'castcore');?></p>
+<p><?php esc_html_e('Join Naomi Ellis as she dives into the extraordinary lives that shaped history. Her warmth and insight turn complex biographies into relatable stories that inspire and educate.', 'castcore');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase"}},"fontSize":"x-small"} -->

@@ -11,7 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Welcome podcast producers about to onboard this journey — CastCore is designed to be your first podcast site.
 
-
 == Changelog ==
 
 = 1.0.0 =
@@ -66,18 +65,17 @@ Copyright 2017, The Mozilla Foundation
 Source: http://www.typotheque.com
 License: Licensed under the Open Font License, version 1.1 or later.
 
-
 == Images ==
 
 Podcast covert art on the screenshot
-Author: Matt Avery - https://mattavery.design/
+Author: Henrique Iamarino - https://iamarino.com/
 License: Public Domain Dedication (CC0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://distributed.blog/
+Source: https://castcore.mystagingwebsite.com/
 
-Matt's image on the About section
-Author: https://www.flickr.com/photos/karmatosed/
+Meet the host image
 License: Public Domain Dedication (CC0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://www.flickr.com/photos/karmatosed/27353655403
+Source: https://pxhere.com/en/photo/676098
+
 

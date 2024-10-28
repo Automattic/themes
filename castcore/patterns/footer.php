@@ -16,11 +16,13 @@
 
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><?php esc_html_e('Welcome to The Houseplant Podcast, your ultimate guide to the world of houseplants! Join us as we explore the wonders and importance of plants in our lives. From plant-based lifestyles to the well-being qualities they offer, we\'ll cover everything related to these green treasures.', 'castcore');?></p>
+<p><?php /* Translators: 1. is the start of a 'em' HTML element, 2. is the end of a 'em' HTML element */ 
+echo sprintf( esc_html__( 'Welcome to %1$sOf Human Lives%2$s, a journey through the incredible lives that have shaped our world. Join host Naomi Ellis as she uncovers the fascinating stories of those who dared to dream, challenge norms, and inspire generations. From innovators to revolutionaries, each episode brings a new perspective on the resilience, vision, and humanity behind history’s most impactful figures.', 'castcore' ), '<em>', '</em>' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Let\'s dive into the joy of indoor gardening, learn about plant care, and discover how houseplants can transform our homes into lush sanctuaries. Get ready to be inspired and enchanted by the magic of plants on THP.', 'castcore');?></p>
+<p><?php /* Translators: 1. is the start of a 'em' HTML element, 2. is the end of a 'em' HTML element */ 
+echo sprintf( esc_html__( 'Step into the lives of remarkable people and see how their legacies still touch us today. Discover the history with a heart on %1$sOf Human Lives%2$s.', 'castcore' ), '<em>', '</em>' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -83,7 +85,8 @@
 <!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"left","style":{"typography":{"lineHeight":"1"}}} -->
-<p class="has-text-align-left" style="line-height:1"><?php echo wp_kses_post( __ ( 'Designed with <a href="[https://wordpress.org](https://wordpress.org/)" rel="nofollow">WordPress</a> ', 'castcore' ) );?></p>
+<p class="has-text-align-left" style="line-height:1"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
+echo sprintf( esc_html__( 'Designed with %1$sWordPress%2$s ', 'castcore' ), '<a href="' . esc_url( '//wordpress.org/)' ) . '" rel="nofollow">', '</a>' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#1a171c","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"0.5rem"}}}} -->
