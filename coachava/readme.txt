@@ -50,7 +50,12 @@ Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)
 Source: https://tribby.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
 
-Geist Mono
+Besley
+Copyright 2020 The Besley Project Authors (https://github.com/indestructible-type/Besley)
+Source: https://indestructibletype.com/Home.html
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
+Geist and Geist Mono
 Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font.git)
 Source: https://github.com/vercel/geist-font
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL

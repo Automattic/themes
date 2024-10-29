@@ -81,7 +81,8 @@
 
 <!-- wp:column {"width":""} -->
 <div class="wp-block-column"><!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php esc_html_e('Designed with WordPress', 'coachava');?></p>
+<p class="has-text-align-left"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
+echo sprintf( esc_html__( 'Designed with %1$sWordPress%2$s', 'coachava' ), '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" rel="noreferrer noopener">', '</a>' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
