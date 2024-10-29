@@ -70,7 +70,6 @@ Copyright 2020 The LibreFranklin Project Authors (https://github.com/impallari/L
 Source: http://www.impallari.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
 
-
 == Images ==
 
 Woman Sitting While Using Laptop (screenshot)
@@ -87,4 +86,11 @@ Woman writing in notebook at work desk in front of a computer with a cup of coff
 License: CC0 1.0 Universal
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 https://www.rawpixel.com/image/5919200/image-book-public-domain-notes
+
+Icons and placeholder logos
+Author: Henrique Iamarino, 2024 (https://www.iamarino.com)
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://coachava.mystagingwebsite.com/
+
 
