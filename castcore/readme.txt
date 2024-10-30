@@ -36,10 +36,6 @@ GNU General Public License for more details.
 
 == Fonts ==
 
-Aspekta
-Copyright © 2022 Ivo Dolenc
-License: SIL Open Font License (OFL), Version 1.1
-
 Besley
 Copyright 2020 The Besley Project Authors (https://github.com/indestructible-type/Besley)
 Source: https://indestructibletype.com/Home.html
@@ -50,20 +46,31 @@ Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figt
 Source: https://erikdkennedy.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
-Instrument Serif
-Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)
-Source: www.fragtypefoundry.xyz
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
-
 Manrope
 Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope)
 Source: http://gent.media
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
 
+Outfit
+Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)
+Source: www.fragtypefoundry.xyz
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
+Piazzolla 24pt
+Copyright 2018 The Piazzolla Project Authors (https://github.com/huertatipografica/piazzolla)
+Source: https://www.huertatipografica.com
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
+Space Grotesk
+Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
+Source: https://fonts.floriankarsten.com
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
 Zilla Slab
 Copyright 2017, The Mozilla Foundation
 Source: http://www.typotheque.com
 License: Licensed under the Open Font License, version 1.1 or later.
+
 
 == Images ==
 
