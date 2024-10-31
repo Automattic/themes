@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: index
- * Slug: greenseed/index
+ * Title: search
+ * Slug: greenseed/search
  * Inserter: no
  */
 ?>
@@ -15,7 +15,15 @@
 <!-- /wp:spacer -->
 
 <!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"layout":{"type":"constrained"}} -->
-<div class="wp-block-query"><!-- wp:post-template -->
+<div class="wp-block-query"><!-- wp:query-title {"type":"search","level":2} /-->
+
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search..."} /-->
+
+<!-- wp:spacer {"height":"var:preset|spacing|80"} -->
+<div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:post-template -->
 <!-- wp:group -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:post-title {"level":3,"isLink":true} /-->
@@ -39,11 +47,9 @@
 <!-- /wp:group -->
 <!-- /wp:post-template -->
 
-<!-- wp:query-no-results -->
 <!-- wp:paragraph -->
 <p><?php esc_html_e('Sorry, but nothing was found. Please try a search with different keywords.', 'greenseed');?></p>
 <!-- /wp:paragraph -->
-<!-- /wp:query-no-results -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|80"} -->
 <div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
