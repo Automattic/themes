@@ -2,20 +2,11 @@
 /**
  * Title: home
  * Slug: greenseed/home
- * Categories: hidden
  * Inserter: no
  */
 ?>
-<!-- wp:group {"lock":{"move":false,"remove":false},"metadata":{"name":"Overlayed Header and Footer (Home)"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"align":"full","className":"overlay","style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
-<div class="wp-block-group alignfull overlay" style="min-height:100vh;padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:template-part {"slug":"header","area":"header"} /-->
-
-<!-- wp:spacer {"height":"0px","style":{"layout":{"flexSize":"100px","selfStretch":"fixed"}}} -->
-<div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:template-part {"slug":"footer","area":"footer"} /--></div>
-<!-- /wp:group --></div>
+<!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:template-part {"slug":"header","area":"header"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Homepage Content"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
@@ -26,7 +17,7 @@
 
 <!-- wp:column {"width":"60%"} -->
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/greenseed-image-5-1024x683.jpg" alt="" class=""/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/greenseed-image-5-1024x683.jpg" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -46,7 +37,7 @@
 
 <!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/greenseed-image-2-2-1024x694.jpg" alt="" class=""/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/greenseed-image-2-2-1024x694.jpg" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -66,7 +57,7 @@
 
 <!-- wp:column {"width":"40%"} -->
 <div class="wp-block-column" style="flex-basis:40%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/greenseed-image-3-2-732x1024.jpg" alt="" class=""/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/greenseed-image-3-2-732x1024.jpg" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -78,7 +69,7 @@
 <!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/greenseed-image-1-2-1024x694.jpg" alt="" class=""/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/greenseed-image-1-2-1024x694.jpg" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -98,7 +89,7 @@
 
 <!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/greenseed-image-4-1024x694.jpg" alt="" class=""/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/greenseed-image-4-1024x694.jpg" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -126,4 +117,8 @@
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%"></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></main>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"fixed-footer","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group fixed-footer" style="margin-top:0;margin-bottom:0"><!-- wp:template-part {"slug":"footer","area":"footer"} /--></div>
 <!-- /wp:group -->
