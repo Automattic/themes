@@ -20,13 +20,9 @@
 <!-- /wp:post-template -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:query-pagination {"align":"full","layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
-<!-- wp:query-pagination-previous {"label":"Previous"} /-->
-
-<!-- wp:query-pagination-numbers /-->
-
-<!-- wp:query-pagination-next {"label":"Next"} /-->
-<!-- /wp:query-pagination --></div>
+<div class="wp-block-group alignwide">
+<!-- wp:pattern {"slug":"coachben/pagination"} /-->
+</div>
 <!-- /wp:group -->
 
 <!-- wp:query-no-results {"align":"wide"} -->

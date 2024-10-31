@@ -28,14 +28,16 @@
 <!-- /wp:post-template -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:query-pagination {"align":"full","layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
-<!-- wp:query-pagination-previous {"label":"Previous"} /-->
+<div class="wp-block-group alignwide">
+<!-- wp:pattern {"slug":"coachben/pagination"} /-->
+</div>
+<!-- /wp:group -->
 
-<!-- wp:query-pagination-numbers /-->
-
-<!-- wp:query-pagination-next {"label":"Next"} /-->
-<!-- /wp:query-pagination --></div>
-<!-- /wp:group --></div>
+<!-- wp:query-no-results {"align":"wide"} -->
+<!-- wp:paragraph -->
+<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'coachben');?></p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
 <!-- /wp:query -->
 
 <!-- wp:template-part {"slug":"cta","area":"uncategorized","align":"wide"} /--></main>
