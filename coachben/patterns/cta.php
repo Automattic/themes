@@ -5,10 +5,10 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"metadata":{"name":"CTA wrapper"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|70","padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
+<!-- wp:group {"metadata":{"name":"CTA wrapper"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group alignwide"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"600"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:0.05rem"><?php esc_html_e('Start your journey now', 'coachben');?></p>
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"600","textTransform":"uppercase"}},"fontSize":"small"} -->
+<p class="has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:0.05rem;text-transform:uppercase"><?php esc_html_e('Start your journey', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} -->

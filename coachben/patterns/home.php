@@ -18,7 +18,7 @@ echo sprintf( esc_html__( 'Discover the power of Coaching with %1$sBen Oatts%2$s
 <div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|60","left":"var:preset|spacing|20"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"></div>
 <!-- /wp:column -->
@@ -134,7 +134,7 @@ echo sprintf( esc_html__( 'Discover the power of Coaching with %1$sBen Oatts%2$s
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Featuring"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"20%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:20%"><!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"unset"}}} -->
 <figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/coachben_stocksnap_6ZYX4YY4IR.jpg" alt="" style="aspect-ratio:1;object-fit:cover"/></figure>
@@ -158,11 +158,7 @@ echo sprintf( esc_html__( 'Discover the power of Coaching with %1$sBen Oatts%2$s
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
-<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|20"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"20%"} -->
 <div class="wp-block-column" style="flex-basis:20%"></div>
 <!-- /wp:column -->
@@ -174,11 +170,11 @@ echo sprintf( esc_html__( 'Discover the power of Coaching with %1$sBen Oatts%2$s
 <!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph {"align":"left"} -->
 <p class="has-text-align-left"><?php /* Translators: 1. is a 'br' HTML element */ 
-echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount significance in the realm of business, exerting a profound influence on the growth and prosperity of not only individuals but also entire organizations.%1$sIts role is pivotal, a driving force that propels individuals and corporate entities towards excellence.', 'coachben' ), '<br>' ); ?></p>
+echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount significance in the realm of business, exerting a profound influence on the growth and prosperity of not only individuals but also entire organizations.%1$sIts role is pivotal, a driving force that propels individuals and corporate entities toward excellence.', 'coachben' ), '<br>' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php esc_html_e('Herein, we delve into the manifold reasons why the practice of coaching shines as an invaluable asset in the business landscape, each facet illuminating its undeniable value for enterprises of all sizes.', 'coachben');?></p>
+<p class="has-text-align-left"><?php esc_html_e('Here, we delve into the manifold reasons why coaching is an invaluable asset in the business landscape. Each facet illuminates its undeniable value for enterprises of all sizes.', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -189,7 +185,11 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.025rem","fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small","fontFamily":"martian-mono"} -->
 <p class="has-primary-color has-text-color has-link-color has-martian-mono-font-family has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:0.025rem"><?php esc_html_e('Request information', 'coachben');?></p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"var:preset|spacing|60"} -->
+<div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"25%"} -->
@@ -200,13 +200,13 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Courses and Events"},"align":"wide","style":{"spacing":{"blockGap":"5vh","padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Courses and Events"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"metadata":{"name":"Courses"},"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide"} -->
 <h1 class="wp-block-heading alignwide has-text-align-left"><?php esc_html_e('Courses', 'coachben');?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|70","left":"var:preset|spacing|20"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"></div>
 <!-- /wp:column -->
@@ -222,12 +222,12 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <p><?php esc_html_e('The present course unlocks your full potential with our intensive, deep-dive course designed to take your skills and knowledge to the next level.', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-primary-color has-text-color has-link-color has-martian-mono-font-family has-small-font-size" style="font-style:normal;font-weight:600"><?php esc_html_e('›', 'coachben');?></p>
+<!-- wp:group {"metadata":{"name":"More info - Secondary"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"small","fontFamily":"martian-mono"} -->
+<p class="has-tertiary-color has-text-color has-link-color has-martian-mono-font-family has-small-font-size" style="font-style:normal;font-weight:600"><?php esc_html_e('›', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:read-more {"content":"Read More"} /--></div>
+<!-- wp:read-more {"content":"Read More","style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -243,12 +243,12 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <p><?php esc_html_e('This certification is ideal for individuals looking to master their chosen field, whether leadership, entrepreneurship, or a specific professional skill.', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-primary-color has-text-color has-link-color has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:0.05rem"><?php esc_html_e('›', 'coachben');?></p>
+<!-- wp:group {"metadata":{"name":"More info - Secondary"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"small","fontFamily":"martian-mono"} -->
+<p class="has-tertiary-color has-text-color has-link-color has-martian-mono-font-family has-small-font-size" style="font-style:normal;font-weight:600"><?php esc_html_e('›', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:read-more {"content":"Read more"} /--></div>
+<!-- wp:read-more {"content":"Read More","style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -263,20 +263,20 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <p><?php esc_html_e('Stay ahead in your career with a program designed to provide ongoing learning opportunities and keep your skills relevant in today’s ever-changing.', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-primary-color has-text-color has-link-color has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:0.05rem"><?php esc_html_e('›', 'coachben');?></p>
+<!-- wp:group {"metadata":{"name":"More info - Secondary"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"small","fontFamily":"martian-mono"} -->
+<p class="has-tertiary-color has-text-color has-link-color has-martian-mono-font-family has-small-font-size" style="font-style:normal;font-weight:600"><?php esc_html_e('›', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:read-more {"content":"Read more"} /--></div>
+<!-- wp:read-more {"content":"Read More","style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- wp:spacer {"height":"var:preset|spacing|60"} -->
+<div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Events"},"align":"wide","layout":{"type":"constrained"}} -->
@@ -292,17 +292,21 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|70"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:columns {"metadata":{"name":"Event 1"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:columns {"metadata":{"name":"Event 1"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|20"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"Date and Time"},"style":{"spacing":{"blockGap":"0rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"Agenda"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('Jul 4, 2025', 'coachben');?></p>
+<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('Jul 4, 2025 — 20:00', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('20:00', 'coachben');?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small","fontFamily":"martian-mono"} -->
+<p class="has-primary-color has-text-color has-link-color has-martian-mono-font-family has-small-font-size" style="font-style:normal;font-weight:600"><?php esc_html_e('›', 'coachben');?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:read-more {"content":"Watch Talk"} /--></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -313,7 +317,21 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Join WordPress Executive Director Josepha Haden Chomphosy and Core Tech Lead Mike Schroder as they discuss their favorite new features and enhancements in WordPress 6.3.&nbsp;', 'coachben');?></p>
+<p><?php esc_html_e('Explore the latest trends, techniques, and tools transforming the coaching world at the Coaching Expo 2025. This annual event brings together industry leaders, innovative coaches, and aspiring professionals to engage in hands-on workshops, keynote talks, and networking opportunities. Delve into sessions on personal growth, career transformation, and the psychology of achievement.', 'coachben');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:spacer {"height":"var:preset|spacing|60"} -->
+<div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:columns {"metadata":{"name":"Event 2"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|20"}}}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"Agenda"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
+<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('Jul 4, 2025 — 20:00', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -323,31 +341,31 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 
 <!-- wp:read-more {"content":"Watch Talk"} /--></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
-
-<!-- wp:columns {"metadata":{"name":"Event 2"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"Date and Time"},"style":{"spacing":{"blockGap":"0rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('Jul 4, 2025', 'coachben');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('20:00', 'coachben');?></p>
-<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"bottom","width":"75%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:75%"><!-- wp:group {"metadata":{"name":"Event wrapper"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e('FORUM SOSTENIBILITÀ 2025', 'coachben');?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e('Forum Sostenibilità Milano 2025', 'coachben');?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Join WordPress Executive Director Josepha Haden Chomphosy and Core Tech Lead Mike Schroder as they discuss their favorite new features and enhancements in WordPress 6.3.', 'coachben');?></p>
+<p><?php esc_html_e('Join influential leaders and visionaries at the FSMi 2025 to discuss and explore sustainable approaches to coaching, business, and community development. This Italian forum highlights the critical role of coaching in driving sustainable, forward-thinking solutions in diverse industries. Attend thought-provoking sessions and gain insights into responsible, impactful leadership.', 'coachben');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:spacer {"height":"var:preset|spacing|60"} -->
+<div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:columns {"metadata":{"name":"Event 3"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|20"}}}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"Agenda"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
+<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('Jul 4, 2025 — 20:00', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -357,20 +375,6 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 
 <!-- wp:read-more {"content":"Watch Talk"} /--></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
-
-<!-- wp:columns {"metadata":{"name":"Event 3"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"Date and Time"},"style":{"spacing":{"blockGap":"0rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('Jul 4, 2025', 'coachben');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-martian-mono-font-family has-small-font-size"><?php esc_html_e('20:00', 'coachben');?></p>
-<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -381,16 +385,8 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Join WordPress Executive Director Josepha Haden Chomphosy and Core Tech Lead Mike Schroder as they discuss their favorite new features and enhancements in WordPress 6.3.', 'coachben');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small","fontFamily":"martian-mono"} -->
-<p class="has-primary-color has-text-color has-link-color has-martian-mono-font-family has-small-font-size" style="font-style:normal;font-weight:600"><?php esc_html_e('›', 'coachben');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:read-more {"content":"Watch Talk"} /--></div>
-<!-- /wp:group --></div>
+<p><?php esc_html_e('TEDNYU presents Ben Oatts in an inspiring talk on “Leading &amp; Coaching.” Oatts, an acclaimed coach and speaker, shares his experiences on effective leadership and the transformational power of coaching. Discover fresh perspectives on mentorship, emotional intelligence, and unlocking potential in both personal and professional spaces.', 'coachben');?></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -400,7 +396,7 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 
 <!-- wp:template-part {"slug":"cta","area":"uncategorized","align":"wide"} /-->
 
-<!-- wp:group {"metadata":{"name":"Blog"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Blog"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"blockGap":{"top":"0.5rem","left":"0.5rem"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"%"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} -->
@@ -421,45 +417,27 @@ echo sprintf( esc_html__( 'Coaching stands as a cornerstone of paramount signifi
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:query {"queryId":14,"query":{"perPage":"4","pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false,"parents":[]},"align":"wide","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Blog posts"},"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:query {"queryId":14,"query":{"perPage":"4","pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false,"parents":[]},"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-query alignwide"><!-- wp:post-template {"align":"full","layout":{"type":"grid","columnCount":4}} -->
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"1px"},"layout":{"selfStretch":"fit","flexSize":null}}} /-->
 
-<!-- wp:spacer {"height":"var:preset|spacing|30"} -->
-<div style="height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group"><!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
+<!-- wp:group {"metadata":{"name":"Title and meta"},"style":{"spacing":{"blockGap":"0.5rem","margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--50)"><!-- wp:post-title {"level":3,"isLink":true} /-->
 
 <!-- wp:post-date {"format":"M j, Y"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
 <!-- /wp:query -->
 
-<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"75%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:75%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"top","width":"0%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:0%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"top","width":"0%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:0%"></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"verticalAlignment":"top","width":"25%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"metadata":{"name":"More info"},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
+<!-- wp:group {"metadata":{"name":"More info"},"align":"wide","style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.05rem","fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"small"} -->
 <p class="has-primary-color has-text-color has-link-color has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:0.05rem"><?php esc_html_e('›', 'coachben');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:read-more {"content":"More blog posts"} /--></div>
+<!-- wp:read-more {"content":"More Blog Posts"} /--></div>
 <!-- /wp:group --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
 

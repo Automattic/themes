@@ -1,11 +1,10 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group"><!-- wp:group {"tagName":"main","lock":{"move":false,"remove":false},"align":"wide"} -->
-<main class="wp-block-group alignwide"><!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"2rem","left":"2rem"}}}} -->
+<!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:group {"lock":{"move":false,"remove":false},"align":"wide"} -->
+<div class="wp-block-group alignwide"><!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|80","left":"var:preset|spacing|20"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"75%"} -->
-<div class="wp-block-column" style="flex-basis:75%"><!-- wp:group {"style":{"spacing":{"padding":{"right":"1rem"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="padding-right:1rem"><!-- wp:group {"style":{"spacing":{"blockGap":"2.5rem"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-column" style="flex-basis:75%"><!-- wp:group {"style":{"spacing":{"blockGap":"2.5rem"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:group {"align":"wide","layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group alignwide"><!-- wp:post-title {"align":"wide"} /-->
 
@@ -15,14 +14,17 @@
 <!-- wp:template-part {"slug":"post-meta","area":"uncategorized"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"comments"} /--></div>
-<!-- /wp:group --></div>
+<!-- wp:template-part {"slug":"comments"} /-->
+
+<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
+<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":""} -->
 <div class="wp-block-column"><!-- wp:template-part {"slug":"sidebar"} /--></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns --></main>
+<!-- /wp:columns --></div>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"signup","area":"uncategorized","align":"wide"} /--></main>
