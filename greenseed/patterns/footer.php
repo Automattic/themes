@@ -6,28 +6,12 @@
  * Block Types: core/template-part/footer
  */
 ?>
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:paragraph {"align":"left","fontSize":"small"} -->
+<p class="has-text-align-left has-small-font-size"><?php echo wp_kses_post( __( 'Inveresk Village Rd 15<br>Musselburgh, Scotland<br><a href="#">@greenseedmkt</a>', 'greenseed' ) ); ?></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:spacer {"height":"var(--wp--preset--spacing--80)"} -->
-<div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)"}}}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">
-            <?php
-                /* Translators: WordPress link. */
-                $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'greenseed' ) ) . '" rel="nofollow">WordPress</a>';
-                echo sprintf(
-                    esc_html__( 'Designed with %1$s', 'greenseed' ),
-                    $wordpress_link
-                );
-            ?>
-        </p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
-</div>
+<!-- wp:paragraph {"align":"right","fontSize":"small"} -->
+<p class="has-text-align-right has-small-font-size"><?php echo wp_kses_post( __( 'Mon — Fri: 8 AM — 4 PM<br>Sat — Sun: 8 AM — 1 PM', 'greenseed' ) ); ?></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group -->
