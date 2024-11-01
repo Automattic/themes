@@ -12,6 +12,9 @@ Greenseed is a sleek, simple theme tailored for small businesses aiming to make 
 
 == Changelog ==
 
+= 1.0.4 =
+* Update screenshot (#8326)
+
 = 1.0.3 =
 * Remove unused patterns and update posts list pattern (#8320)
 * Cleanup stylesheet and readme (#8321)
