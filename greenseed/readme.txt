@@ -1,7 +1,7 @@
 === Greenseed ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.0
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ Greenseed is a sleek, simple theme tailored for small businesses aiming to make 
 * Cleanup template parts (#8311)
 * Reformat theme.json (#8312)
 * Fix 404 template (#8313)
-* Greenseed: Fix Archive template (#8314)
+* Fix Archive template (#8314)
 * Fix Index template (#8315)
 * Fix Search template (#8316)
 * Fix home template (#8317)
@@ -27,44 +27,8 @@ Greenseed is a sleek, simple theme tailored for small businesses aiming to make 
 = 1.0.1 =
 * renamed images (#8123)
 
-= 0.0.30 =
-* Greenseed: Update header alignment (#7575)
-
-= 0.0.29 =
-* Remove auto-loading-homepage tag. (#7300)
-
-= 0.0.28 =
-* Remove Rubik font from heading definition (#7267)
-
-= 0.0.27 =
-* Add link styles for post-terms (#7058)
-
-= 0.0.26 =
-* Remove table CSS from block canvas theme as it has been addressed in Gutenberg (#6954)
-
-= 0.0.24 =
-* Greenseed: Add no results content to search template (#6860)
-
-= 0.0.23 =
-* Remove font-smoothing CSS (#6816)
-
-= 0.0.22 =
-* Add home.html template to Greenseed (#6784)
-
-= 0.0.21 =
-* Greenseed: Add self-closing tag to comments pattern in page template (#6764)
-
-= 0.0.20 =
-* Greenseed: small updates (#6705)
-
-= 0.0.19 =
-* Make theme available for translation as much as possible (#6484)
-
-= 0.0.18 =
-* Update block canvas styles (#6640)
-
-= 0.0.17 =
-* Block canvas: clean up templates (#6620)
+= 1.0.0 =
+* Initial release
 
 == Copyright ==
 
@@ -83,17 +47,25 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-Image for theme screenshot, Credit Lisa Fotios
+== Fonts ==
+
+DM Sans Font
+Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
+This Font Software is licensed under the SIL Open Font License, Version 1.1 . This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
+
+== Images ==
+
+Credit Lisa Fotios
 License: CC0
 License URL: https://stocksnap.io/license
 Source: https://stocksnap.io/photo/outdoor-vegetable-37DTDTYBW5
 
-Image for theme screenshot, Credit Jakub Kapusnak
+Credit Jakub Kapusnak
 License: CC0
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://www.rawpixel.com/image/448663/free-photo-image-agriculture-eating-farm
 
-DM Sans from Google Fonts
-License: Open Font License 
-License URL: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
-Source: https://fonts.google.com/specimen/DM+Sans
+Credit Pxhere
+License: CC0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1626938
