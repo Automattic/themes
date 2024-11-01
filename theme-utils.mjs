@@ -76,8 +76,8 @@ const commands = {
 	},
 	'version-bump-themes': {
 		helpText:
-			'Bump the version of any theme that has had changes since the last deployment. This includes bumping the version of any parent themes and updating the changelog for the theme.',
-		run: versionBumpThemes,
+			'Bump the version of any theme that has had changes since the last deployment. This includes bumping the version of any parent themes and updating the changelog for the theme. Optionally specify a single theme to version bump.',
+		run: ( args ) => versionBumpThemes(	args?.[ 1 ].split( /[ ,]+/ ) ),
 	},
 	'land-diff': {
 		helpText: 'Run gh pr merge to merge in the specified pull request id.',
@@ -810,10 +810,10 @@ async function updateLastDeployedHash() {
  If a theme has changes also update its changelog.
  Commit the change.
 */
-async function versionBumpThemes() {
+async function versionBumpThemes( themeSlugs ) {
 	console.log( 'Version Bumping' );
 
-	const themes = await getActionableThemes();
+	const themes = themeSlugs ? themeSlugs : await getActionableThemes();
 	const latestTag = execSync( 'git describe --tags --abbrev=0' )
 		.toString()
 		.trim();
