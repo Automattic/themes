@@ -12,6 +12,10 @@ Silence.
 
 == Changelog ==
 
+= 1.0.2 =
+* Update width for small screens (#8329)
+* Fix tagline position (#8330)
+
 = 1.0.1 =
 * Lossless image optimization (#7671)
 

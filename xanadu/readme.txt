@@ -12,6 +12,9 @@ This theme is named after the city in Samuel Taylor Coleridge’s poem Kubla Kha
 
 == Changelog ==
 
+= 1.0.4 =
+* Update font scales to remove absolute size (#8331)
+
 = 1.0.3 =
 * Xanadu: Polishing (#8291)
 
