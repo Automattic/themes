@@ -23,8 +23,9 @@ declare( strict_types = 1 );
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+	<!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|70"}}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--70)">
+
 		<!-- wp:site-tagline {"style":{"layout":{"selfStretch":"fixed","flexSize":"60%"}}} /-->
 	</div>
 	<!-- /wp:group -->
