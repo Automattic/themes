@@ -26,7 +26,7 @@
 
 <!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide"><!-- wp:search {"label":"","showLabel":false,"placeholder":"Search...","style":{"border":{"radius":"0px"}}} /--></div>
+<div class="wp-block-group alignwide"><!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Search...', 'Search input field placeholder text', 'greenseed' ); ?>","style":{"border":{"radius":"0px"}}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->

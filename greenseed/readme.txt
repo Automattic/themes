@@ -65,7 +65,17 @@ License: CC0
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://www.rawpixel.com/image/448663/free-photo-image-agriculture-eating-farm
 
-Credit Pxhere
+Credit pxhere.com
 License: CC0
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/1626938
+
+U.S. Government image
+License: CC0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+https://www.rawpixel.com/image/9648144/freshly-harvest-vegetables
+
+Credit: Kamusal Alan
+License: CC0
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+https://pxhere.com/tr/photo/808550
