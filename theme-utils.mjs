@@ -77,7 +77,7 @@ const commands = {
 	'version-bump-themes': {
 		helpText:
 			'Bump the version of any theme that has had changes since the last deployment. This includes bumping the version of any parent themes and updating the changelog for the theme. Optionally specify a single theme to version bump.',
-		run: ( args ) => versionBumpThemes(	args?.[ 1 ].split( /[ ,]+/ ) ),
+		run: ( args ) => versionBumpThemes(	args?.[ 1 ]?.split( /[ ,]+/ ) ),
 	},
 	'land-diff': {
 		helpText: 'Run gh pr merge to merge in the specified pull request id.',
