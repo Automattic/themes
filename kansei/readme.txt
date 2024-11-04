@@ -1,7 +1,7 @@
 === Kansei ===
-Contributors: 
+Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,9 +38,16 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+== Fonts ==
+
 Cormorant Font
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 License URL: https://scripts.sil.org/OFL
 -- End of Cormorant Font credits --
 
-https://unsplash.com/photos/white-and-black-floral-textile-Tc_4PdN-Fq0
+== Images ==
+
+Credit: Milad Fakurian
+License: Unsplash License
+License URL: https://unsplash.com/license
+Source: https://unsplash.com/photos/white-and-black-floral-textile-Tc_4PdN-Fq0
