@@ -18,9 +18,9 @@
 <div class="wp-block-columns"><!-- wp:column {"width":"40%"} -->
 <div class="wp-block-column" style="flex-basis:40%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:query-pagination {"paginationArrow":"arrow"} -->
-<!-- wp:query-pagination-previous {"label":"Prev"} /-->
+<!-- wp:query-pagination-previous {"label":"<?php esc_html_e('Prev', 'kansei');?>"} /-->
 
-<!-- wp:query-pagination-next {"label":"Next"} /-->
+<!-- wp:query-pagination-next {"label":"<?php esc_html_e('Next', 'kansei');?>"} /-->
 <!-- /wp:query-pagination --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->

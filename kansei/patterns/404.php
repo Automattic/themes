@@ -28,7 +28,7 @@
 <div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Type to search","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside"} /--></div>
+<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"<?php echo esc_html_x( 'Type to search', 'This is a placeholder text in a search field', 'kansei' ); ?>","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></main>

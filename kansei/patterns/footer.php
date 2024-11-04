@@ -2,13 +2,9 @@
 /**
  * Title: Default footer
  * Slug: kansei/footer
- * Categories: footer
- * Block Types: core/template-part/footer
+ * Inserter: no
  */
-
-declare( strict_types = 1 );
 ?>
-
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"3rem"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:3rem">
 	<!-- wp:columns -->
