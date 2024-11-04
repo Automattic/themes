@@ -11,6 +11,14 @@ Kansei is a theme reminiscing of the Japanese book design tradition and graphic 
 
 == Changelog ==
 
+= 1.0.3 =
+* Update templates with query loop block, remove unnecessary header pattern (#8348)
+* Make sure main tag is present on all templates (#8349)
+* Kansei: Update outer grid gaps to reduce vertical spacing for small screens (#8350)
+* Remove duplicated font registration (#8351)
+* Removed unnecessary patterns (#8352)
+* Update readme and stylesheet (#8353)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 
