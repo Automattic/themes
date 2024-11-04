@@ -13,6 +13,21 @@ Indice is a tribute to the iconic indicehibit, an archetypal open source CMS tha
 
 == Changelog ==
 
+= 1.0.5 =
+* Update archive template to add no result block (#8336)
+* Update Footer (#8337)
+* Update Index template (#8338)
+* Update Search Results Page to add main tag (#8339)
+* Update Gallery Page template (#8340)
+* Update Single Post template (#8341)
+* Update Gallery Page template
+* Revert Update Gallery Page template
+* Remove unnecessary spacer from gallery page template (#8342)
+* Update 404 page template, remove unnecessary patterns (#8343)
+* Update templates with query loop block (#8344)
+* Remove unnecessary wide width (#8345)
+* Cleanup readme and stylesheet (#8346)
+
 = 1.0.4 =
 * Indice: Fixe a wrong tag (#8088)
 
