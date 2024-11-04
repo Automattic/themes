@@ -15,7 +15,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:columns -->
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"0","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"40%"} -->
 <div class="wp-block-column" style="flex-basis:40%"></div>
 <!-- /wp:column -->
