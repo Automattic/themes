@@ -1,0 +1,61 @@
+/*
+Theme Name: Downtown
+Theme URI: https://themeshaper.com/downtown/
+Author: Automattic
+Author URI: https://automattic.com
+Description: Downtown was designed as a spin-off of Vetro, a theme composed of wide-width layouts with generous space for images and bold type sizes. Its pages are composed of wide content blocks to grant viewers focus on visuals and short paragraphs.
+Requires at least: 6.5
+Tested up to: 6.6
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: downtown
+Tags: entertainment, blog, one-column, right-sidebar, wide-blocks, block-patterns, featured-images, full-site-editing, rtl-language-support, sticky-post, style-variations, threaded-comments, translation-ready
+
+/* Progresive enhancement to reduce widows and orphans.
+/* https://github.com/WordPress/gutenberg/issues/55190
+*/
+
+/* Progresive enhancement to reduce widows and orphans.
+/* https://github.com/WordPress/gutenberg/issues/55190
+*/
+
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption {
+    text-wrap: balance;
+}
+p {
+    text-wrap: pretty;
+}
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline
+	> .wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+ a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .25em;
+}
