@@ -13,6 +13,9 @@ Inspired by the phrase “code is poetry”, this is a geeky theme designed for 
 
 == Changelog ==
 
+= 1.0.4 =
+* Beep: General bug fixes and improvements (#8359)
+
 = 1.0.3 =
 * Update spacing sizes (#8328)
 
