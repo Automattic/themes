@@ -38,7 +38,23 @@
 			"wideSize": "92vw"
 		},
 		"spacing": {
+			"defaultSpacingSizes": false,
 			"spacingSizes": [
+				{
+					"name": "1",
+					"size": "0.67rem",
+					"slug": "30"
+				},
+				{
+					"name": "2",
+					"size": "1rem",
+					"slug": "40"
+				},
+				{
+					"name": "3",
+					"size": "1.5rem",
+					"slug": "50"
+				},
 				{
 					"name": "4",
 					"size": "min(2.25rem, 6.5vw)",
@@ -65,6 +81,7 @@
 			]
 		},
 		"typography": {
+			"defaultFontSizes": false,
 			"fluid": true,
 			"fontFamilies": [
 				{
@@ -188,49 +205,46 @@
 			],
 			"fontSizes": [
 				{
-					"fluid": {
-						"max": "1rem",
-						"min": "0.75rem"
-					},
+					"fluid": false,
 					"name": "Tiny",
-					"size": "0.9rem",
+					"size": "0.75rem",
 					"slug": "x-small"
 				},
 				{
-					"fluid": false,
+					"fluid": {
+						"max": "1.125rem",
+						"min": "0.75rem"
+					},
 					"name": "Small",
 					"size": "1rem",
 					"slug": "small"
 				},
 				{
-					"fluid": false,
+					"fluid": {
+						"max": "1.125rem",
+						"min": "1rem"
+					},
 					"name": "Medium",
 					"size": "1.125rem",
 					"slug": "medium"
 				},
 				{
-					"fluid": false,
+					"fluid": {
+						"max": "1.6875rem",
+						"min": "1rem"
+					},
 					"name": "Large",
-					"size": "1.37rem",
+					"size": "1.6875rem",
 					"slug": "large"
 				},
 				{
 					"fluid": {
 						"max": "2.25rem",
-						"min": "1.75rem"
+						"min": "1.125rem"
 					},
 					"name": "Extra Large",
-					"size": "2rem",
-					"slug": "x-large"
-				},
-				{
-					"fluid": {
-						"max": "3rem",
-						"min": "2.25rem"
-					},
-					"name": "Huge",
 					"size": "2.25rem",
-					"slug": "xx-large"
+					"slug": "x-large"
 				}
 			]
 		},
@@ -359,7 +373,6 @@
 				"elements": {
 					"cite": {
 						"typography": {
-							"fontSize": "var(--wp--preset--font-size--large)",
 							"fontStyle": "normal"
 						}
 					}
@@ -571,6 +584,6 @@
 			"title": "Navigation"
 		}
 	],
-	"version": 2,
+	"version": 3,
 	"$schema": "https://schemas.wp.org/trunk/theme.json"
 }
