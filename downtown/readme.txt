@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Downtown was designed as a spin-off of Vetro, a theme composed of wide-width layouts with generous space for images and bold type sizes. Its pages are composed of wide content blocks to grant viewers focus on visuals and short paragraphs.
+Downtown was designed as a spin-off of Vetro, a theme with wide-width layouts, generous space for images, and bold type sizes. Its pages have wide content blocks that allow viewers to focus on visuals and short paragraphs.
 
 == Changelog ==
 
