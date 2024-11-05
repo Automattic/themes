@@ -12,6 +12,10 @@ Exegi monumentum aere perennius.
 
 == Changelog ==
 
+= 1.0.4 =
+* Simplified template structure for better customisation (#8355)
+* Update patterns to remove unnecessary pattern (#8356)
+
 = 1.0.3 =
 * Perenne: Add footer pattern (#8249)
 
