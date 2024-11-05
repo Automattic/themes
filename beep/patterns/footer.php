@@ -2,8 +2,7 @@
 /**
  * Title: Default Footer
  * Slug: beep/footer
- * Categories: footer
- * Block Types: core/template-part/footer
+ * Inserter: no
  */
 
 declare( strict_types = 1 );
