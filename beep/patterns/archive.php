@@ -12,13 +12,13 @@
 <!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"left":"var:preset|spacing|80","bottom":"var:preset|spacing|80","right":"var:preset|spacing|80","top":"0"}}},"layout":{"type":"default"}} -->
 <main class="wp-block-group" style="padding-top:0;padding-right:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--80)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:paragraph {"style":{"spacing":{"margin":{"left":"0","right":"var:preset|spacing|40"}}},"textColor":"inactive"} -->
-<p class="has-inactive-color has-text-color" style="margin-right:var(--wp--preset--spacing--40);margin-left:0"><?php esc_html_e('$archive =', 'beep');?></p>
+<p class="has-inactive-color has-text-color" style="margin-right:var(--wp--preset--spacing--40);margin-left:0">$<?php esc_html_e('archive', 'beep');?> =</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:query-title {"type":"archive"} /-->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"left":"0"}}},"textColor":"inactive"} -->
-<p class="has-inactive-color has-text-color" style="margin-left:0"><?php esc_html_e(';', 'beep');?></p>
+<p class="has-inactive-color has-text-color" style="margin-left:0">;</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -40,7 +40,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60)"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|inactive"}}},"spacing":{"margin":{"right":"1rem"}}},"textColor":"inactive"} -->
-<p class="has-inactive-color has-text-color has-link-color" style="margin-right:1rem"><?php esc_html_e('$previous =', 'beep');?></p>
+<p class="has-inactive-color has-text-color has-link-color" style="margin-right:1rem">$<?php esc_html_e('previous', 'beep');?> =</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:query-pagination -->
@@ -48,13 +48,13 @@
 <!-- /wp:query-pagination -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|inactive"}}}},"textColor":"inactive"} -->
-<p class="has-inactive-color has-text-color has-link-color"><?php esc_html_e(';', 'beep');?></p>
+<p class="has-inactive-color has-text-color has-link-color">;</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|inactive"}}},"spacing":{"margin":{"right":"1rem"}}},"textColor":"inactive"} -->
-<p class="has-inactive-color has-text-color has-link-color" style="margin-right:1rem"><?php esc_html_e('$next = ', 'beep');?></p>
+<p class="has-inactive-color has-text-color has-link-color" style="margin-right:1rem">$<?php esc_html_e('next', 'beep');?> =</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:query-pagination -->
@@ -62,7 +62,7 @@
 <!-- /wp:query-pagination -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|inactive"}}}},"textColor":"inactive"} -->
-<p class="has-inactive-color has-text-color has-link-color"><?php esc_html_e(';', 'beep');?></p>
+<p class="has-inactive-color has-text-color has-link-color">;</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
