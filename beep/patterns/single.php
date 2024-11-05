@@ -25,7 +25,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|80"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--80)"><!-- wp:post-content /--></div>
+<div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--80)"><!-- wp:post-content {"lock":{"move":false,"remove":true}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"left":"0","right":"var:preset|spacing|40"}}},"textColor":"inactive"} -->
