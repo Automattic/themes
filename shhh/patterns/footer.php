@@ -15,8 +15,8 @@ declare( strict_types = 1 );
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-	<!-- wp:paragraph {"lock":{"move":false,"remove":true},"className":"has-x-small-font-size","fontSize":"x-small"} -->
-	<p class="has-x-small-font-size"><?php
+	<!-- wp:paragraph {"lock":{"move":false,"remove":true},"className":"has-x-small-font-size","fontSize":"small"} -->
+	<p class="has-small-font-size"><?php
 		/* Translators: WordPress link. */
 		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'shhh' ) ) . '" rel="nofollow">WordPress</a>';
 		echo sprintf(
