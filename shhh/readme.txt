@@ -13,6 +13,20 @@ Silence.
 
 == Changelog ==
 
+= 1.0.3 =
+* Remove absolute font sizes (#8362)
+* Remove absolute colour values (#8363)
+* Update archive template (#8364)
+* Update theme.json (#8365)
+* Update 404 template (#8366)
+* Update index template (#8367)
+* Add no-results block to templates needed (#8369)
+* Update search template (#8370)
+* Change comments pattern to a template part (#8371)
+* Change header pattern to template part (#8372)
+* Remove excerpt pattern (#8373)
+* Cleanup for update (#8374)
+
 = 1.0.2 =
 * Update width for small screens (#8329)
 * Fix tagline position (#8330)
