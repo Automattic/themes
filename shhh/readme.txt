@@ -1,7 +1,8 @@
 === Shhh ===
+
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,4 +46,3 @@ Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/d
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
 License URL: http://scripts.sil.org/OFL 
 Source: https://www.colophon-foundry.org
--- End of DM Mono Font credits --
