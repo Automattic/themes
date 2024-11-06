@@ -24,6 +24,10 @@
 <!-- /wp:spacer -->
 <!-- /wp:post-template -->
 
+<!-- wp:paragraph -->
+<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'shhh');?></p>
+<!-- /wp:paragraph -->
+
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
 <!-- wp:query-pagination-previous /-->
