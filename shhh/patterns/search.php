@@ -15,7 +15,7 @@
 <main class="wp-block-query"><!-- wp:post-template {"layout":{"type":"default"}} -->
 <!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|60"}}}} /-->
 
-<!-- wp:post-excerpt {"moreText":"— read more","showMoreOnNewLine":false} /-->
+<!-- wp:post-excerpt {"moreText":"<?php esc_html_e('— read more', 'shhh');?>","showMoreOnNewLine":false} /-->
 
 <!-- wp:spacer {"height":"40px"} -->
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
