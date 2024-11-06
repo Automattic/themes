@@ -272,6 +272,18 @@ function dalston_block_extends_styles() {
 add_action( 'enqueue_block_assets', 'dalston_block_extends_styles' );
 
 /**
+ * Enqueue Custom Cover Block Scripts
+ */
+function dalston_block_extends_scripts() {
+
+	wp_enqueue_script(
+		'dalston-extend-cover-block-script',
+		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block-script.js'
+	);
+}
+add_action( 'enqueue_block_assets', 'dalston_block_extends_scripts' );
+
+/**
  * Whether this is an AMP endpoint.
  *
  * @see https://github.com/Automattic/amp-wp/blob/e4472bfa5c304b6c1b968e533819e3fa96579ad4/includes/amp-helper-functions.php#L248
