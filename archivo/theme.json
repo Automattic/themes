@@ -1,6 +1,55 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
+	"customTemplates": [
+		{
+			"name": "archive-product",
+			"postTypes": [
+				"page"
+			],
+			"title": "Product Archive"
+		},
+		{
+			"name": "cart",
+			"postTypes": [
+				"page"
+			],
+			"title": "Cart"
+		},
+		{
+			"name": "checkout",
+			"postTypes": [
+				"page"
+			],
+			"title": "Checkout"
+		},
+		{
+			"name": "order-confirmation",
+			"postTypes": [
+				"page"
+			],
+			"title": "Order Confirmation"
+		},
+		{
+			"name": "product-search-results",
+			"postTypes": [
+				"page"
+			],
+			"title": "Product Search Results"
+		},
+		{
+			"name": "taxonomy-product_cat",
+			"postTypes": [
+				"page"
+			],
+			"title": "Product Category Archive"
+		},
+		{
+			"name": "taxonomy-product_tag",
+			"postTypes": [
+				"page"
+			],
+			"title": "Product Tag Archive"
+		}
+	],
 	"settings": {
 		"appearanceTools": true,
 		"color": {
@@ -39,9 +88,7 @@
 			"wideSize": "1624px"
 		},
 		"spacing": {
-			"spacingScale": {
-				"steps": 0
-			},
+			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
 					"name": "1",
@@ -74,10 +121,18 @@
 					"slug": "80"
 				}
 			],
-			"units": ["%", "px", "em", "rem", "vh", "vw"]
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
 		},
 		"typography": {
 			"customFontSize": true,
+			"defaultFontSizes": false,
 			"dropCap": false,
 			"fluid": false,
 			"fontFamilies": [
@@ -112,7 +167,9 @@
 							"fontFamily": "Courier Prime",
 							"fontStyle": "normal",
 							"fontWeight": "700",
-							"src": ["file:./assets/fonts/courier-prime_700.ttf"]
+							"src": [
+								"file:./assets/fonts/courier-prime_700.ttf"
+							]
 						},
 						{
 							"fontFamily": "Courier Prime",
@@ -237,8 +294,8 @@
 			"core/comments-title": {
 				"spacing": {
 					"margin": {
-						"top": "0",
-						"bottom": "var(--wp--preset--spacing--50)"
+						"bottom": "var(--wp--preset--spacing--50)",
+						"top": "0"
 					}
 				},
 				"typography": {
@@ -372,8 +429,8 @@
 				},
 				"spacing": {
 					"margin": {
-						"right": "0",
-						"left": "0"
+						"left": "0",
+						"right": "0"
 					},
 					"padding": {
 						"left": "var(--wp--preset--spacing--50)"
@@ -535,8 +592,8 @@
 		"spacing": {
 			"blockGap": "var(--wp--preset--spacing--50)",
 			"padding": {
-				"right": "var(--wp--preset--spacing--50)",
-				"left": "var(--wp--preset--spacing--50)"
+				"left": "var(--wp--preset--spacing--50)",
+				"right": "var(--wp--preset--spacing--50)"
 			}
 		},
 		"typography": {
@@ -557,41 +614,6 @@
 			"title": "Footer"
 		}
 	],
-	"customTemplates": [
-		{
-			"name": "archive-product",
-			"postTypes": ["page"],
-			"title": "Product Archive"
-		},
-		{
-			"name": "cart",
-			"postTypes": ["page"],
-			"title": "Cart"
-		},
-		{
-			"name": "checkout",
-			"postTypes": ["page"],
-			"title": "Checkout"
-		},
-		{
-			"name": "order-confirmation",
-			"postTypes": ["page"],
-			"title": "Order Confirmation"
-		},
-		{
-			"name": "product-search-results",
-			"postTypes": ["page"],
-			"title": "Product Search Results"
-		},
-		{
-			"name": "taxonomy-product_cat",
-			"postTypes": ["page"],
-			"title": "Product Category Archive"
-		},
-		{
-			"name": "taxonomy-product_tag",
-			"postTypes": ["page"],
-			"title": "Product Tag Archive"
-		}
-	]
+	"version": 3,
+	"$schema": "https://schemas.wp.org/trunk/theme.json"
 }
