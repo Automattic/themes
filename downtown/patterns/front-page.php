@@ -61,10 +61,7 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.01rem","fontSize":"0.75rem","fontStyle":"normal","fontWeight":"600","textTransform":"uppercase"}}} -->
-<p style="font-size:0.75rem;font-style:normal;font-weight:600;letter-spacing:0.01rem;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( '%1$sDiscover Day Trips%2$s', 'downtown' ), '<a href="' . esc_url( '#' ) . '">', '</a>' ); ?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:read-more {"content":"Check availability"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -80,10 +77,7 @@ echo sprintf( esc_html__( '%1$sDiscover Day Trips%2$s', 'downtown' ), '<a href="
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.01rem","fontSize":"0.75rem","fontStyle":"normal","fontWeight":"600","textTransform":"uppercase"}}} -->
-<p style="font-size:0.75rem;font-style:normal;font-weight:600;letter-spacing:0.01rem;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( '%1$sExplore & Book%2$s', 'downtown' ), '<a href="' . esc_url( '#' ) . '">', '</a>' ); ?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:read-more {"content":"Explore and Book"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -97,8 +91,8 @@ echo sprintf( esc_html__( '%1$sExplore & Book%2$s', 'downtown' ), '<a href="' . 
 <div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":1}} -->
 <!-- wp:cover {"useFeaturedImage":true,"dimRatio":50,"overlayColor":"primary","isUserOverlayColor":true,"minHeight":65,"minHeightUnit":"vh","contentPosition":"bottom left","style":{"border":{"radius":"6px"},"color":[],"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background","layout":{"type":"constrained"}} -->
 <div class="wp-block-cover has-custom-content-position is-position-bottom-left has-background-color has-text-color has-link-color" style="border-radius:6px;min-height:65vh"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40","padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontStyle":"normal","fontWeight":"600","letterSpacing":"0.01rem","textTransform":"uppercase"}}} -->
-<p style="font-size:0.75rem;font-style:normal;font-weight:600;letter-spacing:0.01rem;text-transform:uppercase"><?php esc_html_e('Dubrovnik by Night', 'downtown');?></p>
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600","letterSpacing":"0.01rem","textTransform":"uppercase"}},"fontSize":"x-small"} -->
+<p class="has-x-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:0.01rem;text-transform:uppercase"><?php esc_html_e('Dubrovnik by night', 'downtown');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-title {"level":1,"isLink":true} /--></div>
@@ -118,7 +112,7 @@ echo sprintf( esc_html__( '%1$sExplore & Book%2$s', 'downtown' ), '<a href="' . 
 
 <!-- wp:post-excerpt {"moreText":"","showMoreOnNewLine":false,"excerptLength":24,"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} /-->
 
-<!-- wp:read-more {"content":"Check availability","style":{"typography":{"textDecoration":"underline"}}} /--></div>
+<!-- wp:read-more {"content":"Check availability","style":{"typography":{"textDecoration":"underline"}},"fontSize":"x-small"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
 <!-- /wp:query --></div>
@@ -130,12 +124,12 @@ echo sprintf( esc_html__( '%1$sExplore & Book%2$s', 'downtown' ), '<a href="' . 
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/4","width":"","height":"","style":{"color":[]}} /-->
 
 <!-- wp:group {"metadata":{"name":"QL copy text"},"style":{"spacing":{"blockGap":"var:preset|spacing|40","margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50)"><!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"2rem"}}} /-->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50)"><!-- wp:post-title {"isLink":true} /-->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:post-date {"style":{"typography":{"fontSize":"0.75rem"}}} /-->
+<div class="wp-block-group"><!-- wp:post-date /-->
 
-<!-- wp:post-terms {"term":"category","separator":" × ","style":{"typography":{"fontSize":"0.75rem"}}} /--></div>
+<!-- wp:post-terms {"term":"category","separator":" × "} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>

@@ -14,12 +14,12 @@
 <h1 class="wp-block-heading alignwide has-text-align-left has-text-align-center"><?php esc_html_e('Sorry, this page could not be found.', 'downtown');?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"500","lineHeight":1.3999999999999999}},"fontSize":"small"} -->
+<!-- wp:group {"metadata":{"name":"Search"},"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"bottom":"2.5vh","top":"2.5vh"}}},"fontSize":"small","layout":{"inherit":true,"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-group has-small-font-size" style="padding-top:2.5vh;padding-bottom:2.5vh;font-style:normal;font-weight:500"><!-- wp:paragraph {"align":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"500","lineHeight":1.3999999999999999}},"fontSize":"small"} -->
 <p class="has-text-align-left has-small-font-size" style="font-style:normal;font-weight:500;line-height:1.4"><?php esc_html_e('Maybe try a search?', 'downtown');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"Search"},"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"bottom":"2.5vh","top":"2.5vh"}}},"fontSize":"small","layout":{"inherit":true,"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group has-small-font-size" style="padding-top:2.5vh;padding-bottom:2.5vh;font-style:normal;font-weight:500"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
+<!-- wp:search {"label":"Search","showLabel":false,"width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></main>
