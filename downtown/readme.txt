@@ -70,11 +70,6 @@ Copyright © 2023, Collletttivo and original designer (as listed on collletttivo
 License: http://scripts.sil.org/OFL
 Source: https://www.collletttivo.it/
 
-Source Serif Font
-Copyright 2014-2021 Adobe (http://www.adobe.com/)
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Source: https://github.com/adobe-fonts/source-serif
-
 Tilda Sans
 Copyright (c) 2021 ParaType Ltd. All rights reserved.
 Source: http://www.paratype.com
