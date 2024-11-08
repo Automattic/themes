@@ -7,14 +7,14 @@
 ?>
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0px","left":"var:preset|spacing|50"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"25%"} -->
-<div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"default"}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"24.272%"} -->
+<div class="wp-block-column" style="flex-basis:24.272%"><!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:template-part {"slug":"checkout-header"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"75%","style":{"spacing":{"padding":{"top":"var:preset|spacing|50"}}}} -->
-<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--50);flex-basis:75%"><!-- wp:heading {"level":1,"lock":{"remove":true,"move":false},"align":"wide","fontSize":"medium"} -->
+<!-- wp:column {"width":"","style":{"spacing":{"padding":{"top":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--50)"><!-- wp:heading {"level":1,"lock":{"remove":true,"move":false},"align":"wide","fontSize":"medium"} -->
 <h1 class="wp-block-heading alignwide has-medium-font-size"><?php esc_html_e('Checkout', 'archivo');?></h1>
 <!-- /wp:heading -->
 
