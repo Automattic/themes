@@ -41,7 +41,7 @@
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"stretch","width":"66.6%"} -->
 <div class="wp-block-column is-vertically-aligned-stretch" style="flex-basis:66.6%"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group" style="min-height:100%"><!-- wp:heading {"level":1,"style":{"typography":{"textTransform":"none"}}} -->
-<h1 class="wp-block-heading" style="text-transform:none"><?php esc_html_e('Meet Gwyneth, our  houseplant expert host.', 'casthub');?></h1>
+<h1 class="wp-block-heading" style="text-transform:none"><?php esc_html_e('Meet Rose, our houseplant expert host', 'casthub');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:columns -->
@@ -52,7 +52,7 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><?php esc_html_e('Gwyneth’s journey into the realm of houseplants began with a small windowsill garden during her college years. What started as a few humble succulents soon blossomed into a full-fledged passion for nurturing…', 'casthub');?></p>
+<p><?php esc_html_e('Rose’s journey into the realm of houseplants began with a small windowsill garden during her college years. What started as a few humble succulents soon blossomed into a full-fledged passion for nurturing…', 'casthub');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:read-more {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.05rem"}},"fontSize":"x-small"} /--></div>

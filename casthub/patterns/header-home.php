@@ -8,18 +8,35 @@
 <!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/tree-dew-plant-leaf-flower-raindrop.jpg","dimRatio":50,"overlayColor":"secondary","isUserOverlayColor":true,"focalPoint":{"x":0.5,"y":0},"minHeight":60,"minHeightUnit":"vh","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"color":{"duotone":"var:preset|duotone|default"}},"textColor":"base","layout":{"type":"default"}} -->
 <div class="wp-block-cover has-base-color has-text-color" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:60vh"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/tree-dew-plant-leaf-flower-raindrop.jpg" style="object-position:50% 0%" data-object-fit="cover" data-object-position="50% 0%"/><div class="wp-block-cover__inner-container"><!-- wp:group {"metadata":{"name":"Wrapper 65vh"},"align":"wide","style":{"dimensions":{"minHeight":"60vh"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="min-height:60vh"><!-- wp:group {"metadata":{"name":"Stack 65vh"},"align":"wide","style":{"dimensions":{"minHeight":"60vh"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch","flexWrap":"wrap"}} -->
-<div class="wp-block-group alignwide" style="min-height:60vh"><!-- wp:group {"metadata":{"name":"Header wrapper"},"align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0"},"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70);padding-right:0;padding-left:0"><!-- wp:site-title /-->
+<div class="wp-block-group alignwide" style="min-height:60vh"><!-- wp:columns {"verticalAlignment":"center","metadata":{"name":"Header wrapper"},"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":{"top":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center" style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"><!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:group {"metadata":{"name":"Branding"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:site-title /-->
+
+<!-- wp:site-tagline /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center","width":"33.3%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.3%"><!-- wp:group {"metadata":{"name":"Menu"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.025rem","fontStyle":"normal","fontWeight":"700"}},"fontSize":"x-small"} -->
+<p class="has-x-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:0.025rem;text-transform:uppercase"><?php esc_html_e('Menu', 'casthub');?></p>
+<!-- /wp:paragraph -->
 
 <!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /--></div>
-<!-- /wp:group -->
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
 
 <!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"66.6%"} -->
-<div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:heading {"level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<h1 class="wp-block-heading has-base-color has-text-color has-link-color"><?php /* Translators: 1. is a 'br' HTML element, 2. is a 'br' HTML element */ 
-echo sprintf( esc_html__( 'The%1$sHouseplants%2$sPodcast', 'casthub' ), '<br>', '<br>' ); ?></h1>
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"61.6%"} -->
+<div class="wp-block-column" style="flex-basis:61.6%"><!-- wp:heading {"level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
+<h1 class="wp-block-heading has-base-color has-text-color has-link-color"><?php esc_html_e('Houseplants nurture your nature', 'casthub');?></h1>
 <!-- /wp:heading --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"5%"} -->
+<div class="wp-block-column" style="flex-basis:5%"></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.3%"} -->
