@@ -18,7 +18,7 @@
 <div class="wp-block-columns"><!-- wp:column {"width":"32.68%"} -->
 <div class="wp-block-column" style="flex-basis:32.68%"><!-- wp:query-title {"type":"search"} /-->
 
-<!-- wp:search {"showLabel":false,"placeholder":"Search...","buttonText":"Search"} /--></div>
+<!-- wp:search {"showLabel":false,"placeholder":"<?php esc_html_e('Search...', 'archivo');?>","buttonText":"<?php esc_html_e('Search', 'archivo');?>"} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":""} -->

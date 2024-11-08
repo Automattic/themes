@@ -22,7 +22,7 @@
 <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'archivo');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"showLabel":false,"placeholder":"Search...","buttonText":"Search"} /--></div>
+<!-- wp:search {"showLabel":false,"placeholder":"<?php esc_html_e('Search...', 'archivo');?>","buttonText":"<?php esc_html_e('Search', 'archivo');?>"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
