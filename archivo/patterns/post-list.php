@@ -8,8 +8,8 @@
 <!-- wp:query {"queryId":4,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[]},"layout":{"type":"default"}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
 <!-- wp:columns {"style":{"spacing":{"padding":{"bottom":"3rem"}}}} -->
-<div class="wp-block-columns" style="padding-bottom:3rem"><!-- wp:column {"width":"32.68%"} -->
-<div class="wp-block-column" style="flex-basis:32.68%"><!-- wp:post-title {"isLink":true} /-->
+<div class="wp-block-columns" style="padding-bottom:3rem"><!-- wp:column {"width":"32.0513%"} -->
+<div class="wp-block-column" style="flex-basis:32.0513%"><!-- wp:post-title {"isLink":true} /-->
 
 <!-- wp:post-excerpt /-->
 
