@@ -5,14 +5,14 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Archivo is a blog and portfolio theme that shows your featured image large.
 Requires at least: 6.3
-Tested up to: 6.4
+Tested up to: 6.6
 Requires PHP: 5.7
 Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: 
 Text Domain: archivo
-Tags: one-column, editor-style, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready, wide-blocks, style-variations
+Tags: one-column, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready, wide-blocks, style-variations
 */
 
 /*
@@ -37,16 +37,7 @@ a {
 }
 
 a:hover {
-	text-decoration-color: var(--wp--preset--color--tertiary) !important;
-}
-
-/*
- * Navigation Block
- * Reset the padding from List block
- * https://github.com/WordPress/gutenberg/issues/50486
- */
-.wp-block-navigation ul {
-	padding: unset;
+	text-decoration-color: var(--wp--preset--color--tertiary);
 }
 
 /*
@@ -61,7 +52,7 @@ a:hover {
 }
 
 .has-modal-open .admin-bar .is-menu-open .wp-block-navigation__responsive-dialog {
-	margin-top: 94px;
+	margin-top: 90px;
 }
 
 /*
@@ -82,16 +73,6 @@ a:hover {
 /* Adjust the top padding for the submenu items */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
 	padding: 0 var(--wp--preset--spacing--50);
-}
-
-/*
- * Pull quote Block
- * Reset the browser default margins for blockquote element
- * https://github.com/WordPress/gutenberg/issues/44129
- */
-.wp-block-pullquote blockquote,
-.wp-block-pullquote p {
-	margin: 0;
 }
 
 /*
