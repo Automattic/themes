@@ -13,6 +13,25 @@ Archivo is a blog and portfolio theme that shows your featured image large.
 
 == Changelog ==
 
+= 1.0.7 =
+* Cleanup Header Template part (#8380)
+* Cleanup JSON (#8381)
+* Cleanup footer template part (#8382)
+* Simplified 404 template (#8384)
+* Simplified archives template (#8388)
+* Update archives template further (#8389)
+* Update several templates (#8390)
+* Large updates for templates (#8391)
+* Move top padding to header template part (#8392)
+* Adjust column width (#8393)
+* Update templates for woo (#8396)
+* Cleanup Patterns (#8397)
+* Remove more unused patterns (#8400)
+* Cleanup stylesheet and readme (#8401)
+* Update an error in Json (#8402)
+* Minor adjustment to grid (#8403)
+* Archivo: add progressive enhancement to reduce widows and orphans (#8405)
+
 = 1.0.6 =
 * Lossless image optimization (#7671)
 
