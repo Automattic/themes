@@ -12,8 +12,19 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: 
 Text Domain: archivo
-Tags: one-column, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready, wide-blocks, style-variations
+Tags: blog, portfolio, three-column,left-sidebar, block-styles, featured-images, full-site-editing, rtl-language-support, style-variations, threaded-comments, translation-ready, wide-blocks
 */
+
+/* Progresive enhancement to reduce widows and orphans.
+/* https://github.com/WordPress/gutenberg/issues/55190
+*/
+
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption {
+	text-wrap: balance;
+}
+p {
+	text-wrap: pretty;
+}
 
 /*
  * Control the hover stylings of outline block style.
