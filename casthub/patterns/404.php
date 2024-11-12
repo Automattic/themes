@@ -11,12 +11,12 @@
 <main class="wp-block-group alignwide" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--80);padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"61.66%"} -->
 <div class="wp-block-column" style="flex-basis:61.66%"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide"} -->
-<h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found"><?php esc_html_e('Oops...', 'casthub');?></h1>
+<div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide","style":{"typography":{"textTransform":"none"}}} -->
+<h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found" style="text-transform:none"><?php esc_html_e('Oops...', 'casthub');?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"textAlign":"left","level":1,"align":"wide"} -->
-<h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found"><?php esc_html_e('This page can’t be found', 'casthub');?></h1>
+<!-- wp:heading {"textAlign":"left","level":1,"align":"wide","style":{"typography":{"textTransform":"none"}}} -->
+<h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found" style="text-transform:none"><?php esc_html_e('This page can’t be found', 'casthub');?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
