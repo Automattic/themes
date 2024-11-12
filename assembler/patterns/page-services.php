@@ -2,7 +2,7 @@
 /**
  * Title: Services Page
  * Slug: assembler/page-services
- * Categories: pages
+ * Categories: page
  * Viewport width: 1400
  */
 declare( strict_types = 1 );

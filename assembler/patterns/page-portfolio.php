@@ -2,7 +2,7 @@
 /**
  * Title: Portfolio Page
  * Slug: assembler/page-portfolio
- * Categories: pages
+ * Categories: page
  * Viewport width: 1400
  */
 declare( strict_types = 1 );

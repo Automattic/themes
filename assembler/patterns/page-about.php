@@ -2,7 +2,7 @@
 /**
  * Title: About Page
  * Slug: assembler/page-about
- * Categories: pages
+ * Categories: page
  * Viewport width: 1400
  */
 declare( strict_types = 1 );
