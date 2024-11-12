@@ -57,6 +57,12 @@ License: This Font Software is licensed under the SIL Open Font License, Version
 License URL: http://scripts.sil.org/OFL
 Source: https://tribby.com/
 
+Figtree
+Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: https://erikdkennedy.com/
+
 Geist and Geist Mono
 Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font.git)
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
@@ -89,6 +95,11 @@ License: CC0 Public Domain
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/1408960
 
+Placeholder and social media icons
+Author: Henrique Iamarino - https://iamarino.com/
+License: Public Domain Dedication (CC0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+
 Podcast host portrait
 License: CC0 Public Domain
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
@@ -98,5 +109,4 @@ Podcast cover photos
 License: CC0 Public Domain
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
 Sources: First https://pxhere.com/en/photo/1179787, Second https://pxhere.com/en/photo/1024013, and Third https://pxhere.com/en/photo/868626
-
 

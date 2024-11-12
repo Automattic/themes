@@ -90,7 +90,7 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:jetpack/subscriptions {"submitButtonText":"\u003cstrong\u003eSUBSCRIBE\u003c/strong\u003e","fontSize":"0.8rem","customFontSize":"0.8rem","borderRadius":4,"borderWeight":0,"className":"is-style-compact"} /--></div>
+<!-- wp:jetpack/subscriptions {"submitButtonText":"<strong><?php esc_html_e('SUBSCRIBE', 'casthub');?></strong>","fontSize":"x-small","customFontSize":"x-small","borderRadius":4,"borderWeight":0,"className":"is-style-compact"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
