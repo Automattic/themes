@@ -12,6 +12,10 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.23 =
+* Assembler: Add more keywords to font pairings (#8358)
+* Fix Lucette typography style JSON validation (#8409)
+
 = 0.0.22 =
 * Fix background color not showing for headings (#8261)
 
