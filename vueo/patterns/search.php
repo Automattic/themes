@@ -10,7 +10,7 @@
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"align":"wide","layout":{"type":"constrained"}} -->
 <main class="wp-block-group alignwide"><!-- wp:columns {"metadata":{"name":"Search"},"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-columns alignwide" style="margin-bottom:var(--wp--preset--spacing--60)"><!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":" Search","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:search {"label":"<?php esc_html_e('Search', 'vueo');?>","showLabel":false,"placeholder":" <?php esc_html_e('Search', 'vueo');?>","width":100,"widthUnit":"%","buttonText":"<?php esc_html_e('Search', 'vueo');?>","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.33%"} -->
