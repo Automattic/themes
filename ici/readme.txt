@@ -12,6 +12,14 @@ The design goal of Ici was to craft a mobile-first layout with high visual densi
 
 == Changelog ==
 
+= 1.0.3 =
+* Ici: Update search template for consistency (#8426)
+* Update templates with QL (#8427)
+* Add no-results block to templates with QL (#8428)
+* Update Inter to woff2 for better performance and add italic versions (#8429)
+* Make sure main tag is present in all templates (#8430)
+* Update readme and stylesheet header (#8431)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 
