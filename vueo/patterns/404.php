@@ -19,7 +19,8 @@
 <p class="has-text-align-left has-small-font-size" style="font-style:normal;font-weight:500;line-height:1.4"><?php esc_html_e('Maybe try a search?', 'vueo');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"Search","showLabel":false,"placeholder":" Search","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
+<!-- wp:search {"label":"<?php esc_html_e('Search', 'vueo');?>","showLabel":false,"placeholder":" <?php esc_html_e('Search', 'vueo');?>","width":100,"widthUnit":"%","buttonText":"<?php esc_html_e('Search', 'vueo');?>","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></main>
