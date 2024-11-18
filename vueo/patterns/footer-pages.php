@@ -14,11 +14,11 @@
 <!-- wp:social-links {"iconColor":"primary","iconColorValue":"#7a5d25","size":"has-small-icon-size","className":"is-style-logos-only"} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"tumblr.com","service":"tumblr"} /-->
 
-<!-- wp:social-link {"url":"https://tumblr.com","service":"behance"} /-->
+<!-- wp:social-link {"url":"#","service":"behance"} /-->
 
-<!-- wp:social-link {"url":"tumblr.com","service":"mastodon"} /-->
+<!-- wp:social-link {"url":"#","service":"mastodon"} /-->
 
-<!-- wp:social-link {"url":"tumblr.com","service":"linkedin"} /--></ul>
+<!-- wp:social-link {"url":"#","service":"linkedin"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
