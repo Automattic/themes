@@ -12,7 +12,7 @@
 <div class="wp-block-group"><!-- wp:site-logo {"width":80,"shouldSyncIcon":false,"style":{"color":{"duotone":["#7a5d25","#e8e5d6"]}}} /-->
 
 <!-- wp:social-links {"iconColor":"primary","iconColorValue":"#7a5d25","size":"has-small-icon-size","className":"is-style-logos-only"} -->
-<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"tumblr.com","service":"tumblr"} /-->
+<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"tumblr"} /-->
 
 <!-- wp:social-link {"url":"#","service":"behance"} /-->
 
