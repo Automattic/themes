@@ -1,4 +1,4 @@
-== urbem ==
+== Urbem ==
 
 Contributors: Automattic
 Requires at least: 6.7
@@ -21,8 +21,8 @@ Urbem is a spin-off of Vitrum (https://wordpress.org/themes/vitrum/), a theme wi
 
 == Copyright ==
 
-urbem WordPress Theme, (C) 2024 Automattic
-urbem is distributed under the terms of the GNU GPL.
+Urbem WordPress Theme, (C) 2024 Automattic
+Urbem is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
