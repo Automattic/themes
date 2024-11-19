@@ -120,22 +120,28 @@ for THEME_SLUG in */ ; do
 		svn cp ${last_directory} $SVN_DIR/$THEME_VERSION
 
 		echo "➤ Copying theme '${THEME_SLUG}' version '${THEME_VERSION}' to svn repository... "
+		
+		# Ensure the destination directory exists
+		mkdir -p $SVN_DIR/$THEME_VERSION
+
+		# Perform the rsync operation
 		rsync -rc --delete --include=theme.json --exclude-from $IGNORE_FILE ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
 
-		# Remove the wpcom-specific tags used in some themes
-		find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i -e 's/, auto-loading-homepage//g' {} \; 
+		# Check the exit status of rsync
+		if [[ $? -ne 0 ]]; then
+		    echo "rsync failed."
+		    exit 1
+		fi
 
-		# Remove files from the previous version	
-		svn status $SVN_DIR/$THEME_VERSION | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
-
-		# Add the version to SVN
+		# Proceed with SVN operations
+		svn status $SVN_DIR/$THEME_VERSION | grep "^\!" | sed 's/^\! *//g' | xargs svn rm
 		svn add $SVN_DIR/$THEME_VERSION --force --depth infinity -q > /dev/null
 
 		echo "➤ Committing files..."
-		svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD} 2>&1 | grep 'svn: E'
+		svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive --username ${SVN_USERNAME} --password ${SVN_PASSWORD} 2>&1 | grep 'svn: E'
 		if [[ $? -eq 0 ]]; then
-			echo 'Commit failed.'
-			exit 1
+		    echo 'Commit failed.'
+		    exit 1
 		fi
 	fi
 done
