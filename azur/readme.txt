@@ -14,6 +14,12 @@ Azur draws its inspiration from the mesmerizing hues of the Azure coast, where t
 
 == Changelog ==
 
+= 1.0.3 =
+* Added archive template (#8435)
+* Update pagination (#8436)
+* Widened the header (#8437)
+* Azur: Clean up to version up (#8438)
+
 = 1.0.2 =
 * Azur: Fix a text domain (#8092)
 
