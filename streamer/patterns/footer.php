@@ -15,13 +15,13 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"medium","fontFamily":"utara"} -->
-<p class="has-tertiary-color has-text-color has-link-color has-utara-font-family has-medium-font-size" style="line-height:1;text-transform:uppercase"><?php esc_html_e('@chronowarriors', 'streamer');?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:group {"metadata":{"name":"Detail line"},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
+<h3 class="wp-block-heading has-tertiary-color has-text-color has-link-color"><?php esc_html_e('@chronowarriors', 'streamer');?></h3>
+<!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.6rem","textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontFamily":"utara"} -->
-<p class="has-tertiary-color has-text-color has-link-color has-utara-font-family" style="font-size:1.6rem;line-height:1;text-transform:uppercase"><?php esc_html_e('↗', 'streamer');?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"small"} -->
+<p class="has-tertiary-color has-text-color has-link-color has-small-font-size"><?php esc_html_e('↗', 'streamer');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -35,13 +35,13 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"medium","fontFamily":"utara"} -->
-<p class="has-tertiary-color has-text-color has-link-color has-utara-font-family has-medium-font-size" style="line-height:1;text-transform:uppercase"><?php esc_html_e('info@chronowarriorsteam.com', 'streamer');?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:group {"metadata":{"name":"Detail line"},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
+<h3 class="wp-block-heading has-tertiary-color has-text-color has-link-color"><?php esc_html_e('info@chronowarriorsteam.com', 'streamer');?></h3>
+<!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.6rem","textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontFamily":"utara"} -->
-<p class="has-tertiary-color has-text-color has-link-color has-utara-font-family" style="font-size:1.6rem;line-height:1;text-transform:uppercase"><?php esc_html_e('↗', 'streamer');?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"small"} -->
+<p class="has-tertiary-color has-text-color has-link-color has-small-font-size"><?php esc_html_e('↗', 'streamer');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -55,26 +55,23 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"no-underline","style":{"typography":{"textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"medium","fontFamily":"utara"} -->
-<p class="no-underline has-tertiary-color has-text-color has-link-color has-utara-font-family has-medium-font-size" style="line-height:1;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( '%1$s/tumblr%2$s', 'streamer' ), '<a href="' . esc_url( '#' ) . '" target="_blank" rel="noreferrer noopener">', '</a>' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%"><!-- wp:group {"metadata":{"name":"Detail line"},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Links"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
+<h3 class="wp-block-heading has-tertiary-color has-text-color has-link-color"><?php esc_html_e('/tumblr', 'streamer');?></h3>
+<!-- /wp:heading -->
 
-<!-- wp:paragraph {"className":"no-underline","style":{"typography":{"textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"medium","fontFamily":"utara"} -->
-<p class="no-underline has-tertiary-color has-text-color has-link-color has-utara-font-family has-medium-font-size" style="line-height:1;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( '%1$s/Youtube%2$s', 'streamer' ), '<a href="' . esc_url( '#' ) . '" target="_blank" rel="noreferrer noopener">', '</a>' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
+<h3 class="wp-block-heading has-tertiary-color has-text-color has-link-color"><?php esc_html_e('/Utube', 'streamer');?></h3>
+<!-- /wp:heading -->
 
-<!-- wp:paragraph {"className":"no-underline","style":{"typography":{"textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"medium","fontFamily":"utara"} -->
-<p class="no-underline has-tertiary-color has-text-color has-link-color has-utara-font-family has-medium-font-size" style="line-height:1;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( '%1$s/Instagram%2$s', 'streamer' ), '<a href="' . esc_url( '#' ) . '" target="_blank" rel="noreferrer noopener">', '</a>' ); ?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
+<h3 class="wp-block-heading has-tertiary-color has-text-color has-link-color"><?php esc_html_e('/Instgr', 'streamer');?></h3>
+<!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.6rem","textTransform":"uppercase","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontFamily":"utara"} -->
-<p class="has-tertiary-color has-text-color has-link-color has-utara-font-family" style="font-size:1.6rem;line-height:1;text-transform:uppercase"><?php esc_html_e('↗', 'streamer');?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","fontSize":"small"} -->
+<p class="has-tertiary-color has-text-color has-link-color has-small-font-size"><?php esc_html_e('↗', 'streamer');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -99,10 +96,10 @@ echo sprintf( esc_html__( '%1$s/Instagram%2$s', 'streamer' ), '<a href="' . esc_
 <!-- wp:column {"width":"66.6%"} -->
 <div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:jetpack/contact-form {"subject":"[Streamer] Blog Home","to":"dev-email@wpengine.local"} -->
 <div class="wp-block-jetpack-contact-form">
-<!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderWidth":0,"labelFontSize":"13px","fieldFontSize":"20px","lineHeight":1,"labelLineHeight":1.3999999999999999,"inputColor":"#d8fe01","fieldBackgroundColor":"#899ba91a"} /-->
-<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderWidth":0,"labelFontSize":"13px","fieldFontSize":"20px","lineHeight":1,"labelLineHeight":1.3999999999999999,"inputColor":"#d8fe01","fieldBackgroundColor":"#899ba91a"} /-->
-<!-- wp:jetpack/field-consent {"requiredText":"(required)","borderWidth":0,"labelFontSize":"13px","fieldFontSize":"20px","lineHeight":1,"labelLineHeight":1.3999999999999999,"inputColor":"#d8fe01","fieldBackgroundColor":"#899ba91a","implicitConsentMessage":"You're giving us permission to email you. You may unsubscribe at any time."} /-->
-<!-- wp:jetpack/button {"element":"button","text":"Subscribe","textColor":"primary","backgroundColor":"tertiary","lock":{"remove":true},"fontSize":"medium","style":{"typography":{"textTransform":"uppercase"}}} /-->
+<!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"mediun","lineHeight":1.5,"labelLineHeight":1.5,"inputColor":"#d8fe01","fieldBackgroundColor":"#899ba91a"} /-->
+<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"medium","lineHeight":1.5,"labelLineHeight":1.5,"inputColor":"#d8fe01","fieldBackgroundColor":"#899ba91a"} /-->
+<!-- wp:jetpack/field-consent {"requiredText":"(required)","borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"medium","lineHeight":1.5,"labelLineHeight":1.5,"inputColor":"#d8fe01","fieldBackgroundColor":"#899ba91a","implicitConsentMessage":"You're giving us permission to email you. You may unsubscribe at any time."} /-->
+<!-- wp:jetpack/button {"element":"button","text":"Subscribe","textColor":"primary","backgroundColor":"tertiary","lock":{"remove":true},"style":{"typography":{"textTransform":"uppercase"}}} /-->
 </div>
 <!-- /wp:jetpack/contact-form --></div>
 <!-- /wp:column --></div>
