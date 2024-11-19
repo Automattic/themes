@@ -123,7 +123,7 @@ for THEME_SLUG in */ ; do
 		rsync -rc --delete --include=theme.json --exclude-from $IGNORE_FILE ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
 
 		# Remove the wpcom-specific tags used in some themes
-		find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, auto-loading-homepage//g' {} \; 
+		find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i -e 's/, auto-loading-homepage//g' {} \; 
 
 		# Remove files from the previous version	
 		svn status $SVN_DIR/$THEME_VERSION | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
