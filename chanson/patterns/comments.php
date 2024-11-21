@@ -34,8 +34,8 @@ declare( strict_types = 1 );
 			</div>
 			<!-- /wp:group -->
 
-			<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-			<div class="wp-block-group" style="margin-top:0px">
+			<!-- wp:group {"style":{"spacing":{"margin":{"top":"0.5rem"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+			<div class="wp-block-group" style="margin-top:0.5rem">
 				<!-- wp:comment-content /-->
 
 				<!-- wp:comment-reply-link /-->
