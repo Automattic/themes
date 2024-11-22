@@ -2,7 +2,6 @@
 /**
  * Title: page
  * Slug: bysshe/page
- * Categories: hidden
  * Inserter: no
  */
 ?>
