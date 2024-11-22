@@ -2,7 +2,6 @@
 /**
  * Title: single
  * Slug: bysshe/single
- * Categories: hidden
  * Inserter: no
  */
 ?>
@@ -11,7 +10,7 @@
 <header class="wp-block-group"><!-- wp:site-title {"style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} /-->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php echo esc_html_x('• •', 'Decorative symbols', 'bysshe');?></p>
+<p class="has-text-align-right has-xxx-small-font-size" style="line-height:1.3"><?php esc_html_e('• •', 'bysshe');?></p>
 <!-- /wp:paragraph --></header>
 <!-- /wp:group -->
 
@@ -24,7 +23,7 @@
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--80)"><!-- wp:post-featured-image {"width":"36px","height":"300px"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:post-title {"textAlign":"left","style":{"typography":{"textTransform":"uppercase","fontSize":"0.9rem"}}} /-->
+<!-- wp:post-title {"textAlign":"left","style":{"typography":{"textTransform":"uppercase"}},"fontSize":"x-small"} /-->
 
 <!-- wp:spacer {"height":"50px","style":{"layout":[]}} -->
 <div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -33,7 +32,7 @@
 <!-- wp:post-content {"layout":{"type":"default"}} /--></main>
 <!-- /wp:group -->
 
-<!-- wp:spacer {"height":"0px","style":{"layout":{"flexSize":"120px","selfStretch":"fixed"}}} -->
+<!-- wp:spacer {"height":"0px","style":{"layout":{"selfStretch":"fixed","flexSize":"50px"}}} -->
 <div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
@@ -52,19 +51,13 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"45%"} -->
-<div class="wp-block-column" style="flex-basis:45%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group"><!-- wp:post-navigation-link {"textAlign":"right"} /-->
+<div class="wp-block-column" style="flex-basis:45%"><!-- wp:group {"tagName":"footer","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<footer class="wp-block-group"><!-- wp:post-navigation-link {"textAlign":"right"} /-->
 
 <!-- wp:paragraph {"align":"right","className":"no-underline","style":{"typography":{"lineHeight":"1.3","fontStyle":"normal","fontWeight":"400","textTransform":"uppercase"}},"fontSize":"xxx-small"} -->
-<p class="has-text-align-right no-underline has-xxx-small-font-size" style="font-style:normal;font-weight:400;line-height:1.3;text-transform:uppercase"><?php
-	/* Translators: WordPress link. */
-	$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'bysshe' ) ) . '" rel="nofollow">WordPress</a>';
-	echo sprintf(
-		esc_html__( 'Designed with %1$s', 'bysshe' ),
-		$wordpress_link
-	);
-?></p>
-<!-- /wp:paragraph --></div>
+<p class="has-text-align-right no-underline has-xxx-small-font-size" style="font-style:normal;font-weight:400;line-height:1.3;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
+echo sprintf( esc_html__( 'Designed with %1$sWordPress%2$s', 'bysshe' ), '<a href="' . esc_url( 'https://wordpress.org' ) . '" rel="nofollow">', '</a>' ); ?></p>
+<!-- /wp:paragraph --></footer>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></footer>
