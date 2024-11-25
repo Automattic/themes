@@ -12,6 +12,9 @@ Spiel is a game magazine theme. The rich and dense old-school homepage layout co
 
 == Changelog ==
 
+= 1.0.7 =
+* Remove local block level colours from sticky post in front page (#8455)
+
 = 1.0.6 =
 * Optimised screenshot (#7834)
 
