@@ -29,9 +29,9 @@ declare( strict_types = 1 );
 
 					<!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
 					<div class="wp-block-group">
-						<!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":[],":hover":{"color":{"text":"var:preset|color|primary"}}}},"color":[]},"textColor":"contrast"} /-->
+						<!-- wp:post-terms {"term":"category"} /-->
 
-						<!-- wp:post-title {"isLink":true,"style":{"spacing":[],"elements":{"link":{"color":[],":hover":{"color":{"text":"var:preset|color|primary"}}}},"color":[]},"textColor":"contrast","fontSize":"x-large"} /-->
+						<!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->
 
 						<!-- wp:post-excerpt {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} /-->
 
