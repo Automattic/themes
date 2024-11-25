@@ -12,6 +12,9 @@ Elevate your esports squad's online presence and connect with fans like never be
 
 == Changelog ==
 
+= 1.0.1 =
+* Streamer: fixes Plunge style variation (#8453)
+
 = 1.0.0 =
 * Initial release
 
