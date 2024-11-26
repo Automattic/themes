@@ -1,0 +1,61 @@
+/*
+Theme Name: Professio
+Theme URI: https://themeshaper.com/professio/
+Author: Automattic
+Author URI: https://automattic.com
+Description: Professio is created for individual teachers based on Annalee, a theme designed for personal coaches.
+Requires at least: 6.7
+Tested up to: 6.7
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: professio
+Tags: One Column, Right Sidebar, Wide Blocks, Block Editor Patterns, Featured Images, Site Editor, rtl-language-support, Sticky Post, Style Variations, threaded-comments, translation-ready, Blog, Education
+
+/* Progresive enhancement to reduce widows and orphans.
+/* https://github.com/WordPress/gutenberg/issues/55190
+*/
+
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption {
+    text-wrap: balance;
+}
+p {
+    text-wrap: pretty;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 2px;
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote and paragraph element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
