@@ -23,12 +23,10 @@
 <!-- wp:columns {"verticalAlignment":"center","style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"padding":{"right":"0","left":"0","top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"},"blockGap":{"top":"0","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"tagName":"header","style":{"dimensions":{"minHeight":""}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<header class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained","contentSize":"36px"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/wolfgang-hasselmann-pVr6wvUneMk-unsplash-scaled.jpg","dimRatio":0,"minHeight":50,"minHeightUnit":"vh","isDark":false,"style":{"layout":{"selfStretch":"fixed","flexSize":"50vh"}}} -->
-<div class="wp-block-cover is-light" style="min-height:50vh"><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/wolfgang-hasselmann-pVr6wvUneMk-unsplash-scaled.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"xxx-small"} -->
-<p class="has-text-align-center has-xxx-small-font-size"></p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:cover --></div>
+<header class="wp-block-group"><!-- wp:group {"style":{"dimensions":{"minHeight":"50vh"},"background":{"backgroundImage":{"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/wolfgang-hasselmann-pVr6wvUneMk-unsplash-scaled.jpg","id":5633,"source":"file","title":"wolfgang-hasselmann-pVr6wvUneMk-unsplash-scaled"},"backgroundSize":"cover"},"spacing":{"padding":{"right":"18px","left":"18px","top":"0px","bottom":"0px"}}},"layout":{"type":"constrained","contentSize":"36px"}} -->
+<div class="wp-block-group" style="min-height:50vh;padding-top:0px;padding-right:18px;padding-bottom:0px;padding-left:18px"><!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
 <!-- wp:site-title {"level":0,"fontSize":"large"} /--></header>
