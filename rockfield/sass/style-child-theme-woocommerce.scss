@@ -44,6 +44,7 @@
  * Remove grid-products flexbox layout
  */
 @include media(mobile) {
+
 	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
 
 		display: inherit;
@@ -81,6 +82,18 @@ body[class*="woocommerce"] #page {
 		@include media(mobile) {
 			display: none;
 		}
+	}
+
+	// Cart
+	.wp-block-woocommerce-cart-totals-block .wp-element-button,
+	.wp-block-button__link {
+		background-color: var(--wp--preset--color--primary);
+		color: var(--wp--preset--color--background);
+	}
+
+	.wc-block-cart-item__remove-link {
+		outline: none;
+		outline-offset: unset;
 	}
 
 	// Clean up mini-cart styles for mobile
@@ -160,21 +173,21 @@ body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a {
 }
 
 /* Remove weird square artifact in WC buttons */
-body[class*="woocommerce"] #page #respond input#submit:before,
-body[class*="woocommerce"] #page #respond input#submit.alt:before,
-body[class*="woocommerce"] #page a.button:before,
-body[class*="woocommerce"] #page a.button.alt:before,
-body[class*="woocommerce"] #page button.button:before,
-body[class*="woocommerce"] #page button.button.alt:before,
-body[class*="woocommerce"] #page input.button:before,
-body[class*="woocommerce"] #page input.button.alt:before,
-body[class*="woocommerce"] #page .cart .button:before,
-body[class*="woocommerce"] #page a.added_to_cart:before,
-body[class*="woocommerce"] #page .woocommerce #respond input#submit:before,
-body[class*="woocommerce"] #page .woocommerce a.button:before,
-body[class*="woocommerce"] #page .woocommerce button.button:before,
-body[class*="woocommerce"] #page .woocommerce input.button:before,
-body[class*="woocommerce"] #page .woocommerce .widget_shopping_cart .buttons a:before,
-body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a:before {
+body[class*="woocommerce"] #page #respond input#submit::before,
+body[class*="woocommerce"] #page #respond input#submit.alt::before,
+body[class*="woocommerce"] #page a.button::before,
+body[class*="woocommerce"] #page a.button.alt::before,
+body[class*="woocommerce"] #page button.button::before,
+body[class*="woocommerce"] #page button.button.alt::before,
+body[class*="woocommerce"] #page input.button::before,
+body[class*="woocommerce"] #page input.button.alt::before,
+body[class*="woocommerce"] #page .cart .button::before,
+body[class*="woocommerce"] #page a.added_to_cart::before,
+body[class*="woocommerce"] #page .woocommerce #respond input#submit::before,
+body[class*="woocommerce"] #page .woocommerce a.button::before,
+body[class*="woocommerce"] #page .woocommerce button.button::before,
+body[class*="woocommerce"] #page .woocommerce input.button::before,
+body[class*="woocommerce"] #page .woocommerce .widget_shopping_cart .buttons a::before,
+body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a::before {
 	display: none;
 }
