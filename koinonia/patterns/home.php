@@ -8,12 +8,11 @@
 <!-- wp:template-part {"slug":"header-home"} /-->
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:group {"metadata":{"name":"About us"},"align":"wide","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"metadata":{"name":"CTA"},"align":"wide","style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"var:preset|spacing|40","bottom":"var:preset|spacing|60"}},"border":{"radius":{"bottomLeft":"10px","bottomRight":"10px"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-bottom-left-radius:10px;border-bottom-right-radius:10px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--40)"><!-- wp:columns {"align":"wide"} -->
+<main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:group {"metadata":{"name":"CTA"},"align":"wide","style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"}},"border":{"radius":{"bottomLeft":"10px","bottomRight":"10px"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-bottom-left-radius:10px;border-bottom-right-radius:10px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"textAlign":"left","fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-text-align-left has-xx-large-font-size"><?php esc_html_e('Turning Caring into Community', 'koinonia');?></h2>
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"textAlign":"left"} -->
+<h2 class="wp-block-heading has-text-align-left"><?php esc_html_e('A supportive experience that turns caring into community', 'koinonia');?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -27,11 +26,6 @@
 <div class="wp-block-column" style="flex-basis:0%"></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
-
-<!-- wp:spacer {"height":"var:preset|spacing|40","metadata":{"name":"Spacer S"}} -->
-<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></div>
-<!-- /wp:group -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|60","metadata":{"name":"Spacer L"}} -->
 <div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
@@ -52,7 +46,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Ensure your pet\'s happiness and well-being while you\'re away with our professional pet-sitting services. Our trained caregivers will keep your furry friends company, providing the love and attention they deserve.', 'koinonia');?></p>
+<p><?php esc_html_e('Ensure your pet\'s well-being while you\'re away with our professional pet-sitting services.', 'koinonia');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -72,7 +66,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Experience peace of mind with our overnight care services. Whether you\'re taking a short trip or an extended vacation, our dedicated caregivers will stay with your pets and ensure a safe and comfortable environment throughout the night.', 'koinonia');?></p>
+<p><?php esc_html_e('Experience peace of mind with the overnight care services offered by the PP volunteers.', 'koinonia');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -92,7 +86,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Treat your pets to a pampering session with our grooming services. From baths to haircuts, our skilled groomers will keep your pets looking and feeling their best, promoting physical health and a happy and clean lifestyle.', 'koinonia');?></p>
+<p><?php esc_html_e('Treat your pets to a pampering session with our diverse grooming services.', 'koinonia');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -112,7 +106,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e('Do you need transportation for your pet? Our reliable pet taxi service ensures safe and comfortable journeys for your furry companions, whether they\'re going to the vet, grooming salon, or any other destination.', 'koinonia');?></p>
+<p><?php esc_html_e('Our reliable pet taxi service ensures safe and comfortable journeys for your furry companions.', 'koinonia');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -126,14 +120,14 @@
 
 <!-- wp:group {"metadata":{"name":"Testimonial 1"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"backgroundColor":"secondary","textColor":"background","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-background-color has-secondary-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-style-default","style":{"border":{"radius":"10px"},"color":{"duotone":"unset"}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-style-default","style":{"border":{"radius":"10px"},"color":{"duotone":"unset"}}} -->
 <figure class="wp-block-image size-full has-custom-border is-style-default"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/img_rawpixel-id-6043044.jpg" alt="" style="border-radius:10px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center","width":"16.66%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:16.66%"></div>
+<!-- wp:column {"verticalAlignment":"center","width":"5%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:5%"></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
@@ -190,15 +184,15 @@
 <div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:group {"metadata":{"name":"Testimonial 2"},"align":"wide","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
+<!-- wp:group {"metadata":{"name":"Testimonial 2"},"align":"wide","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-radius:20px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:group {"style":{"spacing":{"margin":{"top":"2.5vh","bottom":"2.5vh"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="margin-top:2.5vh;margin-bottom:2.5vh"><!-- wp:image {"width":"56px","height":"56px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":[]}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:image {"width":"56px","height":"56px","scale":"cover","sizeSlug":"full","linkDestination":"none","metadata":{"name":"quotation marks"},"style":{"color":[]}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/speech-marks.png" alt="" style="object-fit:cover;width:56px;height:56px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"textAlign":"left","metadata":{"name":"Testimonial"}} -->
+<!-- wp:group {"metadata":{"name":"Testimonial wrapper"},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group"><!-- wp:heading {"textAlign":"left","metadata":{"name":"Testimonial"}} -->
 <h2 class="wp-block-heading has-text-align-left"><?php esc_html_e('The pet taxi service made my life so much easier. It\'s reliable, and my pet loves the rides. Thank you, PP, excellent service!', 'koinonia');?></h2>
 <!-- /wp:heading -->
 

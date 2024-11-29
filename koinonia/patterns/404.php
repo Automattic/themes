@@ -10,8 +10,8 @@
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:template-part {"slug":"header","area":"header","align":"wide"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
-<main class="wp-block-group alignwide"><!-- wp:group {"metadata":{"name":"Content wrapper"},"layout":{"type":"constrained","justifyContent":"left"}} -->
+<!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
+<main class="wp-block-group alignwide" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"metadata":{"name":"Content wrapper"},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide","style":{"typography":{"textTransform":"none"}}} -->
 <h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found" style="text-transform:none"><?php esc_html_e('Oops...', 'koinonia');?></h1>
