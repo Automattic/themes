@@ -10,20 +10,22 @@
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:group {"metadata":{"name":"CTA"},"align":"wide","style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"}},"border":{"radius":{"bottomLeft":"10px","bottomRight":"10px"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-bottom-left-radius:10px;border-bottom-right-radius:10px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)"><!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"textAlign":"left"} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"45%"} -->
+<div class="wp-block-column" style="flex-basis:45%"><!-- wp:heading {"textAlign":"left"} -->
 <h2 class="wp-block-heading has-text-align-left"><?php esc_html_e('A supportive experience that turns caring into community', 'koinonia');?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph -->
-<p><?php esc_html_e('At PawPals, we believe in the power of community to make a positive impact on the lives of pets. Join our collaborative network of pet lovers dedicated to providing love, care, and support.', 'koinonia');?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:column {"width":"5%"} -->
+<div class="wp-block-column" style="flex-basis:5%"></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"0%"} -->
-<div class="wp-block-column" style="flex-basis:0%"></div>
+<!-- wp:column {"width":"50%"} -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"metadata":{"name":"Intro paragraph"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--20)"><!-- wp:paragraph -->
+<p><?php esc_html_e('At PawPals, we believe in the power of community to make a positive impact on the lives of pets. Join our collaborative network of pet lovers dedicated to providing love, care, and support.', 'koinonia');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
