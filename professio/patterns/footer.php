@@ -32,7 +32,7 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:group {"metadata":{"name":"Links and credit"},"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<!-- wp:group {"metadata":{"name":"Links and credit"},"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"metadata":{"name":"Links"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"metadata":{"name":"Link"},"className":"no-underline","style":{"layout":{"selfStretch":"fit","flexSize":null},"typography":{"textTransform":"uppercase"}},"fontSize":"x-small","fontFamily":"pt-root-ui"} -->
 <p class="no-underline has-pt-root-ui-font-family has-x-small-font-size" style="text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
