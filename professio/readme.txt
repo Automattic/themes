@@ -14,6 +14,9 @@ Professio is created for individual teachers based on Annalee, a theme designed 
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixes background image links on patterns (#8475)
+
 = 1.0.0 =
 * Initial release
 
