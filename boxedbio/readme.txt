@@ -1,5 +1,5 @@
 === Boxed Bio ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.2.2
 Requires PHP: 5.7
@@ -23,11 +23,11 @@ Your new Link-in-Bio site, BoxedBio, offers a simple organization of blocks to d
 
 == Copyright ==
 
-Boxed Bio is based on BiB (https://github.com/wordpress/bib/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Boxed Bio is based on BiB (https://github.com/wordpress/bib/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
-BiB WordPress Theme, (C) 2023 the WordPress team
+BiB WordPress Theme, (C) 2023 Automattic
 BiB is distributed under the terms of the GNU GPL.
-BiB is based on BiB (https://github.com/wordpress/bib/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+BiB is based on BiB (https://github.com/wordpress/bib/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

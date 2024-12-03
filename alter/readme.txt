@@ -1,5 +1,5 @@
 === Alter ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.2.2
 Requires PHP: 5.7
@@ -23,7 +23,7 @@ Alter is a lean theme for bloggers that goes directly to the point, showing text
 
 == Copyright ==
 
-Alter WordPress Theme, (C) 2023 the WordPress team
+Alter WordPress Theme, (C) 2023 Automattic
 Alter is distributed under the terms of the GNU GPL.
 Alter is based on G01 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

@@ -1,5 +1,5 @@
 === Blogorama ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 6.3
 Requires PHP: 5.7
@@ -26,9 +26,9 @@ A beautifully designed blog theme displaying large typography and customizable c
 
 == Copyright ==
 
-Blogorama WordPress Theme, (C) 2023 the WordPress team
+Blogorama WordPress Theme, (C) 2023 Automattic
 Blogorama is distributed under the terms of the GNU GPL.
-Blogorama is based on Blogorama (https://github.com/wordpress/blogorama/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Blogorama is based on Blogorama (https://github.com/wordpress/blogorama/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

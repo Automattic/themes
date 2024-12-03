@@ -1,5 +1,5 @@
 === RAW ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 6.2
 Requires PHP: 5.7
@@ -32,7 +32,7 @@ RAW is a theme design inspired by the Brutalist concepts from the homonymous Arc
 
 == Copyright ==
 
-RAW WordPress Theme, (C) 2023 the WordPress team
+RAW WordPress Theme, (C) 2023 Automattic
 RAW is distributed under the terms of the GNU GPL.
 RAW is based on Brut Second (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

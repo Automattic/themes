@@ -26,7 +26,7 @@ DOS is a blog theme designed for the nostalgic ones, a tribute to the folks that
 
 == Copyright ==
 
-DOS WordPress Theme, (C) 2023 the WordPress team
+DOS WordPress Theme, (C) 2023 Automattic
 DOS is distributed under the terms of the GNU GPL.
 DOS is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

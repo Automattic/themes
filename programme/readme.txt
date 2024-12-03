@@ -1,5 +1,5 @@
 === Programme ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 6.2
 Requires PHP: 5.7
@@ -32,7 +32,7 @@ Programme is a blog theme that reverences the legendary designer Massimo Vignell
 
 == Copyright ==
 
-Programme WordPress Theme, (C) 2023 the WordPress team
+Programme WordPress Theme, (C) 2023 Automattic
 Programme is distributed under the terms of the GNU GPL.
 Programme is based on PV1 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

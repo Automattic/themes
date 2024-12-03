@@ -1,5 +1,5 @@
 === Curriculum ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 6.2
 Requires PHP: 5.7
@@ -29,9 +29,9 @@ Curriculum is a blog theme that echoes the structure of a professional profile w
 
 == Copyright ==
 
-Curriculum WordPress Theme, (C) 2023 the WordPress team
+Curriculum WordPress Theme, (C) 2023 Automattic
 Curriculum is distributed under the terms of the GNU GPL.
-Curriculum is based on Curriculum (https://github.com/wordpress/curriculum/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Curriculum is based on Curriculum (https://github.com/wordpress/curriculum/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

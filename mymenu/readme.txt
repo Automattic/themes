@@ -41,7 +41,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-MyMenu is based on My Menu (), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+MyMenu is based on My Menu (), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
 This theme bundles the following third-party resources:

@@ -1,5 +1,5 @@
 === Grammer One ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 5.7

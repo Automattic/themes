@@ -34,7 +34,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-Massimo is based on Programme (https://github.com/wordpress/programme/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Massimo is based on Programme (https://github.com/wordpress/programme/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
 == Fonts ==

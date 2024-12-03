@@ -1,5 +1,5 @@
 === Organizer ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.2.2
 Requires PHP: 5.7
@@ -29,7 +29,7 @@ Organizer has a simple structure and displays only the necessary information a r
 
 == Copyright ==
 
-Organizer WordPress Theme, (C) 2023 the WordPress team
+Organizer WordPress Theme, (C) 2023 Automattic
 Organizer is distributed under the terms of the GNU GPL.
 Organizer is based on ORG04 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

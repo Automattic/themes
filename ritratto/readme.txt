@@ -1,5 +1,5 @@
 === Ritratto ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.3
 Requires PHP: 5.7
@@ -32,9 +32,9 @@ Besides an appreciable headshot, the theme offers large titles, descriptions, an
 
 == Copyright ==
 
-Ritratto is based on Headshot (https://github.com/wordpress/headshot/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Ritratto is based on Headshot (https://github.com/wordpress/headshot/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
-Headshot WordPress Theme, (C) 2023 the WordPress team
+Headshot WordPress Theme, (C) 2023 Automattic
 Headshot is distributed under the terms of the GNU GPL.
 Headshot is based on HDST (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

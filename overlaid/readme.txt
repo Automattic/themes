@@ -23,7 +23,7 @@ Overlaid displays large titles and excerpts that scroll over an image on the Hom
 
 == Copyright ==
 
-Overlaid WordPress Theme, (C) 2023 the WordPress team
+Overlaid WordPress Theme, (C) 2023 Automattic
 Overlaid is distributed under the terms of the GNU GPL.
 Overlaid is based on BT4 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

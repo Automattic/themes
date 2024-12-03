@@ -1,5 +1,5 @@
 === Stage ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.2.2
 Requires PHP: 5.7
@@ -30,7 +30,7 @@ Stage is the perfect theme for our users engaged in artistic activities. Its con
 
 == Copyright ==
 
-Stage WordPress Theme, (C) 2023 the WordPress team
+Stage WordPress Theme, (C) 2023 Automattic
 Stage is distributed under the terms of the GNU GPL.
 Stage is based on SCFF1 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

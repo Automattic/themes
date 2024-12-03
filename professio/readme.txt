@@ -37,7 +37,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-Professio is based on Nausicaa (https://github.com/wordpress/nausicaa/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Professio is based on Nausicaa (https://github.com/wordpress/nausicaa/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
 == Images ==

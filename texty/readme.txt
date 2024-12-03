@@ -29,7 +29,7 @@ Texty is a text-only blog theme that trusts Post excerpts rather than Post title
 
 == Copyright ==
 
-Texty WordPress Theme, (C) 2023 the WordPress team
+Texty WordPress Theme, (C) 2023 Automattic
 Texty is distributed under the terms of the GNU GPL.
 Texty is based on TXT1 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

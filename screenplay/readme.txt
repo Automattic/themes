@@ -23,7 +23,7 @@ Screenplay is a simple blog theme that suits perfectly writers or the general pu
 
 == Copyright ==
 
-Screenplay WordPress Theme, (C) 2023 the WordPress team
+Screenplay WordPress Theme, (C) 2023 Automattic
 Screenplay is distributed under the terms of the GNU GPL.
 Screenplay is based on Casablanca (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

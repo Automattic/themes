@@ -29,7 +29,7 @@ Pieria is a theme focused on typography — essentially following a low-level st
 
 == Copyright ==
 
-Pieria WordPress Theme, (C) 2023 the WordPress team
+Pieria WordPress Theme, (C) 2023 Automattic
 Pieria is distributed under the terms of the GNU GPL.
 Pieria is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

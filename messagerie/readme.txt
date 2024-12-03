@@ -1,5 +1,5 @@
 === Messagerie ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.4
 Requires PHP: 5.7
@@ -30,7 +30,7 @@ Messagerie is a theme that brings the mobile messaging experience to your WordPr
 
 == Copyright ==
 
-Messagerie WordPress Theme, (C) 2023 the WordPress team
+Messagerie WordPress Theme, (C) 2023 Automattic
 Messagerie is distributed under the terms of the GNU GPL.
 Messagerie is based on M01 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
