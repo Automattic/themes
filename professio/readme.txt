@@ -14,6 +14,9 @@ Professio is created for individual teachers based on Annalee, a theme designed 
 
 == Changelog ==
 
+= 1.0.3 =
+* Corrected theme tags
+
 = 1.0.2 =
 * Corrected authors/contributors names (#8478)
 
