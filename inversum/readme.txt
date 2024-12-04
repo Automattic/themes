@@ -14,6 +14,9 @@ A blog theme entirely designed in the Editor, Inversum offers a direct experienc
 
 == Changelog ==
 
+= 1.2 =
+* Corrected authors/contributors names (#8478)
+
 = 1.1 =
 * Add strict types
 
