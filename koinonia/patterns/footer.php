@@ -6,15 +6,15 @@
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Footer wrapper"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|60"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"metadata":{"name":"Navigation"},"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
-<div class="wp-block-group alignwide"><!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|40"},"typography":{"textTransform":"none"}},"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /-->
+<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"metadata":{"name":"Navigation"},"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group alignwide"><!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|40"},"typography":{"textTransform":"none"}},"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"horizontal","flexWrap":"wrap"}} /-->
 
 <!-- wp:social-links {"iconColor":"primary","iconColorValue":"#0b303b","size":"has-normal-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
-<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"/automattic","service":"linkedin"} /-->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"linkedin"} /-->
 
-<!-- wp:social-link {"url":"/automattic","service":"instagram"} /-->
+<!-- wp:social-link {"url":"#","service":"instagram"} /-->
 
-<!-- wp:social-link {"url":"/automattic","service":"youtube"} /--></ul>
+<!-- wp:social-link {"url":"#","service":"youtube"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:group -->
 

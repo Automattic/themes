@@ -14,8 +14,8 @@
 <div class="wp-block-query alignwide"><!-- wp:query-title {"type":"archive","align":"wide"} /-->
 
 <!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":3}} -->
-<!-- wp:group {"metadata":{"name":"Post wrapper"},"align":"wide","style":{"border":{"radius":"10px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-radius:10px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3"} /-->
+<!-- wp:group {"metadata":{"name":"Post wrapper"},"align":"wide","style":{"border":{"radius":"10px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"dimensions":{"minHeight":"100%"}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-radius:10px;min-height:100%;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3"} /-->
 
 <!-- wp:group {"metadata":{"name":"QL copy"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--70)"><!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->

@@ -8,7 +8,7 @@
 <!-- wp:template-part {"slug":"header-home"} /-->
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:group {"metadata":{"name":"CTA"},"align":"wide","style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"}},"border":{"radius":{"bottomLeft":"10px","bottomRight":"10px"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:group {"metadata":{"name":"Featuring"},"align":"wide","style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"}},"border":{"radius":{"bottomLeft":"10px","bottomRight":"10px"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide has-tertiary-background-color has-background" style="border-bottom-left-radius:10px;border-bottom-right-radius:10px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--40)"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"45%"} -->
 <div class="wp-block-column" style="flex-basis:45%"><!-- wp:heading {"textAlign":"left"} -->
@@ -21,11 +21,15 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"metadata":{"name":"Intro paragraph"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--20)"><!-- wp:paragraph -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"metadata":{"name":"Intro paragraph"},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
 <p><?php esc_html_e('At PawPals, we believe in the power of community to make a positive impact on the lives of pets. Join our collaborative network of pet lovers dedicated to providing love, care, and support.', 'koinonia');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"0%"} -->
+<div class="wp-block-column" style="flex-basis:0%"></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
@@ -35,8 +39,8 @@
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|70"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"layout":{"type":"default"}} -->
-<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 1"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--20)"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 1"},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"auto","height":"64px","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":[]}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/icn_sitting.png" alt="" style="aspect-ratio:1;object-fit:cover;width:auto;height:64px"/></figure>
 <!-- /wp:image --></div>
@@ -55,8 +59,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"layout":{"type":"default"}} -->
-<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 2"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--20)"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 2"},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"auto","height":"64px","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":[]}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/icn_overnight.png" alt="" style="aspect-ratio:1;object-fit:cover;width:auto;height:64px"/></figure>
 <!-- /wp:image --></div>
@@ -75,8 +79,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"layout":{"type":"default"}} -->
-<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 3"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--20)"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 3"},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"auto","height":"64px","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":[]}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/icn_grooming.png" alt="" style="aspect-ratio:1;object-fit:cover;width:auto;height:64px"/></figure>
 <!-- /wp:image --></div>
@@ -95,8 +99,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"layout":{"type":"default"}} -->
-<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 4"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|20"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--20)"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-column"><!-- wp:group {"metadata":{"name":"Service 4"},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Service Icon"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"width":"auto","height":"64px","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"color":[]}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/icn_taxi.png" alt="" style="aspect-ratio:1;object-fit:cover;width:auto;height:64px"/></figure>
 <!-- /wp:image --></div>
@@ -227,8 +231,7 @@ echo sprintf( esc_html__( 'Subscribe to%1$sGet our News', 'koinonia' ), '<br>' )
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center"><?php /* Translators: 1. is a 'br' HTML element */ 
-echo sprintf( esc_html__( 'PawPals invites you to be a hero for pets! Collaborate with us to create a world where no pet is left behind.%1$sTake action, make a difference, and let\'s build a future where every pet receives the love and care they deserve.', 'koinonia' ), '<br>' ); ?></p>
+<p class="has-text-align-center"><?php esc_html_e('PawPals invites you to be a hero for pets! Collaborate with us to create a world where no pet is left behind.', 'koinonia');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|40","metadata":{"name":"Spacer S"},"style":{"layout":[]}} -->
@@ -237,9 +240,9 @@ echo sprintf( esc_html__( 'PawPals invites you to be a hero for pets! Collaborat
 
 <!-- wp:jetpack/contact-form {"subject":"[PawPals] Blog Home","to":"dev-email@wpengine.local","className":"is-style-animated"} -->
 <div class="wp-block-jetpack-contact-form is-style-animated">
-<!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"0.8rem","fieldFontSize":"0.8rem","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
-<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"0.8rem","fieldFontSize":"0.8rem","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
-<!-- wp:jetpack/field-telephone {"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"0.8rem","fieldFontSize":"0.8rem","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
+<!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"x-small","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
+<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"x-small","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
+<!-- wp:jetpack/field-telephone {"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"x-small","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
 <!-- wp:jetpack/button {"element":"button","text":"Subscribe","width":"100%","lock":{"remove":true},"className":"is-style-fill"} /-->
 </div>
 <!-- /wp:jetpack/contact-form --></div>

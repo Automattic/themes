@@ -10,7 +10,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Koinonia is a theme for non-profit organizations based in the theme Lativ.
+Koinonia is a WordPress theme designed for non-profit organizations and community-driven projects. Perfect for showcasing services and initiatives that bring people and pets together, it’s an ideal choice for those who share a passion for caring, connection, and our furry companions.
+
 
 == Changelog ==
 
@@ -72,6 +73,11 @@ Source: https://www.tokotype.com
 
 
 == Images ==
+
+Icons related and graphic elements
+Author: Henrique Iamarino (https://iamarino.com)
+License: CC0 1.0 Universal
+License URI: https://creativecommons.org/publicdomain/zero/1.0/
 
 Free bulldog looking out of car window image
 License: CC0 1.0 Universal
