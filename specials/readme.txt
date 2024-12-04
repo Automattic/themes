@@ -12,6 +12,9 @@ A clean, beautiful, and customizable theme for restaurant menu websites.
 
 == Changelog ==
 
+= 1.0.2 =
+* Corrected authors/contributors names (#8478)
+
 = 1.0.0 =
 * Initial release
 
