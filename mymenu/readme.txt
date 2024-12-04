@@ -15,6 +15,9 @@ MyMenu is a simple theme designed to facilitate restaurant owners’ site-buildi
 
 == Changelog ==
 
+= 1.0.4 =
+* Corrected authors/contributors names (#8478)
+
 = 1.0.2 =
 * Updates version number to equal the showcase (#8282)
 
