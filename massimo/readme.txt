@@ -14,6 +14,9 @@ Massimo is a blog theme that reverences the legendary designer Massimo Vignelli 
 
 == Changelog ==
 
+= 1.0.1 =
+* Corrected authors/contributors names (#8478)
+
 = 1.0.0 =
 * Initial release
 
