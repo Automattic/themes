@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A theme designed to celebrate Dadaism and its great artists.
+Dadaist is a theme designed to celebrate Dadaism and its great artists. A theme design full of diverse typefaces and background images to wrap a unique blog design.
 
 
 == Changelog ==
