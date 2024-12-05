@@ -34,6 +34,44 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-
 Dadaist is based on Dada (https://themeshaper.com/dada/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
+
+== Fonts ==
+
+Antique Serie Font
+Antique Série, dessiné par Coline Houot et Romain Laurent, à partir d’un caractère de la maison Jacoby & Fils. Version 1.0 (mai 2023)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL 
+Source: https://fontesk.com/antique-serie-font/
+
+Besley Font
+Copyright 2020 The Besley Project Authors (https://github.com/indestructible-type/Besley) 
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL 
+Source: https://indestructibletype.com/Home.html
+
+Inter Font
+Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter) 
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL 
+Source: https://rsms.me/
+
+URW Gothic Font
+(URW)++,Copyright 2014 by (URW)++ Design & Development
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL 
+Source: https://github.com/URWTypeFoundry
+
+
+== Images ==
+
+Graphics and photo collages by the theme author Henrique Iamarino.
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+
+Dada artists, group photograph, 1920, Paris.
+From left to right, Back row: Louis Aragon, Theodore Fraenkel, Paul Eluard, Clément Pansaers, Emmanuel Fay (cut off). Second row: Paul Dermée, Philippe Soupault, Georges Ribemont-Dessaignes. Front row: Tristan Tzara (with monocle), Celine Arnauld, Francis Picabia, André Breton.
+License: Public Domain (PD)
+License URI: https://creativecommons.org/public-domain/pdm/
+Source: https://en.wikipedia.org/wiki/Dada
