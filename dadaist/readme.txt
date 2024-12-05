@@ -51,6 +51,12 @@ License: This Font Software is licensed under the SIL Open Font License, Version
 License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL 
 Source: https://indestructibletype.com/Home.html
 
+Futura Renner
+Futura Renner family is a digital version of Futura lead character belonging to the typography department of Ecole Nationale Supérieure des Arts de la Cambre, and probably the first draft of Futura as we know it.
+License: SIL Open Font License, Version 1.1.
+License URI: https://openfontlicense.org/
+Source: https://github.com/raphaelbastide/Unified-Font-Repository
+
 GravePresse
 The characters listed on this site are available for download 'as is' (in .otf, .woff and .woff2 formats) under free license ( SIL Open Font License ) on their respective pages. They will be updated as we progress. Contact: adrien.vasquez (at) esad-gv.fr
 License: SIL Open Font License, Version 1.1.
