@@ -317,7 +317,7 @@ echo sprintf( esc_html__( '%1$sThe Movement%2$s', 'dadaist' ), '<a href="' . esc
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|50","padding":{"top":"2vh"}},"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group alignwide" style="padding-top:2vh"><!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"uppercase","lineHeight":"0.5"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"medium","fontFamily":"urw-gothic"} -->
 <h2 class="wp-block-heading has-text-align-center has-primary-color has-text-color has-link-color has-urw-gothic-font-family has-medium-font-size" style="line-height:0.5;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( '%1$sAll posts.%2$s', 'dadaist' ), '<a href="' . esc_url( 'http://dadaist.local/blog/' ) . '" data-type="page" data-id="46">', '</a>' ); ?></h2>
+echo sprintf( esc_html__( '%1$sAll posts.%2$s', 'dadaist' ), '<a href="' . esc_url( '#' ) . '" data-type="page" data-id="46">', '</a>' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"metadata":{"name":"Halftone stroke"},"style":{"background":{"backgroundImage":{"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dada_haltfone-tex_1.png","id":10435,"source":"file","title":"dada_haltfone-tex_1"},"backgroundSize":"720px"},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"dimensions":{"minHeight":"20px"},"layout":{"selfStretch":"fixed","flexSize":"33.33%"}},"layout":{"type":"constrained"}} -->
@@ -339,7 +339,7 @@ echo sprintf( esc_html__( '%1$sAll posts.%2$s', 'dadaist' ), '<a href="' . esc_u
 
 <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
 <h1 class="wp-block-heading has-text-align-center" style="font-style:normal;font-weight:600"><?php /* Translators: 1. is a 'br' HTML element */ 
-echo sprintf( esc_html__( 'Don’t Miss a minute.%1$sSubscribe Today.', 'dadaist' ), '<br>' ); ?></h1>
+echo sprintf( esc_html__( 'Don’t Miss a Minute.%1$sSubscribe Today.', 'dadaist' ), '<br>' ); ?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 

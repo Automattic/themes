@@ -32,13 +32,13 @@
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Search block"},"style":{"spacing":{"blockGap":"var:preset|spacing|50","margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"><!-- wp:paragraph {"align":"center"} -->
+<!-- wp:group {"metadata":{"name":"Search block"},"style":{"spacing":{"blockGap":"var:preset|spacing|50","margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"><!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center"><?php /* Translators: 1. is a 'br' HTML element */ 
 echo sprintf( esc_html__( 'It looks like no content was found at this location.%1$sCould you try a search?', 'dadaist' ), '<br>' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search","width":100,"widthUnit":"%","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"width":"0px","style":"none"}}} /--></main>
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"Search","width":100,"widthUnit":"%","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"width":"0px","style":"none"}}} /--></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
 
