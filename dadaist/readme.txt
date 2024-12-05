@@ -51,11 +51,23 @@ License: This Font Software is licensed under the SIL Open Font License, Version
 License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL 
 Source: https://indestructibletype.com/Home.html
 
+GravePresse
+The characters listed on this site are available for download 'as is' (in .otf, .woff and .woff2 formats) under free license ( SIL Open Font License ) on their respective pages. They will be updated as we progress. Contact: adrien.vasquez (at) esad-gv.fr
+License: SIL Open Font License, Version 1.1.
+License URI: https://openfontlicense.org/
+Source: https://xcicero.esad-gv.net/index.php
+
 Inter Font
 Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter) 
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
 License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL 
 Source: https://rsms.me/
+
+Overused Grotesk
+Copyright (c) 2023, Bao Nguyen (RandomMaerks) (rmforbusiness@gmail.com)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is copied below, and is also available with a FAQ at http://scripts.sil.org/OFL
+Source: https://github.com/RandomMaerks/Overused-Grotesk
 
 URW Gothic Font
 (URW)++,Copyright 2014 by (URW)++ Design & Development
