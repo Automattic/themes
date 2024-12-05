@@ -2,55 +2,58 @@
     "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 3,
     "title": "Hunter",
-    "categories": [
-        "corporate",
+    "category": "sophisticated",
+    "keywords": [
+        "earthy",
+        "rustic",
+        "warm",
+        "natural",
+        "sophisticated",
+        "organic",
+        "cozy",
+        "muted",
         "elegant",
-        "professional",
-        "business",
+        "coffee",
+        "furniture",
         "brown"
     ],
     "settings": {
         "color": {
             "palette": [
                 {
-                    "color": "#FFFFFF",
-                    "name": "Color 1",
-                    "slug": "theme-1"
-                },
-                {
                     "color": "#F6F4ED",
                     "name": "Color 2",
                     "slug": "theme-2"
                 },
                 {
-                    "color": "#002A32",
+                    "color": "#4E410B",
                     "name": "Color 3",
                     "slug": "theme-3"
                 },
                 {
-                    "color": "#331800",
-                    "name": "Color 4",
-                    "slug": "theme-4"
+                    "color": "#FFFFFF",
+                    "name": "Color 1",
+                    "slug": "theme-1"
                 },
                 {
                     "color": "#1a0c00",
-                    "name": "Color 5",
-                    "slug": "theme-5"
+                    "name": "Color 4",
+                    "slug": "theme-4"
                 }
             ],
             "duotone": [
                 {
                     "colors": [
-                        "#002A32",
-                        "#F6F4ED"
+                        "#1a0c00",
+                        "#FFFFFF"
                     ],
                     "slug": "duotone-1",
                     "name": "Duotone 1"
                 },
                 {
                     "colors": [
-                        "#1A0C00",
-                        "#F6F4ED"
+                        "#4E410B",
+                        "#FFFFFF"
                     ],
                     "slug": "duotone-2",
                     "name": "Duotone 2"
@@ -64,53 +67,33 @@
                 },
                 {
                     "slug": "gradient-1-2",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-1) 0%, var(--wp--preset--color--theme-2) 100%)",
+                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-2) 0%, var(--wp--preset--color--theme-3) 100%)",
                     "name": "Gradient 1"
                 },
                 {
                     "slug": "gradient-1-3",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-1) 0%, var(--wp--preset--color--theme-3) 100%)",
+                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-2) 0%, var(--wp--preset--color--theme-1) 100%)",
                     "name": "Gradient 2"
                 },
                 {
                     "slug": "gradient-1-4",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-1) 0%, var(--wp--preset--color--theme-4) 100%)",
+                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-2) 0%, var(--wp--preset--color--theme-4) 100%)",
                     "name": "Gradient 3"
                 },
                 {
-                    "slug": "gradient-1-5",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-1) 0%, var(--wp--preset--color--theme-5) 100%)",
+                    "slug": "gradient-2-3",
+                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-3) 0%, var(--wp--preset--color--theme-1) 100%)",
                     "name": "Gradient 4"
                 },
                 {
-                    "slug": "gradient-2-3",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-2) 0%, var(--wp--preset--color--theme-3) 100%)",
+                    "slug": "gradient-2-4",
+                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-3) 0%, var(--wp--preset--color--theme-4) 100%)",
                     "name": "Gradient 5"
                 },
                 {
-                    "slug": "gradient-2-4",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-2) 0%, var(--wp--preset--color--theme-4) 100%)",
-                    "name": "Gradient 6"
-                },
-                {
-                    "slug": "gradient-2-5",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-2) 0%, var(--wp--preset--color--theme-5) 100%)",
-                    "name": "Gradient 7"
-                },
-                {
                     "slug": "gradient-3-4",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-3) 0%, var(--wp--preset--color--theme-4) 100%)",
-                    "name": "Gradient 8"
-                },
-                {
-                    "slug": "gradient-3-5",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-3) 0%, var(--wp--preset--color--theme-5) 100%)",
-                    "name": "Gradient 9"
-                },
-                {
-                    "slug": "gradient-4-5",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-4) 0%, var(--wp--preset--color--theme-5) 100%)",
-                    "name": "Gradient 10"
+                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-1) 0%, var(--wp--preset--color--theme-4) 100%)",
+                    "name": "Gradient 6"
                 }
             ]
         }
@@ -119,6 +102,13 @@
         "color": {
             "background": "var(--wp--preset--color--theme-2)",
             "text": "var(--wp--preset--color--theme-3)"
+        },
+        "blocks": {
+            "core/separator": {
+                "color": {
+                    "text": "var(--wp--preset--color--theme-3)"
+                }
+            }
         },
         "elements": {
             "button": {
@@ -132,13 +122,6 @@
                         "text": "var(--wp--preset--color--theme-2)"
                     }
                 }
-            },
-            "link": {
-                "color": {
-                    "text": {
-                        "ref": "styles.color.text"
-                    }
-                }
             }
         },
         "variations": {
@@ -148,28 +131,13 @@
                     "text": "var(--wp--preset--color--theme-4)"
                 },
                 "blocks": {
-                    "core/paragraph": {
-                        "elements": {
-                            "link": {
-                                "color": {
-                                    "text": "var(--wp--preset--color--theme-3)"
-                                }
-                            }
-                        }
-                    },
                     "core/separator": {
                         "color": {
-                            "background": "var(--wp--preset--color--theme-3)",
                             "text": "var(--wp--preset--color--theme-3)"
                         }
                     }
                 },
                 "elements": {
-                    "link": {
-                        "color": {
-                            "text": "var(--wp--preset--color--theme-3)"
-                        }
-                    },
                     "button": {
                         "color": {
                             "background": "var(--wp--preset--color--theme-3)",
@@ -195,15 +163,6 @@
                     "text": "var(--wp--preset--color--theme-2)"
                 },
                 "blocks": {
-                    "core/paragraph": {
-                        "elements": {
-                            "link": {
-                                "color": {
-                                    "text": "var(--wp--preset--color--theme-2)"
-                                }
-                            }
-                        }
-                    },
                     "core/separator": {
                         "color": {
                             "background": "var(--wp--preset--color--theme-2)",
@@ -212,11 +171,6 @@
                     }
                 },
                 "elements": {
-                    "link": {
-                        "color": {
-                            "text": "var(--wp--preset--color--theme-2)"
-                        }
-                    },
                     "button": {
                         "color": {
                             "background": "var(--wp--preset--color--theme-2)",
@@ -228,11 +182,6 @@
                                 "text": "var(--wp--preset--color--theme-3)"
                             }
                         }
-                    },
-                    "heading": {
-                        "color": {
-                            "text": "var(--wp--preset--color--theme-2)"
-                        }
                     }
                 }
             },
@@ -242,28 +191,13 @@
                     "text": "var(--wp--preset--color--theme-2)"
                 },
                 "blocks": {
-                    "core/paragraph": {
-                        "elements": {
-                            "link": {
-                                "color": {
-                                    "text": "var(--wp--preset--color--theme-2)"
-                                }
-                            }
-                        }
-                    },
                     "core/separator": {
                         "color": {
-                            "background": "var(--wp--preset--color--theme-2)",
                             "text": "var(--wp--preset--color--theme-2)"
                         }
                     }
                 },
                 "elements": {
-                    "link": {
-                        "color": {
-                            "text": "var(--wp--preset--color--theme-2)"
-                        }
-                    },
                     "button": {
                         "color": {
                             "background": "var(--wp--preset--color--theme-2)",
@@ -274,11 +208,6 @@
                                 "background": "var(--wp--preset--color--theme-1)",
                                 "text": "var(--wp--preset--color--theme-4)"
                             }
-                        }
-                    },
-                    "heading": {
-                        "color": {
-                            "text": "var(--wp--preset--color--theme-2)"
                         }
                     }
                 }
