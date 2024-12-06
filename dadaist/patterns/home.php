@@ -348,14 +348,8 @@ echo sprintf( esc_html__( 'Don’t Miss a Minute.%1$sSubscribe Today.', 'dadaist
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Jetpack block wrapper"},"align":"wide","style":{"border":{"top":{"width":"1px"}},"background":{"backgroundImage":{"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/dada_haltfone-tex_1.png","id":10435,"source":"file","title":"dada_haltfone-tex_1"},"backgroundSize":"720px"},"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide" style="border-top-width:1px;padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"metadata":{"name":"Jetpack wrapper"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50","top":"var:preset|spacing|50","bottom":"var:preset|spacing|70"}},"border":{"left":{"width":"1px"},"right":{"width":"1px"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="border-right-width:1px;border-left-width:1px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--50)"><!-- wp:jetpack/contact-form {"subject":"[dadaistist] Front Page Contact","to":"your-email@domain.com","className":"is-style-animated"} -->
-<div class="wp-block-jetpack-contact-form is-style-animated">
-<!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","labelFontSize":"x-small","fieldFontSize":"small","lineHeight":1.5,"labelLineHeight":1.5,"inputColor":"#f04031","labelColor":"#f04031","fieldBackgroundColor":"#121212e6","borderColor":"#f04031"} /-->
-<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","labelFontSize":"x-small","fieldFontSize":"small","lineHeight":1.5,"labelLineHeight":1.5,"inputColor":"#f04031","labelColor":"#f04031","fieldBackgroundColor":"#121212e6","borderColor":"#f04031"} /-->
-<!-- wp:jetpack/button {"element":"button","text":"Subscribe Now","textColor":"contrast","backgroundColor":"primary","width":"100%","lock":{"remove":true},"fontSize":"x-small","style":{"typography":{"textTransform":"uppercase"}}} /-->
-</div>
-<!-- /wp:jetpack/contact-form --></div>
+<div class="wp-block-group alignwide" style="border-top-width:1px;padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"metadata":{"name":"Jetpack wrapper"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50","top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}},"border":{"left":{"width":"1px"},"right":{"width":"1px"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
+<div class="wp-block-group" style="border-right-width:1px;border-left-width:1px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:jetpack/subscriptions {"buttonWidth":"","className":"is-style-split"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
