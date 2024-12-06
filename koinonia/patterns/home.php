@@ -234,18 +234,11 @@ echo sprintf( esc_html__( 'Subscribe to%1$sGet our News', 'koinonia' ), '<br>' )
 <p class="has-text-align-center"><?php esc_html_e('PawPals invites you to be a hero for pets! Collaborate with us to create a world where no pet is left behind.', 'koinonia');?></p>
 <!-- /wp:paragraph -->
 
+<!-- wp:jetpack/subscriptions {"buttonWidth":"25%"} /-->
+
 <!-- wp:spacer {"height":"var:preset|spacing|40","metadata":{"name":"Spacer S"},"style":{"layout":[]}} -->
 <div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:jetpack/contact-form {"subject":"[PawPals] Blog Home","to":"dev-email@wpengine.local","className":"is-style-animated"} -->
-<div class="wp-block-jetpack-contact-form is-style-animated">
-<!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"x-small","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
-<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"x-small","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
-<!-- wp:jetpack/field-telephone {"requiredText":"(required)","borderRadius":5,"borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"x-small","lineHeight":1,"labelLineHeight":1,"fieldBackgroundColor":"#fbfbfb"} /-->
-<!-- wp:jetpack/button {"element":"button","text":"Subscribe","width":"100%","lock":{"remove":true},"className":"is-style-fill"} /-->
-</div>
-<!-- /wp:jetpack/contact-form --></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
 

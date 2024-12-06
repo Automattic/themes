@@ -79,10 +79,10 @@ Author: Henrique Iamarino (https://iamarino.com)
 License: CC0 1.0 Universal
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
 
-Free bulldog looking out of car window image
+Free pug dog sitting image, public domain animal CC0 photo
 License: CC0 1.0 Universal
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://www.rawpixel.com/image/5924467/photo-image-background-public-domain-green
+Source: https://www.rawpixel.com/image/5918213/photo-image-background-public-domain-shadow
 
 A person's hand about to touch white dog
 License: CC0 1.0 Universal
