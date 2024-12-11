@@ -13,12 +13,12 @@
 <div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#1e1551","openInNewTab":true,"size":"has-normal-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
-<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"github"} /-->
+<!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#1e1551","openInNewTab":true,"size":"has-normal-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"bluesky"} /-->
 
-<!-- wp:social-link {"url":"#","service":"mastodon"} /-->
+<!-- wp:social-link {"url":"#","service":"tumblr"} /-->
 
-<!-- wp:social-link {"url":"#","service":"linkedin"} /--></ul>
+<!-- wp:social-link {"url":"#","service":"mastodon"} /--></ul>
 <!-- /wp:social-links -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
