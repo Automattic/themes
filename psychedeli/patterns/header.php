@@ -34,11 +34,7 @@
 
 <!-- wp:column {"verticalAlignment":"stretch","width":"20%"} -->
 <div class="wp-block-column is-vertically-aligned-stretch" style="flex-basis:20%"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"right":"0","left":"0","top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<div class="wp-block-group" style="min-height:100%;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-right:0;padding-bottom:var(--wp--preset--spacing--20);padding-left:0"><!-- wp:navigation {"textColor":"contrast","overlayMenu":"always","icon":"menu","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center","orientation":"horizontal"}} /-->
-
-<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
-<p style="text-transform:uppercase"><?php esc_html_e('Menu', 'psychedeli');?></p>
-<!-- /wp:paragraph --></div>
+<div class="wp-block-group" style="min-height:100%;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-right:0;padding-bottom:var(--wp--preset--spacing--20);padding-left:0"><!-- wp:navigation {"textColor":"contrast","backgroundColor":"base","overlayMenu":"always","icon":"menu","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center","orientation":"horizontal"}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
