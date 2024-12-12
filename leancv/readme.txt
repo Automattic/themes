@@ -2,8 +2,8 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 5.7
+Tested up to: 6.7
+Requires PHP: 8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,7 @@ LeanCV is based on MyCV (), (C) Automattic, [GPLv2 or later](http://www.gnu.org/
 
 
 = Images ==
+
 Generated with AI on Midjourney, released under the CC0 license.
 
 
