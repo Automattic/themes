@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-LeanCV is a blog theme that echoes the structure of a professional profile with original visuals and interesting navigation. It's suitable for the general public to display information, experiences, and education. And it's super easy to customize.
+LeanCV is a blog theme that echoes the structure of a professional curriculum. It's suitable for the general public to display information, experiences, and education. And it's super easy to customize.
 
 == Changelog ==
 
