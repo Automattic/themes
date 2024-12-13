@@ -30,7 +30,7 @@
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0.3rem","right":"0rem","bottom":"0.5rem","left":"0rem"},"blockGap":"0px","margin":{"top":"0px","bottom":"0px"}},"border":{"top":{"width":"0.2rem"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignfull" style="border-top-width:0.2rem;margin-top:0px;margin-bottom:0px;padding-top:0.3rem;padding-right:0rem;padding-bottom:0.5rem;padding-left:0rem"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"0rem","top":"0rem","right":"0rem","left":"0rem"},"margin":{"top":"0rem","bottom":"0rem"}}},"layout":{"type":"flex","justifyContent":"right"}} -->
 <div class="wp-block-group alignfull" style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"align":"right","style":{"typography":{"fontSize":"3rem","lineHeight":"1","textTransform":"uppercase","fontStyle":"normal","fontWeight":"700","letterSpacing":"-0.1rem"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<p class="has-text-align-right has-base-color has-text-color has-link-color" style="font-size:3rem;font-style:normal;font-weight:700;letter-spacing:-0.1rem;line-height:1;text-transform:uppercase"><a href="https://eventual.mystagingwebsite.com/2023/" data-type="page" data-id="481">Last edition</a></p>
+<p class="has-text-align-right has-base-color has-text-color has-link-color" style="font-size:3rem;font-style:normal;font-weight:700;letter-spacing:-0.1rem;line-height:1;text-transform:uppercase"><a href="#" data-type="page" data-id="481">Last edition</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
