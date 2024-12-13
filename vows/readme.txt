@@ -2,7 +2,7 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.7
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,24 +43,45 @@ GNU General Public License for more details.
 Vows is based on Dark Academia (https://themeshaper.com/dark-academia/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
-== Images ==
-All images used in the templates were generated with AI using Midjourney.
-
-
 == Fonts ==
 
-Playfair Display Font
-Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name "Playfair Display". 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
-Source: http://www.forthehearts.net
--- End of Playfair Display Font credits --
+Albert Sans
+Copyright 2021 The Albert Sans Project Authors (https://github.com/usted/Albert-Sans) 
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: https://www.a-foundry.net
 
-Figtree Font
+Aventine
+Copyright 2018 Stephen French (https://www.behance.net/stephenfrenchjr)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL
+Source: https://www.behance.net/gallery/69526881/AVENTINE-Free-Oldstyle-Typeface
+
+Figtree
 Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree)
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
-Source: https://fonts.google.com/specimen/Figtree/about
--- End of Gabarito Font credits --
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL
+Source: https://erikdkennedy.com/
+
+Gabarito
+Copyright 2023 The Gabarito Project Authors (https://github.com/naipefoundry/gabarito)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL
+Source: http://www.naipe.xyz/
+
+Literata 24pt
+Copyright 2017 The Literata Project Authors (https://github.com/googlefonts/literata)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL
+Source: http://www.google.com
+
+Playfair Display
+Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name "Playfair Display".
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL
+Source: http://www.forthehearts.net
 
 
+== Images ==
+
+All images used in the templates were generated with AI using Midjourney.
