@@ -12,6 +12,9 @@ Psychedeli is the ultimate WordPress theme for bloggers and artists seeking to s
 
 == Changelog ==
 
+= 1.0.1 =
+Update headers to show a long site title properly (#8526)
+
 = 1.0.0 =
 * Initial release
 
