@@ -1040,6 +1040,7 @@ async function versionBumpTheme( theme, addChanges ) {
  Determine if a theme has had a version bump since a given hash.
  Used by versionBumpThemes
  Compares the value of 'version' in style.css between the hash and current value
+ Returns true if the theme does not need a version bump
 */
 async function checkThemeForVersionBump( theme, hash ) {
 	return executeCommand( `
@@ -1059,7 +1060,7 @@ async function checkThemeForVersionBump( theme, hash ) {
 			);
 			let styleCss = fs.readFileSync( `${ theme }/style.css`, 'utf8' );
 			let currentVersion = getThemeMetadata( styleCss, 'Version' );
-			return previousVersion != currentVersion;
+			return previousVersion === currentVersion;
 		} );
 }
 
