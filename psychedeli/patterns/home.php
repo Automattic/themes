@@ -130,13 +130,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"top","width":"50%","layout":{"type":"default"}} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50%"><!-- wp:jetpack/subscriptions {"subject":"[Psychedeli] Blog Home","to":"mail@your-domain.com","className":"is-style-animated"} -->
-<div class="wp-block-jetpack-subscriptions is-style-animated">
-<!-- wp:jetpack/field-name {"required":true,"requiredText":"(required)","borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"small","lineHeight":1,"labelLineHeight":1} /-->
-<!-- wp:jetpack/field-email {"required":true,"requiredText":"(required)","borderWidth":0,"labelFontSize":"x-small","fieldFontSize":"small","lineHeight":1,"labelLineHeight":1} /-->
-<!-- wp:jetpack/button {"element":"button","text":"Subscribe","borderRadius":2,"width":"100%","lock":{"remove":true}} /-->
-</div>
-<!-- /wp:jetpack/subscriptions --></div>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50%"><!-- wp:jetpack/subscriptions {"buttonWidth":"25%","className":"is-style-compact"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
