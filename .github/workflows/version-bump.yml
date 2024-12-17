@@ -36,7 +36,7 @@ jobs:
         id: version-bump
         run: |
           if [ "${{ github.event.inputs.theme-slug }}" == 'all' ]; then
-            npm run deploy:version-bump
+            npm run deploy:version-bump-from-last-bump
           else
             # Check if theme exists
             theme_exists=false
@@ -59,7 +59,7 @@ jobs:
               exit 1
             fi
 
-            npm run deploy:version-bump -- ${{ github.event.inputs.theme-slug }}
+            npm run deploy:version-bump-from-last-bump -- ${{ github.event.inputs.theme-slug }}
           fi
 
       - name: Check if there are changes

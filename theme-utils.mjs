@@ -79,6 +79,11 @@ const commands = {
 			'Bump the version of any theme that has had changes since the last deployment. This includes bumping the version of any parent themes and updating the changelog for the theme. Optionally specify a single theme to version bump.',
 		run: ( args ) => versionBumpThemes(	args?.[ 1 ]?.split( /[ ,]+/ ) ),
 	},
+	'version-bump-from-last-bump': {
+		helpText:
+			'Bump the version of any theme that has had changes since the last "Version Bump" commit. This includes updating the changelog for the theme. Optionally specify a single theme to version bump.',
+		run: ( args ) => versionBumpThemesFromLastBump( args?.[ 1 ]?.split( /[ ,]+/ ) ),
+	},
 	'land-diff': {
 		helpText: 'Run gh pr merge to merge in the specified pull request id.',
 		additionalArgs: '<gh pr id>',
@@ -858,6 +863,43 @@ async function versionBumpThemes( themeSlugs ) {
 	return changesWereMade;
 }
 
+/*
+ Version bump (increment version patch) any theme project that has had changes since the last "Version Bump" commit (e.g. for running via the GH Action, as we do not want to use the last dotcom deployment as a reference.)
+ If a theme's version has already been changed since that last deployment then do not version bump it.
+ If a theme has changes also update its changelog.
+ Does not update the root project version.
+*/
+async function versionBumpThemesFromLastBump( themeSlugs ) {
+	console.log( 'Version Bumping' );
+
+	const themes = themeSlugs ? themeSlugs : await getActionableThemes();
+	// Get the hash for the latest "Version Bump" commit.
+	const hash = execSync( `git log -1 --grep="Version Bump" --format=%H` ).toString().trim();
+	let changesWereMade = false;
+
+	for ( let theme of themes ) {
+		const hasChanges = await checkThemeForChanges( theme, hash );
+
+		if ( ! hasChanges ) {
+			continue;
+		}
+
+		const hasVersionBump = await checkThemeForVersionBump( theme, hash );
+
+		if ( hasVersionBump ) {
+			continue;
+		}
+
+		await versionBumpTheme( theme, true );
+		await updateThemeChangelog( theme, true );
+		changesWereMade = true;
+	}
+
+	console.log( `Version bumping complete:`, changesWereMade ? 'themes successfully version bumped' : 'no changes were made' );
+
+	return changesWereMade;
+}
+
 export function getThemeMetadata( styleCss, attribute, trimWPCom = true ) {
 	if ( ! styleCss || ! attribute ) {
 		return null;
@@ -1060,7 +1102,7 @@ async function checkThemeForVersionBump( theme, hash ) {
 			);
 			let styleCss = fs.readFileSync( `${ theme }/style.css`, 'utf8' );
 			let currentVersion = getThemeMetadata( styleCss, 'Version' );
-			return previousVersion === currentVersion;
+			return previousVersion !== currentVersion;
 		} );
 }
 
