@@ -150,16 +150,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"top","width":"50%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50%"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide"} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50%"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide"} -->
 <h1 class="wp-block-heading alignwide has-text-align-left"><?php esc_html_e('Articles', 'psychedeli');?></h1>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="font-style:normal;font-weight:700;text-transform:uppercase"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( '%1$sView Blog%2$s', 'psychedeli' ), '<a href="' . esc_url( '#' ) . '">', '</a>' ); ?></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+<!-- /wp:heading --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
