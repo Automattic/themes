@@ -864,8 +864,8 @@ async function versionBumpThemes( themeSlugs ) {
 }
 
 /*
- Version bump (increment version patch) any theme project that has had changes since the last "Version Bump" commit (e.g. for running via the GH Action, as we do not want to use the last dotcom deployment as a reference.)
- If a theme's version has already been changed since that last deployment then do not version bump it.
+ Version bump (increment version patch) any theme project that has had changes since the last "Version Bump" commit (e.g. for running via the GH Action, as we do not want to use the last wpcom deployment as a reference.)
+ If a theme's version has already been changed since that last commit then do not version bump it.
  If a theme has changes also update its changelog.
  Does not update the root project version.
 */
