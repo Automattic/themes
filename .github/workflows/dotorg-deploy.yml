@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Install SVN
+        run: |
+          sudo apt update
+          sudo apt install -y subversion
       - run: ./deploy-dotorg.sh
         env: 
          SVN_USERNAME: ${{ secrets.SVN_USERNAME }} 
