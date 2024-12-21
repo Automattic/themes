@@ -45,73 +45,9 @@ Tags: block-patterns, eLearning, education, full-site-editing, lms, online cours
 	text-align: center;
 }
 
- /* Background and text color, padding around for navbar, only for mobile view. Desktop view has separate color */
- .wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
-	background-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--background);
-	padding: 1.5rem;
- }
-
- /* Distance between navigation menu items in mobile view, theme.json blockgap not working for navigation block */
- .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
-	gap: var(--wp--custom--nav-mobile-gap);
- }
-
- /* Color of the cross button in navbar mobile view */
- .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
-	color: var(--wp--preset--color--background);
- }
-
-/* line height of the menu items in mobile view, to match design */
- .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container a.wp-block-navigation-item__content {
-	line-height: 90%;
- }
-
- /* The navigation item that looks like a button in the design has a different front size and the button is rounded */
- .wp-block-navigation .wp-block-navigation__responsive-container .wp-block-navigation-link.is-style-navigation-link-button a {
-	font-size: var(--wp--custom--typography--font-sizes--button);
-	border-radius: 8px;
-}
-
-/* Background & text color, padding and border of the navbar button */
-.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a {
-	background-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--background);
-	padding: 15.5px 32px;
-	border: 1px solid var(--wp--preset--color--foreground);
-}
-
-/* Navbar button color change on hover */
-.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a:hover {
-	background-color: var(--wp--preset--color--background);
-	color: var(--wp--preset--color--foreground);
-}
-
-/* Set the font size of the menu items in mobile view, except for the button menu item */
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link:not(.is-style-navigation-link-button) a {
-	font-size: var(--wp--preset--font-size--xx-large);
-}
-
-/* Design for the navbar button item, in case of mobile view. Has extra margin on top as per design */
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a {
-	color: var(--wp--preset--color--foreground);
-	background-color: var(--wp--preset--color--background);
-	width: calc(100vw - 3rem);
-	text-align: center;
-	padding: 17.5px 0px;
-	margin-top: calc(7.5rem - var(--wp--custom--nav-mobile-gap));
-}
-
-/* Separate hover behavior for navbar button, applicable when in mobile view, as the colors are separate for mobile view */
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a:hover {
-	background-color: var(--wp--preset--color--background);
-	color: var(--wp--preset--color--foreground);
-}
-
 header {
 	background-color: transparent;
 }
-
 
 .wp-site-blocks header ~ main {
 	margin-block-start: 0;
