@@ -1,9 +1,7 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: front-page
  * Slug: vitrum/front-page
- * Categories: hidden
  * Inserter: no
  */
 ?>
@@ -14,7 +12,7 @@
 <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"90%"} -->
 <div class="wp-block-column" style="flex-basis:90%"><!-- wp:heading {"textAlign":"left","level":1,"className":"alignwide"} -->
-<h1 class="wp-block-heading has-text-align-left alignwide"><?php echo __('GlassBenders Guild is an atelier engaged in sustainable design and communal landscapes.', 'vitrum');?></h1>
+<h1 class="wp-block-heading has-text-align-left alignwide"><?php esc_html_e('GlassBenders Guild is an atelier engaged in sustainable design and communal landscapes.', 'vitrum');?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -30,7 +28,7 @@
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph -->
-<p><?php echo __('As a full-service firm, the Guild delivers contemporary projects, from the client-oriented creative process to the latest building methodologies and construction techniques applied to building sites. We are proud to achieve that through close collaboration with team members, consultants, contractors, and trades.', 'vitrum');?></p>
+<p><?php esc_html_e('As a full-service firm, the Guild delivers contemporary projects, from the client-oriented creative process to the latest building methodologies and construction techniques applied to building sites. We are proud to achieve that through close collaboration with team members, consultants, contractors, and trades.', 'vitrum');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|20","style":{"layout":[]}} -->
@@ -38,12 +36,12 @@
 <!-- /wp:spacer -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"radius":"4px"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="border-radius:4px"><?php echo __('Get started', 'vitrum');?></a></div>
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e('Get started', 'vitrum');?></a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"style":{"border":{"radius":"4px"}},"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" style="border-radius:4px"><?php echo __('Dismiss', 'vitrum');?></a></div>
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button"><?php esc_html_e('Dismiss', 'vitrum');?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
