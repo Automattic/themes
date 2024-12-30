@@ -2,8 +2,8 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 5.7
+Tested up to: 6.7
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,6 @@ Inversum is based on Upsidedown (), (C) Automattic, [GPLv2 or later](http://www.
 
 Rubik
 Copyright 2015 The Rubik Project Authors (https://github.com/googlefonts/rubik)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: https://scripts.sil.org/OFL
 Source: http://www.google.com/fonts
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
-

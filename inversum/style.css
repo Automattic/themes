@@ -5,13 +5,24 @@ Author: Automattic
 Author URI: https://automattic.com
 Description: A blog theme entirely designed in the Editor, Inversum offers a direct experience of post-reading with its noticeable post titles listed on a text-only page and an original swap of header and footer blocks.
 Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 5.7
-Version: 1.2
+Tested up to: 6.7
+Requires PHP: 7.0
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: inversum
-Tags: blog, one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, style-variations
+Tags: blog, one-column, block-styles, full-site-editing, rtl-language-support, threaded-comments, translation-ready, wide-blocks, style-variations
+
+/* Progresive enhancement to reduce widows and orphans.
+/* https://github.com/WordPress/gutenberg/issues/55190
+*/
+
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption {
+    text-wrap: balance;
+}
+p {
+    text-wrap: pretty;
+}
 
 /*
  * Control the hover stylings of outline block style.
