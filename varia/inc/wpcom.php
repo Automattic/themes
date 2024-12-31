@@ -147,7 +147,7 @@ function varia_wpcom_admin_body_classes( $classes ) {
 	$hide                   = get_theme_mod( 'hide_front_page_title', false );
 	$front_page             = (int) get_option( 'page_on_front' );
 
-	if ( $is_block_editor_screen && $front_page === $post->ID && true === $hide ) {
+	if ( $is_block_editor_screen && ! empty( $post ) && $front_page === $post->ID && true === $hide ) {
 		$classes .= ' hide-homepage-title';
 	}
 
