@@ -12,6 +12,9 @@ Bitácora is a simple old-school blog theme.
 
 == Changelog ==
 
+= 1.0.10 =
+* Bitacora: Update Custom CSS for Subscription Block (#8563)
+
 = 1.0.9 =
 * Remove copyright statement (#7988)
 
