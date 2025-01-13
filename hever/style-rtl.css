@@ -2785,6 +2785,10 @@ body:not(.fse-enabled) .site-description {
 	font-size: 0.75614rem;
 }
 
+@counter-style empty {
+	symbols: "– ";
+}
+
 .main-navigation {
 	color: var(--wp--preset--color--foreground);
 }
@@ -2974,7 +2978,7 @@ body:not(.fse-enabled) .site-description {
 	/* Increment the dashes */
 	counter-increment: nested-list;
 	/* Insert dashes with spaces in between */
-	content: "– " counters(nested-list, "– ", none);
+	content: "– " counters(nested-list, "– ", empty);
 }
 
 @media only screen and (min-width: 560px) {

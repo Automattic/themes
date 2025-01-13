@@ -1543,6 +1543,12 @@ pre.wp-block-verse {
 	margin: 0 0 5px 0;
 }
 
+@counter-style empty {
+	.fse-template-part {
+		symbols: "– ";
+	}
+}
+
 .fse-template-part .main-navigation {
 	color: #111111;
 }
@@ -1732,7 +1738,7 @@ pre.wp-block-verse {
 	/* Increment the dashes */
 	counter-increment: nested-list;
 	/* Insert dashes with spaces in between */
-	content: "– " counters(nested-list, "– ", none);
+	content: "– " counters(nested-list, "– ", empty);
 }
 
 @media only screen and (min-width: 560px) {

@@ -2761,6 +2761,10 @@ body:not(.fse-enabled) .site-description {
 	font-size: 1.74901rem;
 }
 
+@counter-style empty {
+	symbols: "– ";
+}
+
 .main-navigation {
 	color: #1e1e1e;
 }
@@ -2950,7 +2954,7 @@ body:not(.fse-enabled) .site-description {
 	/* Increment the dashes */
 	counter-increment: nested-list;
 	/* Insert dashes with spaces in between */
-	content: "– " counters(nested-list, "– ", none);
+	content: "– " counters(nested-list, "– ", empty);
 }
 
 @media only screen and (min-width: 560px) {
