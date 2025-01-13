@@ -1,9 +1,9 @@
-@counter-style empty {
-	symbols: "– ";
-}
-
 // Navigation
 .main-navigation {
+
+	@counter-style empty {
+		symbols: "– ";
+	}
 
 	color: #{map-deep-get($config-header, "main-nav", "color", "text")};
 
@@ -34,6 +34,7 @@
 	}
 
 	#toggle:checked + #toggle-menu {
+
 		.open {
 			display: none;
 		}
@@ -86,7 +87,7 @@
 			}
 
 			&:focus-within a {
-			//	outline: none;
+				//	outline: none;
 			}
 
 			@include media(mobile) {
@@ -108,7 +109,9 @@
 		& > li {
 
 			@include media(mobile) {
+
 				& > a {
+
 					@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
 				}
 
@@ -149,6 +152,7 @@
 	a {
 		color: #{map-deep-get($config-header, "main-nav", "color", "link")};
 		display: block;
+
 		@include font-family( map-deep-get($config-header, "main-nav", "font", "family" ) );
 		font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
 		padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
@@ -172,6 +176,7 @@
 
 		list-style: none;
 		margin-left: 0;
+
 		/* Reset the counter for each UL */
 		counter-reset: nested-list;
 
@@ -181,8 +186,10 @@
 			padding-bottom: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")};
 
 			&::before {
+
 				/* Increment the dashes */
 				counter-increment: nested-list;
+
 				/* Insert dashes with spaces in between */
 				content: "– " counters(nested-list, "– ", empty);
 			}
@@ -191,6 +198,7 @@
 
 	// Show top-level sub-menu indicators above mobile-breakpoint-only
 	@include media(mobile) {
+
 		& > div > ul > .menu-item-has-children > a {
 
 			&::after {
@@ -206,8 +214,8 @@
 	.hide-visually {
 		position: absolute !important;
 		clip: rect(1px, 1px, 1px, 1px);
-		padding:0 !important;
-		border:0 !important;
+		padding: 0 !important;
+		border: 0 !important;
 		height: 1px !important;
 		width: 1px !important;
 		overflow: hidden;
@@ -216,7 +224,8 @@
 
 // Prevent overruling the user defined font size value set inside Gutenberg
 // for Full Site Editing's Menu Navigation block.
-body:not( .fse-enabled ) {
+body:not(.fse-enabled) {
+
 	.main-navigation a {
 		font-size: #{map-deep-get($config-header, "main-nav", "font", "size")};
 	}
