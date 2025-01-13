@@ -1,9 +1,7 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: 404
  * Slug: vitrum/404
- * Categories: hidden
  * Inserter: no
  */
 ?>
@@ -13,7 +11,7 @@
 <main class="wp-block-group" style="padding-top:10vh;padding-bottom:15vh"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"70%","style":{"spacing":{"padding":{"right":"0"}}}} -->
 <div class="wp-block-column" style="padding-right:0;flex-basis:70%"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide","className":"has-text-align-center"} -->
-<h1 class="wp-block-heading alignwide has-text-align-left has-text-align-center"><?php echo __('Ops, this page could not be found. Maybe try a search?', 'vitrum');?></h1>
+<h1 class="wp-block-heading alignwide has-text-align-left has-text-align-center"><?php esc_html_e('Oops, this page could not be found. Maybe try a search?', 'vitrum');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:search {"label":"Search","showLabel":false,"width":100,"widthUnit":"%","buttonText":"Search","buttonUseIcon":true,"align":"center"} /--></div>

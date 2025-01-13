@@ -1,16 +1,14 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: index
  * Slug: vitrum/index
- * Categories: hidden
  * Inserter: no
  */
 ?>
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"5vh","bottom":"10vh"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="padding-top:5vh;padding-bottom:10vh"><!-- wp:query {"queryId":30,"query":{"perPage":8,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
+<main class="wp-block-group" style="padding-top:5vh;padding-bottom:10vh"><!-- wp:query {"queryId":30,"query":{"perPage":5,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":4}} -->
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1","width":"","height":""} /-->
 
@@ -33,7 +31,7 @@
 
 <!-- wp:query-no-results -->
 <!-- wp:paragraph -->
-<p><?php echo __('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'vitrum');?></p>
+<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'vitrum');?></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:query --></main>

@@ -1,9 +1,7 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: search
  * Slug: vitrum/search
- * Categories: hidden
  * Inserter: no
  */
 ?>
@@ -16,7 +14,7 @@
 
 <!-- wp:query-title {"type":"search","showSearchTerm":false,"fontFamily":"inter"} /-->
 
-<!-- wp:query {"queryId":30,"query":{"perPage":8,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"default"}} -->
+<!-- wp:query {"queryId":30,"query":{"perPage":5,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"default"}} -->
 <div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1","width":"","height":""} /-->
 
@@ -39,7 +37,7 @@
 
 <!-- wp:query-no-results -->
 <!-- wp:paragraph -->
-<p><?php echo __('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'vitrum');?></p>
+<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'vitrum');?></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:query --></div>
