@@ -32,10 +32,10 @@
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:25%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
 <p><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
-echo sprintf( esc_html__( 'Designed with %1$sWordPress%2$s                ', 'inversum' ), '<a rel="nofollow" href="' . esc_url( 'https://wordpress.org' ) . '">', '</a>' ); ?></p>
+echo sprintf( esc_html__( 'Designed with %1$sWordPress%2$s', 'inversum' ), '<a rel="nofollow" href="' . esc_url( 'https://wordpress.org' ) . '">', '</a>' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dprimary)","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"1rem","left":"1rem"}}}} -->
+<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#030201","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"1rem","left":"1rem"}}}} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"mastodon"} /-->
 
 <!-- wp:social-link {"url":"#","service":"tumblr"} /-->
