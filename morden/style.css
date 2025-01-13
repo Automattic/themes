@@ -2789,12 +2789,14 @@ body:not(.fse-enabled) .site-description {
 	font-size: 0.75614rem;
 }
 
-@counter-style empty {
-	symbols: "– ";
-}
-
 .main-navigation {
 	color: var(--wp--preset--color--background);
+}
+
+@counter-style empty {
+	.main-navigation {
+		symbols: "– ";
+	}
 }
 
 .main-navigation > div {

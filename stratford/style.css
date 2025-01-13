@@ -2803,12 +2803,14 @@ body:not(.fse-enabled) .site-description {
 	font-size: 0.83333rem;
 }
 
-@counter-style empty {
-	symbols: "– ";
-}
-
 .main-navigation {
 	color: var(--wp--preset--color--foreground);
+}
+
+@counter-style empty {
+	.main-navigation {
+		symbols: "– ";
+	}
 }
 
 .main-navigation > div {
