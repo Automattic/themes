@@ -14,6 +14,17 @@ Vitrum was designed to be a portfolio theme and is composed of wide-width layout
 
 == Changelog ==
 
+= 1.4.1 =
+* Fixed the button padding and stroke sizes;
+* Adjusted contentSize to 1050px;
+* Remove unused patterns patterns/about.php, and patterns/hidden-404.php;
+* On readme.txt and style.css: Change Tested up to: to 6.7 and Requires PHP: to 7.0;
+* Reviewed the image credits, removing unnecessary links;
+* Removed theme tags and added the mentioned one;
+* Removed duplicated comment is duplicated in style.css;
+* Removed several numeric font sizes in the theme, replacing them with preset type sizes;
+* Changed the theme version to 1.4.0 in style.css.
+
 = 1.4 =
 * Remove copyright statement (#7988)
 
