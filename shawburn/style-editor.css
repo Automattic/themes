@@ -1533,6 +1533,12 @@ pre.wp-block-verse {
 	margin: 0 0 5px 0;
 }
 
+@counter-style empty {
+	.fse-template-part {
+		symbols: "– ";
+	}
+}
+
 .fse-template-part .main-navigation {
 	color: var(--wp--preset--color--white);
 }
@@ -1602,7 +1608,7 @@ pre.wp-block-verse {
 	z-index: 1;
 }
 
-.fse-template-part .main-navigation > div > ul li:hover, .fse-template-part .main-navigation > div > ul li[focus-within] {
+.fse-template-part .main-navigation > div > ul li:hover, .fse-template-part.js-focus-within .main-navigation > div > ul li[focus-within], .js-focus-within .fse-template-part .main-navigation > div > ul li[focus-within] {
 	cursor: pointer;
 	z-index: 99999;
 }
@@ -1619,7 +1625,8 @@ pre.wp-block-verse {
 		/* Submenu display */
 	}
 	.fse-template-part .main-navigation > div > ul li:hover > ul,
-	.fse-template-part .main-navigation > div > ul li[focus-within] > ul,
+	.fse-template-part.js-focus-within .main-navigation > div > ul li[focus-within] > ul,
+	.js-focus-within .fse-template-part .main-navigation > div > ul li[focus-within] > ul,
 	.fse-template-part .main-navigation > div > ul li ul:hover,
 	.fse-template-part .main-navigation > div > ul li ul:focus {
 		visibility: visible;
@@ -1722,7 +1729,7 @@ pre.wp-block-verse {
 	/* Increment the dashes */
 	counter-increment: nested-list;
 	/* Insert dashes with spaces in between */
-	content: "– " counters(nested-list, "– ", none);
+	content: "– " counters(nested-list, "– ", empty);
 }
 
 @media only screen and (min-width: 560px) {
