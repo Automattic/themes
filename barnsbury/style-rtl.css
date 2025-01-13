@@ -351,7 +351,8 @@ abbr[title] {
 	/* 1 */
 	text-decoration: underline;
 	/* 2 */
-	text-decoration: underline dotted;
+	-webkit-text-decoration: underline dotted;
+	        text-decoration: underline dotted;
 	/* 2 */
 }
 
@@ -2812,11 +2813,6 @@ body:not(.fse-enabled) .site-description {
 	z-index: 1;
 }
 
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
-	cursor: pointer;
-	z-index: 99999;
-}
-
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2827,14 +2823,6 @@ body:not(.fse-enabled) .site-description {
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li[focus-within] > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li:focus-within > ul,
@@ -4131,37 +4119,15 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 		font-size: 0.5rem;
 	}
 	.main-navigation > div > ul > li:hover > a,
-	.main-navigation > div > ul > li[focus-within] > a,
-	.main-navigation > div > ul > li.current-menu-item > a {
-		color: #20603C;
-	}
-	.main-navigation > div > ul > li:hover > a,
 	.main-navigation > div > ul > li:focus-within > a,
 	.main-navigation > div > ul > li.current-menu-item > a {
 		color: #20603C;
-	}
-	.main-navigation > div > ul > li:hover > ul,
-	.main-navigation > div > ul > li[focus-within] > ul,
-	.main-navigation > div > ul > li.current-menu-item > ul {
-		box-shadow: none;
-		overflow: hidden;
 	}
 	.main-navigation > div > ul > li:hover > ul,
 	.main-navigation > div > ul > li:focus-within > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
-	}
-	.main-navigation > div > ul > li:hover > ul::before,
-	.main-navigation > div > ul > li[focus-within] > ul::before,
-	.main-navigation > div > ul > li.current-menu-item > ul::before {
-		border-bottom: 8px solid #20603C;
-		border-right: 8px solid transparent;
-		border-left: 8px solid transparent;
-		content: "";
-		display: block;
-		margin-right: 16px;
-		width: 16px;
 	}
 	.main-navigation > div > ul > li:hover > ul::before,
 	.main-navigation > div > ul > li:focus-within > ul::before,
@@ -4175,27 +4141,10 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 		width: 16px;
 	}
 	.main-navigation > div > ul > li:hover li > a,
-	.main-navigation > div > ul > li[focus-within] li > a,
-	.main-navigation > div > ul > li.current-menu-item li > a {
-		background: #20603C;
-		color: #FFFDF6;
-	}
-	.main-navigation > div > ul > li:hover li > a,
 	.main-navigation > div > ul > li:focus-within li > a,
 	.main-navigation > div > ul > li.current-menu-item li > a {
 		background: #20603C;
 		color: #FFFDF6;
-	}
-	.main-navigation > div > ul > li:hover li:hover > a,
-	.main-navigation > div > ul > li:hover li.focus > a,
-	.main-navigation > div > ul > li:hover li.current-menu-item > a,
-	.main-navigation > div > ul > li[focus-within] li:hover > a,
-	.main-navigation > div > ul > li[focus-within] li.focus > a,
-	.main-navigation > div > ul > li[focus-within] li.current-menu-item > a,
-	.main-navigation > div > ul > li.current-menu-item li:hover > a,
-	.main-navigation > div > ul > li.current-menu-item li.focus > a,
-	.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
-		background: #133a24;
 	}
 	.main-navigation > div > ul > li:hover li:hover > a,
 	.main-navigation > div > ul > li:hover li.focus > a,

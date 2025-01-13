@@ -375,7 +375,8 @@ abbr[title] {
 	/* 1 */
 	text-decoration: underline;
 	/* 2 */
-	text-decoration: underline dotted;
+	-webkit-text-decoration: underline dotted;
+	        text-decoration: underline dotted;
 	/* 2 */
 }
 
@@ -2869,11 +2870,6 @@ body:not(.fse-enabled) .site-description {
 	z-index: 1;
 }
 
-.main-navigation > div > ul li:hover, .main-navigation.js-focus-within > div > ul li[focus-within], .js-focus-within .main-navigation > div > ul li[focus-within] {
-	cursor: pointer;
-	z-index: 99999;
-}
-
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2884,15 +2880,6 @@ body:not(.fse-enabled) .site-description {
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation.js-focus-within > div > ul li[focus-within] > ul,
-	.js-focus-within .main-navigation > div > ul li[focus-within] > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li:focus-within > ul,

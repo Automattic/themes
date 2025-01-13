@@ -352,7 +352,8 @@ abbr[title] {
 	/* 1 */
 	text-decoration: underline;
 	/* 2 */
-	text-decoration: underline dotted;
+	-webkit-text-decoration: underline dotted;
+	        text-decoration: underline dotted;
 	/* 2 */
 }
 
@@ -2813,11 +2814,6 @@ body:not(.fse-enabled) .site-description {
 	z-index: 1;
 }
 
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
-	cursor: pointer;
-	z-index: 99999;
-}
-
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2828,14 +2824,6 @@ body:not(.fse-enabled) .site-description {
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li[focus-within] > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li:focus-within > ul,
@@ -4187,22 +4175,10 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 		background: #252E36;
 	}
 	.main-navigation > div > ul > li:hover > ul,
-	.main-navigation > div > ul > li[focus-within] > ul,
-	.main-navigation > div > ul > li.current-menu-item > ul {
-		box-shadow: none;
-		overflow: hidden;
-	}
-	.main-navigation > div > ul > li:hover > ul,
 	.main-navigation > div > ul > li:focus-within > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
-	}
-	.main-navigation > div > ul > li:hover li > a,
-	.main-navigation > div > ul > li[focus-within] li > a,
-	.main-navigation > div > ul > li.current-menu-item li > a {
-		background: #252E36;
-		border-top: 1px solid rgba(255, 255, 255, 0.5);
 	}
 	.main-navigation > div > ul > li:hover li > a,
 	.main-navigation > div > ul > li:focus-within li > a,
