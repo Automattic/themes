@@ -1,5 +1,8 @@
-// Navigation
+@counter-style empty {
+	symbols: "– ";
+}
 
+// Navigation
 .main-navigation {
 
 	color: #{map-deep-get($config-header, "main-nav", "color", "text")};
@@ -181,7 +184,7 @@
 				/* Increment the dashes */
 				counter-increment: nested-list;
 				/* Insert dashes with spaces in between */
-				content: "\2013\00a0" counters( nested-list, "\2013\00a0", none );
+				content: "– " counters(nested-list, "– ", empty);
 			}
 		}
 	}
