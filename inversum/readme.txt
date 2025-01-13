@@ -14,6 +14,19 @@ A blog theme entirely designed in the Editor, Inversum offers a direct experienc
 
 == Changelog ==
 
+= 1.2.1 =
+* Removed the extra column from all the templates (#8555)
+* Removed blog home (#8555)
+* Made single post and page template more similar (#8555)
+* Removed unused images/upsidedown_sitelogo.png (#8555)
+* Removed unused parts/post-meta.html (#8555)
+* Removed unused patterns/comments.php (#8555)
+* Used '#' for the URLs in social links in the footer (#8555)
+* On readme.txt and style.css: Change Tested up to: to 6.7 and Requires PHP: to 7.0 (#8555)
+* Removed theme tags and added the mentioned one (#8555)
+* Removed several numeric font sizes in the theme, replacing them with preset type sizes (#8555)
+* Change the version to 1.2.0 in style.css (#8555)
+
 = 1.2 =
 * Corrected authors/contributors names (#8478)
 
