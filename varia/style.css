@@ -970,6 +970,10 @@ footer {
  * Elements
  * - Styles for basic HTML elemants
  */
+@counter-style empty {
+	symbols: "";
+}
+
 blockquote {
 	padding-left: 16px;
 }
@@ -2790,7 +2794,7 @@ body:not(.fse-enabled) .site-description {
 	z-index: 1;
 }
 
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
+.main-navigation > div > ul li:hover, .main-navigation.js-focus-within > div > ul li[focus-within], .js-focus-within .main-navigation > div > ul li[focus-within] {
 	cursor: pointer;
 	z-index: 99999;
 }
@@ -2807,7 +2811,8 @@ body:not(.fse-enabled) .site-description {
 		/* Submenu display */
 	}
 	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li[focus-within] > ul,
+	.main-navigation.js-focus-within > div > ul li[focus-within] > ul,
+	.js-focus-within .main-navigation > div > ul li[focus-within] > ul,
 	.main-navigation > div > ul li ul:hover,
 	.main-navigation > div > ul li ul:focus {
 		visibility: visible;
@@ -2910,7 +2915,7 @@ body:not(.fse-enabled) .site-description {
 	/* Increment the dashes */
 	counter-increment: nested-list;
 	/* Insert dashes with spaces in between */
-	content: "– " counters(nested-list, "– ", none);
+	content: "– " counters(nested-list, "– ", empty);
 }
 
 @media only screen and (min-width: 560px) {
