@@ -6,8 +6,8 @@
  */
 ?>
 
-<!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|90","left":"var:preset|spacing|90"}}}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--90);padding-left:var(--wp--preset--spacing--90)">
+<!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 
 <!-- wp:columns -->
 <div class="wp-block-columns">

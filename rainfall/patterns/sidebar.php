@@ -10,8 +10,8 @@
 <div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|20"}}}} -->
-<h6 class="wp-block-heading" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--20)"><?php esc_html_e('Search for a Topic', 'rainfall');?></h6>
+<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"0.44rem"}}}} -->
+<h6 class="wp-block-heading" style="margin-bottom:0.44rem"><?php esc_html_e('Search for a Topic', 'rainfall');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:search {"label":"Search for a Topic","showLabel":false,"placeholder":"Type something...","buttonText":"Search"} /-->
@@ -20,8 +20,8 @@
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} -->
-<h6 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--20)"><?php esc_html_e('Categories', 'rainfall');?></h6>
+<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"0.44rem"}}}} -->
+<h6 class="wp-block-heading" style="margin-bottom:0.44rem"><?php esc_html_e('Categories', 'rainfall');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:categories /-->
@@ -30,8 +30,8 @@
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} -->
-<h6 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--20)"><?php esc_html_e('Posted Recently', 'rainfall');?></h6>
+<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"0.44rem"}}}} -->
+<h6 class="wp-block-heading" style="margin-bottom:0.44rem"><?php esc_html_e('Posted Recently', 'rainfall');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:latest-posts {"postsToShow":3} /-->
@@ -40,8 +40,8 @@
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} -->
-<h6 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--20)"><?php esc_html_e('Submissions', 'rainfall');?></h6>
+<!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"0.44rem"}}}} -->
+<h6 class="wp-block-heading" style="margin-bottom:0.44rem"><?php esc_html_e('Submissions', 'rainfall');?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
