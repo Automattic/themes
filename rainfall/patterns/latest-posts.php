@@ -6,7 +6,7 @@
  */
 ?>
 <!-- wp:heading {"level":1,"fontSize":"xx-large"} -->
-<h1 class="wp-block-heading has-xx-large-font-size">Latest Posts</h1>
+<h1 class="wp-block-heading has-xx-large-font-size"><?php echo esc_html__( 'Latest Posts', 'rainfall' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
