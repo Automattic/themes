@@ -1,6 +1,15 @@
+header.wp-block-template-part {
+
+	&.block-editor-block-list__block,
+	.site-header.block-editor-block-list__block,
+	.gapless-group {
+		position: static; //needs to override gutenberg rules so the triangle shows both on the editor and frontend.
+	}
+}
+
 .wp-site-blocks {
 	position: relative; // This is needed so that the polygon is stretched across the whole site.
-	 .site-header:before {
+	.site-header::before {
 		content: "";
 		background-color: var(--wp--custom--color--tertiary);
 		position: absolute;
@@ -9,12 +18,15 @@
 		left: 0;
 		right: 0;
 		z-index: -1;
+
 		@include break-small-only() {
 			clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
 		}
+
 		@include break-small() {
 			clip-path: polygon(0 0, 100vw 0, 100vw 37vw, 52vw 70vw, 0 5vw);
 		}
+
 		@include break-large() {
 			clip-path: polygon(13vw 0, 100vw 0, 100vw 16vw, 50vw 51vw);
 		}

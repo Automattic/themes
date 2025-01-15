@@ -374,7 +374,11 @@ textarea:focus {
   outline: 1px dotted currentcolor;
 }
 
-.home .site-footer-container .wp-block-group:before {
+.quadrat-site-footer {
+  margin-left: calc(-1 * var(--wp--custom--gap--horizontal));
+  margin-right: calc(-1 * var(--wp--custom--gap--horizontal));
+}
+.quadrat-site-footer:before {
   content: "";
   background-color: var(--wp--custom--color--tertiary);
   clip-path: polygon(41vw 49vw, 100vw 68vw, 100vw 100vw, 18vw 100vw);
@@ -384,6 +388,12 @@ textarea:focus {
   left: 0;
   right: 0;
   z-index: -1;
+}
+
+header.wp-block-template-part.block-editor-block-list__block,
+header.wp-block-template-part .site-header.block-editor-block-list__block,
+header.wp-block-template-part .gapless-group {
+  position: static;
 }
 
 .wp-site-blocks {
