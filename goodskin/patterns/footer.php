@@ -25,15 +25,15 @@ declare( strict_types = 1 );
 <!-- wp:column {"verticalAlignment":"bottom","width":"66.66%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:66.66%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontWeight":"300"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-style:italic;font-weight:300"><a href="#">Instagram</a></p>
+<p class="has-large-font-size" style="font-style:italic;font-weight:300"><a href="#"><?php echo esc_html__( 'Instagram', 'goodskin' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontWeight":"300"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-style:italic;font-weight:300"><a href="#">TikTok</a></p>
+<p class="has-large-font-size" style="font-style:italic;font-weight:300"><a href="#"><?php echo esc_html__( 'TikTok', 'goodskin' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontWeight":"300"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-style:italic;font-weight:300"><a href="#">Youtube</a></p>
+<p class="has-large-font-size" style="font-style:italic;font-weight:300"><a href="#"><?php echo esc_html__( 'Youtube', 'goodskin' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
