@@ -1039,6 +1039,10 @@ footer {
  * Elements
  * - Styles for basic HTML elemants
  */
+@counter-style empty {
+	symbols: "";
+}
+
 blockquote {
 	padding-right: 16px;
 }
@@ -2974,7 +2978,7 @@ body:not(.fse-enabled) .site-description {
 	/* Increment the dashes */
 	counter-increment: nested-list;
 	/* Insert dashes with spaces in between */
-	content: "– " counters(nested-list, "– ", none);
+	content: "– " counters(nested-list, "– ", empty);
 }
 
 @media only screen and (min-width: 560px) {
@@ -4063,6 +4067,13 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 
 .wp-block-jetpack-map .mapboxgl-popup h3 {
 	padding-top: 15px;
+}
+
+/**
+ * Related Posts
+ */
+.entry-content #jp-relatedposts {
+	margin: 0 auto;
 }
 
 /**
