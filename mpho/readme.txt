@@ -38,7 +38,7 @@ Mpho is a minimalist single column theme that draws inspiration from short-sized
 
 Mpho WordPress Theme, (C) 2023 Automattic
 Mpho is distributed under the terms of the GNU GPL.
-Mpho is based on Fatima (https://github.com/Automattic/themes/tree/trunk/fatima), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Mpho is based on Fatima (https://wordpress.com/theme/fatima), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

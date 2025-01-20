@@ -35,7 +35,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-Partygurl is based on Didone (https://github.com/Automattic/themes/tree/trunk/didone), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Partygurl is based on Didone (https://wordpress.com/theme/didone), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Fonts ==
 Tex Gyre Heros Font

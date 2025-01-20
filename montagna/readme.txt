@@ -34,7 +34,7 @@ A WordPress theme for travel-related websites and blogs, designed to showcase st
 
 Montagna WordPress Theme, (C) 2023 Automattic
 Montagna is distributed under the terms of the GNU GPL.
-Montagna is based on Blank Canvas (https://github.com/automattic/themes/tree/trunk/blank-canvas-3), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Montagna is based on Blank Canvas (https://wordpress.com/theme/blank-canvas-3), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
