@@ -1,8 +1,8 @@
 == Layover ==
 
 Contributors: Automattic
-Requires at least: 6.0
-Tested up to: 6.5
+Requires at least: 5.8
+Tested up to: 6.7
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,21 +41,34 @@ Layover is based on Overlay (), (C) Automattic, [GPLv2 or later](http://www.gnu.
 
 
 == Images ==
-William II, Prince of Orange, and his Bride, Mary Stuart (1641) - Anthony van Dyck (Flemish, 1599-1641)
-License: Public domain
-File: https://artvee.com/dl/william-ii-prince-of-orange-and-his-bride-mary-stuart/
 
+Prince of Orange, William II, and his Bride, Mary Stuart (1641) - Anthony van Dyck (Flemish, 1599-1641)
+License: Public domain
+Source: https://artvee.com/dl/william-ii-prince-of-orange-and-his-bride-mary-stuart/
 
 == Fonts ==
 
 Manrope
-Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope)
-Source: http://gent.media
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+Copyright 2018 The Manrope Project Authors
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1 .
+License URI: This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
+Source: https://github.com/sharanda/manrope
 
-DM Sans
-Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
-Source: https://www.colophon-foundry.org
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+Cardo
+Copyright (c) 2002-2011, David J. Perry (hospes02@scholarsfonts.net)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1 .
+License URI: This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
+
+Instrument Serif
+Copyright 2022 The Instrument Serif Project Authors
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1 . 
+License URI: This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
+Source: https://github.com/Instrument/instrument-serif
+
+Outward
+Copyright (c) 2017, Raoul Audouin (http://raoulaudouin.fr), with Reserved Font Name Outward.
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1 . 
+License URI: This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
+Source: https://velvetyne.fr/fonts/outward/
 
 

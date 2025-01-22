@@ -1,15 +1,13 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: header
  * Slug: layover/header
- * Categories: hidden
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:4rem"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<div class="wp-block-group"><!-- wp:site-logo {"width":24,"shouldSyncIcon":true,"style":{"color":[]}} /-->
+<!-- wp:group {"metadata":{"name":"Header Wrapper"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--70)"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"width":24,"shouldSyncIcon":false,"style":{"color":[]}} /-->
 
 <!-- wp:site-title {"style":{"spacing":{"blockGap":"2rem"}}} /--></div>
 <!-- /wp:group -->
@@ -21,6 +19,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground"} -->
-<p class="has-text-align-center has-foreground-color has-text-color has-link-color"><?php echo __('Shakespeare published 154 sonnets in his <em>quarto</em> in 1609. While the initial 126 are addressed to a young man, the final 28 are directed toward an enigmatic woman referred to as the <em>dark lady</em>.', 'layover');?></p>
+<p class="has-text-align-center has-foreground-color has-text-color has-link-color"><?php /* Translators: 1. is the start of a 'em' HTML element, 2. is the end of a 'em' HTML element, 3. is the start of a 'em' HTML element, 4. is the end of a 'em' HTML element */ 
+echo sprintf( esc_html__( 'Shakespeare published 154 sonnets in his %1$squarto%2$s in 1609. While the initial 126 are addressed to a young man, the final 28 are directed toward an enigmatic woman referred to as the %3$sdark lady%4$s.', 'layover' ), '<em>', '</em>', '<em>', '</em>' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
