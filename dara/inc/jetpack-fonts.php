@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 
 add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {

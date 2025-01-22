@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * The template used for displaying hero content in page.php and page-templates.
