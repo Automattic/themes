@@ -2,8 +2,8 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 5.7
+Tested up to: 6.7
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,7 +43,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-
 MyMenu is based on My Menu (), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
@@ -51,20 +50,36 @@ This theme bundles the following third-party resources:
 
 == Fonts ==
 
-Font: DM Mono from Google Fonts
-License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+DM Mono
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
 Source: https://fonts.google.com/specimen/DM+Mono
 
-Font: Fraunces from Google Fonts
-License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Fraunces
+Copyright 2018 The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
 Source: https://fonts.google.com/specimen/Fraunces
 
-Font: TeX Gyre Adventor font
-License: GUST e-foundry License v1.00 (http://www.gust.org.pl/fonts/licenses/GUST-FONT-LICENSE.txt)
-Source: https://www.fontsquirrel.com/fonts/tex-gyre-adventor
+Nata Sans
+Copyright (c) 2024, Daniel Uzquiano (https://dnlzqn.xyz|daniel.uzquiano@gmail.com>), with Reserved Font Name Nata Sans.
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
+Source: https://github.com/dnlzqn/nata-sans
+
+TeX Gyre Adventor
+Copyright 1999 2002-2008 LaTeX3 Project - The TeX Gyre font collection defines versions of the base 35 PostScript
+fonts with greatly extended glyph collections. The original fonts are the base35 release from URW.
+License: GUST Font License (an instance of the LaTeX Project Public License)
+License URI: http://www.gust.org.pl/fonts/licenses/GUST-FONT-LICENSE.txt
+Source: https://www.gust.org.pl/projects/e-foundry/tex-gyre
 
 
 == Images ==
+
+Screenshot Logo Design by the theme author Henrique Iamarino.
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
 
 Image: Girl holding a juicy beef burger 
 License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)
@@ -73,7 +88,6 @@ Source: https://www.foodiesfeed.com/free-food-photo/girl-holding-a-juicy-beef-bu
 Image: Young lady holding huge burger
 License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)
 Source: https://www.foodiesfeed.com/free-food-photo/young-lady-holding-huge-burger/
-
 
 Image: Halloumi cheeseburger
 License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)

@@ -71,6 +71,49 @@
 			"wideSize": "1200px"
 		},
 		"spacing": {
+			"customSpacingSize": true,
+			"spacingScale": {
+				"theme": {
+					"steps": 0
+				}
+			},
+			"spacingSizes": [
+				{
+					"name": "2X-Small",
+					"size": "0.5rem",
+					"slug": "20"
+				},
+				{
+					"name": "X-Small",
+					"size": "clamp(0.5rem, 1vw, 1rem)",
+					"slug": "30"
+				},
+				{
+					"name": "Small",
+					"size": "clamp(0.75rem, 1.5vw, 1.5rem)",
+					"slug": "40"
+				},
+				{
+					"name": "Medium",
+					"size": "clamp(1rem, 2vw, 2rem)",
+					"slug": "50"
+				},
+				{
+					"name": "Large",
+					"size": "clamp(1.5rem, 3vw, 3rem)",
+					"slug": "60"
+				},
+				{
+					"name": "X-Large",
+					"size": "clamp(2rem, 4vw, 4rem)",
+					"slug": "70"
+				},
+				{
+					"name": "2X-Large",
+					"size": "clamp(3rem, 6vw, 6rem)",
+					"slug": "80"
+				}
+			],
 			"units": [
 				"%",
 				"px",
@@ -96,7 +139,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/dm-mono_normal_400.ttf"
+								"file:./assets/fonts/dm-mono/dm-mono-400-normal.ttf"
 							]
 						},
 						{
@@ -104,43 +147,22 @@
 							"fontStyle": "italic",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/dm-mono_italic_400.ttf"
+								"file:./assets/fonts/dm-mono/dm-mono-400-italic.ttf"
 							]
 						}
 					],
 					"fontFamily": "DM Mono",
+					"name": "DM Mono",
 					"slug": "dm-mono"
 				},
 				{
 					"fontFace": [
 						{
-							"fontFamily": "TeXGyreAdventor",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/texgyreadventor_normal_700.woff"
-							]
-						},
-						{
-							"fontFamily": "TeXGyreAdventor",
-							"fontStyle": "italic",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/texgyreadventor_italic_700.woff"
-							]
-						}
-					],
-					"fontFamily": "TeXGyreAdventor",
-					"slug": "texgyreadventor"
-				},
-				{
-					"fontFace": [
-						{
 							"fontFamily": "Fraunces",
 							"fontStyle": "normal",
 							"fontWeight": "600",
 							"src": [
-								"file:./assets/fonts/fraunces_normal_600.ttf"
+								"file:./assets/fonts/fraunces/fraunces-vf-normal.woff2"
 							]
 						},
 						{
@@ -148,12 +170,75 @@
 							"fontStyle": "italic",
 							"fontWeight": "600",
 							"src": [
-								"file:./assets/fonts/fraunces_italic_600.ttf"
+								"file:./assets/fonts/fraunces/fraunces-vf-italic.woff2"
 							]
 						}
 					],
 					"fontFamily": "Fraunces",
+					"name": "Fraunces",
 					"slug": "fraunces"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Nata Sans",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/nata-sans/nata-sans-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Nata Sans",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/nata-sans/nata-sans-600-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Nata Sans",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/nata-sans/nata-sans-700-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Nata Sans",
+							"fontStyle": "normal",
+							"fontWeight": "800",
+							"src": [
+								"file:./assets/fonts/nata-sans/nata-sans-800-normal.woff2"
+							]
+						}
+					],
+					"fontFamily": "Nata Sans",
+					"name": "Nata Sans",
+					"slug": "nata-sans"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "TeX Gyre Adventor",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/tex-gyre-adventor/tex-gyre-adventor-700-normal.woff"
+							]
+						},
+						{
+							"fontFamily": "TeX Gyre Adventor",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/tex-gyre-adventor/tex-gyre-adventor-700-italic.woff"
+							]
+						}
+					],
+					"fontFamily": "TeX Gyre Adventor",
+					"name": "TeX Gyre Adventor",
+					"slug": "tex-gyre-adventor"
 				}
 			],
 			"fontSizes": [
@@ -358,7 +443,7 @@
 			},
 			"core/query-pagination": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--texgyreadventor)",
+					"fontFamily": "var(--wp--preset--font-family--tex-gyre-adventor)",
 					"fontSize": "var(--wp--preset--font-size--x-large)",
 					"letterSpacing": "0rem"
 				}
@@ -498,7 +583,7 @@
 					"text": "var(--wp--preset--color--primary)"
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--texgyreadventor)",
+					"fontFamily": "var(--wp--preset--font-family--tex-gyre-adventor)",
 					"fontWeight": "400",
 					"lineHeight": "1.125"
 				}
@@ -533,18 +618,24 @@
 			"fontFamily": "var(--wp--preset--font-family--dm-mono)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
 			"fontStyle": "normal",
-			"fontWeight": "500",
 			"lineHeight": "1.5"
 		}
 	},
 	"templateParts": [
 		{
 			"area": "header",
-			"name": "header"
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "uncategorized",
+			"name": "post-meta",
+			"title": "Post Meta"
 		},
 		{
 			"area": "footer",
-			"name": "footer"
+			"name": "footer",
+			"title": "Footer"
 		}
 	],
 	"version": 3,
