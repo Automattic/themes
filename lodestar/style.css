@@ -4,6 +4,9 @@ Theme URI: http://theme.wordpress.com/themes/lodestar
 Author: Automattic
 Author URI: https://www.wordpress.com
 Description: Lodestar is a trendy one-page theme designed with startups and small business ventures in mind.
+Requires at least: 4.0
+Tested up to: 4.7
+Requires PHP: 7.4
 Version: 1.0.24-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -281,7 +284,6 @@ th {
 	width: 1px;
 	overflow: hidden;
 }
-
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -396,12 +398,7 @@ textarea {
 	line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: "Work Sans", "Helvetica Neue", helvetica, arial, sans-serif;
 	font-weight: 800;
@@ -456,10 +453,7 @@ p {
 	padding: 0;
 }
 
-dfn,
-cite,
-em,
-i {
+dfn, cite, em, i {
 	font-style: italic;
 }
 
@@ -485,23 +479,18 @@ pre {
 	padding: 1.6em;
 }
 
-code,
-kbd,
-tt,
-var {
+code, kbd, tt, var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
 
-abbr,
-acronym {
+abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
 
-mark,
-ins {
+mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
@@ -510,11 +499,9 @@ big {
 	font-size: 125%;
 }
 
-blockquote,
-q {
+blockquote, q {
 	quotes: "" "";
 }
-
 blockquote::before,
 blockquote::after,
 q::before,
@@ -529,8 +516,8 @@ q::after {
 /* Genericons */
 
 .menu-toggle::before,
-.menu-item-has-children>a::after,
-.page_item_has_children>a::after,
+.menu-item-has-children > a::after,
+.page_item_has_children > a::after,
 .bypostauthor::before {
 	font-family: Genericons;
 	font-size: 1em;
@@ -681,8 +668,8 @@ ol {
 	list-style: decimal;
 }
 
-li>ul,
-li>ol {
+li > ul,
+li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -860,7 +847,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1200px;
-	max-width: calc(1200px - 1em);
+	max-width: calc( 1200px - 1em );
 	padding-left: 2em;
 	padding-right: 2em;
 }
@@ -905,7 +892,7 @@ body {
 
 .header-top a:hover,
 .header-top a:focus {
-	color: rgba(255, 255, 255, 0.7);
+	color: rgba(255,255,255,0.7);
 }
 
 .site-top-content {
@@ -913,7 +900,7 @@ body {
 	padding: 0.75em 1.5em;
 }
 
-.main-navigation+.site-top-content {
+.main-navigation + .site-top-content {
 	padding-top: 0;
 }
 
@@ -980,7 +967,7 @@ body {
 
 body:not(.no-header-image) .custom-header-image::before,
 .lodestar-front-page .custom-header-image::before {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0,0,0,0.5);
 	bottom: 0;
 	content: "";
 	left: 0;
@@ -1037,7 +1024,7 @@ body:not(.no-header-image) .custom-header-image::before,
 /* Small menu. */
 .menu-toggle {
 	background-color: transparent;
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255,255,255,0.2);
 	box-shadow: none;
 	color: #fff;
 	display: inline-block;
@@ -1091,14 +1078,10 @@ body:not(.no-header-image) .custom-header-image::before,
 
 .panel-image::before {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+100 */
-	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
-	/* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
-	/* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
-	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#4d000000', GradientType=0);
-	/* IE6-9 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#4d000000',GradientType=0 ); /* IE6-9 */
 	bottom: 0;
 	content: "";
 	left: 0;
@@ -1241,7 +1224,7 @@ body:not(.logged-in) .lodestar-panel .jetpack-testimonial .entry-header {
 	font-size: 1.25rem;
 }
 
-.lodestar-intro .entry-content>*:last-child {
+.lodestar-intro .entry-content > *:last-child {
 	margin-bottom: 0;
 }
 
@@ -1284,7 +1267,7 @@ body:not(.logged-in) .lodestar-panel .jetpack-testimonial .entry-header {
 
 .entry-title a:hover,
 .entry-title a:focus {
-	color: #666;
+	 color: #666;
 }
 
 .entry-meta {
@@ -1688,7 +1671,7 @@ h2.widget-title {
 	padding: 0.5em 0;
 }
 
-.widget ul li+li {
+.widget ul li + li {
 	margin-top: -1px;
 }
 
@@ -1850,8 +1833,7 @@ h2.widget-title {
 	border: 1px solid #ddd;
 	display: inline-block;
 	float: left;
-	font-size: 1rem !important;
-	/* !important to overwrite inline styles */
+	font-size: 1rem !important; /* !important to overwrite inline styles */
 	margin: 4px 4px 0 0 !important;
 	padding: 4px 10px 5px !important;
 	position: relative;
@@ -1902,14 +1884,10 @@ h2.widget-title {
 .footer-image::before {
 	position: absolute;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.25+100 */
-	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
-	/* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
-	/* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
-	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#40000000', GradientType=0);
-	/* IE6-9 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#40000000',GradientType=0 ); /* IE6-9 */
 	content: "";
 	top: 0;
 	bottom: 0;
@@ -2026,11 +2004,9 @@ h2.widget-title {
 }
 
 .infinite-loader .spinner {
-	left: 50% !important;
-	/* !important to override inline styles */
+	left: 50% !important; /* !important to override inline styles */
 	margin-left: -9px;
-	top: 0 !important;
-	/* !important to override inline styles */
+	top: 0 !important; /* !important to override inline styles */
 }
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -2055,41 +2031,36 @@ h2.widget-title {
 
 .site-content .contact-form input[type="radio"],
 .site-content .contact-form input[type="checkbox"] {
-	margin-bottom: 6px;
-	margin-right: .3em;
-	vertical-align: middle;
+  margin-bottom: 6px;
+  margin-right: .3em;
+  vertical-align: middle;
 }
-
 .site-content .contact-form label.checkbox,
 .site-content .contact-form label.checkbox-multiple,
 .site-content .contact-form label.radio {
-	font-weight: normal;
-	font-style: normal;
-	margin-bottom: .4375em;
-	float: none;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: .4375em;
+  float: none;
 }
-
 .site-content .contact-form label.checkbox,
-.site-content .contact-form>div {
-	margin-bottom: .875em;
+.site-content .contact-form > div {
+  margin-bottom: .875em;
 }
-
 .site-content .contact-form textarea,
 .site-content .contact-form input[type='text'],
 .site-content .contact-form input[type='email'],
 .site-content .contact-form input[type='url'],
 .site-content .contact-form select {
-	margin-bottom: .4375em;
-	max-width: 100%;
+  margin-bottom: .4375em;
+  max-width: 100%;
 }
-
 .site-content .contact-form .grunion-field-label {
-	margin-bottom: .21875em;
-	width: 100%;
+  margin-bottom: .21875em;
+  width: 100%;
 }
-
 .site-content .contact-form .grunion-field-label.textarea {
-	width: 100%;
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -2106,15 +2077,15 @@ h2.widget-title {
 	font-weight: normal;
 	font-size: 14px;
 	font-size: 0.85rem;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .entry-content div#jp-relatedposts h3.jp-relatedposts-headline em {
 	font-weight: normal;
 }
 
-.sd-rating+.sd-sharing-enabled {
+.sd-rating + .sd-sharing-enabled {
 	padding-top: 1em;
 	margin: 1em 0;
 }
@@ -2124,17 +2095,15 @@ h2.widget-title {
 }
 
 #wpstats {
-	display: none;
+    display: none;
 }
 
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 img {
-	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
 }
 
 .page-content .wp-smiley,
@@ -2339,7 +2308,6 @@ object {
 
 /* Add a highlight class to improve Customizer behaviour */
 @-webkit-keyframes flash {
-
 	0%,
 	20%,
 	40%,
@@ -2359,7 +2327,6 @@ object {
 }
 
 @keyframes flash {
-
 	0%,
 	20%,
 	40%,
@@ -2599,14 +2566,13 @@ object {
 	/* Front Page */
 
 	.lodestar-front-page .custom-header {
-		margin-top: 0 !important;
-		/* Override styles added with JavaScript */
+		margin-top: 0 !important; /* Override styles added with JavaScript */
 	}
 
 	.lodestar-front-page .custom-header-image {
 		height: 1200px;
 		height: 100vh;
-		height: calc(100vh - 85px);
+		height: calc( 100vh - 85px );
 		max-height: 100%;
 	}
 
@@ -2634,7 +2600,6 @@ object {
 		padding-left: 1em;
 		padding-right: 1em;
 	}
-
 	.one-column .panel-content .entry-content {
 		padding-left: 15%;
 		padding-right: 15%;
@@ -2705,12 +2670,9 @@ object {
 	.two-column .panel-content .entry-content .wp-block-image,
 	.two-column .panel-content .entry-content .wp-block-gallery,
 	.two-column .panel-content .entry-content .wp-block-embed {
-		-webkit-column-break-inside: avoid;
-		/* Chrome, Safari, Opera */
-		page-break-inside: avoid;
-		/* Firefox */
-		break-inside: avoid;
-		/* IE 10+ */
+		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+		          page-break-inside: avoid; /* Firefox */
+		               break-inside: avoid; /* IE 10+ */
 	}
 
 	/* Blog Posts on front page */
@@ -2864,29 +2826,29 @@ object {
 		background: #29292a;
 	}
 
-	.main-navigation ul li.current_page_item>a,
-	.main-navigation ul li.current-menu-item>a,
-	.main-navigation ul li.current_page_ancestor>a {
+	.main-navigation ul li.current_page_item > a,
+	.main-navigation ul li.current-menu-item > a,
+	.main-navigation ul li.current_page_ancestor > a {
 		background: #151515;
 	}
 
-	.main-navigation ul ul li:hover>ul,
-	.main-navigation ul ul li.focus>ul {
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li.focus > ul {
 		left: 100%;
 	}
 
 	.main-navigation ul ul a {
-		padding: 0.75em 1.25em;
+	    padding: 0.75em 1.25em;
 		width: 250px;
 	}
 
-	.main-navigation ul li:hover>ul,
-	.main-navigation ul li.focus>ul {
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
 		left: auto;
 	}
 
-	.main-navigation .menu-item-has-children>a::after,
-	.main-navigation .page_item_has_children>a::after {
+	.main-navigation .menu-item-has-children > a::after,
+	.main-navigation .page_item_has_children > a::after {
 		content: "\f431";
 		display: inline;
 		left: 2px;
@@ -2894,17 +2856,15 @@ object {
 		top: -2px;
 	}
 
-	.main-navigation ul ul .menu-item-has-children>a::after,
-	.main-navigation ul ul .page_item_has_children>a::after {
+	.main-navigation ul ul .menu-item-has-children > a::after,
+	.main-navigation ul ul .page_item_has_children > a::after {
 		margin-top: -10px;
 		left: auto;
 		position: absolute;
 		right: 1.0em;
 		top: 50%;
-		-webkit-transform: rotate(-90deg);
-		/* Chrome, Safari, Opera */
-		-ms-transform: rotate(-90deg);
-		/* IE 9 */
+		-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+		-ms-transform: rotate(-90deg); /* IE 9 */
 		transform: rotate(-90deg);
 	}
 
@@ -2931,7 +2891,7 @@ object {
 	}
 
 	.has-top-content .site-top-content,
-	.has-top-content .main-navigation+.site-top-content {
+	.has-top-content .main-navigation + .site-top-content {
 		width: 35%;
 		padding: 1em 0 1em 2em;
 		text-align: right;
@@ -2939,8 +2899,8 @@ object {
 
 	.site-header-fixed .site-top-content,
 	.site-header-hidden .site-top-content,
-	.site-header-fixed .main-navigation+.site-top-content,
-	.site-header-hidden .main-navigation+.site-top-content {
+	.site-header-fixed .main-navigation + .site-top-content,
+	.site-header-hidden .main-navigation + .site-top-content {
 		padding-bottom: 1em;
 		padding-top: 1em;
 	}
@@ -3034,7 +2994,7 @@ object {
 		padding-top: 28.6%;
 		position: relative;
 		width: 48%;
-		width: calc(50% - 20px);
+		width: calc( 50% - 20px );
 	}
 
 	.portfolio-projects article.hide {
@@ -3072,7 +3032,7 @@ object {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+  		justify-content: center;
 		padding: 1.5em;
 		position: absolute;
 		top: 0;
@@ -3139,7 +3099,7 @@ object {
 		padding: 0;
 	}
 
-	html:not(.no-background-fixed) .footer {
+	html:not(.no-background-fixed)  .footer {
 		background-attachment: fixed;
 	}
 
@@ -3171,17 +3131,15 @@ object {
 	}
 }
 
-@media screen and (min-width: 65em) {
-
+@media screen and ( min-width: 65em ) {
 	html:not(.no-background-fixed) .custom-header-image,
-	html:not(.no-background-fixed) .lodestar-front-page .custom-header-image,
-	html:not(.no-background-fixed) .panel-image {
+	html:not(.no-background-fixed)  .lodestar-front-page .custom-header-image,
+	html:not(.no-background-fixed)  .panel-image {
 		background-attachment: fixed;
 	}
 }
 
-@media screen and (min-width: 70em) {
-
+@media screen and ( min-width: 70em ) {
 	/* Front Page panels */
 	.one-column .panel-content .portfolio-projects,
 	.one-column .panel-content .testimonials,
@@ -3191,11 +3149,9 @@ object {
 	}
 }
 
-@media screen and (max-width: 59.999em) {
-
+@media screen and ( max-width: 59.999em ) {
 	.custom-header,
 	.custom-header-image {
-		margin-top: 0 !important;
-		/* !important to override styles added by JavaScript */
+		margin-top: 0 !important; /* !important to override styles added by JavaScript */
 	}
 }
