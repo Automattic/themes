@@ -23,8 +23,8 @@
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:post-date {"style":{"spacing":{"blockGap":"1rem"}}} /-->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem"},"spacing":{"blockGap":"1rem"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-size:1rem"><?php esc_html_e('·', 'brightblog');?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"small"},"spacing":{"blockGap":"1rem"}},"fontFamily":"rubik"} -->
+<p class="has-rubik-font-family" style="font-size:small"><?php esc_html_e('·', 'brightblog');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"category","style":{"spacing":{"blockGap":"1rem"}}} /--></div>
