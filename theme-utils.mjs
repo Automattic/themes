@@ -13,12 +13,10 @@ import AjvDraft04 from 'ajv-draft-04';
 import glob from 'fast-glob';
 import chalk, { Chalk } from 'chalk';
 
-const remoteSSH = 'wpcom-sandbox';
-const sandboxPublicThemesFolder =
-	'/home/wpcom/public_html/wp-content/themes/pub';
-const sandboxRootFolder = '/home/wpcom/public_html/';
-const glotPressScript =
-	'~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
+const remoteSSH = process.env.REMOTE_SSH;
+const publicThemesFolder = process.env.PUBLIC_THEMES_FOLDER;
+const buildThemeZip = process.env.BUILD_THEME_ZIP;
+const glotPressScript = process.env.GLOTPRESS_SCRIPT;
 const isWin = process.platform === 'win32';
 const coreThemes = [
 	'twentyten',
@@ -613,7 +611,7 @@ async function buildComZip( themeSlug ) {
 
 	if ( themeVersion && wpVersionCompat ) {
 		await executeOnSandbox(
-			`php ${ sandboxRootFolder }bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${ themeSlug } --themeversion=${ themeVersion } --wpversioncompat=${ wpVersionCompat };`,
+			`php ${ buildThemeZip } --stylesheet=pub/${ themeSlug } --themeversion=${ themeVersion } --wpversioncompat=${ wpVersionCompat };`,
 			true
 		);
 	} else {
@@ -632,7 +630,7 @@ async function buildComZip( themeSlug ) {
 			'Please build the .zip file for the theme manually.',
 			themeSlug
 		);
-		open( 'https://mc.a8c.com/themes/downloads/' );
+		open( process.env.THEME_DOWNLOADS_URL );
 	}
 }
 
@@ -696,7 +694,7 @@ async function checkForDeployability() {
 */
 async function landChanges( prId ) {
 	return executeCommand(
-		`ssh -tt -A ${ remoteSSH } "cd ${ sandboxPublicThemesFolder } && gh pr merge ${ prId } --squash; exit;"`,
+		`ssh -tt -A ${ remoteSSH } "cd ${ publicThemesFolder } && gh pr merge ${ prId } --squash; exit;"`,
 		true
 	);
 }
@@ -793,7 +791,7 @@ async function deployThemes( themes ) {
 */
 async function getLastDeployedHash() {
 	let result = await executeOnSandbox( `
-		cat ${ sandboxPublicThemesFolder }/.pub-git-hash
+		cat ${ publicThemesFolder }/.pub-git-hash
 	` );
 	return result;
 }
@@ -804,7 +802,7 @@ async function getLastDeployedHash() {
 async function updateLastDeployedHash() {
 	let hash = await executeCommand( `git rev-parse HEAD` );
 	await executeOnSandbox( `
-		echo '${ hash }' > ${ sandboxPublicThemesFolder }/.pub-git-hash
+		echo '${ hash }' > ${ publicThemesFolder }/.pub-git-hash
 	` );
 }
 
@@ -1151,7 +1149,7 @@ async function cleanSandbox() {
 	console.log( 'Cleaning the Themes Sandbox' );
 	await executeOnSandbox(
 		`
-		cd ${ sandboxPublicThemesFolder };
+		cd ${ publicThemesFolder };
 		git reset --hard HEAD;
 		git clean -fd;
 		git checkout trunk;
@@ -1180,7 +1178,7 @@ async function pushThemeToSandbox( theme ) {
 	console.log( `Syncing ${ theme }` );
 	return executeCommand(
 		`
-		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${ theme }/ wpcom-sandbox:${ sandboxPublicThemesFolder }/
+		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${ theme }/ wpcom-sandbox:${ publicThemesFolder }/
 	`,
 		true
 	);
@@ -1219,7 +1217,7 @@ async function pullAllThemes() {
 		try {
 			await executeCommand(
 				`
-			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${ sandboxPublicThemesFolder }/${ theme }/ ./${ theme }/ 
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${ publicThemesFolder }/${ theme }/ ./${ theme }/ 
 		`,
 				true
 			);
@@ -1234,7 +1232,7 @@ async function pullCoreThemes() {
 	for ( let theme of coreThemes ) {
 		await executeCommand(
 			`
-			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${ sandboxPublicThemesFolder }/${ theme }/ ./${ theme }/ 
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${ publicThemesFolder }/${ theme }/ ./${ theme }/ 
 		`,
 			true
 		);
@@ -1246,7 +1244,7 @@ async function pushCoreThemes() {
 	for ( let theme of coreThemes ) {
 		await executeCommand(
 			`
-			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${ theme }/ wpcom-sandbox:${ sandboxPublicThemesFolder }/${ theme }/ 
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${ theme }/ wpcom-sandbox:${ publicThemesFolder }/${ theme }/ 
 		`,
 			true
 		);
@@ -1312,7 +1310,7 @@ async function createGithubPR( commitMessage ) {
 
 	let result = await executeOnSandbox(
 		`
-		cd ${ sandboxPublicThemesFolder };
+		cd ${ publicThemesFolder };
 		git branch -D deploy
 		git checkout -b deploy
 		git add --all
@@ -1393,8 +1391,8 @@ async function createGlotPressProject( changedThemes ) {
 
 			await executeOnSandbox(
 				`
-				cd ${ sandboxPublicThemesFolder };
-				php ${ glotPressScript } ${ sandboxPublicThemesFolder }/${ themeSlug };
+				cd ${ publicThemesFolder };
+				php ${ glotPressScript } ${ publicThemesFolder }/${ themeSlug };
 			`,
 				true
 			);
