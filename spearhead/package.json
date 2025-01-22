@@ -10,12 +10,12 @@
 	"author": "automattic",
 	"license": "GPL-2.0",
 	"devDependencies": {
-		"@wordpress/browserslist-config": "^5.16.0",
+		"@wordpress/browserslist-config": "^6.16.0",
 		"chokidar-cli": "^3.0.0",
 		"minimist": "^1.2.2",
-		"node-sass": "^7.0.3",
 		"npm-run-all": "^4.1.5",
-		"rtlcss": "^4.1.0"
+		"rtlcss": "^4.1.0",
+		"sass": "^1.83.4"
 	},
 	"rtlcssConfig": {
 		"options": {
@@ -32,8 +32,8 @@
 	},
 	"scripts": {
 		"start": "npm run watch",
-		"build:style": "node-sass assets/sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1  --source-map true",
-		"build:navigation": "node-sass assets/sass/navigation.scss navigation.css --output-style expanded --indent-type tab --indent-width 1  --source-map true",
+		"build:style": "sass assets/sass/style.scss style.css",
+		"build:navigation": "sass assets/sass/navigation.scss navigation.css",
 		"build:rtl": "rtlcss style.css style-rtl.css",
 		"build:navigation-rtl": "rtlcss navigation.css navigation-rtl.css",
 		"build": "run-s \"build:*\"",
