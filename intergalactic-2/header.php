@@ -20,11 +20,6 @@ $header = get_header_image();
 </head>
 
 <body <?php body_class(); ?>>
-<?php
-if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-}
-?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'intergalactic-2' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
