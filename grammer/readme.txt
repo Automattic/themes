@@ -2,8 +2,8 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.6
-Requires PHP: 5.7
+Tested up to: 6.7
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,15 +39,24 @@ GNU General Public License for more details.
 
 == Fonts ==
 
+Albert Sans
+Copyright 2021 The Albert Sans Project Authors
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1 .
+License URI: This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
+Source: https://github.com/usted/Albert-Sans
+
 Haskoy
 Copyright 2021 The Haskoy Project Authors (https://github.com/ertekinno/haskoy)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: http://scripts.sil.org/OFL
 Source: https://ertekinn.com/
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
 
 == Images ==
 
-Title: Site logo image
+Title: Site logo on screenshot
 License: Generated with AI on Midjourney, released under the CC0 license.
+License URI: https://creativecommons.org/public-domain/cc0/
 
 Title: Pizza with Italian sausage
 Author: Jakub Kapusnak - Prague, Czech Republic
