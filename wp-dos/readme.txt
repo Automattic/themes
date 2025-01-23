@@ -2,8 +2,8 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 5.7
+Tested up to: 6.7
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,9 +13,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WP-DOS is a blog theme designed for nostalgic ones. It is a tribute to the folks who invented computing as we know it today. It is an exciting opportunity to test blogging as if we were back again to the green (or amber) phosphor.
 
 == Changelog ==
-
-= 1.1 =
-* Changes during deploy
 
 = 1.0.0 =
 * Initial release
@@ -37,15 +34,13 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-WP-DOS is based on DOS (https://github.com/wordpress/dos/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-
 == Fonts ==
 
 JetBrains Mono
 Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: https://scripts.sil.org/OFL
 Source: https://www.jetbrains.com
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
 
 == Images ==
