@@ -58,13 +58,6 @@ Copyright 2021 Kasper Nordkvist
 Source: https://uncut.wtf/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
 
-Overused Grotesk
-Copyright (c) 2023, Bao Nguyen (RandomMaerks) (rmforbusiness@gmail.com)
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-http://scripts.sil.org/OFL
-
-
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
 -----------------------------------------------------------
