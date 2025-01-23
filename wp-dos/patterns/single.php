@@ -49,9 +49,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:template-part {"slug":"post-meta","area":"uncategorized"} /-->
+<div class="wp-block-column" style="flex-basis:55%"><!-- wp:post-content {"layout":{"type":"constrained","justifyContent":"left"}} /-->
 
-<!-- wp:post-content {"layout":{"type":"constrained","justifyContent":"left"}} /--></div>
+<!-- wp:template-part {"slug":"post-meta","area":"uncategorized"} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->
