@@ -17,7 +17,8 @@
 <!-- wp:post-date {"format":"M j, Y","isLink":true,"style":{"spacing":{"margin":{"bottom":"1.5rem"}}},"fontSize":"small"} /-->
 <!-- /wp:post-template -->
 
-<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","style":{"typography":{"fontSize":"2rem","letterSpacing":"0px"}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:group {"metadata":{"name":"Pagination"},"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide"><!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","style":{"typography":{"fontSize":"2rem","letterSpacing":"0px"}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
 <!-- wp:query-pagination-previous {"label":"Newer Posts"} /-->
 
 <!-- wp:query-pagination-next {"label":"Older Posts"} /-->
@@ -29,10 +30,17 @@
 <p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'grammer');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
-
-<!-- wp:search {"label":"Search","showLabel":false,"width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"0px","width":"0px","style":"none"}},"textColor":"background"} /-->
 <!-- /wp:query-no-results --></div>
-<!-- /wp:query --></main>
+<!-- /wp:group --></div>
+<!-- /wp:query -->
+
+<!-- wp:group {"metadata":{"name":"Search Block"},"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-group alignwide"><!-- wp:spacer {"height":"var:preset|spacing|50","metadata":{"name":"M"}} -->
+<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:search {"label":"Search","showLabel":false,"width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"0px","width":"0px","style":"none"}},"textColor":"background"} /--></div>
+<!-- /wp:group --></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","area":"footer"} /-->
