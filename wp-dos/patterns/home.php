@@ -53,7 +53,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:post-content {"style":{"spacing":{"margin":{"top":"-1.7rem"}}},"layout":{"type":"constrained","justifyContent":"left"}} /--></div>
+<div class="wp-block-column" style="flex-basis:55%"><!-- wp:post-content {"layout":{"type":"constrained","justifyContent":"left"}} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->
