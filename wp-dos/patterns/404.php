@@ -10,15 +10,15 @@
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content Wrapper"},"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|70","top":"var:preset|spacing|70"}},"dimensions":{"minHeight":"50vh"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <main class="wp-block-group" style="min-height:50vh;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns {"verticalAlignment":"center","align":"full","style":{"spacing":{"blockGap":{"top":"0"}}}} -->
-<div class="wp-block-columns alignfull are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"20%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:20%"><!-- wp:heading {"style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-columns alignfull are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"25%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:25%"><!-- wp:heading {"style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|30"}}}} -->
 <h2 class="wp-block-heading" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--30)"><?php /* Translators: 1. is a 'br' HTML element, 2. is a 'br' HTML element, 3. is a 'br' HTML element, 4. is a 'br' HTML element, 5. is a 'br' HTML element, 6. is a 'br' HTML element, 7. is a 'br' HTML element, 8. is a 'br' HTML element, 9. is a 'br' HTML element */ 
 echo sprintf( esc_html__( '%1$s█▄─▄▄─█─▄▄─█▄─██─▄█▄─▄▄▀█%2$s██─▄███─██─██─██─███─▄─▄█%3$s▀▄▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▀▄▄▀%4$s█─▄▄─█─█─█%5$s█─██─█─▄─█%6$s▀▄▄▄▄▀▄▀▄▀%7$s█▄─▄▄─█─▄▄─█▄─██─▄█▄─▄▄▀█%8$s██─▄███─██─██─██─███─▄─▄█%9$s▀▄▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▀▄▄▀', 'wp-dos' ), '<br>', '<br>', '<br>', '<br>', '<br>', '<br>', '<br>', '<br>', '<br>' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center","width":"5%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:5%"></div>
+<!-- wp:column {"verticalAlignment":"center","width":"0%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:0%"></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"55%"} -->

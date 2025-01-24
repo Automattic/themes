@@ -10,9 +10,9 @@
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content Wrapper"},"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|70","top":"var:preset|spacing|70"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"full","layout":{"type":"constrained"}} -->
-<div class="wp-block-query alignfull"><!-- wp:post-template {"align":"full","style":{"spacing":{"blockGap":"10vh"}}} -->
-<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"0"}}}} -->
-<div class="wp-block-columns"><!-- wp:column {"width":"20%"} -->
+<div class="wp-block-query alignfull"><!-- wp:post-template {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|80"}}} -->
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"0"},"padding":{"bottom":"var:preset|spacing|80"}}}} -->
+<div class="wp-block-columns" style="padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:column {"width":"20%"} -->
 <div class="wp-block-column" style="flex-basis:20%"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
 <div class="wp-block-group alignwide"><!-- wp:post-title {"level":1,"isLink":true,"align":"wide"} /-->
 
@@ -55,9 +55,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:group {"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group"><!-- wp:post-content {"layout":{"type":"constrained","justifyContent":"left"}} /--></div>
-<!-- /wp:group --></div>
+<div class="wp-block-column" style="flex-basis:55%"><!-- wp:post-content {"style":{"spacing":{"margin":{"top":"-1.7rem"}}},"layout":{"type":"constrained","justifyContent":"left"}} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->
