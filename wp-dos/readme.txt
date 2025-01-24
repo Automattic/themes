@@ -14,6 +14,30 @@ WP-DOS is a blog theme designed for nostalgic ones. It is a tribute to the folks
 
 == Changelog ==
 
+= 1.1.1 =
+* Removed the navigation and pagination blocks from the column structure and made both wide;
+* Added the required No Results paragraph block;
+* Fixed the Search block, removing the width spec;
+* Adjusted the overlay in all cover elements, making the background one for all templates;
+* Made Comments a template and moved it to a new column;
+* Removed bundled Overused Grotesk and system-font;
+* Fixed the values for the custom font size presets in the theme.json;
+* Fixed Jetbrains font presets;
+* Listed the templates in the theme.json, including the new comments;
+* Hopefully, after the CBT save Header, Footer, and the 404 template are now * internationalized;
+* Used Post Meta correctly on the single post template, as required;
+* Fixed the main tags in all the templates;
+* Removed unused patterns: hidden-no-results-content.php. The other, comments.php is now * being use;
+* Updated info: Tested up to and Requires PHP as needed;
+* Changed the version number;
+* Removed incorrect tags listed.
+* Moved post meta block to its correct place
+* Added a new post meta template part and minor cleanup
+* Fixed Blog Home following the previous commit
+
+= 1.1.0 =
+* Changes during deploy
+
 = 1.0.0 =
 * Initial release
 
