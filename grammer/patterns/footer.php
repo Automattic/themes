@@ -1,17 +1,16 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: footer
  * Slug: grammer/footer
- * Categories: hidden
  * Inserter: no
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"3vh","bottom":"6vh"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:3vh;padding-bottom:6vh"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"1rem"}}}} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"66.66%","layout":{"type":"constrained"}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"66.66%","layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:paragraph {"align":"left","metadata":{"categories":["hidden"]},"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p class="has-text-align-left"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>.', 'grammer');?></p>
+<p class="has-text-align-left"><?php /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */ 
+echo sprintf( esc_html__( 'Designed with %1$sWordPress%2$s.', 'grammer' ), '<a href="' . esc_url( 'https://wordpress.org' ) . '" rel="nofollow">', '</a>' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
