@@ -1,58 +1,6 @@
 {
 	"settings": {
-		"blocks": {
-			"core/cover": {
-				"color": {
-					"palette": [
-						{
-							"color": "#0c0c0e",
-							"name": "Primary",
-							"slug": "primary"
-						},
-						{
-							"color": "#babac4",
-							"name": "Secondary",
-							"slug": "secondary"
-						},
-						{
-							"color": "#d6d6dc",
-							"name": "Foreground",
-							"slug": "foreground"
-						},
-						{
-							"color": "#f3f1f1",
-							"name": "Background",
-							"slug": "background"
-						},
-						{
-							"color": "#fcfcfc1a",
-							"name": "Tertiary",
-							"slug": "tertiary"
-						}
-					]
-				}
-			}
-		},
-		"border": {
-			"color": true,
-			"radius": true,
-			"style": true,
-			"width": true
-		},
 		"color": {
-			"background": true,
-			"button": true,
-			"caption": true,
-			"custom": true,
-			"customDuotone": true,
-			"customGradient": true,
-			"defaultDuotone": true,
-			"defaultGradients": true,
-			"defaultPalette": true,
-			"duotone": [],
-			"gradients": [],
-			"heading": true,
-			"link": true,
 			"palette": [
 				{
 					"color": "#0c0c0e",
@@ -83,7 +31,7 @@
 			"text": true
 		},
 		"layout": {
-			"contentSize": "800px",
+			"contentSize": "720px",
 			"wideSize": "1200px"
 		},
 		"shadow": {
@@ -157,49 +105,6 @@
 			"fluid": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-					"name": "System Font",
-					"slug": "system-font"
-				},
-				{
-					"fontFace": [
-						{
-							"fontFamily": "Haskoy",
-							"fontStyle": "normal",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/haskoy_normal_400.woff2"
-							]
-						},
-						{
-							"fontFamily": "Haskoy",
-							"fontStyle": "italic",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/haskoy_italic_400.woff2"
-							]
-						},
-						{
-							"fontFamily": "Haskoy",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/haskoy_normal_700.woff2"
-							]
-						},
-						{
-							"fontFamily": "Haskoy",
-							"fontStyle": "italic",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/haskoy_italic_700.woff2"
-							]
-						}
-					],
-					"fontFamily": "Haskoy",
-					"slug": "haskoy"
-				},
-				{
 					"fontFace": [
 						{
 							"fontFamily": "Albert Sans",
@@ -235,13 +140,53 @@
 						}
 					],
 					"fontFamily": "Albert Sans",
+					"name": "Albert Sans",
 					"slug": "albert-sans"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Haskoy",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/haskoy/haskoy-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Haskoy",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/haskoy/haskoy-400-italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "Haskoy",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/haskoy/haskoy-700-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Haskoy",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/haskoy/haskoy-700-italic.woff2"
+							]
+						}
+					],
+					"fontFamily": "Haskoy",
+					"name": "Haskoy",
+					"slug": "haskoy"
 				}
 			],
 			"fontSizes": [
 				{
 					"fluid": {
-						"max": "1.0625rem",
+						"max": "1rem",
 						"min": "0.825rem"
 					},
 					"name": "Small",
@@ -250,7 +195,7 @@
 				},
 				{
 					"fluid": {
-						"max": "1.25rem",
+						"max": "1.125rem",
 						"min": "1rem"
 					},
 					"name": "Medium",
@@ -263,16 +208,16 @@
 						"min": "1.75rem"
 					},
 					"name": "Large",
-					"size": "1.75rem",
+					"size": "2rem",
 					"slug": "large"
 				},
 				{
 					"fluid": {
-						"max": "3rem",
+						"max": "4rem",
 						"min": "2.5rem"
 					},
 					"name": "Extra Large",
-					"size": "3rem",
+					"size": "4rem",
 					"slug": "x-large"
 				}
 			],
@@ -641,9 +586,12 @@
 			"core/query-title": {
 				"spacing": {
 					"padding": {
-						"bottom": "2vh",
-						"top": "2vh"
+						"bottom": "var(--wp--preset--spacing--30)",
+						"top": "var(--wp--preset--spacing--60)"
 					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)"
 				}
 			},
 			"core/quote": {
@@ -801,7 +749,7 @@
 			},
 			"heading": {
 				"color": {
-					"text": "#ffffff"
+					"text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--rubik)",
@@ -844,17 +792,29 @@
 			"fontStyle": "normal",
 			"fontWeight": "400",
 			"letterSpacing": "0rem",
-			"lineHeight": "1.2"
+			"lineHeight": "1.5"
 		}
 	},
 	"templateParts": [
 		{
 			"area": "header",
-			"name": "header"
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "header",
+			"name": "header-minimal",
+			"title": "Header Minimal"
+		},
+		{
+			"area": "uncategorized",
+			"name": "post-meta",
+			"title": "Post Meta"
 		},
 		{
 			"area": "footer",
-			"name": "footer"
+			"name": "footer",
+			"title": "Footer"
 		}
 	],
 	"version": 3,

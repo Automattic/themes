@@ -28,6 +28,9 @@ Scratchpad includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.13 =
+* Scratchpad: Fix margin top-bottom on frontend (#8600)
+
 = 1.0.12 =
 * Lossless image optimization (#7671)
 

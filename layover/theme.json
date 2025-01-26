@@ -111,8 +111,48 @@
 		},
 		"spacing": {
 			"customSpacingSize": true,
-			"defaultSpacingSizes": false,
-			"spacingSizes": [],
+			"spacingScale": {
+				"theme": {
+					"steps": 0
+				}
+			},
+			"spacingSizes": [
+				{
+					"name": "2X-Small",
+					"size": "0.5rem",
+					"slug": "20"
+				},
+				{
+					"name": "X-Small",
+					"size": "clamp(0.5rem, 1vw, 1rem)",
+					"slug": "30"
+				},
+				{
+					"name": "Small",
+					"size": "clamp(0.75rem, 1.5vw, 1.5rem)",
+					"slug": "40"
+				},
+				{
+					"name": "Medium",
+					"size": "clamp(1rem, 2vw, 2rem)",
+					"slug": "50"
+				},
+				{
+					"name": "Large",
+					"size": "clamp(1.5rem, 3vw, 3rem)",
+					"slug": "60"
+				},
+				{
+					"name": "X-Large",
+					"size": "clamp(2rem, 4vw, 4rem)",
+					"slug": "70"
+				},
+				{
+					"name": "2X-Large",
+					"size": "clamp(3rem, 6vw, 6rem)",
+					"slug": "80"
+				}
+			],
 			"units": [
 				"%",
 				"px",
@@ -140,25 +180,25 @@
 							"fontFamily": "Manrope",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/manrope/manrope_normal_400.ttf"
-						},
-						{
-							"fontFamily": "Manrope",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": "file:./assets/fonts/manrope/manrope_normal_700.ttf"
+							"src": "file:./assets/fonts/manrope/manrope-400-normal.ttf"
 						},
 						{
 							"fontFamily": "Manrope",
 							"fontStyle": "italic",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/manrope/manrope_normal_400.ttf"
+							"src": "file:./assets/fonts/manrope/manrope-400-italic.ttf"
+						},
+						{
+							"fontFamily": "Manrope",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "file:./assets/fonts/manrope/manrope-700-normal.ttf"
 						},
 						{
 							"fontFamily": "Manrope",
 							"fontStyle": "italic",
 							"fontWeight": "700",
-							"src": "file:./assets/fonts/manrope/manrope_normal_700.ttf"
+							"src": "file:./assets/fonts/manrope/manrope-700-italic.ttf"
 						}
 					],
 					"fontFamily": "Manrope, sans-serif",
@@ -171,19 +211,19 @@
 							"fontFamily": "Cardo",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/cardo/cardo_normal_400.woff2"
-						},
-						{
-							"fontFamily": "Cardo",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": "file:./assets/fonts/cardo/cardo_normal_700.woff2"
+							"src": "file:./assets/fonts/cardo/cardo-400-normal.woff2"
 						},
 						{
 							"fontFamily": "Cardo",
 							"fontStyle": "italic",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/cardo/cardo_italic_400.ttf"
+							"src": "file:./assets/fonts/cardo/cardo-400-italic.woff2"
+						},
+						{
+							"fontFamily": "Cardo",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "file:./assets/fonts/cardo/cardo-700-normal.woff2"
 						}
 					],
 					"fontFamily": "Cardo, serif",
@@ -196,13 +236,13 @@
 							"fontFamily": "Instrument Serif",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/instrument-serif/instrument-serif_normal_400.ttf"
+							"src": "file:./assets/fonts/instrument-serif/instrument-serif-400-normal.ttf"
 						},
 						{
 							"fontFamily": "Instrument Serif",
 							"fontStyle": "italic",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/instrument-serif/instrument-serif_italic_400.ttf"
+							"src": "file:./assets/fonts/instrument-serif/instrument-serif-400-italic.ttf"
 						}
 					],
 					"fontFamily": "Instrument Serif, serif",
@@ -215,13 +255,13 @@
 							"fontFamily": "Outward",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/outward/outward_normal_400.ttf"
+							"src": "file:./assets/fonts/outward/outward-400-normal.ttf"
 						},
 						{
 							"fontFamily": "Outward",
 							"fontStyle": "italic",
 							"fontWeight": "400",
-							"src": "file:./assets/fonts/outward/outward_italic_400.ttf"
+							"src": "file:./assets/fonts/outward/outward-400-italic.ttf"
 						}
 					],
 					"fontFamily": "Outward, sans-serif",
@@ -232,11 +272,20 @@
 			"fontSizes": [
 				{
 					"fluid": {
+						"max": "0.825rem",
+						"min": "0.8rem"
+					},
+					"name": "Extra Small",
+					"size": "0.825rem",
+					"slug": "x-small"
+				},
+				{
+					"fluid": {
 						"max": "1.0625rem",
 						"min": "0.825rem"
 					},
 					"name": "Small",
-					"size": "1rem",
+					"size": "1.0625rem",
 					"slug": "small"
 				},
 				{
@@ -245,7 +294,7 @@
 						"min": "1rem"
 					},
 					"name": "Medium",
-					"size": "1.125rem",
+					"size": "1.25rem",
 					"slug": "medium"
 				},
 				{
@@ -254,7 +303,7 @@
 						"min": "1.75rem"
 					},
 					"name": "Large",
-					"size": "1.75rem",
+					"size": "2rem",
 					"slug": "large"
 				},
 				{
@@ -292,26 +341,31 @@
 			},
 			"core/comment-author-name": {
 				"typography": {
-					"fontSize": "0.9rem",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
 					"fontStyle": "normal",
 					"fontWeight": "600"
 				}
 			},
+			"core/comment-content": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				}
+			},
 			"core/comment-date": {
 				"typography": {
-					"fontSize": "0.9rem"
+					"fontSize": "var(--wp--preset--font-size--x-small)"
 				}
 			},
 			"core/comment-edit-link": {
 				"typography": {
-					"fontSize": "0.9rem",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
 					"fontStyle": "normal",
 					"fontWeight": "700"
 				}
 			},
 			"core/comment-reply-link": {
 				"typography": {
-					"fontSize": "0.9rem",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
 					"fontStyle": "normal",
 					"fontWeight": "700"
 				}
@@ -329,8 +383,8 @@
 				},
 				"spacing": {
 					"padding": {
-						"bottom": "4rem",
-						"top": "4rem"
+						"bottom": "var(--wp--preset--spacing--60)",
+						"top": "var(--wp--preset--spacing--60)"
 					}
 				}
 			},
@@ -760,11 +814,13 @@
 	"templateParts": [
 		{
 			"area": "header",
-			"name": "header"
+			"name": "header",
+			"title": "Header"
 		},
 		{
 			"area": "footer",
-			"name": "footer"
+			"name": "footer",
+			"title": "Footer"
 		}
 	],
 	"version": 3,

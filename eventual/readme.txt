@@ -12,6 +12,9 @@ As its name states Eventual is a theme designed for events and ceremonies. It is
 
 == Changelog ==
 
+= 1.0.5 =
+* Eventual: remove static links (#8539)
+
 = 1.0.4 =
 * Eventual: Fix post/page title color. (#8042)
 

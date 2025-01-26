@@ -12,6 +12,9 @@ Bain Marie is the perfect theme for food bloggers. Featuring elegant, modern sty
 
 == Changelog ==
 
+= 0.0.34 =
+* Update theme URIs (#8599)
+
 = 0.0.33 =
 * Fix search block's placeholder text. (#8267)
 

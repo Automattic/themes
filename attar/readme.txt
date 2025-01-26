@@ -12,6 +12,9 @@ Attar is a minimal, product-oriented theme.
 
 == Changelog ==
 
+= 1.0.7 =
+* Update theme URIs (#8599)
+
 = 1.0.6 =
 * Fixed Blockbase children style variations (#7859)
 

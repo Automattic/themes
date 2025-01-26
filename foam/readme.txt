@@ -12,6 +12,9 @@ Foam is a WordPress event theme with a vibrant, straightforward style. Entirely 
 
 == Changelog ==
 
+= 1.0.9 =
+* Update theme URIs (#8599)
+
 = 1.0.8 =
 * Foam: Add a main tag to the home template (#8184)
 

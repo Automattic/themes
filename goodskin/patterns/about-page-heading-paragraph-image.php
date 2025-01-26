@@ -23,7 +23,7 @@ declare( strict_types = 1 );
 
 <!-- wp:column {"width":"48%"} -->
 <div class="wp-block-column" style="flex-basis:48%"><!-- wp:image {"id":206,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="https://skinblog.mystagingwebsite.com/wp-content/uploads/2024/03/skin-blog-about-image-792x1024.jpg" alt="" class="wp-image-206"/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/skin-blog-about-image-792x1024.jpg" alt="" class="wp-image-206"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

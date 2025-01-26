@@ -12,6 +12,9 @@ Dorna is a minimal, product-oriented theme.
 
 == Changelog ==
 
+= 1.0.6 =
+* Update theme URIs (#8599)
+
 = 1.0.5 =
 * Fixed Blockbase children style variations (#7859)
 

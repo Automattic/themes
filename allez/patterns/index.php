@@ -133,7 +133,7 @@ declare( strict_types = 1 );
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem","letterSpacing":"0.02rem","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
-<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="https://gara.mystagingwebsite.com/news/" data-type="page" data-id="25">View</a><a href="https://gara.mystagingwebsite.com/about-us/schedule/" data-type="page" data-id="33"> </a><a href="https://gara.mystagingwebsite.com/news/" data-type="page" data-id="25">all</a></p>
+<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="#" data-type="page" data-id="25">View</a><a href="#" data-type="page" data-id="33"> </a><a href="#" data-type="page" data-id="25">all</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -148,7 +148,7 @@ declare( strict_types = 1 );
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem","letterSpacing":"0.02rem","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
-<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="https://gara.mystagingwebsite.com/news/" data-type="page" data-id="25">View all</a></p>
+<p class="has-primary-color has-text-color has-link-color" style="font-size:0.8rem;letter-spacing:0.02rem;text-transform:uppercase"><a href="#" data-type="page" data-id="25">View all</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></main>

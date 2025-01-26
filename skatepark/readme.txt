@@ -11,6 +11,9 @@ Skatepark is a bold and exciting WordPress theme designed for modern events and 
 
 == Changelog ==
 
+= 1.0.54 =
+* fix color classes (#8618)
+
 = 1.0.53 =
 * Lossless image optimization (#7671)
 

@@ -18,6 +18,9 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.35 =
+* Update theme URIs (#8599)
+
 = 1.1.34 =
 * Add strict types
 * Seedlet: Fix a fatal error in Gutenberg (#7940)

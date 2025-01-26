@@ -12,6 +12,12 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 
 == Changelog ==
 
+= 1.0.9 =
+* Update theme URIs (#8599)
+
+= 1.0.8 =
+* Pixl: fix spacing in header (#8558)
+
 = 1.0.7 =
 * Lossless image optimization (#7671)
 

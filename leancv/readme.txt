@@ -14,6 +14,9 @@ LeanCV is a blog theme that echoes the structure of a professional curriculum. I
 
 == Changelog ==
 
+= 1.1.4 =
+* Update profile-pic.php (#8560)
+
 = 1.1.3 =
 * Update the minimum PHP version (#8548)
 

@@ -12,6 +12,9 @@ Bring the Social Media experience to your site and transform it into a repositor
 
 == Changelog ==
 
+= 1.0.4 =
+* Fix static links in GrammerOne (#8538)
+
 = 1.0.3 =
 * Corrected authors/contributors names (#8478)
 

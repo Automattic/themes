@@ -12,6 +12,9 @@ DOS is a blog theme designed for the nostalgic ones, a tribute to the folks that
 
 == Changelog ==
 
+= 1.0.4 =
+* Update theme URIs (#8599)
+
 = 1.0.3 =
 * Corrected authors/contributors names (#8478)
 

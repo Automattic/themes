@@ -12,6 +12,9 @@ Sunderland is a simple WordPress event theme designed for announcing upcoming ev
 
 == Changelog ==
 
+= 1.0.6 =
+* Update theme URIs (#8599)
+
 = 1.0.5 =
 * Sunderland: Update theme and prepare for Dotorg submission (#7812)
 

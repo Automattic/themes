@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 		<div class="site-branding">
 			<?php dara_the_custom_logo(); ?>
 			<?php

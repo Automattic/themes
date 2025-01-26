@@ -12,6 +12,9 @@ Impressionist is a block theme about the impressionist art movement.
 
 == Changelog ==
 
+= 1.0.3 =
+* Update theme URIs (#8599)
+
 = 1.0.2 =
 * Impressionist: Add new page templates (#8229)
 
@@ -23,7 +26,7 @@ Impressionist is a block theme about the impressionist art movement.
 
 == Copyright ==
 
-Impressionist is based on Impressionist (https://github.com/Automattic/themes/tree/trunk/impressionist), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Impressionist is based on Impressionist (https://wordpress.com/theme/impressionist), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 Impressionist WordPress Theme, (C) 2022 Automattic
 Impressionist is distributed under the terms of the GNU GPL.

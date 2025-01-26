@@ -12,6 +12,9 @@ Heiwa is a theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.9 =
+* Update theme URIs (#8599)
+
 = 1.0.8 =
 * Fixed Blockbase children style variations (#7859)
 

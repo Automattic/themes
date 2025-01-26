@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.15 =
+* Update theme URIs (#8599)
+
 = 1.0.14 =
 * Remove fixed font-size from post title block on blockbase themes (#8197)
 

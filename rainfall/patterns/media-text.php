@@ -20,9 +20,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ) . '/assets/rainfall-background.jpg'; ?>","dimRatio":50,"minHeight":80,"minHeightUnit":"vh","contentPosition":"center center","style":{"color":{"duotone":["#000000","#ffffff"]}}} -->
-<div class="wp-block-cover" style="min-height:80vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/rainfall-background.jpg'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":["#000000","#ffffff"]}}} -->
-<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/rainfall-foreground.jpg'; ?>" alt=""/></figure>
+<div class="wp-block-column"><!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/rainfall-background.jpg'; ?>","dimRatio":50,"minHeight":80,"minHeightUnit":"vh","contentPosition":"center center","style":{"color":{"duotone":["#000000","#ffffff"]}}} -->
+<div class="wp-block-cover" style="min-height:80vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/rainfall-background.jpg'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":["#000000","#ffffff"]}}} -->
+<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/rainfall-foreground.jpg'; ?>" alt=""/></figure>
 <!-- /wp:image --></div></div>
 <!-- /wp:cover --></div>
 <!-- /wp:column --></div>

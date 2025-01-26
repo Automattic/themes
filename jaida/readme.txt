@@ -12,6 +12,9 @@ A WordPress block theme made for blogging.
 
 == Changelog ==
 
+= 1.0.4 =
+* Update theme URIs (#8599)
+
 = 1.0.3 =
 * Remove copyright statement (#7988)
 

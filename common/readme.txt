@@ -12,6 +12,9 @@ Common\'s style is anything but ordinary and it speaks for itself. The unique co
 
 == Changelog ==
 
+= 1.0.7 =
+* Common:Remove static links (#8530)
+
 = 1.0.6 =
 * Update single posts template (#8463)
 * Cleanup json (#8464)

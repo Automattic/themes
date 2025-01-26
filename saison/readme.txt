@@ -12,6 +12,9 @@ Saison is a clean, modern theme for restaurants, bakeries and other food busines
 
 == Changelog ==
 
+= 1.0.1 =
+* Update theme URIs (#8599)
+
 = 0.0.29 =
 * Remove auto-loading-homepage tag. (#7300)
 

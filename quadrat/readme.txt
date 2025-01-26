@@ -12,6 +12,15 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.60 =
+* fix color classes (#8617)
+
+= 1.1.59 =
+* Quadrat: fix triangles (#8579)
+
+= 1.1.58 =
+* Quadrat, Zoologist, Geologist: Fix post nav block arrows (#8571)
+
 = 1.1.57 =
 * Remove fixed font-size from post title block on blockbase themes (#8197)
 

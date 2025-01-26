@@ -13,6 +13,12 @@ Stewart is a modern blogging theme with a left sidebar. Its default color scheme
 
 == Changelog ==
 
+= 1.20 =
+* Stewart: Update sidebar-footer page template (#8591)
+
+= 1.19 =
+* Remove wp:query block from the page template of Stewart theme. (#8581)
+
 = 1.18 =
 * Stewart: Update comments (#8303)
 

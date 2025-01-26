@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <div class="site-info">
 	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dara' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'dara' ), 'WordPress' ); ?></a>
 	<span class="sep"> | </span>

@@ -14,6 +14,19 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.39 =
+* Add missing SVG icons, taken from https://raw.githubusercontent.com/Automattic/jetpack/refs/heads/trunk/projects/packages/classic-theme-helper/src/social-menu/social-menu.svg (#8593)
+
+= 1.6.38 =
+* Update theme URIs (#8599)
+
+= 1.6.37 =
+* Varia: Fix Jetpack subscription button (#8588)
+* Varia: Strengthen button CSS (#8585)
+
+= 1.6.36 =
+* Varia: Fix nested bullets in menus (#8569)
+
 = 1.6.35 =
 * Update functions.php (#8510)
 

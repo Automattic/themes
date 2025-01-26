@@ -2,7 +2,7 @@
 
 Seedlet is simple, text-driven WordPress theme.
 
-![](https://github.com/Automattic/themes/raw/master/seedlet/screenshot.png)
+![](https://github.a8c.com/Automattic/wpcom-themes/tree/trunk/seedlet/screenshot.png)
 
 Along with being an excellent standalone theme, Seedlet is designed to be a parent-theme that allows folks to quickly create Gutenberg-ready child-themes for WordPress. *[Instructions for how to make child themes are coming soon]*
 
@@ -49,7 +49,7 @@ In each view, the variables are loaded first and then the stylesheet is loaded w
 
 GNU General Public License v2 or later.
 
-URI: [LICENSE](https://github.com/Automattic/themes/blob/master/seedlet/LICENSE)
+URI: [LICENSE](https://github.a8c.com/Automattic/wpcom-themes/tree/trunk/seedlet/LICENSE)
 
 ## Acknowledgments
 CSS vars ponyfill: https://github.com/jhildenbiddle/css-vars-ponyfill

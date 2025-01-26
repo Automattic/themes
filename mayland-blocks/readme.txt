@@ -12,6 +12,9 @@ Mayland Blocks is a block theme based on the Mayland theme.
 
 == Changelog ==
 
+= 2.1.36 =
+* Update theme URIs (#8599)
+
 = 2.1.35 =
 * Remove fixed font-size from post title block on blockbase themes (#8197)
 

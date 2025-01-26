@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.0.32 =
+* Update theme URIs (#8599)
+
 = 1.0.31 =
 * Remove fixed font-size from post title block on blockbase themes (#8197)
 

@@ -69,15 +69,15 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('<strong>Whispering Pines Resort</strong><br>Special wedding rate available. <a href="http://localhost.local/accommodations/#">Book Here</a>.', 'blissed');?></p>
+<p><?php echo __('<strong>Whispering Pines Resort</strong><br>Special wedding rate available. <a href="#">Book Here</a>.', 'blissed');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('<strong>Lakeside Inn</strong><br>5-minute drive from the venue. <a href="http://localhost.local/accommodations/#">Book Here</a>.', 'blissed');?></p>
+<p><?php echo __('<strong>Lakeside Inn</strong><br>5-minute drive from the venue. <a href="#">Book Here</a>.', 'blissed');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('<strong>Mountain View Lodge</strong><br>Special wedding rate available. <a href="http://localhost.local/accommodations/#">Book Here</a>.', 'blissed');?></p>
+<p><?php echo __('<strong>Mountain View Lodge</strong><br>Special wedding rate available. <a href="#">Book Here</a>.', 'blissed');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -91,7 +91,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('<a href="http://localhost.local/wedding-registry/#">Amazon</a>&nbsp;|&nbsp;<a href="http://localhost.local/wedding-registry/#">Target</a>&nbsp;|&nbsp;<a href="http://localhost.local/wedding-registry/#">Crate &amp; Barrel</a>', 'blissed');?></p>
+<p><?php echo __('<a href="#">Amazon</a>&nbsp;|&nbsp;<a href="#">Target</a>&nbsp;|&nbsp;<a href="#">Crate &amp; Barrel</a>', 'blissed');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->

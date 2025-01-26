@@ -12,6 +12,12 @@ Hari is a minimalist, product-oriented theme.
 
 == Changelog ==
 
+= 1.0.6 =
+* fix color classes (#8619)
+
+= 1.0.5 =
+* Update theme URIs (#8599)
+
 = 1.0.4 =
 * Lossless image optimization (#7671)
 

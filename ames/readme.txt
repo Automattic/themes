@@ -12,6 +12,9 @@ Ames is a minimalist theme, designed for single-page websites. Its single post a
 
 == Changelog ==
 
+= 1.0.3 =
+* Update theme URIs (#8599)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 

@@ -19,6 +19,12 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.23 =
+* Update theme URIs (#8599)
+
+= 3.1.22 =
+* Blockbase: Fix previewing post editor colors from style variations in child themes (#8575)
+
 = 3.1.21 =
 * Blockbase: Fix font collection logic and add error handling for theme.json file (#8300)
 

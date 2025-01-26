@@ -12,6 +12,9 @@ Ueno is suitable for any kind of blog or website. It has an opinionated default 
 
 == Changelog ==
 
+= 1.0.7 =
+* Ueno: Remove static links. (#8537)
+
 = 1.0.6 =
 * Update screenshot.png
 

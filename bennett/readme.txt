@@ -12,6 +12,9 @@ Bennett is a minimalist theme, designed for single-page websites.
 
 == Changelog ==
 
+= 1.0.5 =
+* Update theme URIs (#8599)
+
 = 1.0.4 =
 * Lossless image optimization (#7671)
 

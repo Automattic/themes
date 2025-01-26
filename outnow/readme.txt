@@ -2,8 +2,8 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 5.7
+Tested up to: 6.7
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 OutNow is the perfect theme for people who are engaged in artistic activities. Its concise and straightforward introduction enables users to promptly select topics for their blog posts or content pages.
 
 == Changelog ==
+
+= 1.3.2 =
+* Outnow: Add Inter Tight font (#8584)
+
+= 1.3.1 =
+* Fixes issues related #8543 (#8557)
 
 = 1.3 =
 * OutNow: Remove Sticky Post settings (#7956)

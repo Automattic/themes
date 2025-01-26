@@ -16,7 +16,7 @@
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"20%"} -->
 <div class="wp-block-column" style="flex-basis:20%"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-1.png" alt=""/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/testimonial-1.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -30,7 +30,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-2.png" alt=""/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/testimonial-2.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -44,7 +44,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-3.png" alt=""/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/testimonial-3.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -58,7 +58,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-4.png" alt=""/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/testimonial-4.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -72,7 +72,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"align":"center","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-5.png" alt=""/></figure>
+<figure class="wp-block-image aligncenter is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/testimonial-5.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->

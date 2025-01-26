@@ -12,6 +12,9 @@ Poema pays tribute to the revered Portuguese writer and poet Fernando Pessoa, an
 
 == Changelog ==
 
+= 1.0.3 =
+* Update theme URIs (#8599)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 

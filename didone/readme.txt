@@ -12,6 +12,9 @@ Didone is a simple theme that supports full-site editing. It comes with a set of
 
 == Changelog ==
 
+= 1.0.5 =
+* Update theme URIs (#8599)
+
 = 1.0.4 =
 * Replace screenshot.png
 

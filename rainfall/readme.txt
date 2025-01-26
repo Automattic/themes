@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.11 =
+* Rainfall: Add paddings and other visual theme improvements (#8551)
+
 = 1.0.10 =
 * Lossless image optimization (#7671)
 

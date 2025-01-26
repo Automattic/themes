@@ -6,8 +6,8 @@
  */
 ?>
 
-<!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|90","left":"var:preset|spacing|90"}}}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--90);padding-left:var(--wp--preset--spacing--90)">
+<!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 
 <!-- wp:columns -->
 <div class="wp-block-columns">
@@ -34,7 +34,7 @@
 
 <!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"align":"right","sizeSlug":"large","linkDestination":"custom"} -->
-<figure class="wp-block-image alignright size-large"><a href="/about"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/home.jpg" alt="<?php esc_attr_e( 'Person with umbrella', 'rainfall' ); ?>"/></a></figure>
+<figure class="wp-block-image alignright size-large"><a href="/about"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/home.jpg" alt="<?php esc_attr_e( 'Person with umbrella', 'rainfall' ); ?>"/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

@@ -2,8 +2,8 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 5.7
+Tested up to: 6.7
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,28 @@ WP-DOS is a blog theme designed for nostalgic ones. It is a tribute to the folks
 
 == Changelog ==
 
-= 1.1 =
+= 1.1.1 =
+* Removed the navigation and pagination blocks from the column structure and made both wide;
+* Added the required No Results paragraph block;
+* Fixed the Search block, removing the width spec;
+* Adjusted the overlay in all cover elements, making the background one for all templates;
+* Made Comments a template and moved it to a new column;
+* Removed bundled Overused Grotesk and system-font;
+* Fixed the values for the custom font size presets in the theme.json;
+* Fixed Jetbrains font presets;
+* Listed the templates in the theme.json, including the new comments;
+* Hopefully, after the CBT save Header, Footer, and the 404 template are now * internationalized;
+* Used Post Meta correctly on the single post template, as required;
+* Fixed the main tags in all the templates;
+* Removed unused patterns: hidden-no-results-content.php. The other, comments.php is now * being use;
+* Updated info: Tested up to and Requires PHP as needed;
+* Changed the version number;
+* Removed incorrect tags listed.
+* Moved post meta block to its correct place
+* Added a new post meta template part and minor cleanup
+* Fixed Blog Home following the previous commit
+
+= 1.1.0 =
 * Changes during deploy
 
 = 1.0.0 =
@@ -37,15 +58,13 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-WP-DOS is based on DOS (https://github.com/wordpress/dos/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-
 == Fonts ==
 
 JetBrains Mono
 Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URI: This license is available with a FAQ at: https://scripts.sil.org/OFL
 Source: https://www.jetbrains.com
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
 
 == Images ==

@@ -9,13 +9,13 @@
 * @return {string} comma separated rgb values
 */
 /**
- * Breakpoint mixins
- */
-/**
  * Long content fade mixin
  *
  * Creates a fading overlay to signify that the content is longer
  * than the space allows.
+ */
+/**
+ * Breakpoint mixins
  */
 /**
  * Focus styles.
@@ -204,7 +204,7 @@ div.horizontal-query-pattern figure.wp-block-post-featured-image img {
 
 .wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button.has-focus {
   border-style: var(--wp--custom--button--border--style);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-width: var(--wp--custom--button--border--width);
   padding-top: var(--wp--custom--button--spacing--padding--top);
   padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
@@ -217,7 +217,7 @@ div.horizontal-query-pattern figure.wp-block-post-featured-image img {
 .wp-block-search .wp-block-search__button:focus,
 .wp-block-search .wp-block-search__button.has-focus {
   border-style: var(--wp--custom--button--border--style);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-width: var(--wp--custom--button--border--width);
   padding-top: var(--wp--custom--button--spacing--padding--top);
   padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
@@ -251,7 +251,6 @@ ul ul {
 
 .wp-block-post-navigation-link {
   border-top: 1px solid;
-  display: flex;
   padding-top: 1em;
 }
 
@@ -323,8 +322,7 @@ ul ul {
 }
 
 .wp-block-post-content a:not(.wp-block-button__link) {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 .wp-block-post-content a:not(.wp-block-button__link):hover {
   text-decoration: none;
@@ -373,14 +371,17 @@ input[type=datetime-local]:focus,
 input[type=color]:focus,
 input[type=checkbox]:focus,
 textarea:focus {
-  outline: 1px dotted currentColor;
+  outline: 1px dotted currentcolor;
 }
 
-.home .site-footer-container .wp-block-group:before {
+.quadrat-site-footer {
+  margin-left: calc(-1 * var(--wp--custom--gap--horizontal));
+  margin-right: calc(-1 * var(--wp--custom--gap--horizontal));
+}
+.quadrat-site-footer::before {
   content: "";
   background-color: var(--wp--custom--color--tertiary);
-  -webkit-clip-path: polygon(41vw 49vw, 100vw 68vw, 100vw 100vw, 18vw 100vw);
-          clip-path: polygon(41vw 49vw, 100vw 68vw, 100vw 100vw, 18vw 100vw);
+  clip-path: polygon(41vw 49vw, 100vw 68vw, 100vw 100vw, 18vw 100vw);
   position: absolute;
   height: 100vw;
   bottom: 0;
@@ -389,10 +390,16 @@ textarea:focus {
   z-index: -1;
 }
 
+header.wp-block-template-part.block-editor-block-list__block,
+header.wp-block-template-part .site-header.block-editor-block-list__block,
+header.wp-block-template-part .gapless-group {
+  position: static;
+}
+
 .wp-site-blocks {
   position: relative;
 }
-.wp-site-blocks .site-header:before {
+.wp-site-blocks .site-header::before {
   content: "";
   background-color: var(--wp--custom--color--tertiary);
   position: absolute;
@@ -403,21 +410,18 @@ textarea:focus {
   z-index: -1;
 }
 @media (max-width: 599px) {
-  .wp-site-blocks .site-header:before {
-    -webkit-clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
-            clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
+  .wp-site-blocks .site-header::before {
+    clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
   }
 }
 @media (min-width: 600px) {
-  .wp-site-blocks .site-header:before {
-    -webkit-clip-path: polygon(0 0, 100vw 0, 100vw 37vw, 52vw 70vw, 0 5vw);
-            clip-path: polygon(0 0, 100vw 0, 100vw 37vw, 52vw 70vw, 0 5vw);
+  .wp-site-blocks .site-header::before {
+    clip-path: polygon(0 0, 100vw 0, 100vw 37vw, 52vw 70vw, 0 5vw);
   }
 }
 @media (min-width: 960px) {
-  .wp-site-blocks .site-header:before {
-    -webkit-clip-path: polygon(13vw 0, 100vw 0, 100vw 16vw, 50vw 51vw);
-            clip-path: polygon(13vw 0, 100vw 0, 100vw 16vw, 50vw 51vw);
+  .wp-site-blocks .site-header::before {
+    clip-path: polygon(13vw 0, 100vw 0, 100vw 16vw, 50vw 51vw);
   }
 }
 

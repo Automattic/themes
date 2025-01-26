@@ -4,7 +4,8 @@
 button,
 .button,
 input[type="submit"],
-.wp-block-button__link,
+a.wp-block-button__link,
+button.wp-block-button__link,
 .wp-block-file__button {
 	// Extend button style
 	@extend %button-style;
@@ -52,11 +53,13 @@ input[type="submit"],
 
 	// Set alignleft as default floating behavior
 	.entry-content > &:not(.alignleft):not(.alignright) {
+
 		@extend %responsive-alignleft;
 	}
 
 	// Set aligndefault as center floating behavior
 	.entry-content > &.aligncenter {
+
 		@extend %responsive-aligndefault;
 	}
 }

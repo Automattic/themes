@@ -12,6 +12,9 @@ Arbutus is a simple blogging theme that supports full-site editing. It comes wit
 
 == Changelog ==
 
+= 1.0.20 =
+* Update theme URIs (#8599)
+
 = 1.0.19 =
 * Remove fixed font-size from post title block on blockbase themes (#8197)
 
