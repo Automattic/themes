@@ -21,6 +21,18 @@ Tags: block-patterns, eLearning, education, full-site-editing, lms, online cours
 	-webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	text-transform: revert;
+}
+
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em
+}
+
+/*
+ * Header
+ */
 header {
 	background-color: transparent;
 }
@@ -31,15 +43,6 @@ header .navigation-wrapper {
 
 .wp-site-blocks header ~ main {
 	margin-block-start: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	text-transform: revert;
-}
-
-a {
-	text-decoration-thickness: .0625em !important;
-	text-underline-offset: .15em
 }
 
 /*
@@ -70,10 +73,6 @@ a {
 }
 
 /* Footer */
-footer .wp-block-column .wp-block-spacer {
-	height: 20px;
-}
-
 footer .wp-block-column a,
 footer .wp-block-column p,
 footer .wp-block-column h3 {
@@ -92,48 +91,8 @@ footer .wp-block-column h3 {
 	}
 }
 
-footer.wp-block-template-part  {
+footer.wp-block-template-part {
 	margin-block-start: 0;
-}
-
-/*
- * "Wide Width, No Title" page template
- */
-
-/* Remove extra space from group blocks */
-body.page-template-page-wide-width .wp-block-post-content .wp-block-group,
-body.page-template-page-wide-width footer .wp-block-group {
-	margin-block-end: 0;
-}
-
-/*
-* Sensei-specific styles
-*/
-.wp-block-sensei-lms-course-overview a {
-	text-decoration: underline;
-}
-
-.wp-block-sensei-lms-course-list .sensei-cta a:hover,
-.wp-block-sensei-lms-course-list .sensei-cta a:focus {
-	text-decoration: none;
-}
-
-/* The first 3 CSS selectors can be removed after allowing enough time (let's say 1 month)for sites
- * to update to the Sensei LMS plugin version containing the changes to the CSS class names.
- */
-.course-list-featured-label__featured-image,
-.course-list-featured-label__course-categories,
-.sensei-lms-featured-badge,
-.sensei-lms-course-list-featured-label__text {
-	font-family: var(--wp--preset--font-family--system);
-	text-transform: uppercase;
-}
-
-/*
- * Style Variations
- */
-.footer-title{
-	white-space: normal;
 }
 
 .footer-title a:hover {
@@ -141,12 +100,17 @@ body.page-template-page-wide-width footer .wp-block-group {
 }
 
 @media screen and (max-width: 700px) {
-	.footer-title{
+	.footer-title {
 		font-size: 86px;
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	.separator {
-		 top: -25px;
-	}
+}
+
+/*
+ * "Wide Width, No Title" Page Template
+ */
+body.page-template-page-wide-width .wp-block-post-content .wp-block-group,
+body.page-template-page-wide-width footer .wp-block-group {
+	margin-block-end: 0;
 }
