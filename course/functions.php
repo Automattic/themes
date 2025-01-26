@@ -54,6 +54,7 @@ function course_enqueue_block_styles() {
 		'core/buttons',
 		'core/comments',
 		'core/navigation',
+		'core/query-pagination',
 	);
 
 	foreach ( $blocks as $block ) {
