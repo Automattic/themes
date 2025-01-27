@@ -1,15 +1,17 @@
 <?php
 /**
- * Title: index
- * Slug: timestream/index
+ * Title: archive
+ * Slug: timestream/archive
  * Inserter: no
  */
 ?>
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Content Wrapper"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"main","metadata":{"name":"Content Wrapper"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
 <main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"0"}}} -->
+<div class="wp-block-query alignwide"><!-- wp:query-title {"type":"archive","align":"wide"} /-->
+
+<!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"0"}}} -->
 <!-- wp:group {"metadata":{"name":"Post template wrapper"},"style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|80"},"margin":{"top":"0","bottom":"0"}},"border":{"left":{"color":"var:preset|color|secondary","style":"dotted","width":"1px"},"top":[],"right":[],"bottom":[]}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="border-left-color:var(--wp--preset--color--secondary);border-left-style:dotted;border-left-width:1px;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40"},"margin":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-columns" style="margin-top:0;margin-bottom:0"><!-- wp:column {"verticalAlignment":"stretch","width":"15%","layout":{"type":"constrained","justifyContent":"left"}} -->

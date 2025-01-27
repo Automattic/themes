@@ -65,7 +65,9 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
-<!-- /wp:query --></div>
+<!-- /wp:query -->
+
+<!-- wp:read-more {"content":"Read more"} /--></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
 

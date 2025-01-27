@@ -84,7 +84,7 @@ Source: http://www.omnibus-type.com/
 
 == Images ==
 
-Images for theme screenshot:
+Blog Home template image:
 Title: Vintage Victorian style tree engraving. Original from the British Library. Digitally enhanced by rawpixel.
 License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
