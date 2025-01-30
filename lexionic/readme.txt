@@ -3,9 +3,14 @@
 Contributors: Automattic
 Requires at least: 6.7
 Tested up to: 6.7
-Requires PHP: 5.7
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+
+== Description ==
+
+Lexiconic is a sleek, versatile theme that empowers book authors, publishers, and storytellers. It is perfect for quickly creating stunning landing pages and offers a seamless showcase of your work. With a rich selection of style variations and customization options, Lexiconic enables you to craft a site that reflects your narrative. Whether you are launching a debut novel, promoting a timeless classic, or building your brand, this theme combines elegance with functionality to bring your story to life.
 
 
 == Changelog ==
@@ -81,6 +86,7 @@ License: This Font Software is licensed under the SIL Open Font License, Version
 License URI: This license is available with a FAQ at: https://scripts.sil.org/OFL
 Source: xcicero.esad-gv.net
 
+
 == Images ==
 
 Book Cover Photo
@@ -89,12 +95,12 @@ License: CC0 Public Domain
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/1415476
 
-Head of Homer - Image of the author
+Head of Homer
 License: CC0 Public Domain
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://www.rawpixel.com/image/8905942/image-art-vintage-public-domain
 
-== Description ==
-
-Lexiconic is a sleek, versatile theme that empowers book authors, publishers, and storytellers. It is perfect for quickly creating stunning landing pages and offers a seamless showcase of your work. With a rich selection of style variations and customization options, Lexiconic enables you to craft a site that reflects your narrative. Whether you are launching a debut novel, promoting a timeless classic, or building your brand, this theme combines elegance with functionality to bring your story to life.
-
+Ulysses and the sirens, John William Waterhouse, 1891 
+License: CC0 Public Domain
+License URI: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://en.wikipedia.org/wiki/Ulysses_and_the_Sirens_(Waterhouse)
