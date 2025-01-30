@@ -95,6 +95,11 @@ License: CC0 Public Domain
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/1415476
 
+Book Mockup Shadow by the theme author Henrique Iamarino.
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://iamarino.com
+
 Head of Homer
 License: CC0 Public Domain
 License URI: https://creativecommons.org/publicdomain/zero/1.0/
