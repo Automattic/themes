@@ -59,12 +59,12 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#897248'; // $config-global--color-primary-default;
-		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#c4493f';  // $config-global--color-secondary-default;
-		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#181818';  // $config-global--color-foreground-default;
-		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#686868';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#020202';  // $config-global--color-foreground-dark-default;
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['link'] ?? '' ) : '#897248'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['fg1'] ?? '' ) : '#c4493f';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['bg'] ?? '' ) : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#181818';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && ( $colors_array['colors']['txt'] ?? '' ) != '#181818' ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#686868';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && ( $colors_array['colors']['txt'] ?? '' ) != '#181818' ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#020202';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
