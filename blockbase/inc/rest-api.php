@@ -52,7 +52,10 @@ function blockbase_remove_style_variations_from_child_themes( $response, $handle
 	$handler_method   = isset( $handler['callback'][1] ) ? $handler['callback'][1] : null;
 	$remove_variations = wp_get_global_settings( array( 'custom', 'excludedParentStyleVariations' ) );
 
-	if ( is_a( $handler_class, 'WP_REST_Global_Styles_Controller_Gutenberg' ) && 'get_theme_items' === $handler_method && ! empty( $remove_variations ) ) {
+	// Global styles are overridden when Gutenberg plugin is used.
+	$check_class = class_exists( 'WP_REST_Global_Styles_Controller_Gutenberg' ) ? 'WP_REST_Global_Styles_Controller_Gutenberg' : 'WP_REST_Global_Styles_Controller';
+	
+	if ( is_a( $handler_class, $check_class ) && 'get_theme_items' === $handler_method && ! empty( $remove_variations ) ) {
 		$i = 0;
 		foreach( $response->data as $element ) {
 			if ( in_array( $element['title'], $remove_variations ) ) {
