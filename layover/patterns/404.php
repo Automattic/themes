@@ -1,4 +1,3 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: 404
@@ -11,8 +10,8 @@
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content"},"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|70","top":"var:preset|spacing|70"}},"dimensions":{"minHeight":"50vh"}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="min-height:50vh;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"metadata":{"name":"404 Wrapper"},"style":{"spacing":{"blockGap":"var:preset|spacing|60"}}} -->
-<div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":1,"align":"wide"} -->
-<h1 class="wp-block-heading alignwide has-text-align-center" id="oops-that-page-can-t-be-found"><?php esc_html_e('Oops! That page can’t be found.', 'layover');?></h1>
+<div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":1,"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground"} -->
+<h1 class="wp-block-heading alignwide has-text-align-center has-foreground-color has-text-color has-link-color" id="oops-that-page-can-t-be-found"><?php esc_html_e('Oops! That page can’t be found.', 'layover');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground","fontSize":"medium"} -->

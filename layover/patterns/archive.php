@@ -1,4 +1,3 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: archive
@@ -17,7 +16,7 @@
 <!-- wp:group {"metadata":{"name":"Post template wrapper"},"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1","width":"40%"} /-->
 
-<!-- wp:post-title {"textAlign":"center","isLink":true} /-->
+<!-- wp:post-title {"textAlign":"center","isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground"} /-->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"1rem"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:1rem"><!-- wp:post-excerpt {"textAlign":"center","excerptLength":25,"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground"} /--></div>
