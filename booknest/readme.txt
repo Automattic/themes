@@ -124,4 +124,8 @@ Source: https://it.m.wikipedia.org/wiki/File:Enrique_Simonet_-_La_autopsia_1890.
 License: License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 
-
+Young adults reading
+Image generated with AI on VisualElectric, released under the CC0 license.
+License: License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://visualelectric.com
