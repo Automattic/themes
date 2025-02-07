@@ -793,7 +793,7 @@ async function deployThemes( themes ) {
 */
 async function getLastDeployedHash() {
 	let result = await executeOnSandbox( `
-		cat ${ sandboxPublicThemesFolder }/.pub-git-hash
+		cat ${ sandboxPublicThemesFolder }/.theme-utils/.pub-git-hash
 	` );
 	return result;
 }
@@ -804,7 +804,7 @@ async function getLastDeployedHash() {
 async function updateLastDeployedHash() {
 	let hash = await executeCommand( `git rev-parse HEAD` );
 	await executeOnSandbox( `
-		echo '${ hash }' > ${ sandboxPublicThemesFolder }/.pub-git-hash
+		echo '${ hash }' > ${ sandboxPublicThemesFolder }/.theme-utils/.pub-git-hash
 	` );
 }
 
