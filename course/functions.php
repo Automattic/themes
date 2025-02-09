@@ -51,7 +51,6 @@ add_action( 'wp_enqueue_scripts', 'course_scripts' );
 
 function course_enqueue_block_styles() {
 	$blocks = array(
-		'core/buttons',
 		'core/comments',
 		'core/navigation',
 		'core/query-pagination',
