@@ -53,65 +53,21 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|70","left":"var:preset|spacing|50"},"margin":{"top":"-25px"}}}} -->
 <div class="wp-block-columns alignwide" style="margin-top:-25px"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"0"},"shadow":"var:preset|shadow|natural","border":{"radius":"5px"}},"backgroundColor":"tertiary","layout":{"type":"grid","minimumColumnWidth":"20rem"}} -->
-<div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"dimensions":{"minHeight":"15rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="min-height:15rem;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"level":3,"style":{"color":{"text":"#58b2d5"},"elements":{"link":{"color":{"text":"#58b2d5"}}}},"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-text-color has-link-color has-x-large-font-size" style="color:#58b2d5"><?php esc_html_e('Harper Lee', 'booknest');?></h3>
-<!-- /wp:heading -->
-
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('To Kill a Mockingbird', 'booknest');?></h3>
-<!-- /wp:heading --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"style":{"border":{"radius":{"bottomLeft":"5px","bottomRight":"5px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="border-bottom-left-radius:5px;border-bottom-right-radius:5px"><!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/image-from-rawpixel-id-8863934.jpg","dimRatio":0,"isUserOverlayColor":true,"contentPosition":"top left","style":{"dimensions":{"aspectRatio":"3/2"},"layout":{"selfStretch":"fit","flexSize":null},"color":{"duotone":"var:preset|duotone|camus"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-top-left"><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/image-from-rawpixel-id-8863934.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…"} -->
-<p class="has-text-align-center"></p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:cover --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-harper-lee.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|natural","border":{"radius":"5px"}},"backgroundColor":"tertiary","layout":{"type":"grid","minimumColumnWidth":"20rem"}} -->
-<div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--natural)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"dimensions":{"minHeight":"15rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="min-height:15rem;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"#fe5837"}}},"color":{"text":"#fe5837"}},"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-text-color has-link-color has-x-large-font-size" style="color:#fe5837"><?php esc_html_e('George Orwell', 'booknest');?></h3>
-<!-- /wp:heading -->
-
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('1984', 'booknest');?></h3>
-<!-- /wp:heading --></div>
-<!-- /wp:group -->
-
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/image-from-rawpixel-id-6040430.jpg","dimRatio":0,"isUserOverlayColor":true,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"},"layout":{"selfStretch":"fit","flexSize":null},"color":{"duotone":"var:preset|duotone|achebe"},"border":{"radius":{"bottomLeft":"5px","bottomRight":"5px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-top-left" style="border-bottom-left-radius:5px;border-bottom-right-radius:5px"><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/image-from-rawpixel-id-6040430.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…"} -->
-<p class="has-text-align-center"></p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:cover --></div>
-<!-- /wp:group --></div>
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-orwell.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|natural","border":{"radius":"5px"}},"backgroundColor":"tertiary","layout":{"type":"grid","minimumColumnWidth":"20rem"}} -->
-<div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--natural)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"dimensions":{"minHeight":"15rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="min-height:15rem;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"#f76ec3"}}},"color":{"text":"#f76ec3"}},"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-text-color has-link-color has-x-large-font-size" style="color:#f76ec3"><?php esc_html_e('Jane Austen', 'booknest');?></h3>
-<!-- /wp:heading -->
-
-<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
-<h3 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('Pride and Prejudice', 'booknest');?></h3>
-<!-- /wp:heading --></div>
-<!-- /wp:group -->
-
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/Jose_Gutierrez_de_la_Vega_A_wedding_in_1830.jpg","dimRatio":0,"isUserOverlayColor":true,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"},"layout":{"selfStretch":"fit","flexSize":null},"color":{"duotone":"var:preset|duotone|saramago"},"border":{"radius":{"bottomLeft":"5px","bottomRight":"5px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-top-left" style="border-bottom-left-radius:5px;border-bottom-right-radius:5px"><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/Jose_Gutierrez_de_la_Vega_A_wedding_in_1830.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…"} -->
-<p class="has-text-align-center"></p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:cover --></div>
-<!-- /wp:group --></div>
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-austen.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
@@ -242,23 +198,9 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|natural","border":{"radius":"5px"}},"backgroundColor":"tertiary","layout":{"type":"grid","minimumColumnWidth":"20rem"}} -->
-<div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--natural)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}},"dimensions":{"minHeight":"15rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="min-height:15rem;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"#b26f11"}}},"color":{"text":"#b26f11"}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-text-color has-link-color has-large-font-size" style="color:#b26f11"><?php esc_html_e('Machado de Assis', 'booknest');?></h3>
-<!-- /wp:heading -->
-
-<!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e('The Posthumous Memoirs of Bras Cubas', 'booknest');?></h3>
-<!-- /wp:heading --></div>
-<!-- /wp:group -->
-
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/book-enrique-simonet-la-autopsia-1890.jpg","dimRatio":0,"isUserOverlayColor":true,"contentPosition":"top left","sizeSlug":"large","style":{"dimensions":{"aspectRatio":"3/2"},"layout":{"selfStretch":"fit","flexSize":null},"color":{"duotone":"var:preset|duotone|kafla"},"border":{"radius":{"bottomLeft":"5px","bottomRight":"5px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-top-left" style="border-bottom-left-radius:5px;border-bottom-right-radius:5px"><img class="wp-block-cover__image-background size-large" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/book-enrique-simonet-la-autopsia-1890.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…"} -->
-<p class="has-text-align-center"></p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:cover --></div>
-<!-- /wp:group --></div>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-machado.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
@@ -480,26 +422,26 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 <!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:group {"metadata":{"name":"FAQ Block Wrapper"},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:details {"showContent":true} -->
-<details class="wp-block-details" open><summary>Will you really get back to me within 24-48 hours?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-<p style="font-style:normal;font-weight:400"><?php esc_html_e('Yes. We have created a smooth and efficient process that will allow us to give you an estimate even when we are on the road or not in the office.', 'booknest');?></p>
+<details class="wp-block-details" open><summary><strong>How does the Booknest book club work?</strong></summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<p style="font-style:normal;font-weight:400"><?php esc_html_e('Each month, we select a new book for our members to read. We start with a live discussion, share weekly posts for open conversations, and host interactive live sessions to explore comments. At the end of the month, we wrap up with a special live session to reflect on the book before moving on to the next one.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details -->
-<details class="wp-block-details"><summary>What is your hourly rate? Is there a job minimum?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-<p style="font-style:normal;font-weight:400"><?php esc_html_e('Yes. We have created a smooth and efficient process that will allow us to give you an estimate even when we are on the road or not in the office.', 'booknest');?></p>
+<details class="wp-block-details"><summary>Do I need to be an active participant to join?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<p style="font-style:normal;font-weight:400"><?php esc_html_e('Not at all! You can engage as much or as little as you like. Whether you prefer reading along quietly, sharing your thoughts in the comments, or joining our live discussions, Booknest welcomes all kinds of readers.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Will you supply us with multiple estimates?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-<p style="font-style:normal;font-weight:400"><?php esc_html_e('Yes. We have created a smooth and efficient process that will allow us to give you an estimate even when we are on the road or not in the office.', 'booknest');?></p>
+<details class="wp-block-details"><summary>How are the books selected?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<p style="font-style:normal;font-weight:400"><?php esc_html_e('Our selections balance literary classics, modern gems, and diverse genres to keep things fresh and engaging. Members can also suggest books, and we occasionally hold polls to let the community decide upcoming reads.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Are the repairs guaranteed?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
-<p style="font-style:normal;font-weight:400"><?php esc_html_e('Yes. We have created a smooth and efficient process that will allow us to give you an estimate even when we are on the road or not in the office.', 'booknest');?></p>
+<details class="wp-block-details"><summary>Is there a membership fee?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<p style="font-style:normal;font-weight:400"><?php esc_html_e('Booknest offers free and premium membership tiers. While free members can access book selections and discussions, premium members enjoy exclusive perks like extra content, private Q&amp;A sessions, and early event access.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>
 <!-- /wp:group --></div>
