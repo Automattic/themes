@@ -54,19 +54,19 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|70","left":"var:preset|spacing|50"},"margin":{"top":"-25px"}}}} -->
 <div class="wp-block-columns alignwide" style="margin-top:-25px"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-harper-lee.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-harper-lee.png" alt="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-orwell.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-orwell.png" alt="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-austen.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-austen.png" alt="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -199,7 +199,7 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 
 <!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Replace Book Cover"},"style":{"border":{"radius":"5px"},"shadow":"var:preset|shadow|natural"}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-machado.png" alt="" class="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cover-machado.png" alt="" style="border-radius:5px;box-shadow:var(--wp--preset--shadow--natural)"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -392,8 +392,8 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:query {"queryId":0,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false,"taxQuery":null,"parents":[]},"tagName":"main","align":"wide","layout":{"type":"constrained"}} -->
-<main class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:query {"queryId":0,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[]},"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3","style":{"layout":{"selfStretch":"fixed","flexSize":"33.33%"}}} /-->
 
 <!-- wp:group {"metadata":{"name":"Post Template Copy"},"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"blockGap":"var:preset|spacing|40","padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|50"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
@@ -407,7 +407,7 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 <!-- wp:post-date {"format":"M j, Y","isLink":true,"style":{"typography":{"textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"small"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-<!-- /wp:post-template --></main>
+<!-- /wp:post-template --></div>
 <!-- /wp:query --></div>
 <!-- /wp:group -->
 
@@ -450,4 +450,4 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+<!-- wp:template-part {"slug":"footer-home","area":"footer"} /-->

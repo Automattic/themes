@@ -58,4 +58,4 @@ echo sprintf( esc_html__( 'It looks like nothing was found at this location.%1$s
 <!-- /wp:columns --></main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer-simple"} /-->
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->

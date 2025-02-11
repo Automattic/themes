@@ -54,12 +54,6 @@ License: This Font Software is licensed under the SIL Open Font License, Version
 License URI: This license is available with a FAQ at: https://scripts.sil.org/OFL
 Source: https://github.com/dmoles/gyrochrome-font
 
-Instrument Sans
-Copyright 2022 The Instrument Sans Project Authors (https://github.com/Instrument/instrument-sans)
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
-License URI: This license is available with a FAQ at: https://openfontlicense.org
-Source: https://github.com/Instrument/instrument-sans
-
 Instrument Serif
 Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1.
@@ -123,21 +117,25 @@ Source: https://www.zenfont.jp/
 
 == Images ==
 
+Book cover image - Jane Austen
 A wedding in 1830 - José Gutiérrez de la Vega 
 Source: https://commons.wikimedia.org/wiki/File:Jos_Gutirrez_de_la_Vega_(attributed)_-_A_wedding_in_1830_-_Google_Art_Project.jpg
 License: License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 
+Book cover image - George Orwell
 Photo image public domain shadow camera 
 Source: https://www.rawpixel.com/image/6040430/photo-image-public-domain-shadow-camera
 License: License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 
+Book cover image - Harper Lee
 Bust portrait of a black man, 1835 - 1853, Nils Jakob Olsson Blommér
 Source: https://www.rawpixel.com/image/8863934/bust-portrait-black-man-1835-1853
 License: License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 
+Book cover image - Machado de Assis
 Anatomy of the heart; And she had a heart!; Autopsy - Enrique Simonet, 1890
 Source: https://it.m.wikipedia.org/wiki/File:Enrique_Simonet_-_La_autopsia_1890.jpg
 License: License: CC0 1.0 Universal (CC0 1.0)
