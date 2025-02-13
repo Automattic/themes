@@ -422,25 +422,25 @@ echo sprintf( esc_html__( 'Latest%1$sReads', 'booknest' ), '<br>' ); ?></p>
 <!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:group {"metadata":{"name":"FAQ Block Wrapper"},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:details {"showContent":true} -->
-<details class="wp-block-details" open><summary><strong>How does the Booknest book club work?</strong></summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<details class="wp-block-details" open><summary><strong><?php esc_html_e('How does the Booknest book club work?', 'booknest');?></strong></summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
 <p style="font-style:normal;font-weight:400"><?php esc_html_e('Each month, we select a new book for our members to read. We start with a live discussion, share weekly posts for open conversations, and host interactive live sessions to explore comments. At the end of the month, we wrap up with a special live session to reflect on the book before moving on to the next one.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Do I need to be an active participant to join?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<details class="wp-block-details"><summary><?php esc_html_e('Do I need to be an active participant to join?', 'booknest');?></summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
 <p style="font-style:normal;font-weight:400"><?php esc_html_e('Not at all! You can engage as much or as little as you like. Whether you prefer reading along quietly, sharing your thoughts in the comments, or joining our live discussions, Booknest welcomes all kinds of readers.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details -->
-<details class="wp-block-details"><summary>How are the books selected?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<details class="wp-block-details"><summary><?php esc_html_e('How are the books selected?', 'booknest');?></summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
 <p style="font-style:normal;font-weight:400"><?php esc_html_e('Our selections balance literary classics, modern gems, and diverse genres to keep things fresh and engaging. Members can also suggest books, and we occasionally hold polls to let the community decide upcoming reads.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details -->
-<details class="wp-block-details"><summary>Is there a membership fee?</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
+<details class="wp-block-details"><summary><?php esc_html_e('Is there a membership fee?', 'booknest');?></summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}}} -->
 <p style="font-style:normal;font-weight:400"><?php esc_html_e('Booknest offers free and premium membership tiers. While free members can access book selections and discussions, premium members enjoy exclusive perks like extra content, private Q&amp;A sessions, and early event access.', 'booknest');?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>
