@@ -21,6 +21,6 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"icon":"menu","style":{"spacing":{"blockGap":"var:preset|spacing|50"},"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"medium","layout":{"type":"flex","justifyContent":"right"}} /--></div>
+<!-- wp:navigation {"icon":"menu","layout":{"type":"flex","justifyContent":"right"}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
