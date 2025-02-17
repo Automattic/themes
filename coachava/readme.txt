@@ -14,6 +14,9 @@ Coach Ava is a theme designed for coaching professionals. It is tailored to show
 
 == Changelog ==
 
+= 1.0.1 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8666)
+
 = 1.0.0 =
 * Initial release
 

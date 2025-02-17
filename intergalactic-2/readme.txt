@@ -59,6 +59,9 @@ You can add links to a multitude of social services in the slide-out menu using 
 
 == Changelog ==
 
+= 2.0.12 =
+* Intergalactic 2: Fix margin top-bottom on frontend (#8609)
+
 = 2.0.11 =
 * Lossless image optimization (#7671)
 

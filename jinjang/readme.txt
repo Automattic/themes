@@ -12,6 +12,9 @@ JinJang is a blog theme with a split, 50:50 layout like Yan Yang.
 
 == Changelog ==
 
+= 1.0.2 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8653)
+
 = 1.0.1 =
 * Lossless image optimization (#7671)
 

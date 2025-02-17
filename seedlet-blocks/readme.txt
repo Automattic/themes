@@ -12,6 +12,9 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.35 =
+* Update all CSS files built with sass package (#8647)
+
 = 2.1.34 =
 * Remove fixed font-size from post title block on blockbase themes (#8197)
 

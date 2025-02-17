@@ -14,6 +14,12 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.41 =
+* Update all CSS files built with sass package (#8647)
+
+= 1.6.40 =
+* Update deps and remove node-sass (#8624)
+
 = 1.6.39 =
 * Add missing SVG icons, taken from https://raw.githubusercontent.com/Automattic/jetpack/refs/heads/trunk/projects/packages/classic-theme-helper/src/social-menu/social-menu.svg (#8593)
 

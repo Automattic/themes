@@ -12,6 +12,9 @@ Tronar is a simple blog theme. It works best with featured images. The latest st
 
 == Changelog ==
 
+= 1.0.4 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8661)
+
 = 1.0.3 =
 * Troner: Update for submission (#7795)
 

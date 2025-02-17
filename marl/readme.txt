@@ -12,6 +12,12 @@ Marl is a minimal, product-oriented theme.
 
 == Changelog ==
 
+= 1.0.9 =
+* Revert correct primary and secondary color classes (#8615) (#8639)
+
+= 1.0.8 =
+* correct primary and secondary color classes (#8615)
+
 = 1.0.7 =
 * Update theme URIs (#8599)
 

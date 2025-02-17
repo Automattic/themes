@@ -12,6 +12,9 @@ Course is a flexible and modern education theme for anyone wanting to share thei
 
 == Changelog ==
 
+= 1.3.10 =
+* Course: Add home template (#8683)
+
 = 1.3.9 =
 * Fix broken blocks in site editor templates (#8101)
 
@@ -154,3 +157,11 @@ Image for theme screenshot, Credit Startup Stock Photos
 License: Creative Commons Zero, 1.0
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://startupstockphotos.com/photos/laptop-and-notebook/
+
+Image for news pattern, Credit Christin Hume via Unsplash
+License: https://unsplash.com/license
+Source: https://unsplash.com/photos/person-using-laptop-computer-Hcfwew744z4
+
+Grayscale photo of woman photo by Micah Williams via Unsplash
+License: https://unsplash.com/license
+Source: https://unsplash.com/photos/hTmaobx98Ro

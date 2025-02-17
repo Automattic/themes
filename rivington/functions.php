@@ -61,12 +61,12 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#CAAB57'; // $config-global--color-primary-default;
-		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#EE4266';  // $config-global--color-secondary-default;
-		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#060f29';   // $config-global--color-background-default;
-		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#F2F2F2';  // $config-global--color-foreground-default;
-		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#F2F2F2' ) ? $colors_array['colors']['txt'] : '#FFFFFF';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#F2F2F2' ) ? $colors_array['colors']['txt'] : '#8F8F8F';  // $config-global--color-foreground-dark-default;
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['link'] ?? '' ) : '#CAAB57'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['fg1'] ?? '' ) : '#EE4266';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['bg'] ?? '' ) : '#060f29';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#F2F2F2';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && ( $colors_array['colors']['txt'] ?? '' ) != '#F2F2F2' ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#FFFFFF';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && ( $colors_array['colors']['txt'] ?? '' ) != '#F2F2F2' ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#8F8F8F';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(

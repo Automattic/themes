@@ -12,6 +12,9 @@ Optimismo is a blog theme with a big bold message at the front.
 
 == Changelog ==
 
+= 1.0.4 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8663)
+
 = 1.0.3 =
 * Lossless image optimization (#7671)
 

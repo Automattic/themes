@@ -12,6 +12,9 @@ Mayland Blocks is a block theme based on the Mayland theme.
 
 == Changelog ==
 
+= 2.1.37 =
+* Update all CSS files built with sass package (#8647)
+
 = 2.1.36 =
 * Update theme URIs (#8599)
 

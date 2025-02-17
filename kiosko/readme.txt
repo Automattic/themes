@@ -12,6 +12,9 @@ Kiosko is a simple store theme with product filters.
 
 == Changelog ==
 
+= 1.0.1 =
+* Add changelog for woocommerce.com (#8642)
+
 = 1.0.0 =
 * Initial release
 

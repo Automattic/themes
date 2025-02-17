@@ -59,12 +59,12 @@ if ( ! function_exists( 'exford_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#23883D'; // $config-global--color-primary-default;
-		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#0963C4';  // $config-global--color-secondary-default;
-		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-default;
-		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#111111' ) ? $colors_array['colors']['txt'] : '#6E6E6E';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#111111' ) ? $colors_array['colors']['txt'] : '#020202';  // $config-global--color-foreground-dark-default;
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['link'] ?? '' ) : '#23883D'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['fg1'] ?? '' ) : '#0963C4';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['bg'] ?? '' ) : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#111111';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && ( $colors_array['colors']['txt'] ?? '' ) != '#111111' ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#6E6E6E';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && ( $colors_array['colors']['txt'] ?? '' ) != '#111111' ) ? ( $colors_array['colors']['txt'] ?? '' ) : '#020202';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -151,7 +151,7 @@ function exford_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 * 
+		 *
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );

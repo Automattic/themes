@@ -12,6 +12,9 @@ Artly is a WordPress theme designed for blogs and magazines. Its modern, offset 
 
 == Changelog ==
 
+= 1.0.9 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay. (#8649)
+
 = 1.0.8 =
 * Artly: Remove static links. (#8536)
 

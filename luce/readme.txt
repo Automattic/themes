@@ -12,6 +12,9 @@ Luce is a simple resume and blog theme with bright personality.
 
 == Changelog ==
 
+= 1.0.3 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8656)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 

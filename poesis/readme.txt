@@ -12,6 +12,9 @@ Poesis pays homage to the literary figures represented in the painting “Six Tu
 
 == Changelog ==
 
+= 1.0.5 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8657)
+
 = 1.0.4 =
 * Lossless image optimization (#7671)
 

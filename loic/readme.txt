@@ -12,6 +12,9 @@ A simple blogging theme ideal for writers.
 
 == Changelog ==
 
+= 1.0.6 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8655)
+
 = 1.0.5 =
 * Loic: Add fix for SyntaxHighlighter max-width bug (#8414)
 

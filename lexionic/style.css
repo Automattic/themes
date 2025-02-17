@@ -1,0 +1,51 @@
+/*
+Theme Name: Lexionic
+Theme URI: https://themeshaper.com/lexionic/
+Author: Automattic
+Author URI: https://automattic.com
+Description: Lexiconic is a sleek, versatile theme that empowers book authors, publishers, and storytellers. It is perfect for quickly creating stunning landing pages and offers a seamless showcase of your work. With a rich selection of style variations and customization options, Lexiconic enables you to craft a site that reflects your narrative. Whether you are launching a debut novel, promoting a timeless classic, or building your brand, this theme combines elegance with functionality to bring your story to life.
+Requires at least: 6.7
+Tested up to: 6.7
+Requires PHP: 7.2
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lexionic
+Tags: blog, block-styles, two-columns, wide-blocks, featured-images, full-site-editing, rtl-language-support, sticky-post, style-variations, threaded-comments, translation-ready
+
+/* Progresive enhancement to reduce widows and orphans.
+/* https://github.com/WordPress/gutenberg/issues/55190
+*/
+
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption {
+    text-wrap: balance;
+}
+p {
+    text-wrap: pretty;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}

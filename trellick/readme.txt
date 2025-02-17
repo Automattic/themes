@@ -12,6 +12,9 @@ Trellick is a raw, brutalist blog theme that strips away the polished veneer of 
 
 == Changelog ==
 
+= 1.0.5 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8660)
+
 = 1.0.4 =
 * Lossless image optimization (#7671)
 

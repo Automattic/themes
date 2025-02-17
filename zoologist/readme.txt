@@ -12,6 +12,14 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.48 =
+* Geologist and Zoologist: Revert color classes changes. (#8633)
+
+= 1.0.47 =
+* Bump required PHP versions to 7.2 (#8589)
+* Revert Bump required PHP versions to 7.2 (#8589)
+* correct color classes for foreground and secondary (#8595)
+
 = 1.0.46 =
 * Quadrat, Zoologist, Geologist: Fix post nav block arrows (#8571)
 

@@ -12,6 +12,9 @@ Bute is a blog theme that has a full-screen front page
 
 == Changelog ==
 
+= 1.0.5 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8651)
+
 = 1.0.4 =
 * Bute: Preps for submission (#7667)
 

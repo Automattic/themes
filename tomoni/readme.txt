@@ -12,6 +12,9 @@ Tomoni is a theme that displays a use case of multilingual content with Japanese
 
 == Changelog ==
 
+= 1.0.4 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8659)
+
 = 1.0.3 =
 * Lossless image optimization (#7671)
 

@@ -12,6 +12,9 @@ Strand is a simple blogging and newsletter theme. The main feature is its split 
 
 == Changelog ==
 
+= 1.0.4 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8665)
+
 = 1.0.3 =
 * Lossless image optimization (#7671)
 

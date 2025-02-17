@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php if ( get_header_image() ) : ?>
 	<div class="custom-header">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

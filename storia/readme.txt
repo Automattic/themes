@@ -12,6 +12,9 @@ A visual story theme.
 
 == Changelog ==
 
+= 1.0.7 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8658)
+
 = 1.0.6 =
 * Lossless image optimization (#7671)
 

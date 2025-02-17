@@ -12,6 +12,9 @@ Fewer is perfect for showcasing portfolios and blogs. With a clean and opinionat
 
 == Changelog ==
 
+= 1.0.5 =
+* Add css unit to styles.spacing.padding value to regain default paddings on menu overlay (#8652)
+
 = 1.0.4 =
 * Added images and font licenses
 
