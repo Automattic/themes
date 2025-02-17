@@ -21,326 +21,42 @@ Tags: block-patterns, eLearning, education, full-site-editing, lms, online cours
 	-webkit-font-smoothing: antialiased;
 }
 
-/**
- * Currently table styles are only available with 'wp-block-styles' theme support (block css) thus the following needs to be included
- * since 'wp-block-styles' aren't used for this theme.
- */
-.wp-block-table thead {
-	border-bottom: 3px solid;
-}
-
-.wp-block-table tfoot {
-	border-top: 3px solid;
-}
-
-.wp-block-table td,
-.wp-block-table th {
-	padding: var(--wp--preset--spacing--30);
-	border: 1px solid;
-	word-break: normal;
-}
-
-.wp-block-table figcaption {
-	font-size: var(--wp--preset--font-size--small);
-	text-align: center;
-}
-
- /* Background and text color, padding around for navbar, only for mobile view. Desktop view has separate color */
- .wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
-	background-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--background);
-	padding: 1.5rem;
- }
-
- /* Distance between navigation menu items in mobile view, theme.json blockgap not working for navigation block */
- .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
-	gap: var(--wp--custom--nav-mobile-gap);
- }
-
- /* Color of the cross button in navbar mobile view */
- .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
-	color: var(--wp--preset--color--background);
- }
-
-/* line height of the menu items in mobile view, to match design */
- .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container a.wp-block-navigation-item__content {
-	line-height: 90%;
- }
-
- /* The navigation item that looks like a button in the design has a different front size and the button is rounded */
- .wp-block-navigation .wp-block-navigation__responsive-container .wp-block-navigation-link.is-style-navigation-link-button a {
-	font-size: var(--wp--custom--typography--font-sizes--button);
-	border-radius: 8px;
-}
-
-/* Background & text color, padding and border of the navbar button */
-.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a {
-	background-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--background);
-	padding: 15.5px 32px;
-	border: 1px solid var(--wp--preset--color--foreground);
-}
-
-/* Navbar button color change on hover */
-.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a:hover {
-	background-color: var(--wp--preset--color--background);
-	color: var(--wp--preset--color--foreground);
-}
-
-/* Set the font size of the menu items in mobile view, except for the button menu item */
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link:not(.is-style-navigation-link-button) a {
-	font-size: var(--wp--preset--font-size--xx-large);
-}
-
-/* Design for the navbar button item, in case of mobile view. Has extra margin on top as per design */
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a {
-	color: var(--wp--preset--color--foreground);
-	background-color: var(--wp--preset--color--background);
-	width: calc(100vw - 3rem);
-	text-align: center;
-	padding: 17.5px 0px;
-	margin-top: calc(7.5rem - var(--wp--custom--nav-mobile-gap));
-}
-
-/* Separate hover behavior for navbar button, applicable when in mobile view, as the colors are separate for mobile view */
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a:hover {
-	background-color: var(--wp--preset--color--background);
-	color: var(--wp--preset--color--foreground);
-}
-
-header {
-	background-color: transparent;
-}
-
-
-.wp-site-blocks header ~ main {
-	margin-block-start: 0;
-}
-
-header .navigation-wrapper {
-	min-height: 116px;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	text-transform: revert;
-} 
-/*
- * Comments
- */
-.wp-block-comments .wp-block-post-comments-form:not(last-child) {
-	margin-bottom: var(--wp--custom--comment-gap);
 }
 
-.comment-reply-title a {
-	font-size: var(--wp--preset--font-size--x-small);
-}
-
-.wp-block-comments .wp-block-comments-pagination {
-	margin-top: calc( var(--wp--custom--comment-gap) / 2 * -1 );
-	margin-bottom: var(--wp--custom--comment-gap);
-}
-
-.wp-block-comments hr,
-.wp-block-comments .wp-block-comments-title {
-	margin-bottom: clamp(2.5rem, 2.167rem + 1.111vw, 3rem);
-}
-
-.wp-block-post-comments-form .comment-form-cookies-consent input[type="checkbox"] {
-	display: none;
-}
-
-.wp-block-post-comments-form .comment-form-cookies-consent input[type="checkbox"] + label:before {
-	border: 1px solid var(--wp--preset--color--foreground);
-	content: "\00a0";
-	display: inline-block;
-	font-size: 1rem;
-	height: 16px;
-	padding: 0;
-	vertical-align: center;
-	width: 16px;
-	border-radius: 4px;
-	margin-right: var(--wp--custom--comment-gap-small);
-}
-
-.wp-block-post-comments-form .comment-form-cookies-consent input[type="checkbox"]:checked + label:before {
-	color: green;
-	content: "\2713";
-	text-align: center;
-}
-
-
-.wp-block-post-comments-form h3.comment-reply-title {
-	margin-bottom: var(--wp--preset--spacing--60);
-}
-
-.wp-block-post-comments-form .comment-form-comment label {
-	display: inline-block;
-}
-
-.wp-block-post-comments-form .comment-form-comment label,
-.wp-block-post-comments-form .comment-form-author label,
-.wp-block-post-comments-form .comment-form-url label,
-.wp-block-post-comments-form .comment-form-email label
-{
-	margin-bottom: 5px;
-}
-
-.wp-block-post-comments-form form.comment-form .form-submit {
-	margin-top: var(--wp--preset--spacing--50);
-}
-
-.wp-block-post-comments-form form.comment-form p input:not([type=submit]),
-.wp-block-post-comments-form form.comment-form textarea {
-	border: 1px solid var(--wp--preset--color--foreground);
-	border-radius: 8px;
-	background-color: var(--wp--preset--color--background);
-	color: var(--wp--preset--color--foreground);
-	font-size: var(--wp--preset--font-size--x-small);
-	padding: 11px;
-}
-
-.wp-block-post-comments-form .comment-form-cookies-consent label {
-	margin: auto 0;
-}
-
-.wp-block-post-comments-form .comment-form-cookies-consent {
-	align-items: center;
-	gap: var(--wp--preset--spacing--30);
-}
-
-.wp-block-post-comments-form .comment-form-cookies-consent input {
-	transform: scale(1.3);
-	background-color: transparent;
-	accent-color: red;
-}
-
-.wp-block-post-comments-form .comment-form {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-column-gap: var(--wp--custom--reply-column-gap);
-	grid-row-gap: var(--wp--custom--comment-gap-medium);
-}
-
-@media screen and (max-width: 480px) {
-	.wp-block-post-comments-form .comment-form {
-		display: flex;
-		flex-direction: column;
-		gap: calc(var(--wp--preset--spacing--60) - var(--wp--preset--spacing--40));
-	}
-}
-
-.wp-block-post-comments-form .comment-form p,
-.wp-block-post-comments-form h3 {
-	margin-block-start: 0;
-	margin-block-end: 0;
-}
-
-.wp-block-post-comments-form .comment-form .comment-notes {
-	display: none;
-}
-
-.wp-block-post-comments-form .comment-form .comment-form-author {
-	order: 1;
-	grid-column: 1 / 3;
-}
-
-.wp-block-post-comments-form .comment-form .comment-form-email {
-	order: 2;
-	grid-column: 1 / 2;
-}
-
-.wp-block-post-comments-form .comment-form .comment-form-url {
-	order: 3;
-	grid-column: 2 / 3;
-}
-
-.wp-block-post-comments-form .comment-form .comment-form-comment {
-	order: 4;
-	grid-column: 1 / 3;
-}
-
-.wp-block-post-comments-form .comment-form .comment-form-cookies-consent {
-	order: 5;
-	grid-column: 1 / 3;
-}
-
-.wp-block-post-comments-form .comment-form .wp-block-button {
-	order: 6;
-	grid-column: 1 / 2;
-}
-
-.wp-block-comments .wp-block-comment-template .wp-block-comment-author-name {
-	margin-bottom: var(--wp--custom--comment-gap-small);
-}
-
-.wp-block-comments .wp-block-comment-template .wp-block-comment-content p {
-	margin-block-start: var(--wp--custom--comment-gap-medium);
-	margin-block-end: var(--wp--custom--comment-gap-small);
-}
-
-.wp-block-comments .comment > .is-vertical > .wp-block-group {
-	align-items: flex-start;
-}
-
-.wp-block-comments .comment > div > div > .is-vertical {
-	gap: 0;
-}
-
-/*
- * Link styles
- */
 a {
 	text-decoration-thickness: .0625em !important;
 	text-underline-offset: .15em
 }
 
 /*
- * Search styles
+ * Header
  */
-.wp-block-search__input {
-	background-color: var(--wp--preset--color--background);
-	border-color: var(--wp--preset--color--foreground);
-	padding: 1.063rem;
+header {
+	background-color: transparent;
+}
+
+header .navigation-wrapper {
+	min-height: 116px;
+}
+
+.wp-site-blocks header ~ main {
+	margin-block-start: 0;
 }
 
 /*
- * Search Results Styles
- */
-.search .wp-block-post-template .wp-block-post {
-	margin: 0;
-}
-
-.search .wp-block-post.course {
-	border-bottom: 0;
-	margin: 0;
-	padding: 0;
-}
-
-/* Buttons */
-.wp-block-button__link:focus {
-	outline: var(--wp--preset--color--foreground) dashed;
-	outline-offset: 1px;
-}
-
-/*
-* Control the hover stylings of outline block style.
-* Unnecessary once block styles are configurable via theme.json
+* Outline Buttons
 */
 .wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):active {
 	background-color: var(--wp--preset--color--secondary);
 	border-color: var(--wp--preset--color--button-border-active);
-	color: var(--wp--preset--color--primary);
 }
 
 .wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):hover {
 	background-color: var(--wp--preset--color--primary);
 	border-color: var(--wp--preset--color--button-border-hover);
 	color: var(--wp--preset--color--secondary);
-}
-
-.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):focus {
-	border-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--foreground);
 }
 
 .wp-block-button.is-style-outline > .wp-block-button__link,
@@ -353,37 +69,10 @@ a {
 }
 
 /*
- * Pagination styles
+ * Search Results
  */
-.wp-block-query-pagination .wp-block-query-pagination-numbers > *:not(:last-child) {
-	margin-right: clamp(1.44rem, 1.91vw + 0.97rem, 2.5rem);
-}
-
-.wp-block-query-pagination .page-numbers.current {
-	text-decoration: underline;
-}
-
-/* Add border around author image in Post Author block */
-.wp-block-post-author__avatar img {
-	border: 1px solid var(--wp--preset--color--tertiary);
-	border-radius: 4px;
-}
-
-/* Design for search box in 404 page template sidebar */
-.course-search-sidebar button {
-	padding: clamp(12px, calc(0.75rem + ((1vw - 4.8px) * 0.5556)), 16px);
-	color: var(--wp--preset--color--tertiary);
-	vertical-align: center;
-}
-
-.course-search-sidebar button svg {
-	height: 32px;
-	width: 32px;
-	vertical-align: bottom;
-}
-
-.course-search-sidebar input.wp-block-search__input {
-	line-height: 100%;
+.search .wp-block-post-template .wp-block-post {
+	margin: 0;
 }
 
 /* Newsletter */
@@ -407,10 +96,6 @@ a {
 }
 
 /* Footer */
-footer .wp-block-column .wp-block-spacer {
-	height: 20px;
-}
-
 footer .wp-block-column a,
 footer .wp-block-column p,
 footer .wp-block-column h3 {
@@ -429,56 +114,8 @@ footer .wp-block-column h3 {
 	}
 }
 
-footer.wp-block-template-part  {
+footer.wp-block-template-part {
 	margin-block-start: 0;
-}
-
-
-/*
- * "Wide Width, No Title" page template
- */
-
-/* Remove extra space from group blocks */
-body.page-template-page-wide-width .wp-block-post-content .wp-block-group,
-body.page-template-page-wide-width footer .wp-block-group {
-	margin-block-end: 0;
-}
-
-/*
-* Sensei-specific styles
-*/
-.wp-block-sensei-lms-course-overview a {
-	text-decoration: underline;
-}
-
-.wp-block-sensei-lms-course-list .sensei-cta a:hover,
-.wp-block-sensei-lms-course-list .sensei-cta a:focus {
-	text-decoration: none;
-}
-
-/* The first 3 CSS selectors can be removed after allowing enough time (let's say 1 month)for sites
- * to update to the Sensei LMS plugin version containing the changes to the CSS class names.
- */
-.course-list-featured-label__featured-image,
-.course-list-featured-label__course-categories,
-.sensei-lms-featured-badge,
-.sensei-lms-course-list-featured-label__text {
-	font-family: var(--wp--preset--font-family--system);
-	text-transform: uppercase;
-}
-
-/*
- * Style Variations
- */
-
-/* Workaround for https://github.com/WordPress/gutenberg/issues/35480. */
-.wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor svg {
-	color: var(--wp--preset--color--primary);
-}
-
-
-.footer-title{
-	white-space: normal;
 }
 
 .footer-title a:hover {
@@ -486,12 +123,17 @@ body.page-template-page-wide-width footer .wp-block-group {
 }
 
 @media screen and (max-width: 700px) {
-	.footer-title{
+	.footer-title {
 		font-size: 86px;
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	.separator {
-		 top: -25px;
-	}
+}
+
+/*
+ * "Wide Width, No Title" Page Template
+ */
+body.page-template-page-wide-width .wp-block-post-content .wp-block-group,
+body.page-template-page-wide-width footer .wp-block-group {
+	margin-block-end: 0;
 }

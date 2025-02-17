@@ -1,0 +1,53 @@
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	padding: 1.5rem;
+}
+
+/* theme.json's blockGap does not work. */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+	gap: var(--wp--custom--nav-mobile-gap);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
+	color: var(--wp--preset--color--background);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container a.wp-block-navigation-item__content {
+	line-height: 90%;
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-navigation-link.is-style-navigation-link-button a {
+	font-size: var(--wp--custom--typography--font-sizes--button);
+	border-radius: var(--wp--custom--button--radius);
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	padding: 15.5px 32px;
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a:hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link:not(.is-style-navigation-link-button) a {
+	font-size: var(--wp--preset--font-size--xx-large);
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a {
+	color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--background);
+	width: calc(100vw - 3rem);
+	text-align: center;
+	padding: 17.5px 0px;
+	margin-top: calc(7.5rem - var(--wp--custom--nav-mobile-gap));
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a:hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}

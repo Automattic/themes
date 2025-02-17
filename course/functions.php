@@ -49,6 +49,28 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'course_scripts' );
 
+function course_enqueue_block_styles() {
+	$blocks = array(
+		'core/comments',
+		'core/navigation',
+		'core/query-pagination',
+		'core/query',
+	);
+
+	foreach ( $blocks as $block ) {
+		// Replace slash with hyphen for filename.
+		$slug = str_replace( '/', '-', $block );
+
+		wp_enqueue_block_style( $block, array(
+			'handle' => "course-block-{$slug}",
+			'src'    => get_theme_file_uri( "assets/css/blocks/{$slug}.css" ),
+			'path'   => get_theme_file_path( "assets/css/blocks/{$slug}.css" )
+		) );
+	}
+}
+
+add_action( 'init', 'course_enqueue_block_styles' );
+
 function course_theme_init() {
 	register_block_style(
 		'core/navigation-link',
