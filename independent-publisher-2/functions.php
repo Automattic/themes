@@ -42,7 +42,7 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 		 */
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 740, 430, true );
+		set_post_thumbnail_size( 740, 9999, true );
 		add_image_size( 'independent-publisher-2-banner', 1440, 600, true );
 		add_image_size( 'independent-publisher-2-full-width', 1100, 9999 );
 
