@@ -97,7 +97,7 @@ if ( ! function_exists( 'varia_entry_meta' ) ) :
 
 			/* translators: used between list items, there is a space after the comma. */
 			$tags_list = get_the_tag_list( '', __( ', ', 'varia' ) );
-			if ( $tags_list ) {
+			if ( is_string( $tags_list ) ) {
 				printf(
 					/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
 					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
@@ -162,7 +162,7 @@ if ( ! function_exists( 'varia_entry_footer' ) ) :
 
 			/* translators: used between list items, there is a space after the comma. */
 			$tags_list = get_the_tag_list( '', __( ', ', 'varia' ) );
-			if ( $tags_list ) {
+			if ( is_string( $tags_list ) ) {
 				printf(
 					/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
 					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
