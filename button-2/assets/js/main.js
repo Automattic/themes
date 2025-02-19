@@ -2,38 +2,37 @@
  * Button 2 Javascript
  */
 
-( function( $ ) {
-
+(function ($) {
 	function fancyImages() {
-		var imgs = $( '.entry-content img.fancy, .entry-content .is-style-fancy, .entry-content .wp-block-image.fancy' );
+		var imgs = $(
+			'.entry-content img.fancy img, .entry-content .is-style-fancy img, .entry-content .wp-block-image.fancy img, .widget-area img.fancy img, .widget-area .is-style-fancy img, .widget-area .wp-block-image.fancy img'
+		);
 
-		for ( var i = 0, imgslength = imgs.length; i < imgslength; i++ ) {
-			if ( '' !== $( imgs[i] ) ) {
+		for (var i = 0, imgslength = imgs.length; i < imgslength; i++) {
+			if ('' !== $(imgs[i])) {
+				$(imgs[i]).wrap('<span class="fancy-image"></span>');
 
-				$( imgs[i] ).wrap( '<span class="fancy-image"></span>' );
+				var fancyImg = $(imgs[i]).closest('.fancy-image');
 
-				var fancyImg = $( imgs[i] ).closest( '.fancy-image' );
-
-				if ( '' == $( imgs[i] ).closest( 'figure' ) ) {
+				if ('' == $(imgs[i]).closest('figure')) {
 					//This image is not captioned; carry over the classes
-					fancyImg.addClass( $( imgs[i] ).attr( 'class' ) );
-					fancyImg.removeClass( 'fancy' );
+					fancyImg.addClass($(imgs[i]).attr('class'));
+					fancyImg.removeClass('fancy');
 				}
 
-				fancyImg.wrapInner( '<span class="corners"></span>' );
-				fancyImg.append( '<span class="shadow"></span>' );
+				fancyImg.wrapInner('<span class="corners"></span>');
+				fancyImg.append('<span class="shadow"></span>');
 			}
 		}
 	}
 
 	// After window loads
-	$( window ).load( function() {
+	$(window).load(function () {
 		fancyImages();
-	} );
+	});
 
 	// After infinite scroll loads new posts
-	$( window ).on( 'post-load', function() {
+	$(window).on('post-load', function () {
 		fancyImages();
-	} );
-
-} )( jQuery );
+	});
+})(jQuery);
