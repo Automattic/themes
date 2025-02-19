@@ -22,7 +22,7 @@ echo sprintf( esc_html__( 'Oops! That page%1$scan’t be found.', 'leancv' ), '<
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Search"},"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:search {"showLabel":false,"buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"top":{"color":"var:preset|color|primary","style":"solid"},"right":{"color":"var:preset|color|primary","style":"solid"},"bottom":{"color":"var:preset|color|primary","style":"solid"},"left":{"color":"var:preset|color|primary","style":"solid"}}}} /--></div>
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:search {"showLabel":false,"buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"top":{"color":"var:preset|color|foreground","style":"solid"},"right":{"color":"var:preset|color|foreground","style":"solid"},"bottom":{"color":"var:preset|color|foreground","style":"solid"},"left":{"color":"var:preset|color|foreground","style":"solid"}}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer"} /--></main>
